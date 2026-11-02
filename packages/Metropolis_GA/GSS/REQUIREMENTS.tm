@@ -70,9 +70,9 @@ Prove:
       route_sections(rt, rts) ->
         ALL sw (
           (switches_normal(rts, sw) ->
-             ~DetectedNormal(sw)) &
+             DetectedNormal(sw)) &
           (switches_reverse(rts, sw) ->
-             ~DetectedReverse(sw))
+             DetectedReverse(sw))
         )
     );
 
