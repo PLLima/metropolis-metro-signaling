@@ -1,0 +1,89 @@
+# ====================================================================
+# Prover iLock & Formal Verification Artifacts
+# ====================================================================
+# Prover license files (NEVER commit license keys or machine IDs)
+*.lic
+*.license
+license.txt
+licence.txt
+prover_license*
+
+# Prover iLock temporary files, logs, and verification runs
+*.log
+*.tmp
+*.bak
+*.out
+*.solver_trace
+*.cache
+build/
+output/
+run/
+temp/
+simulation_output/
+mqtt_logs/
+
+# ====================================================================
+# Deliverable Raw Binaries & Installers
+# ====================================================================
+# Prover iLock installers and heavy archives
+*.exe
+*.msi
+*.zip
+*.tar.gz
+*.7z
+Metropolis-CS_Prover-2026.zip
+Prover_iLock-*.exe
+
+# GA Input PDFs (keep raw vendor specifications out of git history if heavy)
+# Uncomment the next line if you track documents outside Git
+# *.pdf
+
+# ====================================================================
+# Visual Studio Code & Editors
+# ====================================================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains / Eclipse / Other IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ====================================================================
+# Operating System Artifacts
+# ====================================================================
+# Windows (especially relevant for Prover iLock host systems)
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ====================================================================
+# Office & Presentation Temporary Files (Slides & Report drafts)
+# ====================================================================
+~$*.docx
+~$*.pptx
+~$*.xlsx
+*.swp
+*.swo
+
+# LaTeX temporary files (if compiling PDF report locally)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
