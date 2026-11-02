@@ -1,0 +1,43 @@
+format: "LCF-2.0-project-table"
+package: "Metropolis_GA"
+project: "G-TEC"
+tables:
+  -
+    type: "t_area_before_object"
+    rows:
+      - ["S-p12", "P12"]
+      - ["S-p12b", "P12"]
+      - ["S-p13", "P13"]
+      - ["S-p13b", "P13"]
+      - ["S-p14", "P14"]
+      - ["S-p14b", "P14"]
+      - ["S-p15", "P15"]
+      - ["S-p15b", "P15"]
+      - ["S-p16", "P16"]
+      - ["S-p16b", "P16"]
+      - ["S1", "VG1-CLA"]
+      - ["S10", "T42"]
+      - ["S2", "VG2-CLA"]
+      - ["S3", "T37"]
+      - ["S3", "front_S1:1"]
+      - ["S3", "front_S1:2"]
+      - ["S4", "T36"]
+      - ["S4", "front_S2:1"]
+      - ["S4", "front_S2:2"]
+      - ["S5", "T39"]
+      - ["S6", "T40"]
+      - ["S6", "front_S8:1"]
+      - ["S6", "front_S8:2"]
+      - ["S7", "T39"]
+      - ["S8", "T42"]
+      - ["S9", "T41"]
+      - ["S9", "flank_sw-24leg1:1"]
+      - ["S9", "front_S7:1"]
+      - ["SeG1-CLA-W", "T37"]
+      - ["SeG1-CLA-W", "front_S1:1"]
+      - ["SeG1-CLA-W", "front_S1:2"]
+      - ["SeG2-CLA-W", "T36"]
+      - ["SeG2-CLA-W", "front_S2:1"]
+      - ["SeG2-CLA-W", "front_S2:2"]
+    descr: "area 'area' is immediately before 'obj'"
+descr: "area 'area' is immediately before 'obj'"

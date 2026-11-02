@@ -1,0 +1,5 @@
+hash-algorithm: "sha256"
+project-file-checksums:
+  -
+    file: "config/io_g-tec.rjson"
+    checksum: "24F487DAA7A8752DD805A91DC55A8888A336A4317DC4C46C547E1B7F9FD4D804"

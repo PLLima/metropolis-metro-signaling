@@ -1,0 +1,3199 @@
+format: "LCF-2.0-project-data"
+package: "Metropolis_GA"
+project: "G-TEC"
+nodes:
+  -
+    id: "X = 1000, Y = 200"
+    node-type: "PassageNode"
+    attrs: {XPosition: "1000", YPosition: "200"}
+  -
+    id: "X = 1000, Y = 300"
+    node-type: "PassageNode"
+    attrs: {XPosition: "1000", YPosition: "300"}
+  -
+    id: "X = 1000, Y = 400"
+    node-type: "PassageNode"
+    attrs: {XPosition: "1000", YPosition: "400"}
+  -
+    id: "X = 1000, Y = 500"
+    node-type: "PassageNode"
+    attrs: {XPosition: "1000", YPosition: "500"}
+  -
+    id: "X = 1090, Y = 100"
+    node-type: "PassageNode"
+    attrs: {XPosition: "1090", YPosition: "100"}
+  -
+    id: "X = 1090, Y = 200"
+    node-type: "PassageNode"
+    attrs: {XPosition: "1090", YPosition: "200"}
+  -
+    id: "X = 1090, Y = 300"
+    node-type: "PassageNode"
+    attrs: {XPosition: "1090", YPosition: "300"}
+  -
+    id: "X = 1090, Y = 400"
+    node-type: "PassageNode"
+    attrs: {XPosition: "1090", YPosition: "400"}
+  -
+    id: "X = 1090, Y = 500"
+    node-type: "PassageNode"
+    attrs: {XPosition: "1090", YPosition: "500"}
+  -
+    id: "X = 1120, Y = 100"
+    node-type: "EndNode"
+    attrs: {XPosition: "1120", YPosition: "100"}
+  -
+    id: "X = 1120, Y = 200"
+    node-type: "EndNode"
+    attrs: {XPosition: "1120", YPosition: "200"}
+  -
+    id: "X = 1120, Y = 300"
+    node-type: "EndNode"
+    attrs: {XPosition: "1120", YPosition: "300"}
+  -
+    id: "X = 1120, Y = 400"
+    node-type: "EndNode"
+    attrs: {XPosition: "1120", YPosition: "400"}
+  -
+    id: "X = 1120, Y = 500"
+    node-type: "EndNode"
+    attrs: {XPosition: "1120", YPosition: "500"}
+  -
+    id: "X = 120, Y = 100"
+    node-type: "EndNode"
+    attrs: {XPosition: "120", YPosition: "100"}
+  -
+    id: "X = 120, Y = 200"
+    node-type: "EndNode"
+    attrs: {XPosition: "120", YPosition: "200"}
+  -
+    id: "X = 290, Y = 100"
+    node-type: "PassageNode"
+    attrs: {XPosition: "290", YPosition: "100"}
+  -
+    id: "X = 290, Y = 200"
+    node-type: "PassageNode"
+    attrs: {XPosition: "290", YPosition: "200"}
+  -
+    id: "X = 420, Y = 100"
+    node-type: "PassageNode"
+    attrs: {XPosition: "420", YPosition: "100"}
+  -
+    id: "X = 420, Y = 200"
+    node-type: "PassageNode"
+    attrs: {XPosition: "420", YPosition: "200"}
+  -
+    id: "X = 440, Y = 100"
+    node-type: "SwitchNode"
+    attrs: {XPosition: "440", YPosition: "100"}
+  -
+    id: "X = 540, Y = 200"
+    node-type: "SwitchNode"
+    attrs: {XPosition: "540", YPosition: "200"}
+  -
+    id: "X = 580, Y = 100"
+    node-type: "PassageNode"
+    attrs: {XPosition: "580", YPosition: "100"}
+  -
+    id: "X = 580, Y = 200"
+    node-type: "PassageNode"
+    attrs: {XPosition: "580", YPosition: "200"}
+  -
+    id: "X = 620, Y = 200"
+    node-type: "PassageNode"
+    attrs: {XPosition: "620", YPosition: "200"}
+  -
+    id: "X = 640, Y = 200"
+    node-type: "SwitchNode"
+    attrs: {XPosition: "640", YPosition: "200"}
+  -
+    id: "X = 720, Y = 100"
+    node-type: "PassageNode"
+    attrs: {XPosition: "720", YPosition: "100"}
+  -
+    id: "X = 740, Y = 200"
+    node-type: "PassageNode"
+    attrs: {XPosition: "740", YPosition: "200"}
+  -
+    id: "X = 760, Y = 200"
+    node-type: "SwitchNode"
+    attrs: {XPosition: "760", YPosition: "200"}
+  -
+    id: "X = 860, Y = 100"
+    node-type: "PassageNode"
+    attrs: {XPosition: "860", YPosition: "100"}
+  -
+    id: "X = 880, Y = 200"
+    node-type: "SwitchNode"
+    attrs: {XPosition: "880", YPosition: "200"}
+  -
+    id: "X = 940, Y = 500"
+    node-type: "PassageNode"
+    attrs: {XPosition: "940", YPosition: "500"}
+  -
+    id: "X = 960, Y = 400"
+    node-type: "PassageNode"
+    attrs: {XPosition: "960", YPosition: "400"}
+  -
+    id: "X = 980, Y = 300"
+    node-type: "PassageNode"
+    attrs: {XPosition: "980", YPosition: "300"}
+  -
+    id: "X = 990, Y = 100"
+    node-type: "PassageNode"
+    attrs: {XPosition: "990", YPosition: "100"}
+edges:
+  -
+    id: "X = 1000, Y = 200__X = 1090, Y = 200"
+    edge: [["X = 1000, Y = 200", 1], ["X = 1090, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 1000, Y = 300__X = 1090, Y = 300"
+    edge: [["X = 1000, Y = 300", 1], ["X = 1090, Y = 300", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 1000, Y = 400__X = 1090, Y = 400"
+    edge: [["X = 1000, Y = 400", 1], ["X = 1090, Y = 400", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 1000, Y = 500__X = 1090, Y = 500"
+    edge: [["X = 1000, Y = 500", 1], ["X = 1090, Y = 500", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 1090, Y = 100__X = 1120, Y = 100"
+    edge: [["X = 1090, Y = 100", 1], ["X = 1120, Y = 100", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 1090, Y = 200__X = 1120, Y = 200"
+    edge: [["X = 1090, Y = 200", 1], ["X = 1120, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 1090, Y = 300__X = 1120, Y = 300"
+    edge: [["X = 1090, Y = 300", 1], ["X = 1120, Y = 300", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 1090, Y = 400__X = 1120, Y = 400"
+    edge: [["X = 1090, Y = 400", 1], ["X = 1120, Y = 400", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 1090, Y = 500__X = 1120, Y = 500"
+    edge: [["X = 1090, Y = 500", 1], ["X = 1120, Y = 500", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 120, Y = 100__X = 290, Y = 100"
+    edge: [["X = 120, Y = 100", 0], ["X = 290, Y = 100", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 120, Y = 200__X = 290, Y = 200"
+    edge: [["X = 120, Y = 200", 0], ["X = 290, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 290, Y = 100__X = 420, Y = 100"
+    edge: [["X = 290, Y = 100", 1], ["X = 420, Y = 100", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 290, Y = 200__X = 420, Y = 200"
+    edge: [["X = 290, Y = 200", 1], ["X = 420, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 420, Y = 100__X = 440, Y = 100"
+    edge: [["X = 420, Y = 100", 1], ["X = 440, Y = 100", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 420, Y = 200__X = 540, Y = 200"
+    edge: [["X = 420, Y = 200", 1], ["X = 540, Y = 200", 1]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 440, Y = 100__X = 540, Y = 200"
+    edge: [["X = 440, Y = 100", 2], ["X = 540, Y = 200", 2]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 440, Y = 100__X = 580, Y = 100"
+    edge: [["X = 440, Y = 100", 1], ["X = 580, Y = 100", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 540, Y = 200__X = 580, Y = 200"
+    edge: [["X = 540, Y = 200", 0], ["X = 580, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 580, Y = 100__X = 720, Y = 100"
+    edge: [["X = 580, Y = 100", 1], ["X = 720, Y = 100", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 580, Y = 200__X = 620, Y = 200"
+    edge: [["X = 580, Y = 200", 1], ["X = 620, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 620, Y = 200__X = 640, Y = 200"
+    edge: [["X = 620, Y = 200", 1], ["X = 640, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 640, Y = 200__X = 740, Y = 200"
+    edge: [["X = 640, Y = 200", 1], ["X = 740, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 640, Y = 200__X = 940, Y = 500"
+    edge: [["X = 640, Y = 200", 2], ["X = 940, Y = 500", 1]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 720, Y = 100__X = 860, Y = 100"
+    edge: [["X = 720, Y = 100", 1], ["X = 860, Y = 100", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 740, Y = 200__X = 760, Y = 200"
+    edge: [["X = 740, Y = 200", 1], ["X = 760, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 760, Y = 200__X = 880, Y = 200"
+    edge: [["X = 760, Y = 200", 1], ["X = 880, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 760, Y = 200__X = 960, Y = 400"
+    edge: [["X = 760, Y = 200", 2], ["X = 960, Y = 400", 1]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 860, Y = 100__X = 990, Y = 100"
+    edge: [["X = 860, Y = 100", 1], ["X = 990, Y = 100", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 880, Y = 200__X = 1000, Y = 200"
+    edge: [["X = 880, Y = 200", 1], ["X = 1000, Y = 200", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 880, Y = 200__X = 980, Y = 300"
+    edge: [["X = 880, Y = 200", 2], ["X = 980, Y = 300", 1]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 940, Y = 500__X = 1000, Y = 500"
+    edge: [["X = 940, Y = 500", 0], ["X = 1000, Y = 500", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 960, Y = 400__X = 1000, Y = 400"
+    edge: [["X = 960, Y = 400", 0], ["X = 1000, Y = 400", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 980, Y = 300__X = 1000, Y = 300"
+    edge: [["X = 980, Y = 300", 0], ["X = 1000, Y = 300", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+  -
+    id: "X = 990, Y = 100__X = 1090, Y = 100"
+    edge: [["X = 990, Y = 100", 1], ["X = 1090, Y = 100", 0]]
+    attrs:
+      LayoutEditorEdgeInteractivity: "interactive"
+      LayoutEditorEdgeVisibility: "visible"
+objects:
+  -
+    id: "None|P12"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "1090"
+      LabelY: "85"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "1090"
+      YPosition: "100"
+      __XCoord__: "1090"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 1090, Y = 100"
+  -
+    id: "None|P13"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "1090"
+      LabelY: "185"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "1090"
+      YPosition: "200"
+      __XCoord__: "1090"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 1090, Y = 200"
+  -
+    id: "None|P14"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "1090"
+      LabelY: "285"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "1090"
+      YPosition: "300"
+      __XCoord__: "1090"
+      __YCoord__: "300"
+      __leObject__: "True"
+    node: "X = 1090, Y = 300"
+  -
+    id: "None|P15"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "1090"
+      LabelY: "385"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "1090"
+      YPosition: "400"
+      __XCoord__: "1090"
+      __YCoord__: "400"
+      __leObject__: "True"
+    node: "X = 1090, Y = 400"
+  -
+    id: "None|P16"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "1090"
+      LabelY: "485"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "1090"
+      YPosition: "500"
+      __XCoord__: "1090"
+      __YCoord__: "500"
+      __leObject__: "True"
+    node: "X = 1090, Y = 500"
+  -
+    id: "P12|T44"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "990"
+      LabelY: "85"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "990"
+      YPosition: "100"
+      __XCoord__: "990"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 990, Y = 100"
+  -
+    id: "P13|T43"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "1000"
+      LabelY: "185"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "1000"
+      YPosition: "200"
+      __XCoord__: "1000"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 1000, Y = 200"
+  -
+    id: "P14|T43"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "1000"
+      LabelY: "285"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "1000"
+      YPosition: "300"
+      __XCoord__: "1000"
+      __YCoord__: "300"
+      __leObject__: "True"
+    node: "X = 1000, Y = 300"
+  -
+    id: "P15|T43"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "1000"
+      LabelY: "385"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "1000"
+      YPosition: "400"
+      __XCoord__: "1000"
+      __YCoord__: "400"
+      __leObject__: "True"
+    node: "X = 1000, Y = 400"
+  -
+    id: "P16|T41"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "1000"
+      LabelY: "485"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "1000"
+      YPosition: "500"
+      __XCoord__: "1000"
+      __YCoord__: "500"
+      __leObject__: "True"
+    node: "X = 1000, Y = 500"
+  -
+    id: "S-p12"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "1000"
+      LabelY: "70"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "990"
+      YPosition: "80"
+      __XCoord__: "990"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 990, Y = 100"
+  -
+    id: "S-p12b"
+    user-type: "g_buffer_stop"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "1070"
+      LabelY: "130"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Buffer stops"
+      XPosition: "1090"
+      YPosition: "120"
+      __XCoord__: "1090"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 1090, Y = 100"
+  -
+    id: "S-p13"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "1004"
+      LabelY: "170"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "999"
+      YPosition: "180"
+      __XCoord__: "1000"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 1000, Y = 200"
+  -
+    id: "S-p13b"
+    user-type: "g_buffer_stop"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "1070"
+      LabelY: "230"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Buffer stops"
+      XPosition: "1090"
+      YPosition: "220"
+      __XCoord__: "1090"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 1090, Y = 200"
+  -
+    id: "S-p14"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "1005"
+      LabelY: "270"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "1000"
+      YPosition: "280"
+      __XCoord__: "1000"
+      __YCoord__: "300"
+      __leObject__: "True"
+    node: "X = 1000, Y = 300"
+  -
+    id: "S-p14b"
+    user-type: "g_buffer_stop"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "1070"
+      LabelY: "330"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Buffer stops"
+      XPosition: "1090"
+      YPosition: "320"
+      __XCoord__: "1090"
+      __YCoord__: "300"
+      __leObject__: "True"
+    node: "X = 1090, Y = 300"
+  -
+    id: "S-p15"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "1005"
+      LabelY: "370"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "1000"
+      YPosition: "380"
+      __XCoord__: "1000"
+      __YCoord__: "400"
+      __leObject__: "True"
+    node: "X = 1000, Y = 400"
+  -
+    id: "S-p15b"
+    user-type: "g_buffer_stop"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "1070"
+      LabelY: "430"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Buffer stops"
+      XPosition: "1090"
+      YPosition: "420"
+      __XCoord__: "1090"
+      __YCoord__: "400"
+      __leObject__: "True"
+    node: "X = 1090, Y = 400"
+  -
+    id: "S-p16"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "1010"
+      LabelY: "470"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "1000"
+      YPosition: "480"
+      __XCoord__: "1000"
+      __YCoord__: "500"
+      __leObject__: "True"
+    node: "X = 1000, Y = 500"
+  -
+    id: "S-p16b"
+    user-type: "g_buffer_stop"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "1065"
+      LabelY: "525"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Buffer stops"
+      XPosition: "1090"
+      YPosition: "520"
+      __XCoord__: "1090"
+      __YCoord__: "500"
+      __leObject__: "True"
+    node: "X = 1090, Y = 500"
+  -
+    id: "S1"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "260"
+      LabelY: "210"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "290"
+      YPosition: "220"
+      __XCoord__: "290"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 290, Y = 200"
+  -
+    id: "S10"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "830"
+      LabelY: "110"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "860"
+      YPosition: "120"
+      __XCoord__: "860"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 860, Y = 100"
+  -
+    id: "S2"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "265"
+      LabelY: "110"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "290"
+      YPosition: "120"
+      __XCoord__: "290"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 290, Y = 100"
+  -
+    id: "S3"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "420"
+      LabelY: "230"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "420"
+      YPosition: "220"
+      __XCoord__: "420"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 420, Y = 200"
+  -
+    id: "S4"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "395"
+      LabelY: "110"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "420"
+      YPosition: "120"
+      __XCoord__: "420"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 420, Y = 100"
+  -
+    id: "S5"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "590"
+      LabelY: "170"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "580"
+      YPosition: "180"
+      __XCoord__: "580"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 580, Y = 200"
+  -
+    id: "S6"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "590"
+      LabelY: "70"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "580"
+      YPosition: "80"
+      __XCoord__: "580"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 580, Y = 100"
+  -
+    id: "S7"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "615"
+      LabelY: "230"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "620"
+      YPosition: "220"
+      __XCoord__: "620"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 620, Y = 200"
+  -
+    id: "S8"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "730"
+      LabelY: "70"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "720"
+      YPosition: "80"
+      __XCoord__: "720"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 720, Y = 100"
+  -
+    id: "S9"
+    user-type: "g_signal"
+    attrs:
+      DirectionLeg: "1"
+      LabelX: "720"
+      LabelY: "210"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "740"
+      YPosition: "220"
+      __XCoord__: "740"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 740, Y = 200"
+  -
+    id: "SeG1-CLA-W"
+    user-type: "g_exit_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "295"
+      LabelY: "170"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "290"
+      YPosition: "180"
+      __XCoord__: "290"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 290, Y = 200"
+  -
+    id: "SeG2-CLA-W"
+    user-type: "g_exit_signal"
+    attrs:
+      DirectionLeg: "0"
+      LabelX: "295"
+      LabelY: "70"
+      LayoutEditorDrawingDirection: "left"
+      ProjectTreePath: "Design/Signals"
+      XPosition: "290"
+      YPosition: "80"
+      __XCoord__: "290"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 290, Y = 100"
+  -
+    id: "T36|T38"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "420"
+      LabelY: "85"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "420"
+      YPosition: "100"
+      __XCoord__: "420"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 420, Y = 100"
+  -
+    id: "T36|VG2-CLA"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "290"
+      LabelY: "85"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "290"
+      YPosition: "100"
+      __XCoord__: "290"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 290, Y = 100"
+  -
+    id: "T37|T38"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "420"
+      LabelY: "185"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "420"
+      YPosition: "200"
+      __XCoord__: "420"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 420, Y = 200"
+  -
+    id: "T37|VG1-CLA"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "290"
+      LabelY: "185"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "290"
+      YPosition: "200"
+      __XCoord__: "290"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 290, Y = 200"
+  -
+    id: "T38|T39"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "580"
+      LabelY: "185"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "580"
+      YPosition: "200"
+      __XCoord__: "580"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 580, Y = 200"
+  -
+    id: "T38|T40"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "580"
+      LabelY: "85"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "580"
+      YPosition: "100"
+      __XCoord__: "580"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 580, Y = 100"
+  -
+    id: "T39|T41"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "620"
+      LabelY: "185"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "620"
+      YPosition: "200"
+      __XCoord__: "620"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 620, Y = 200"
+  -
+    id: "T40|T42"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "720"
+      LabelY: "85"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "720"
+      YPosition: "100"
+      __XCoord__: "720"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 720, Y = 100"
+  -
+    id: "T41|T43"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "740"
+      LabelY: "185"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "740"
+      YPosition: "200"
+      __XCoord__: "740"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 740, Y = 200"
+  -
+    id: "T42|T44"
+    user-type: "g_track_circuit_delimiter"
+    attrs:
+      LabelX: "860"
+      LabelY: "85"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Delimiters"
+      XPosition: "860"
+      YPosition: "100"
+      __XCoord__: "860"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 860, Y = 100"
+  -
+    id: "g_ordinal__0__"
+    user-type: "g_ordinal"
+    attrs:
+      OrdinalString: "g_ordinal__0__"
+      ProjectTreePath: "Auxiliary/Ordinals"
+      value: "0"
+    node: null
+  -
+    id: "g_ordinal__1__"
+    user-type: "g_ordinal"
+    attrs:
+      OrdinalString: "g_ordinal__1__"
+      ProjectTreePath: "Auxiliary/Ordinals"
+      value: "1"
+    node: null
+  -
+    id: "g_ordinal__2__"
+    user-type: "g_ordinal"
+    attrs:
+      OrdinalString: "g_ordinal__2__"
+      ProjectTreePath: "Auxiliary/Ordinals"
+      value: "2"
+    node: null
+  -
+    id: "sw-22"
+    user-type: "g_switch"
+    attrs:
+      BentLeg: "2"
+      LabelX: "440"
+      LabelY: "80"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Switches"
+      XPosition: "440"
+      YPosition: "100"
+      __XCoord__: "440"
+      __YCoord__: "100"
+      __leObject__: "True"
+    node: "X = 440, Y = 100"
+  -
+    id: "sw-23"
+    user-type: "g_switch"
+    attrs:
+      BentLeg: "2"
+      LabelX: "525"
+      LabelY: "210"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Switches"
+      XPosition: "540"
+      YPosition: "200"
+      __XCoord__: "540"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 540, Y = 200"
+  -
+    id: "sw-24"
+    user-type: "g_switch"
+    attrs:
+      BentLeg: "2"
+      LabelX: "630"
+      LabelY: "180"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Switches"
+      XPosition: "640"
+      YPosition: "200"
+      __XCoord__: "640"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 640, Y = 200"
+  -
+    id: "sw-25"
+    user-type: "g_switch"
+    attrs:
+      BentLeg: "2"
+      LabelX: "745"
+      LabelY: "180"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Switches"
+      XPosition: "760"
+      YPosition: "200"
+      __XCoord__: "760"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 760, Y = 200"
+  -
+    id: "sw-26"
+    user-type: "g_switch"
+    attrs:
+      BentLeg: "2"
+      LabelX: "865"
+      LabelY: "180"
+      LayoutEditorDrawingDirection: "right"
+      ProjectTreePath: "Design/Switches"
+      XPosition: "880"
+      YPosition: "200"
+      __XCoord__: "880"
+      __YCoord__: "200"
+      __leObject__: "True"
+    node: "X = 880, Y = 200"
+paths:
+  -
+    id: "P12E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P12|T44/Route sections"
+      end_obj: "None|P12"
+      start_obj: "P12|T44"
+    start: "X = 990, Y = 100"
+    edges: ["X = 990, Y = 100__X = 1090, Y = 100"]
+  -
+    id: "P12W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/None|P12/Route sections"
+      end_obj: "P12|T44"
+      start_obj: "None|P12"
+    start: "X = 1090, Y = 100"
+    edges: ["X = 990, Y = 100__X = 1090, Y = 100"]
+  -
+    id: "P13E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P13|T43/Route sections"
+      end_obj: "None|P13"
+      start_obj: "P13|T43"
+    start: "X = 1000, Y = 200"
+    edges: ["X = 1000, Y = 200__X = 1090, Y = 200"]
+  -
+    id: "P13W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/None|P13/Route sections"
+      end_obj: "P13|T43"
+      start_obj: "None|P13"
+    start: "X = 1090, Y = 200"
+    edges: ["X = 1000, Y = 200__X = 1090, Y = 200"]
+  -
+    id: "P14E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P14|T43/Route sections"
+      end_obj: "None|P14"
+      start_obj: "P14|T43"
+    start: "X = 1000, Y = 300"
+    edges: ["X = 1000, Y = 300__X = 1090, Y = 300"]
+  -
+    id: "P14W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/None|P14/Route sections"
+      end_obj: "P14|T43"
+      start_obj: "None|P14"
+    start: "X = 1090, Y = 300"
+    edges: ["X = 1000, Y = 300__X = 1090, Y = 300"]
+  -
+    id: "P15E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P15|T43/Route sections"
+      end_obj: "None|P15"
+      start_obj: "P15|T43"
+    start: "X = 1000, Y = 400"
+    edges: ["X = 1000, Y = 400__X = 1090, Y = 400"]
+  -
+    id: "P15W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/None|P15/Route sections"
+      end_obj: "P15|T43"
+      start_obj: "None|P15"
+    start: "X = 1090, Y = 400"
+    edges: ["X = 1000, Y = 400__X = 1090, Y = 400"]
+  -
+    id: "P16E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P16|T41/Route sections"
+      end_obj: "None|P16"
+      start_obj: "P16|T41"
+    start: "X = 1000, Y = 500"
+    edges: ["X = 1000, Y = 500__X = 1090, Y = 500"]
+  -
+    id: "P16W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/None|P16/Route sections"
+      end_obj: "P16|T41"
+      start_obj: "None|P16"
+    start: "X = 1090, Y = 500"
+    edges: ["X = 1000, Y = 500__X = 1090, Y = 500"]
+  -
+    id: "S-p12-S10"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p12/Protection paths"
+      end_obj: "S10"
+      start_obj: "S-p12"
+    start: "X = 990, Y = 100"
+    edges: ["X = 860, Y = 100__X = 990, Y = 100"]
+  -
+    id: "S-p12-S8"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S-p12/Routes"
+      end_obj: "S8"
+      start_obj: "S-p12"
+    start: "X = 990, Y = 100"
+    edges:
+      - "X = 860, Y = 100__X = 990, Y = 100"
+      - "X = 720, Y = 100__X = 860, Y = 100"
+  -
+    id: "S-p13-S5"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S-p13/Routes"
+      end_obj: "S5"
+      start_obj: "S-p13"
+    start: "X = 1000, Y = 200"
+    edges:
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 580, Y = 200__X = 620, Y = 200"
+  -
+    id: "S-p13-S9"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p13/Protection paths"
+      end_obj: "S9"
+      start_obj: "S-p13"
+    start: "X = 1000, Y = 200"
+    edges:
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+  -
+    id: "S-p13-sw-25"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p13/Protection paths"
+      end_obj: "sw-25"
+      start_obj: "S-p13"
+    start: "X = 1000, Y = 200"
+    edges:
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+  -
+    id: "S-p13-sw-26"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p13/Protection paths"
+      end_obj: "sw-26"
+      start_obj: "S-p13"
+    start: "X = 1000, Y = 200"
+    edges: ["X = 880, Y = 200__X = 1000, Y = 200"]
+  -
+    id: "S-p14-S5"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S-p14/Routes"
+      end_obj: "S5"
+      start_obj: "S-p14"
+    start: "X = 1000, Y = 300"
+    edges:
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 580, Y = 200__X = 620, Y = 200"
+  -
+    id: "S-p14-S9"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p14/Protection paths"
+      end_obj: "S9"
+      start_obj: "S-p14"
+    start: "X = 1000, Y = 300"
+    edges:
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+  -
+    id: "S-p14-sw-25"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p14/Protection paths"
+      end_obj: "sw-25"
+      start_obj: "S-p14"
+    start: "X = 1000, Y = 300"
+    edges:
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+  -
+    id: "S-p14-sw-26"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p14/Protection paths"
+      end_obj: "sw-26"
+      start_obj: "S-p14"
+    start: "X = 1000, Y = 300"
+    edges:
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+  -
+    id: "S-p15-S5"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S-p15/Routes"
+      end_obj: "S5"
+      start_obj: "S-p15"
+    start: "X = 1000, Y = 400"
+    edges:
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 580, Y = 200__X = 620, Y = 200"
+  -
+    id: "S-p15-S9"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p15/Protection paths"
+      end_obj: "S9"
+      start_obj: "S-p15"
+    start: "X = 1000, Y = 400"
+    edges:
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+  -
+    id: "S-p15-sw-25"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p15/Protection paths"
+      end_obj: "sw-25"
+      start_obj: "S-p15"
+    start: "X = 1000, Y = 400"
+    edges:
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+  -
+    id: "S-p16-S5"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S-p16/Routes"
+      end_obj: "S5"
+      start_obj: "S-p16"
+    start: "X = 1000, Y = 500"
+    edges:
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 580, Y = 200__X = 620, Y = 200"
+  -
+    id: "S-p16-S7"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p16/Protection paths"
+      end_obj: "S7"
+      start_obj: "S-p16"
+    start: "X = 1000, Y = 500"
+    edges:
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 620, Y = 200__X = 640, Y = 200"
+  -
+    id: "S-p16-sw-24"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p16/Protection paths"
+      end_obj: "sw-24"
+      start_obj: "S-p16"
+    start: "X = 1000, Y = 500"
+    edges:
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+  -
+    id: "S1-S3"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S1/Routes"
+      end_obj: "S3"
+      start_obj: "S1"
+    start: "X = 290, Y = 200"
+    edges: ["X = 290, Y = 200__X = 420, Y = 200"]
+  -
+    id: "S1-S5"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S1/Protection paths"
+      end_obj: "S5"
+      start_obj: "S1"
+    start: "X = 290, Y = 200"
+    edges:
+      - "X = 290, Y = 200__X = 420, Y = 200"
+      - "X = 420, Y = 200__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "S1-sw-23"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S1/Protection paths"
+      end_obj: "sw-23"
+      start_obj: "S1"
+    start: "X = 290, Y = 200"
+    edges:
+      - "X = 290, Y = 200__X = 420, Y = 200"
+      - "X = 420, Y = 200__X = 540, Y = 200"
+  -
+    id: "S10-S-p12"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S10/Protection paths"
+      end_obj: "S-p12"
+      start_obj: "S10"
+    start: "X = 860, Y = 100"
+    edges: ["X = 860, Y = 100__X = 990, Y = 100"]
+  -
+    id: "S10-S-p12b"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S10/Routes"
+      end_obj: "S-p12b"
+      start_obj: "S10"
+    start: "X = 860, Y = 100"
+    edges:
+      - "X = 860, Y = 100__X = 990, Y = 100"
+      - "X = 990, Y = 100__X = 1090, Y = 100"
+  -
+    id: "S2-S4"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S2/Routes"
+      end_obj: "S4"
+      start_obj: "S2"
+    start: "X = 290, Y = 100"
+    edges: ["X = 290, Y = 100__X = 420, Y = 100"]
+  -
+    id: "S2-S5"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S2/Protection paths"
+      end_obj: "S5"
+      start_obj: "S2"
+    start: "X = 290, Y = 100"
+    edges:
+      - "X = 290, Y = 100__X = 420, Y = 100"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "S2-S6"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S2/Protection paths"
+      end_obj: "S6"
+      start_obj: "S2"
+    start: "X = 290, Y = 100"
+    edges:
+      - "X = 290, Y = 100__X = 420, Y = 100"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+  -
+    id: "S2-sw-23"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S2/Protection paths"
+      end_obj: "sw-23"
+      start_obj: "S2"
+    start: "X = 290, Y = 100"
+    edges:
+      - "X = 290, Y = 100__X = 420, Y = 100"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+  -
+    id: "S3-S5"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S3/Protection paths"
+      end_obj: "S5"
+      start_obj: "S3"
+    start: "X = 420, Y = 200"
+    edges:
+      - "X = 420, Y = 200__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "S3-S7"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S3/Routes"
+      end_obj: "S7"
+      start_obj: "S3"
+    start: "X = 420, Y = 200"
+    edges:
+      - "X = 420, Y = 200__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+      - "X = 580, Y = 200__X = 620, Y = 200"
+  -
+    id: "S3-sw-23"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S3/Protection paths"
+      end_obj: "sw-23"
+      start_obj: "S3"
+    start: "X = 420, Y = 200"
+    edges: ["X = 420, Y = 200__X = 540, Y = 200"]
+  -
+    id: "S4-S10"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S4/Routes"
+      end_obj: "S10"
+      start_obj: "S4"
+    start: "X = 420, Y = 100"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+      - "X = 580, Y = 100__X = 720, Y = 100"
+      - "X = 720, Y = 100__X = 860, Y = 100"
+  -
+    id: "S4-S5"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S4/Protection paths"
+      end_obj: "S5"
+      start_obj: "S4"
+    start: "X = 420, Y = 100"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "S4-S6"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S4/Protection paths"
+      end_obj: "S6"
+      start_obj: "S4"
+    start: "X = 420, Y = 100"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+  -
+    id: "S4-S7"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S4/Routes"
+      end_obj: "S7"
+      start_obj: "S4"
+    start: "X = 420, Y = 100"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+      - "X = 580, Y = 200__X = 620, Y = 200"
+  -
+    id: "S4-sw-23"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S4/Protection paths"
+      end_obj: "sw-23"
+      start_obj: "S4"
+    start: "X = 420, Y = 100"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+  -
+    id: "S5-S3"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S5/Protection paths"
+      end_obj: "S3"
+      start_obj: "S5"
+    start: "X = 580, Y = 200"
+    edges:
+      - "X = 540, Y = 200__X = 580, Y = 200"
+      - "X = 420, Y = 200__X = 540, Y = 200"
+  -
+    id: "S5-S4"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S5/Protection paths"
+      end_obj: "S4"
+      start_obj: "S5"
+    start: "X = 580, Y = 200"
+    edges:
+      - "X = 540, Y = 200__X = 580, Y = 200"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+  -
+    id: "S5-SeG1-CLA-W"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S5/Routes"
+      end_obj: "SeG1-CLA-W"
+      start_obj: "S5"
+    start: "X = 580, Y = 200"
+    edges:
+      - "X = 540, Y = 200__X = 580, Y = 200"
+      - "X = 420, Y = 200__X = 540, Y = 200"
+      - "X = 290, Y = 200__X = 420, Y = 200"
+  -
+    id: "S5-SeG2-CLA-W"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S5/Routes"
+      end_obj: "SeG2-CLA-W"
+      start_obj: "S5"
+    start: "X = 580, Y = 200"
+    edges:
+      - "X = 540, Y = 200__X = 580, Y = 200"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 290, Y = 100__X = 420, Y = 100"
+  -
+    id: "S5-sw-22"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S5/Protection paths"
+      end_obj: "sw-22"
+      start_obj: "S5"
+    start: "X = 580, Y = 200"
+    edges:
+      - "X = 540, Y = 200__X = 580, Y = 200"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+  -
+    id: "S6-S4"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S6/Protection paths"
+      end_obj: "S4"
+      start_obj: "S6"
+    start: "X = 580, Y = 100"
+    edges:
+      - "X = 440, Y = 100__X = 580, Y = 100"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+  -
+    id: "S6-SeG2-CLA-W"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S6/Routes"
+      end_obj: "SeG2-CLA-W"
+      start_obj: "S6"
+    start: "X = 580, Y = 100"
+    edges:
+      - "X = 440, Y = 100__X = 580, Y = 100"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 290, Y = 100__X = 420, Y = 100"
+  -
+    id: "S6-sw-22"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S6/Protection paths"
+      end_obj: "sw-22"
+      start_obj: "S6"
+    start: "X = 580, Y = 100"
+    edges: ["X = 440, Y = 100__X = 580, Y = 100"]
+  -
+    id: "S7-S-p13"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S7/Protection paths"
+      end_obj: "S-p13"
+      start_obj: "S7"
+    start: "X = 620, Y = 200"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+  -
+    id: "S7-S-p14"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S7/Protection paths"
+      end_obj: "S-p14"
+      start_obj: "S7"
+    start: "X = 620, Y = 200"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "S7-S-p15"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S7/Protection paths"
+      end_obj: "S-p15"
+      start_obj: "S7"
+    start: "X = 620, Y = 200"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+  -
+    id: "S7-S-p16"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S7/Protection paths"
+      end_obj: "S-p16"
+      start_obj: "S7"
+    start: "X = 620, Y = 200"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+  -
+    id: "S7-S-p16b"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S7/Routes"
+      end_obj: "S-p16b"
+      start_obj: "S7"
+    start: "X = 620, Y = 200"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+      - "X = 1000, Y = 500__X = 1090, Y = 500"
+  -
+    id: "S7-S9"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S7/Routes"
+      end_obj: "S9"
+      start_obj: "S7"
+    start: "X = 620, Y = 200"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+  -
+    id: "S8-S4"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S8/Protection paths"
+      end_obj: "S4"
+      start_obj: "S8"
+    start: "X = 720, Y = 100"
+    edges:
+      - "X = 580, Y = 100__X = 720, Y = 100"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+  -
+    id: "S8-S6"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S8/Routes"
+      end_obj: "S6"
+      start_obj: "S8"
+    start: "X = 720, Y = 100"
+    edges: ["X = 580, Y = 100__X = 720, Y = 100"]
+  -
+    id: "S8-sw-22"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S8/Protection paths"
+      end_obj: "sw-22"
+      start_obj: "S8"
+    start: "X = 720, Y = 100"
+    edges:
+      - "X = 580, Y = 100__X = 720, Y = 100"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+  -
+    id: "S9-S-p13"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S9/Protection paths"
+      end_obj: "S-p13"
+      start_obj: "S9"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+  -
+    id: "S9-S-p13b"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S9/Routes"
+      end_obj: "S-p13b"
+      start_obj: "S9"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 1000, Y = 200__X = 1090, Y = 200"
+  -
+    id: "S9-S-p14"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S9/Protection paths"
+      end_obj: "S-p14"
+      start_obj: "S9"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "S9-S-p14b"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S9/Routes"
+      end_obj: "S-p14b"
+      start_obj: "S9"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+      - "X = 1000, Y = 300__X = 1090, Y = 300"
+  -
+    id: "S9-S-p15"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S9/Protection paths"
+      end_obj: "S-p15"
+      start_obj: "S9"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+  -
+    id: "S9-S-p15b"
+    user-type: "g_route"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Signals/S9/Routes"
+      end_obj: "S-p15b"
+      start_obj: "S9"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+      - "X = 1000, Y = 400__X = 1090, Y = 400"
+  -
+    id: "T36E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T36|VG2-CLA/Route sections"
+      end_obj: "T36|T38"
+      start_obj: "T36|VG2-CLA"
+    start: "X = 290, Y = 100"
+    edges: ["X = 290, Y = 100__X = 420, Y = 100"]
+  -
+    id: "T36W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T36|T38/Route sections"
+      end_obj: "T36|VG2-CLA"
+      start_obj: "T36|T38"
+    start: "X = 420, Y = 100"
+    edges: ["X = 290, Y = 100__X = 420, Y = 100"]
+  -
+    id: "T37E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T37|VG1-CLA/Route sections"
+      end_obj: "T37|T38"
+      start_obj: "T37|VG1-CLA"
+    start: "X = 290, Y = 200"
+    edges: ["X = 290, Y = 200__X = 420, Y = 200"]
+  -
+    id: "T37W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T37|T38/Route sections"
+      end_obj: "T37|VG1-CLA"
+      start_obj: "T37|T38"
+    start: "X = 420, Y = 200"
+    edges: ["X = 290, Y = 200__X = 420, Y = 200"]
+  -
+    id: "T38E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T36|T38/Route sections"
+      end_obj: "T38|T40"
+      start_obj: "T36|T38"
+    start: "X = 420, Y = 100"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+  -
+    id: "T38E1"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T36|T38/Route sections"
+      end_obj: "T38|T39"
+      start_obj: "T36|T38"
+    start: "X = 420, Y = 100"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "T38E2"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T37|T38/Route sections"
+      end_obj: "T38|T39"
+      start_obj: "T37|T38"
+    start: "X = 420, Y = 200"
+    edges:
+      - "X = 420, Y = 200__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "T38W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T38|T40/Route sections"
+      end_obj: "T36|T38"
+      start_obj: "T38|T40"
+    start: "X = 580, Y = 100"
+    edges:
+      - "X = 440, Y = 100__X = 580, Y = 100"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+  -
+    id: "T38W1"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T38|T39/Route sections"
+      end_obj: "T37|T38"
+      start_obj: "T38|T39"
+    start: "X = 580, Y = 200"
+    edges:
+      - "X = 540, Y = 200__X = 580, Y = 200"
+      - "X = 420, Y = 200__X = 540, Y = 200"
+  -
+    id: "T38W2"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T38|T39/Route sections"
+      end_obj: "T36|T38"
+      start_obj: "T38|T39"
+    start: "X = 580, Y = 200"
+    edges:
+      - "X = 540, Y = 200__X = 580, Y = 200"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+  -
+    id: "T39E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T38|T39/Route sections"
+      end_obj: "T39|T41"
+      start_obj: "T38|T39"
+    start: "X = 580, Y = 200"
+    edges: ["X = 580, Y = 200__X = 620, Y = 200"]
+  -
+    id: "T39W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T39|T41/Route sections"
+      end_obj: "T38|T39"
+      start_obj: "T39|T41"
+    start: "X = 620, Y = 200"
+    edges: ["X = 580, Y = 200__X = 620, Y = 200"]
+  -
+    id: "T40E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T38|T40/Route sections"
+      end_obj: "T40|T42"
+      start_obj: "T38|T40"
+    start: "X = 580, Y = 100"
+    edges: ["X = 580, Y = 100__X = 720, Y = 100"]
+  -
+    id: "T40W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T40|T42/Route sections"
+      end_obj: "T38|T40"
+      start_obj: "T40|T42"
+    start: "X = 720, Y = 100"
+    edges: ["X = 580, Y = 100__X = 720, Y = 100"]
+  -
+    id: "T41E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T39|T41/Route sections"
+      end_obj: "T41|T43"
+      start_obj: "T39|T41"
+    start: "X = 620, Y = 200"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+  -
+    id: "T41E1"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T39|T41/Route sections"
+      end_obj: "P16|T41"
+      start_obj: "T39|T41"
+    start: "X = 620, Y = 200"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+  -
+    id: "T41W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P16|T41/Route sections"
+      end_obj: "T39|T41"
+      start_obj: "P16|T41"
+    start: "X = 1000, Y = 500"
+    edges:
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 620, Y = 200__X = 640, Y = 200"
+  -
+    id: "T41W1"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T41|T43/Route sections"
+      end_obj: "T39|T41"
+      start_obj: "T41|T43"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 620, Y = 200__X = 640, Y = 200"
+  -
+    id: "T42E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T40|T42/Route sections"
+      end_obj: "T42|T44"
+      start_obj: "T40|T42"
+    start: "X = 720, Y = 100"
+    edges: ["X = 720, Y = 100__X = 860, Y = 100"]
+  -
+    id: "T42W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T42|T44/Route sections"
+      end_obj: "T40|T42"
+      start_obj: "T42|T44"
+    start: "X = 860, Y = 100"
+    edges: ["X = 720, Y = 100__X = 860, Y = 100"]
+  -
+    id: "T43E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T41|T43/Route sections"
+      end_obj: "P13|T43"
+      start_obj: "T41|T43"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+  -
+    id: "T43E1"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T41|T43/Route sections"
+      end_obj: "P14|T43"
+      start_obj: "T41|T43"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "T43E2"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T41|T43/Route sections"
+      end_obj: "P15|T43"
+      start_obj: "T41|T43"
+    start: "X = 740, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+  -
+    id: "T43W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P13|T43/Route sections"
+      end_obj: "T41|T43"
+      start_obj: "P13|T43"
+    start: "X = 1000, Y = 200"
+    edges:
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+  -
+    id: "T43W1"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P14|T43/Route sections"
+      end_obj: "T41|T43"
+      start_obj: "P14|T43"
+    start: "X = 1000, Y = 300"
+    edges:
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+  -
+    id: "T43W2"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P15|T43/Route sections"
+      end_obj: "T41|T43"
+      start_obj: "P15|T43"
+    start: "X = 1000, Y = 400"
+    edges:
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+  -
+    id: "T44E"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/T42|T44/Route sections"
+      end_obj: "P12|T44"
+      start_obj: "T42|T44"
+    start: "X = 860, Y = 100"
+    edges: ["X = 860, Y = 100__X = 990, Y = 100"]
+  -
+    id: "T44W"
+    user-type: "g_route_section"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Green"
+      ProjectTreePath: "Design/Delimiters/P12|T44/Route sections"
+      end_obj: "T42|T44"
+      start_obj: "P12|T44"
+    start: "X = 990, Y = 100"
+    edges: ["X = 860, Y = 100__X = 990, Y = 100"]
+  -
+    id: "sw-22-S5"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-22/Protection paths"
+      end_obj: "S5"
+      start_obj: "sw-22"
+    start: "X = 440, Y = 100"
+    edges:
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "sw-22-S6"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-22/Protection paths"
+      end_obj: "S6"
+      start_obj: "sw-22"
+    start: "X = 440, Y = 100"
+    edges: ["X = 440, Y = 100__X = 580, Y = 100"]
+  -
+    id: "sw-22-sw-23"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-22/Protection paths"
+      end_obj: "sw-23"
+      start_obj: "sw-22"
+    start: "X = 440, Y = 100"
+    edges: ["X = 440, Y = 100__X = 540, Y = 200"]
+  -
+    id: "sw-23-S3"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-23/Protection paths"
+      end_obj: "S3"
+      start_obj: "sw-23"
+    start: "X = 540, Y = 200"
+    edges: ["X = 420, Y = 200__X = 540, Y = 200"]
+  -
+    id: "sw-23-S4"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-23/Protection paths"
+      end_obj: "S4"
+      start_obj: "sw-23"
+    start: "X = 540, Y = 200"
+    edges:
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+  -
+    id: "sw-23-sw-22"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "0"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-23/Protection paths"
+      end_obj: "sw-22"
+      start_obj: "sw-23"
+    start: "X = 540, Y = 200"
+    edges: ["X = 440, Y = 100__X = 540, Y = 200"]
+  -
+    id: "sw-24-S-p13"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-24/Protection paths"
+      end_obj: "S-p13"
+      start_obj: "sw-24"
+    start: "X = 640, Y = 200"
+    edges:
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+  -
+    id: "sw-24-S-p14"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-24/Protection paths"
+      end_obj: "S-p14"
+      start_obj: "sw-24"
+    start: "X = 640, Y = 200"
+    edges:
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "sw-24-S-p15"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-24/Protection paths"
+      end_obj: "S-p15"
+      start_obj: "sw-24"
+    start: "X = 640, Y = 200"
+    edges:
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+  -
+    id: "sw-24-S-p16"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-24/Protection paths"
+      end_obj: "S-p16"
+      start_obj: "sw-24"
+    start: "X = 640, Y = 200"
+    edges:
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+  -
+    id: "sw-25-S-p13"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-25/Protection paths"
+      end_obj: "S-p13"
+      start_obj: "sw-25"
+    start: "X = 760, Y = 200"
+    edges:
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+  -
+    id: "sw-25-S-p14"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-25/Protection paths"
+      end_obj: "S-p14"
+      start_obj: "sw-25"
+    start: "X = 760, Y = 200"
+    edges:
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "sw-25-S-p15"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-25/Protection paths"
+      end_obj: "S-p15"
+      start_obj: "sw-25"
+    start: "X = 760, Y = 200"
+    edges:
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+  -
+    id: "sw-26-S-p13"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-26/Protection paths"
+      end_obj: "S-p13"
+      start_obj: "sw-26"
+    start: "X = 880, Y = 200"
+    edges: ["X = 880, Y = 200__X = 1000, Y = 200"]
+  -
+    id: "sw-26-S-p14"
+    user-type: "g_protection_path"
+    attrs:
+      DirectionLeg: "1"
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-26/Protection paths"
+      end_obj: "S-p14"
+      start_obj: "sw-26"
+    start: "X = 880, Y = 200"
+    edges:
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+areas:
+  -
+    id: "P12"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "1030"
+      LabelY: "110"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 1090, Y = 100", "X = 990, Y = 100"]
+    edges: ["X = 990, Y = 100__X = 1090, Y = 100"]
+  -
+    id: "P13"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "1030"
+      LabelY: "210"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 1000, Y = 200", "X = 1090, Y = 200"]
+    edges: ["X = 1000, Y = 200__X = 1090, Y = 200"]
+  -
+    id: "P14"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "1030"
+      LabelY: "310"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 1000, Y = 300", "X = 1090, Y = 300"]
+    edges: ["X = 1000, Y = 300__X = 1090, Y = 300"]
+  -
+    id: "P15"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "1040"
+      LabelY: "410"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 1000, Y = 400", "X = 1090, Y = 400"]
+    edges: ["X = 1000, Y = 400__X = 1090, Y = 400"]
+  -
+    id: "P16"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "1030"
+      LabelY: "510"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 1000, Y = 500", "X = 1090, Y = 500"]
+    edges: ["X = 1000, Y = 500__X = 1090, Y = 500"]
+  -
+    id: "T36"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "350"
+      LabelY: "110"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 290, Y = 100", "X = 420, Y = 100"]
+    edges: ["X = 290, Y = 100__X = 420, Y = 100"]
+  -
+    id: "T37"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "340"
+      LabelY: "210"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 290, Y = 200", "X = 420, Y = 200"]
+    edges: ["X = 290, Y = 200__X = 420, Y = 200"]
+  -
+    id: "T38"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "500"
+      LabelY: "140"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes:
+      - "X = 420, Y = 100"
+      - "X = 420, Y = 200"
+      - "X = 440, Y = 100"
+      - "X = 540, Y = 200"
+      - "X = 580, Y = 100"
+      - "X = 580, Y = 200"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 420, Y = 200__X = 540, Y = 200"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "T39"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "590"
+      LabelY: "210"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 580, Y = 200", "X = 620, Y = 200"]
+    edges: ["X = 580, Y = 200__X = 620, Y = 200"]
+  -
+    id: "T40"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "640"
+      LabelY: "110"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 580, Y = 100", "X = 720, Y = 100"]
+    edges: ["X = 580, Y = 100__X = 720, Y = 100"]
+  -
+    id: "T41"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "700"
+      LabelY: "290"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes:
+      - "X = 1000, Y = 500"
+      - "X = 620, Y = 200"
+      - "X = 640, Y = 200"
+      - "X = 740, Y = 200"
+      - "X = 940, Y = 500"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+  -
+    id: "T42"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "770"
+      LabelY: "110"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 720, Y = 100", "X = 860, Y = 100"]
+    edges: ["X = 720, Y = 100__X = 860, Y = 100"]
+  -
+    id: "T43"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "850"
+      LabelY: "270"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes:
+      - "X = 1000, Y = 200"
+      - "X = 1000, Y = 300"
+      - "X = 1000, Y = 400"
+      - "X = 740, Y = 200"
+      - "X = 760, Y = 200"
+      - "X = 880, Y = 200"
+      - "X = 960, Y = 400"
+      - "X = 980, Y = 300"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "T44"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "920"
+      LabelY: "110"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 860, Y = 100", "X = 990, Y = 100"]
+    edges: ["X = 860, Y = 100__X = 990, Y = 100"]
+  -
+    id: "VG1-CLA"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "130"
+      LabelY: "210"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 120, Y = 200", "X = 290, Y = 200"]
+    edges: ["X = 120, Y = 200__X = 290, Y = 200"]
+  -
+    id: "VG2-CLA"
+    user-type: "g_track_circuit"
+    attrs:
+      LabelX: "130"
+      LabelY: "110"
+      ProjectTreePath: "Design/Track circuits"
+      __leObject__: "True"
+    nodes: ["X = 120, Y = 100", "X = 290, Y = 100"]
+    edges: ["X = 120, Y = 100__X = 290, Y = 100"]
+  -
+    id: "flank_sw-22leg1:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-22/Protection areas"
+    nodes: ["X = 440, Y = 100", "X = 580, Y = 100"]
+    edges: ["X = 440, Y = 100__X = 580, Y = 100"]
+  -
+    id: "flank_sw-22leg2:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-22/Protection areas"
+    nodes: ["X = 440, Y = 100", "X = 540, Y = 200"]
+    edges: ["X = 440, Y = 100__X = 540, Y = 200"]
+  -
+    id: "flank_sw-22leg2:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-22/Protection areas"
+    nodes: ["X = 440, Y = 100", "X = 540, Y = 200", "X = 580, Y = 200"]
+    edges:
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "flank_sw-23leg1:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-23/Protection areas"
+    nodes: ["X = 420, Y = 200", "X = 540, Y = 200"]
+    edges: ["X = 420, Y = 200__X = 540, Y = 200"]
+  -
+    id: "flank_sw-23leg2:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-23/Protection areas"
+    nodes: ["X = 440, Y = 100", "X = 540, Y = 200"]
+    edges: ["X = 440, Y = 100__X = 540, Y = 200"]
+  -
+    id: "flank_sw-23leg2:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-23/Protection areas"
+    nodes: ["X = 420, Y = 100", "X = 440, Y = 100", "X = 540, Y = 200"]
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+  -
+    id: "flank_sw-24leg1:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-24/Protection areas"
+    nodes:
+      - "X = 1000, Y = 200"
+      - "X = 1000, Y = 300"
+      - "X = 1000, Y = 400"
+      - "X = 640, Y = 200"
+      - "X = 740, Y = 200"
+      - "X = 760, Y = 200"
+      - "X = 880, Y = 200"
+      - "X = 960, Y = 400"
+      - "X = 980, Y = 300"
+    edges:
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "flank_sw-24leg2:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-24/Protection areas"
+    nodes: ["X = 1000, Y = 500", "X = 640, Y = 200", "X = 940, Y = 500"]
+    edges:
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+  -
+    id: "flank_sw-25leg1:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-25/Protection areas"
+    nodes:
+      - "X = 1000, Y = 200"
+      - "X = 1000, Y = 300"
+      - "X = 760, Y = 200"
+      - "X = 880, Y = 200"
+      - "X = 980, Y = 300"
+    edges:
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "flank_sw-25leg2:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-25/Protection areas"
+    nodes: ["X = 1000, Y = 400", "X = 760, Y = 200", "X = 960, Y = 400"]
+    edges:
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+  -
+    id: "flank_sw-26leg1:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-26/Protection areas"
+    nodes: ["X = 1000, Y = 200", "X = 880, Y = 200"]
+    edges: ["X = 880, Y = 200__X = 1000, Y = 200"]
+  -
+    id: "flank_sw-26leg2:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Red"
+      ProjectTreePath: "Design/Switches/sw-26/Protection areas"
+    nodes: ["X = 1000, Y = 300", "X = 880, Y = 200", "X = 980, Y = 300"]
+    edges:
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "front_S-p12:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p12/Protection areas"
+    nodes: ["X = 860, Y = 100", "X = 990, Y = 100"]
+    edges: ["X = 860, Y = 100__X = 990, Y = 100"]
+  -
+    id: "front_S-p13:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p13/Protection areas"
+    nodes: ["X = 1000, Y = 200", "X = 880, Y = 200"]
+    edges: ["X = 880, Y = 200__X = 1000, Y = 200"]
+  -
+    id: "front_S-p13:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p13/Protection areas"
+    nodes: ["X = 1000, Y = 200", "X = 760, Y = 200", "X = 880, Y = 200"]
+    edges:
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+  -
+    id: "front_S-p13:3"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p13/Protection areas"
+    nodes:
+      - "X = 1000, Y = 200"
+      - "X = 740, Y = 200"
+      - "X = 760, Y = 200"
+      - "X = 880, Y = 200"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+  -
+    id: "front_S-p14:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p14/Protection areas"
+    nodes: ["X = 1000, Y = 300", "X = 880, Y = 200", "X = 980, Y = 300"]
+    edges:
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "front_S-p14:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p14/Protection areas"
+    nodes:
+      - "X = 1000, Y = 300"
+      - "X = 760, Y = 200"
+      - "X = 880, Y = 200"
+      - "X = 980, Y = 300"
+    edges:
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "front_S-p14:3"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p14/Protection areas"
+    nodes:
+      - "X = 1000, Y = 300"
+      - "X = 740, Y = 200"
+      - "X = 760, Y = 200"
+      - "X = 880, Y = 200"
+      - "X = 980, Y = 300"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "front_S-p15:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p15/Protection areas"
+    nodes: ["X = 1000, Y = 400", "X = 760, Y = 200", "X = 960, Y = 400"]
+    edges:
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+  -
+    id: "front_S-p15:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p15/Protection areas"
+    nodes:
+      - "X = 1000, Y = 400"
+      - "X = 740, Y = 200"
+      - "X = 760, Y = 200"
+      - "X = 960, Y = 400"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+  -
+    id: "front_S-p16:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p16/Protection areas"
+    nodes: ["X = 1000, Y = 500", "X = 640, Y = 200", "X = 940, Y = 500"]
+    edges:
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+  -
+    id: "front_S-p16:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S-p16/Protection areas"
+    nodes:
+      - "X = 1000, Y = 500"
+      - "X = 620, Y = 200"
+      - "X = 640, Y = 200"
+      - "X = 940, Y = 500"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+  -
+    id: "front_S10:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S10/Protection areas"
+    nodes: ["X = 860, Y = 100", "X = 990, Y = 100"]
+    edges: ["X = 860, Y = 100__X = 990, Y = 100"]
+  -
+    id: "front_S1:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S1/Protection areas"
+    nodes: ["X = 290, Y = 200", "X = 420, Y = 200", "X = 540, Y = 200"]
+    edges:
+      - "X = 290, Y = 200__X = 420, Y = 200"
+      - "X = 420, Y = 200__X = 540, Y = 200"
+  -
+    id: "front_S1:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S1/Protection areas"
+    nodes:
+      - "X = 290, Y = 200"
+      - "X = 420, Y = 200"
+      - "X = 540, Y = 200"
+      - "X = 580, Y = 200"
+    edges:
+      - "X = 290, Y = 200__X = 420, Y = 200"
+      - "X = 420, Y = 200__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "front_S2:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S2/Protection areas"
+    nodes:
+      - "X = 290, Y = 100"
+      - "X = 420, Y = 100"
+      - "X = 440, Y = 100"
+      - "X = 540, Y = 200"
+      - "X = 580, Y = 100"
+    edges:
+      - "X = 290, Y = 100__X = 420, Y = 100"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+  -
+    id: "front_S2:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S2/Protection areas"
+    nodes:
+      - "X = 290, Y = 100"
+      - "X = 420, Y = 100"
+      - "X = 440, Y = 100"
+      - "X = 540, Y = 200"
+      - "X = 580, Y = 200"
+    edges:
+      - "X = 290, Y = 100__X = 420, Y = 100"
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "front_S3:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S3/Protection areas"
+    nodes: ["X = 420, Y = 200", "X = 540, Y = 200"]
+    edges: ["X = 420, Y = 200__X = 540, Y = 200"]
+  -
+    id: "front_S3:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S3/Protection areas"
+    nodes: ["X = 420, Y = 200", "X = 540, Y = 200", "X = 580, Y = 200"]
+    edges:
+      - "X = 420, Y = 200__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "front_S4:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S4/Protection areas"
+    nodes:
+      - "X = 420, Y = 100"
+      - "X = 440, Y = 100"
+      - "X = 540, Y = 200"
+      - "X = 580, Y = 100"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+  -
+    id: "front_S4:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S4/Protection areas"
+    nodes:
+      - "X = 420, Y = 100"
+      - "X = 440, Y = 100"
+      - "X = 540, Y = 200"
+      - "X = 580, Y = 200"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "front_S5:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S5/Protection areas"
+    nodes:
+      - "X = 420, Y = 200"
+      - "X = 440, Y = 100"
+      - "X = 540, Y = 200"
+      - "X = 580, Y = 200"
+    edges:
+      - "X = 420, Y = 200__X = 540, Y = 200"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "front_S5:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S5/Protection areas"
+    nodes:
+      - "X = 420, Y = 100"
+      - "X = 440, Y = 100"
+      - "X = 540, Y = 200"
+      - "X = 580, Y = 200"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 540, Y = 200"
+      - "X = 540, Y = 200__X = 580, Y = 200"
+  -
+    id: "front_S6:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S6/Protection areas"
+    nodes: ["X = 440, Y = 100", "X = 580, Y = 100"]
+    edges: ["X = 440, Y = 100__X = 580, Y = 100"]
+  -
+    id: "front_S6:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S6/Protection areas"
+    nodes: ["X = 420, Y = 100", "X = 440, Y = 100", "X = 580, Y = 100"]
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+  -
+    id: "front_S7:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S7/Protection areas"
+    nodes:
+      - "X = 1000, Y = 200"
+      - "X = 1000, Y = 300"
+      - "X = 1000, Y = 400"
+      - "X = 1000, Y = 500"
+      - "X = 620, Y = 200"
+      - "X = 640, Y = 200"
+      - "X = 740, Y = 200"
+      - "X = 760, Y = 200"
+      - "X = 880, Y = 200"
+      - "X = 940, Y = 500"
+      - "X = 960, Y = 400"
+      - "X = 980, Y = 300"
+    edges:
+      - "X = 620, Y = 200__X = 640, Y = 200"
+      - "X = 640, Y = 200__X = 740, Y = 200"
+      - "X = 640, Y = 200__X = 940, Y = 500"
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 940, Y = 500__X = 1000, Y = 500"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "front_S8:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S8/Protection areas"
+    nodes: ["X = 440, Y = 100", "X = 580, Y = 100", "X = 720, Y = 100"]
+    edges:
+      - "X = 440, Y = 100__X = 580, Y = 100"
+      - "X = 580, Y = 100__X = 720, Y = 100"
+  -
+    id: "front_S8:2"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S8/Protection areas"
+    nodes:
+      - "X = 420, Y = 100"
+      - "X = 440, Y = 100"
+      - "X = 580, Y = 100"
+      - "X = 720, Y = 100"
+    edges:
+      - "X = 420, Y = 100__X = 440, Y = 100"
+      - "X = 440, Y = 100__X = 580, Y = 100"
+      - "X = 580, Y = 100__X = 720, Y = 100"
+  -
+    id: "front_S9:1"
+    user-type: "g_protection_area"
+    attrs:
+      HighlightingColor: "Orange"
+      ProjectTreePath: "Design/Signals/S9/Protection areas"
+    nodes:
+      - "X = 1000, Y = 200"
+      - "X = 1000, Y = 300"
+      - "X = 1000, Y = 400"
+      - "X = 740, Y = 200"
+      - "X = 760, Y = 200"
+      - "X = 880, Y = 200"
+      - "X = 960, Y = 400"
+      - "X = 980, Y = 300"
+    edges:
+      - "X = 740, Y = 200__X = 760, Y = 200"
+      - "X = 760, Y = 200__X = 880, Y = 200"
+      - "X = 760, Y = 200__X = 960, Y = 400"
+      - "X = 880, Y = 200__X = 1000, Y = 200"
+      - "X = 880, Y = 200__X = 980, Y = 300"
+      - "X = 960, Y = 400__X = 1000, Y = 400"
+      - "X = 980, Y = 300__X = 1000, Y = 300"
+  -
+    id: "sw-22-sw-23:crossover"
+    user-type: "g_crossover"
+    attrs: {HighlightingColor: "Red", ProjectTreePath: "Design/Crossovers"}
+    nodes: ["X = 440, Y = 100", "X = 540, Y = 200"]
+    edges: ["X = 440, Y = 100__X = 540, Y = 200"]
+descr: "Some project description"

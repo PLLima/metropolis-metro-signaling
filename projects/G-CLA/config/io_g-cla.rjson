@@ -1,0 +1,37 @@
+{
+  io: [
+    {
+      cleanup-on-disconnect: true,
+      outbound: [
+        ["SeG1-ABR-W.LineOutput", "SeG1-ABR-W.LineOutput"],
+        ["SeG1-CLA-E.LineOutput", "SeG1-CLA-E.LineOutput"],
+        ["SeG2-ABR-W.LineOutput", "SeG2-ABR-W.LineOutput"],
+        ["SeG2-CLA-E.LineOutput", "SeG2-CLA-E.LineOutput"],
+        ["VG1-ABR.Clear", "VG1-ABR.Clear"],
+        ["VG1-CLA.Clear", "VG1-CLA.Clear"],
+        ["VG2-ABR.Clear", "VG2-ABR.Clear"],
+        ["VG2-CLA.Clear", "VG2-CLA.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "G-CLA"
+    },
+    {
+      default-bool: false,
+      default-int: 0,
+      inbound: [
+        ["SeG1-ABR-W.LineInput", "SeG1-ABR-E.LineOutput"],
+        ["SeG1-CLA-E.LineInput", "SeG1-CLA-W.LineOutput"],
+        ["SeG2-ABR-W.LineInput", "SeG2-ABR-E.LineOutput"],
+        ["SeG2-CLA-E.LineInput", "SeG2-CLA-W.LineOutput"],
+        ["VG1-ABR.Clear", "VG1-ABR.Clear"],
+        ["VG1-CLA.Clear", "VG1-CLA.Clear"],
+        ["VG2-ABR.Clear", "VG2-ABR.Clear"],
+        ["VG2-CLA.Clear", "VG2-CLA.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "G-CLA"
+    }
+  ],
+  port: 1883,
+  server: "mqtt.prover.com"
+}

@@ -1,0 +1,9 @@
+format: "LCF-2.0-project-table"
+package: "Metropolis_GA"
+project: "G-TEC"
+tables:
+  -
+    type: "t_ordinal_value"
+    rows: [["g_ordinal__0__", 0], ["g_ordinal__1__", 1], ["g_ordinal__2__", 2]]
+    descr: "the integer value of each ordinal"
+descr: "the integer value of each ordinal"

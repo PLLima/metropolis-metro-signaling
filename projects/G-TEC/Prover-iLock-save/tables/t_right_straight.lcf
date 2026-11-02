@@ -1,0 +1,9 @@
+format: "LCF-2.0-project-table"
+package: "Metropolis_GA"
+project: "G-TEC"
+tables:
+  -
+    type: "t_right_straight"
+    rows: []
+    descr: "the right leg of 'switch' is the straight leg"
+descr: "the right leg of 'switch' is the straight leg"
