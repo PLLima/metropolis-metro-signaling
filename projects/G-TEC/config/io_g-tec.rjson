@@ -1,0 +1,29 @@
+{
+  io: [
+    {
+      cleanup-on-disconnect: true,
+      outbound: [
+        ["SeG1-CLA-W.LineOutput", "SeG1-CLA-W.LineOutput"],
+        ["SeG2-CLA-W.LineOutput", "SeG2-CLA-W.LineOutput"],
+        ["VG1-CLA.Clear", "VG1-CLA.Clear"],
+        ["VG2-CLA.Clear", "VG2-CLA.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "G-TEC"
+    },
+    {
+      default-bool: false,
+      default-int: 0,
+      inbound: [
+        ["SeG1-CLA-W.LineInput", "SeG1-CLA-E.LineOutput"],
+        ["SeG2-CLA-W.LineInput", "SeG2-CLA-E.LineOutput"],
+        ["VG1-CLA.Clear", "VG1-CLA.Clear"],
+        ["VG2-CLA.Clear", "VG2-CLA.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "G-TEC"
+    }
+  ],
+  port: 1883,
+  server: "mqtt.prover.com"
+}
