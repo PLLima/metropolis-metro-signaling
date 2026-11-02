@@ -1,0 +1,9 @@
+format: "LCF-2.0-project-table"
+package: "Metropolis_GA"
+project: "G-PEX"
+tables:
+  -
+    type: "t_right_straight"
+    rows: [["sw-1"], ["sw-2"], ["sw-4"], ["sw-5"]]
+    descr: "the right leg of 'switch' is the straight leg"
+descr: "the right leg of 'switch' is the straight leg"

@@ -1,0 +1,46 @@
+format: "LCF-2.0-project-table"
+package: "Metropolis_GA"
+project: "G-PEX"
+tables:
+  -
+    type: "t_area_before_object"
+    rows:
+      - ["S-p1", "P1"]
+      - ["S-p1b", "P1"]
+      - ["S-p2", "P2"]
+      - ["S-p2b", "P2"]
+      - ["S-p3", "P3"]
+      - ["S-p3b", "P3"]
+      - ["S-p4", "P4"]
+      - ["S-p4b", "P4"]
+      - ["S-p5", "P5"]
+      - ["S-p5b", "P5"]
+      - ["S1", "T4"]
+      - ["S1", "front_S-p4:2"]
+      - ["S1", "front_S-p4:3"]
+      - ["S1", "front_S-p5:2"]
+      - ["S1", "front_S-p5:3"]
+      - ["S2", "VG2-PEX"]
+      - ["S3", "VG1-PEX"]
+      - ["SeG1-PEX-E", "T9"]
+      - ["SeG1-PEX-E", "flank_sw-4leg2:1"]
+      - ["SeG1-PEX-E", "front_S-p4:2"]
+      - ["SeG1-PEX-E", "front_S-p4:3"]
+      - ["SeG1-PEX-E", "front_S-p5:2"]
+      - ["SeG1-PEX-E", "front_S-p5:3"]
+      - ["SeG1-PEX-E", "front_S1:1"]
+      - ["SeG1-PEX-E", "front_S1:2"]
+      - ["SeG1-PEX-E", "front_S3:1"]
+      - ["SeG1-PEX-E", "front_S3:2"]
+      - ["SeG2-PEX-E", "T8"]
+      - ["SeG2-PEX-E", "flank_sw-4leg1:2"]
+      - ["SeG2-PEX-E", "front_S-p1:4"]
+      - ["SeG2-PEX-E", "front_S-p2:4"]
+      - ["SeG2-PEX-E", "front_S-p3:3"]
+      - ["SeG2-PEX-E", "front_S-p4:3"]
+      - ["SeG2-PEX-E", "front_S-p5:3"]
+      - ["SeG2-PEX-E", "front_S1:2"]
+      - ["SeG2-PEX-E", "front_S2:1"]
+      - ["SeG2-PEX-E", "front_S2:2"]
+    descr: "area 'area' is immediately before 'obj'"
+descr: "area 'area' is immediately before 'obj'"
