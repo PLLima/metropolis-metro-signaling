@@ -1,0 +1,244 @@
+format: "LCF-2.0-project-data"
+package: "Metropolis_GA"
+project: "G-EME"
+nodes:
+  - {id: "@0", node-type: "EndNode"}
+  - {id: "@1", node-type: "EndNode"}
+  - {id: "@13", node-type: "SwitchNode"}
+  - {id: "@15", node-type: "SwitchNode"}
+  - {id: "@20", node-type: "SwitchNode"}
+  - {id: "@22", node-type: "SwitchNode"}
+  - {id: "@27", node-type: "PassageNode"}
+  - {id: "@3", node-type: "EndNode"}
+  - {id: "@30", node-type: "PassageNode"}
+  - {id: "@33", node-type: "PassageNode"}
+  - {id: "@36", node-type: "PassageNode"}
+  - {id: "@39", node-type: "PassageNode"}
+  - {id: "@4", node-type: "EndNode"}
+  - {id: "@42", node-type: "PassageNode"}
+  - {id: "@45", node-type: "PassageNode"}
+  - {id: "@48", node-type: "PassageNode"}
+  - {id: "@51", node-type: "PassageNode"}
+  - {id: "@54", node-type: "PassageNode"}
+  - {id: "@57", node-type: "PassageNode"}
+  - {id: "@6", node-type: "PassageNode"}
+  - {id: "@60", node-type: "PassageNode"}
+  - {id: "@63", node-type: "PassageNode"}
+  - {id: "@7", node-type: "EndNode"}
+  - {id: "@72", node-type: "PassageNode"}
+  - {id: "@75", node-type: "PassageNode"}
+  - {id: "@9", node-type: "SwitchNode"}
+edges:
+  -
+    id: "@10"
+    edge: [["@9", 2], ["@54", 0]]
+  -
+    id: "@11"
+    edge: [["@9", 1], ["@6", 1]]
+  -
+    id: "@14"
+    edge: [["@13", 1], ["@72", 0]]
+  -
+    id: "@16"
+    edge: [["@15", 0], ["@39", 0]]
+  -
+    id: "@17"
+    edge: [["@13", 2], ["@15", 2]]
+  -
+    id: "@2"
+    edge: [["@0", 0], ["@30", 0]]
+  -
+    id: "@21"
+    edge: [["@20", 2], ["@63", 0]]
+  -
+    id: "@23"
+    edge: [["@22", 0], ["@60", 0]]
+  -
+    id: "@24"
+    edge: [["@20", 1], ["@22", 1]]
+  -
+    id: "@28"
+    edge: [["@27", 1], ["@13", 0]]
+  -
+    id: "@31"
+    edge: [["@30", 1], ["@27", 0]]
+  -
+    id: "@34"
+    edge: [["@33", 1], ["@36", 0]]
+  -
+    id: "@37"
+    edge: [["@36", 1], ["@15", 1]]
+  -
+    id: "@40"
+    edge: [["@39", 1], ["@42", 0]]
+  -
+    id: "@43"
+    edge: [["@42", 1], ["@20", 0]]
+  -
+    id: "@46"
+    edge: [["@45", 1], ["@4", 0]]
+  -
+    id: "@49"
+    edge: [["@48", 1], ["@51", 0]]
+  -
+    id: "@5"
+    edge: [["@3", 0], ["@33", 0]]
+  -
+    id: "@52"
+    edge: [["@51", 1], ["@7", 0]]
+  -
+    id: "@55"
+    edge: [["@54", 1], ["@57", 0]]
+  -
+    id: "@58"
+    edge: [["@57", 1], ["@1", 0]]
+  -
+    id: "@61"
+    edge: [["@60", 1], ["@9", 0]]
+  -
+    id: "@64"
+    edge: [["@63", 1], ["@45", 0]]
+  -
+    id: "@73"
+    edge: [["@72", 1], ["@75", 0]]
+  -
+    id: "@76"
+    edge: [["@75", 1], ["@22", 2]]
+  -
+    id: "@8"
+    edge: [["@6", 0], ["@48", 0]]
+objects:
+  - {id: "S-p6", user-type: "g_signal", attrs: {DirectionLeg: "0"}, node: "@48"}
+  -
+    id: "S-p6b"
+    user-type: "g_buffer_stop"
+    attrs: {DirectionLeg: "1"}
+    node: "@51"
+  - {id: "S1", user-type: "g_signal", attrs: {DirectionLeg: "1"}, node: "@33"}
+  - {id: "S10", user-type: "g_signal", attrs: {DirectionLeg: "1"}, node: "@60"}
+  - {id: "S11", user-type: "g_signal", attrs: {DirectionLeg: "0"}, node: "@45"}
+  - {id: "S12", user-type: "g_signal", attrs: {DirectionLeg: "0"}, node: "@57"}
+  - {id: "S2", user-type: "g_signal", attrs: {DirectionLeg: "1"}, node: "@30"}
+  - {id: "S3", user-type: "g_signal", attrs: {DirectionLeg: "1"}, node: "@36"}
+  - {id: "S4", user-type: "g_signal", attrs: {DirectionLeg: "1"}, node: "@27"}
+  - {id: "S5", user-type: "g_signal", attrs: {DirectionLeg: "0"}, node: "@39"}
+  - {id: "S6", user-type: "g_signal", attrs: {DirectionLeg: "1"}, node: "@75"}
+  - {id: "S7", user-type: "g_signal", attrs: {DirectionLeg: "1"}, node: "@42"}
+  - {id: "S8", user-type: "g_signal", attrs: {DirectionLeg: "0"}, node: "@60"}
+  - {id: "S9", user-type: "g_signal", attrs: {DirectionLeg: "0"}, node: "@63"}
+  -
+    id: "SeG1-EME-E"
+    user-type: "g_exit_signal"
+    attrs: {DirectionLeg: "1"}
+    node: "@45"
+  -
+    id: "SeG1-PEX-W"
+    user-type: "g_exit_signal"
+    attrs: {DirectionLeg: "0"}
+    node: "@33"
+  -
+    id: "SeG2-EME-E"
+    user-type: "g_exit_signal"
+    attrs: {DirectionLeg: "1"}
+    node: "@57"
+  -
+    id: "SeG2-PEX-W"
+    user-type: "g_exit_signal"
+    attrs: {DirectionLeg: "0"}
+    node: "@30"
+  -
+    id: "g_track_circuit_delimiter-10"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@39"
+  -
+    id: "g_track_circuit_delimiter-11"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@42"
+  -
+    id: "g_track_circuit_delimiter-12"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@45"
+  -
+    id: "g_track_circuit_delimiter-13"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@48"
+  -
+    id: "g_track_circuit_delimiter-14"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@51"
+  -
+    id: "g_track_circuit_delimiter-15"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@54"
+  -
+    id: "g_track_circuit_delimiter-16"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@57"
+  -
+    id: "g_track_circuit_delimiter-17"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@60"
+  -
+    id: "g_track_circuit_delimiter-18"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@63"
+  -
+    id: "g_track_circuit_delimiter-25"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@72"
+  -
+    id: "g_track_circuit_delimiter-26"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@75"
+  -
+    id: "g_track_circuit_delimiter-6"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@27"
+  -
+    id: "g_track_circuit_delimiter-7"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@30"
+  -
+    id: "g_track_circuit_delimiter-8"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@33"
+  -
+    id: "g_track_circuit_delimiter-9"
+    user-type: "g_track_circuit_delimiter"
+    attrs: {}
+    node: "@36"
+  - {id: "sw-6", user-type: "g_switch", attrs: {BentLeg: "2"}, node: "@13"}
+  - {id: "sw-7", user-type: "g_switch", attrs: {BentLeg: "2"}, node: "@15"}
+  - {id: "sw-8", user-type: "g_switch", attrs: {BentLeg: "1"}, node: "@20"}
+  - {id: "sw-9", user-type: "g_switch", attrs: {BentLeg: "1"}, node: "@22"}
+  - {id: "sw_10", user-type: "g_switch", attrs: {BentLeg: "1"}, node: "@9"}
+paths: []
+areas:
+  - {id: "P6", user-type: "g_track_circuit", attrs: {}, nodes: ["@48", "@51"], edges: ["@49"]}
+  - {id: "T10", user-type: "g_track_circuit", attrs: {}, nodes: ["@27", "@30"], edges: ["@31"]}
+  - {id: "T11", user-type: "g_track_circuit", attrs: {}, nodes: ["@33", "@36"], edges: ["@34"]}
+  - {id: "T12", user-type: "g_track_circuit", attrs: {}, nodes: ["@13", "@15", "@27", "@36", "@39", "@72"], edges: ["@14", "@16", "@17", "@28", "@37"]}
+  - {id: "T13", user-type: "g_track_circuit", attrs: {}, nodes: ["@39", "@42"], edges: ["@40"]}
+  - {id: "T14", user-type: "g_track_circuit", attrs: {}, nodes: ["@72", "@75"], edges: ["@73"]}
+  - {id: "T15", user-type: "g_track_circuit", attrs: {}, nodes: ["@20", "@22", "@42", "@60", "@63", "@75"], edges: ["@21", "@23", "@24", "@43", "@76"]}
+  - {id: "T16", user-type: "g_track_circuit", attrs: {}, nodes: ["@45", "@63"], edges: ["@64"]}
+  - {id: "T17", user-type: "g_track_circuit", attrs: {}, nodes: ["@48", "@54", "@6", "@60", "@9"], edges: ["@10", "@11", "@61", "@8"]}
+  - {id: "T18", user-type: "g_track_circuit", attrs: {}, nodes: ["@54", "@57"], edges: ["@55"]}
+  - {id: "VG1-EME", user-type: "g_track_circuit", attrs: {}, nodes: ["@4", "@45"], edges: ["@46"]}
+  - {id: "VG1-PEX", user-type: "g_track_circuit", attrs: {}, nodes: ["@3", "@33"], edges: ["@5"]}
+  - {id: "VG2-EME", user-type: "g_track_circuit", attrs: {}, nodes: ["@1", "@57"], edges: ["@58"]}
+  - {id: "VG2-PEX", user-type: "g_track_circuit", attrs: {}, nodes: ["@0", "@30"], edges: ["@2"]}

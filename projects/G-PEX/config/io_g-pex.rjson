@@ -1,0 +1,29 @@
+{
+  io: [
+    {
+      cleanup-on-disconnect: true,
+      outbound: [
+        ["SeG1-PEX-E.LineOutput", "SeG1-PEX-E.LineOutput"],
+        ["SeG2-PEX-E.LineOutput", "SeG2-PEX-E.LineOutput"],
+        ["VG1-PEX.Clear", "VG1-PEX.Clear"],
+        ["VG2-PEX.Clear", "VG2-PEX.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "G-PEX"
+    },
+    {
+      default-bool: false,
+      default-int: 0,
+      inbound: [
+        ["SeG1-PEX-E.LineInput", "SeG1-PEX-W.LineOutput"],
+        ["SeG2-PEX-E.LineInput", "SeG2-PEX-W.LineOutput"],
+        ["VG1-PEX.Clear", "VG1-PEX.Clear"],
+        ["VG2-PEX.Clear", "VG2-PEX.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "G-PEX"
+    }
+  ],
+  port: 1883,
+  server: "mqtt.prover.com"
+}
