@@ -1,0 +1,37 @@
+{
+  io: [
+    {
+      cleanup-on-disconnect: true,
+      outbound: [
+        ["SeG1-ABR-E.LineOutput", "SeG1-ABR-E.LineOutput"],
+        ["SeG1-EME-W.LineOutput", "SeG1-EME-W.LineOutput"],
+        ["SeG2-ABR-E.LineOutput", "SeG2-ABR-E.LineOutput"],
+        ["SeG2-EME-W.LineOutput", "SeG2-EME-W.LineOutput"],
+        ["VG1-ABR.Clear", "VG1-ABR.Clear"],
+        ["VG1-EME.Clear", "VG1-EME.Clear"],
+        ["VG2-ABR.Clear", "VG2-ABR.Clear"],
+        ["VG2-EME.Clear", "VG2-EME.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "G-ABR"
+    },
+    {
+      default-bool: false,
+      default-int: 0,
+      inbound: [
+        ["SeG1-ABR-E.LineInput", "SeG1-ABR-W.LineOutput"],
+        ["SeG1-EME-W.LineInput", "SeG1-EME-E.LineOutput"],
+        ["SeG2-ABR-E.LineInput", "SeG2-ABR-W.LineOutput"],
+        ["SeG2-EME-W.LineInput", "SeG2-EME-E.LineOutput"],
+        ["VG1-ABR.Clear", "VG1-ABR.Clear"],
+        ["VG1-EME.Clear", "VG1-EME.Clear"],
+        ["VG2-ABR.Clear", "VG2-ABR.Clear"],
+        ["VG2-EME.Clear", "VG2-EME.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "G-ABR"
+    }
+  ],
+  port: 1883,
+  server: "mqtt.prover.com"
+}
