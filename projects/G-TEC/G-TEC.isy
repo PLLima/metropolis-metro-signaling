@@ -1,0 +1,16 @@
+﻿PlannerVersion = 6.4.0
+ProjectVersion = 
+PackageName = Metropolis_GA
+PackageVersion = dev
+DesignFileNameRelative = Prover-iLock-save\design.xml
+DesignDirNameRelative = Prover-iLock-save
+DeclaredAttributesFileNameRelative = Prover-iLock-save\declared_attributes.xml
+PartialEvalCacheDirNameRelative = Prover-iLock-save\pe-cache
+LastSave = 02/11/2026 14:53:46
+Creator = 
+Customer = 
+Created = 02/11/2026 14:22:57
+UseLayoutImporter = False
+Workflow = RB1
+WorkflowState = LayoutBegin
+LayoutEditorVersion = 2019

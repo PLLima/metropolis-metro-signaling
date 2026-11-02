@@ -1,0 +1,526 @@
+nodes:
+  - {id: "@0", x: 120, y: 100}
+  - {id: "@1", x: 1120, y: 100}
+  - {id: "@101", x: 1090, y: 300}
+  - {id: "@11", x: 880, y: 200}
+  - {id: "@15", x: 1120, y: 400}
+  - {id: "@16", x: 960, y: 400}
+  - {id: "@18", x: 760, y: 200}
+  - {id: "@22", x: 1120, y: 500}
+  - {id: "@23", x: 940, y: 500}
+  - {id: "@25", x: 640, y: 200}
+  - {id: "@29", x: 440, y: 100}
+  - {id: "@3", x: 120, y: 200}
+  - {id: "@31", x: 540, y: 200}
+  - {id: "@36", x: 290, y: 100}
+  - {id: "@40", x: 420, y: 100}
+  - {id: "@43", x: 580, y: 100}
+  - {id: "@46", x: 290, y: 200}
+  - {id: "@50", x: 420, y: 200}
+  - {id: "@53", x: 580, y: 200}
+  - {id: "@56", x: 620, y: 200}
+  - {id: "@59", x: 740, y: 200}
+  - {id: "@6", x: 1120, y: 200}
+  - {id: "@65", x: 1090, y: 200}
+  - {id: "@73", x: 1000, y: 200}
+  - {id: "@75", x: 1000, y: 300}
+  - {id: "@77", x: 1000, y: 400}
+  - {id: "@8", x: 1120, y: 300}
+  - {id: "@80", x: 1090, y: 400}
+  - {id: "@83", x: 1090, y: 500}
+  - {id: "@86", x: 1000, y: 500}
+  - {id: "@89", x: 720, y: 100}
+  - {id: "@9", x: 980, y: 300}
+  - {id: "@92", x: 860, y: 100}
+  - {id: "@95", x: 990, y: 100}
+  - {id: "@98", x: 1090, y: 100}
+edges:
+  - {id: "@10", interactive: true, visible: true}
+  - {id: "@102", interactive: true, visible: true}
+  - {id: "@12", interactive: true, visible: true}
+  - {id: "@13", interactive: true, visible: true}
+  - {id: "@17", interactive: true, visible: true}
+  - {id: "@19", interactive: true, visible: true}
+  - {id: "@2", interactive: true, visible: true}
+  - {id: "@20", interactive: true, visible: true}
+  - {id: "@24", interactive: true, visible: true}
+  - {id: "@26", interactive: true, visible: true}
+  - {id: "@27", interactive: true, visible: true}
+  - {id: "@30", interactive: true, visible: true}
+  - {id: "@32", interactive: true, visible: true}
+  - {id: "@33", interactive: true, visible: true}
+  - {id: "@37", interactive: true, visible: true}
+  - {id: "@41", interactive: true, visible: true}
+  - {id: "@44", interactive: true, visible: true}
+  - {id: "@47", interactive: true, visible: true}
+  - {id: "@5", interactive: true, visible: true}
+  - {id: "@51", interactive: true, visible: true}
+  - {id: "@54", interactive: true, visible: true}
+  - {id: "@57", interactive: true, visible: true}
+  - {id: "@60", interactive: true, visible: true}
+  - {id: "@66", interactive: true, visible: true}
+  - {id: "@74", interactive: true, visible: true}
+  - {id: "@76", interactive: true, visible: true}
+  - {id: "@78", interactive: true, visible: true}
+  - {id: "@81", interactive: true, visible: true}
+  - {id: "@84", interactive: true, visible: true}
+  - {id: "@87", interactive: true, visible: true}
+  - {id: "@90", interactive: true, visible: true}
+  - {id: "@93", interactive: true, visible: true}
+  - {id: "@96", interactive: true, visible: true}
+  - {id: "@99", interactive: true, visible: true}
+objects:
+  -
+    id: "S-p12"
+    x: 990
+    y: 80
+    label-x: 1000
+    label-y: 70
+    drawing-dir: "left"
+  -
+    id: "S-p12b"
+    x: 1090
+    y: 120
+    label-x: 1070
+    label-y: 130
+    drawing-dir: "right"
+  -
+    id: "S-p13"
+    x: 999
+    y: 180
+    label-x: 1004
+    label-y: 170
+    drawing-dir: "left"
+  -
+    id: "S-p13b"
+    x: 1090
+    y: 220
+    label-x: 1070
+    label-y: 230
+    drawing-dir: "right"
+  -
+    id: "S-p14"
+    x: 1000
+    y: 280
+    label-x: 1005
+    label-y: 270
+    drawing-dir: "left"
+  -
+    id: "S-p14b"
+    x: 1090
+    y: 320
+    label-x: 1070
+    label-y: 330
+    drawing-dir: "right"
+  -
+    id: "S-p15"
+    x: 1000
+    y: 380
+    label-x: 1005
+    label-y: 370
+    drawing-dir: "left"
+  -
+    id: "S-p15b"
+    x: 1090
+    y: 420
+    label-x: 1070
+    label-y: 430
+    drawing-dir: "right"
+  -
+    id: "S-p16"
+    x: 1000
+    y: 480
+    label-x: 1010
+    label-y: 470
+    drawing-dir: "left"
+  -
+    id: "S-p16b"
+    x: 1090
+    y: 520
+    label-x: 1065
+    label-y: 525
+    drawing-dir: "right"
+  -
+    id: "S1"
+    x: 290
+    y: 220
+    label-x: 260
+    label-y: 210
+    drawing-dir: "right"
+  -
+    id: "S10"
+    x: 860
+    y: 120
+    label-x: 830
+    label-y: 110
+    drawing-dir: "right"
+  -
+    id: "S2"
+    x: 290
+    y: 120
+    label-x: 265
+    label-y: 110
+    drawing-dir: "right"
+  -
+    id: "S3"
+    x: 420
+    y: 220
+    label-x: 420
+    label-y: 230
+    drawing-dir: "right"
+  -
+    id: "S4"
+    x: 420
+    y: 120
+    label-x: 395
+    label-y: 110
+    drawing-dir: "right"
+  -
+    id: "S5"
+    x: 580
+    y: 180
+    label-x: 590
+    label-y: 170
+    drawing-dir: "left"
+  -
+    id: "S6"
+    x: 580
+    y: 80
+    label-x: 590
+    label-y: 70
+    drawing-dir: "left"
+  -
+    id: "S7"
+    x: 620
+    y: 220
+    label-x: 615
+    label-y: 230
+    drawing-dir: "right"
+  -
+    id: "S8"
+    x: 720
+    y: 80
+    label-x: 730
+    label-y: 70
+    drawing-dir: "left"
+  -
+    id: "S9"
+    x: 740
+    y: 220
+    label-x: 720
+    label-y: 210
+    drawing-dir: "right"
+  -
+    id: "SeG1-CLA-W"
+    x: 290
+    y: 180
+    label-x: 295
+    label-y: 170
+    drawing-dir: "left"
+  -
+    id: "SeG2-CLA-W"
+    x: 290
+    y: 80
+    label-x: 295
+    label-y: 70
+    drawing-dir: "left"
+  -
+    id: "g_track_circuit_delimiter-29"
+    x: 290
+    y: 100
+    label-x: 290
+    label-y: 85
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-30"
+    x: 420
+    y: 100
+    label-x: 420
+    label-y: 85
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-31"
+    x: 580
+    y: 100
+    label-x: 580
+    label-y: 85
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-33"
+    x: 290
+    y: 200
+    label-x: 290
+    label-y: 185
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-34"
+    x: 420
+    y: 200
+    label-x: 420
+    label-y: 185
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-35"
+    x: 580
+    y: 200
+    label-x: 580
+    label-y: 185
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-36"
+    x: 620
+    y: 200
+    label-x: 620
+    label-y: 185
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-37"
+    x: 740
+    y: 200
+    label-x: 740
+    label-y: 185
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-38"
+    x: 1000
+    y: 200
+    label-x: 1000
+    label-y: 185
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-39"
+    x: 1090
+    y: 200
+    label-x: 1090
+    label-y: 185
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-40"
+    x: 1090
+    y: 100
+    label-x: 1090
+    label-y: 85
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-41"
+    x: 990
+    y: 100
+    label-x: 990
+    label-y: 85
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-42"
+    x: 720
+    y: 100
+    label-x: 720
+    label-y: 85
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-44"
+    x: 1000
+    y: 400
+    label-x: 1000
+    label-y: 385
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-45"
+    x: 1090
+    y: 400
+    label-x: 1090
+    label-y: 385
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-46"
+    x: 1000
+    y: 500
+    label-x: 1000
+    label-y: 485
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-47"
+    x: 1090
+    y: 500
+    label-x: 1090
+    label-y: 485
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-57"
+    x: 860
+    y: 100
+    label-x: 860
+    label-y: 85
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-68"
+    x: 1090
+    y: 300
+    label-x: 1090
+    label-y: 285
+    drawing-dir: "right"
+  -
+    id: "g_track_circuit_delimiter-69"
+    x: 1000
+    y: 300
+    label-x: 1000
+    label-y: 285
+    drawing-dir: "right"
+  -
+    id: "sw-22"
+    x: 440
+    y: 100
+    label-x: 440
+    label-y: 80
+    drawing-dir: "right"
+  -
+    id: "sw-23"
+    x: 540
+    y: 200
+    label-x: 525
+    label-y: 210
+    drawing-dir: "right"
+  -
+    id: "sw-24"
+    x: 640
+    y: 200
+    label-x: 630
+    label-y: 180
+    drawing-dir: "right"
+  -
+    id: "sw-25"
+    x: 760
+    y: 200
+    label-x: 745
+    label-y: 180
+    drawing-dir: "right"
+  -
+    id: "sw-26"
+    x: 880
+    y: 200
+    label-x: 865
+    label-y: 180
+    drawing-dir: "right"
+areas:
+  -
+    id: "P12"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 1030
+    label-y: 110
+    root: "@96"
+  -
+    id: "P13"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 1030
+    label-y: 210
+    root: "@74"
+  -
+    id: "P14"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 1030
+    label-y: 310
+    root: "@76"
+  -
+    id: "P15"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 1040
+    label-y: 410
+    root: "@78"
+  -
+    id: "P16"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 1030
+    label-y: 510
+    root: "@87"
+  -
+    id: "T36"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 350
+    label-y: 110
+    root: "@37"
+  -
+    id: "T37"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 340
+    label-y: 210
+    root: "@47"
+  -
+    id: "T38"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 500
+    label-y: 140
+    root: "@33"
+  -
+    id: "T39"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 590
+    label-y: 210
+    root: "@54"
+  -
+    id: "T40"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 640
+    label-y: 110
+    root: "@44"
+  -
+    id: "T41"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 700
+    label-y: 290
+    root: "@27"
+  -
+    id: "T42"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 770
+    label-y: 110
+    root: "@90"
+  -
+    id: "T43"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 850
+    label-y: 270
+    root: "@20"
+  -
+    id: "T44"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 920
+    label-y: 110
+    root: "@93"
+  -
+    id: "VG1-CLA"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 130
+    label-y: 210
+    root: "@5"
+  -
+    id: "VG2-CLA"
+    area-type: "delimited"
+    delimiter-types: ["g_track_circuit_delimiter"]
+    label-x: 130
+    label-y: 110
+    root: "@2"
+paths: []
+comments: []
+view:
+  x: 788
+  y: -130
+  zoom: 1
+  track-grid-size: 20
+  background-images: []
+shapes:
+  labels: []
+  lines: []
+  polygons: []

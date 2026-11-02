@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="G-TEC" plannerVersion="6.4">
+  <phase name="Layout" />
+  <activities>
+    <activity name="GenLayout" state="Unfinished" />
+    <activity name="Layout" state="Unfinished" />
+    <activity name="Generate" state="Unfinished" />
+    <activity name="GeneratorScript" state="Unfinished" />
+    <activity name="DistributionScript" state="Unfinished" />
+    <activity name="Distribution" state="Unfinished" />
+    <activity name="CheckDesign" state="Unfinished" />
+    <activity name="CodeScript" state="Unfinished" />
+    <activity name="Simulate" state="Unfinished" />
+    <activity name="TestCaseGeneration" state="Unfinished" />
+    <activity name="CheckSafetyRequirements" state="Unfinished" />
+    <activity name="RunScripts" state="Unfinished" />
+    <activity name="OpenConsole" state="Unfinished" />
+  </activities>
+  <instances>
+    <designInstances />
+    <testInstances />
+    <safetyInstances />
+  </instances>
+  <associations />
+  <parameters />
+  <timers />
+</project>
