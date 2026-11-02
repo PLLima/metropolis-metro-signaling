@@ -1,0 +1,283 @@
+{
+  "nodes" : [
+    {
+      "id" : "@0",
+      "x" : 100,
+      "y" : 140
+    },
+    {
+      "id" : "@1",
+      "x" : 540,
+      "y" : 140
+    },
+    {
+      "id" : "@10",
+      "x" : 130,
+      "y" : 140
+    },
+    {
+      "id" : "@13",
+      "x" : 490,
+      "y" : 140
+    },
+    {
+      "id" : "@20",
+      "x" : 260,
+      "y" : 140
+    },
+    {
+      "id" : "@23",
+      "x" : 410,
+      "y" : 140
+    },
+    {
+      "id" : "@26",
+      "x" : 400,
+      "y" : 200
+    },
+    {
+      "id" : "@3",
+      "x" : 340,
+      "y" : 140
+    },
+    {
+      "id" : "@41",
+      "x" : 510,
+      "y" : 220
+    },
+    {
+      "id" : "@5",
+      "x" : 420,
+      "y" : 220
+    },
+    {
+      "id" : "@8",
+      "x" : 540,
+      "y" : 220
+    }
+  ],
+  "objects" : [
+    {
+      "id" : "B1",
+      "x" : 510,
+      "y" : 200,
+      "label-x" : 490,
+      "label-y" : 190,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S02E",
+      "x" : 490,
+      "y" : 120,
+      "label-x" : 490,
+      "label-y" : 95,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S06W",
+      "x" : 130,
+      "y" : 160,
+      "label-x" : 100,
+      "label-y" : 165,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S1",
+      "x" : 130,
+      "y" : 120,
+      "label-x" : 110,
+      "label-y" : 110,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S2",
+      "x" : 410,
+      "y" : 160,
+      "label-x" : 410,
+      "label-y" : 150,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S3",
+      "x" : 260,
+      "y" : 120,
+      "label-x" : 240,
+      "label-y" : 110,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S4",
+      "x" : 490,
+      "y" : 160,
+      "label-x" : 490,
+      "label-y" : 150,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S6",
+      "x" : 380,
+      "y" : 220,
+      "label-x" : 380,
+      "label-y" : 215,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-1",
+      "x" : 260,
+      "y" : 140,
+      "label-x" : 260,
+      "label-y" : 125,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-2",
+      "x" : 410,
+      "y" : 140,
+      "label-x" : 410,
+      "label-y" : 125,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-3",
+      "x" : 400,
+      "y" : 200,
+      "label-x" : 400,
+      "label-y" : 185,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-4",
+      "x" : 510,
+      "y" : 220,
+      "label-x" : 510,
+      "label-y" : 205,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-5",
+      "x" : 130,
+      "y" : 140,
+      "label-x" : 130,
+      "label-y" : 125,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-6",
+      "x" : 490,
+      "y" : 140,
+      "label-x" : 490,
+      "label-y" : 125,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "sw1",
+      "x" : 340,
+      "y" : 140,
+      "label-x" : 340,
+      "label-y" : 125,
+      "drawing-dir" : "right",
+      "layer" : 0
+    }
+  ],
+  "areas" : [
+    {
+      "id" : "T1",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 190,
+      "label-y" : 140,
+      "root" : "@11",
+      "layer" : 0
+    },
+    {
+      "id" : "T2",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 300,
+      "label-y" : 140,
+      "root" : "@21",
+      "layer" : 0
+    },
+    {
+      "id" : "T20",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 510,
+      "label-y" : 140,
+      "root" : "@14",
+      "layer" : 0
+    },
+    {
+      "id" : "T26",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 100,
+      "label-y" : 140,
+      "root" : "@2",
+      "layer" : 0
+    },
+    {
+      "id" : "T3",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 440,
+      "label-y" : 140,
+      "root" : "@24",
+      "layer" : 0
+    },
+    {
+      "id" : "T4",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 440,
+      "label-y" : 220,
+      "root" : "@9",
+      "layer" : 0
+    }
+  ],
+  "paths" : [],
+  "view" : {
+    "x" : 45,
+    "y" : 32,
+    "zoom" : 2,
+    "track-grid-size" : 20,
+    "background-images" : [],
+    "layers" : [
+      {
+        "id" : 0,
+        "name" : "(default)",
+        "show-labels" : true,
+        "show-objects" : true,
+        "show-areas" : false,
+        "show-paths" : false,
+        "show-level-crossings" : true
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>gss_export</name>
+  <version>2.0</version>
+  <root>false</root>
+  <description>Package for exporting the Prover iLock GSS to HLL.</description>
+  <dependencies />
+  <expects>
+    <application.version value="5.2+" />
+  </expects>
+</package>

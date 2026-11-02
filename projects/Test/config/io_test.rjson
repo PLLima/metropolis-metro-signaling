@@ -1,0 +1,33 @@
+{
+  io: [
+    {
+      cleanup-on-disconnect: true,
+      outbound: [
+        ["S02W.LineOutput", "S02W.LineOutput"],
+        ["S05E.LineOutput", "S05E.LineOutput"],
+        ["S06E.LineOutput", "S06E.LineOutput"],
+        ["T20.Clear", "T20.Clear"],
+        ["T25.Clear", "T25.Clear"],
+        ["T26.Clear", "T26.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "Test"
+    },
+    {
+      default-bool: false,
+      default-int: 0,
+      inbound: [
+        ["S02W.LineInput", "S02E.LineOutput"],
+        ["S05E.LineInput", "S05W.LineOutput"],
+        ["S06E.LineInput", "S06W.LineOutput"],
+        ["T20.Clear", "T20.Clear"],
+        ["T25.Clear", "T25.Clear"],
+        ["T26.Clear", "T26.Clear"]
+      ],
+      prefix: "metropolis_line/",
+      program: "Test"
+    }
+  ],
+  port: 1883,
+  server: "mqtt.prover.com"
+}

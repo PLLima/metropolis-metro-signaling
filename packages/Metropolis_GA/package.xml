@@ -1,0 +1,51 @@
+<package>
+  <name>Metropolis_GA</name>
+  <version>dev</version>
+  <root>true</root>
+  <description>Metropolis Generic Application (GA)</description>
+  <dependencies>
+    <package name="Certification_LCF_Dump" version="3.3.3" />
+    <package name="gss_export" version="2.0"/>
+    <package name="lcf_utils" version="2.1.0" />
+    <package name="ilock_utils" version="3.0" />
+    <package name="iLock_Geography" version="5.2.1" />
+    <package name="debug_utils" version="3.1"/>
+    <package name="om_integration" version="2.4"/>
+    <package name="rewriting" version="1.9.3" />
+    <package name="variable_alias" version="1.6.3" />
+    <package name="iLock_SEIF" version="1.7.6"/>
+  </dependencies>
+  <sources>
+    <pispec path="OM" type="design"/>
+    <pispec path="GDS" type="design"/>
+    <pispec path="GTS" type="test"/>
+    <pispec path="GSS" type="safety"/>
+    <pispec path="GVS" type="visualization"/>
+  </sources>
+  <expects>
+    <application.version value="5.21.0+" />
+    <workflow value="rb1" />
+    <workflow.phase.design.hide value="true" />
+    <layout.editor.background_color value="WhiteSmoke" />
+    <layout.editor.versions value="2019" />
+    <design.true_points_enumerator.enabled value="true" />
+    <evaluator.optimization.tuple_quantification.enabled value="true" />
+    <evaluator.optimization.lifting.enabled value="true" />
+    <evaluator.optimization.reordering.enabled value="true" />
+    <evaluator.checks.predicate_signatures value="error" />
+    <schemaViewer.style.default value="b" />
+    <simulator.debugger.results.show_all_descriptions value="true" />
+    <simulator.autorun.testcase value="_INIT_.INITIALIZE_SYSTEM" />
+    <simulator.mode_menu.enabled value="true" />
+    <simulator.mqtt.config_paths value="config/io*.rjson" />
+    <verifier.version value="2015" />
+    <verifier.variables.initialValue.default value="free" />
+    <verifier.debug_with_soft_constraints value="true" />
+    <verifier.split_universal_quantification value="true" />
+    <verifier.requirements.view value="Requirement view" />
+    <verifier.default_initial_value.boolean_equations value="false" />
+    <verifier.strategies value="'Induction' { 'conj' : -ind conj start 0 stop 3 timeout 120;'ind' : -ind conj start 0 stop 10 timeout 3600;'Ipol' : -ipol stop 10; };'Interpolation' { 'conj' : -ind conj start 0 stop 1 timeout 120;'ipol' : -ipol start 0 stop 10 timeout 3600; };" />
+    <message_handler.suppress value="Design-1001;Design-1029;Code-2018" />
+  </expects>
+</package>
+

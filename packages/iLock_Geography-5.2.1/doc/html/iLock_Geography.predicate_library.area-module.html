@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>iLock_Geography.predicate_library.area</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;iLock_Geography ::
+        <a href="iLock_Geography.predicate_library-module.html">Package&nbsp;predicate_library</a> ::
+        Module&nbsp;area
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="iLock_Geography.predicate_library.area-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module area</h1><p class="nomargin-top"></p>
+<p>The module defines predicate classes that are used to populate geo 
+  predicates related to areas.</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="iLock_Geography.predicate_library.area.ObjectInArea-class.html" class="summary-name">ObjectInArea</a><br />
+      Predicate class that builds true point '(obj, area)' if obj of type 
+      INSIDE_TYPE_C is inside of area of type AREA_TYPE.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="iLock_Geography.predicate_library.area.AreaInArea-class.html" class="summary-name">AreaInArea</a><br />
+      Predicate class that builds true point '(area_1, area_2)' if area_1 
+      is inside of area_2.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="iLock_Geography.predicate_library.area.AreaIntersectsArea-class.html" class="summary-name">AreaIntersectsArea</a><br />
+      Predicate class that builds true point '(area_1, area_2)' if area_1 
+      and area_2, both of type AREA_TYPE intersected with each other.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="iLock_Geography.predicate_library.area.AreaAtSignal-class.html" class="summary-name">AreaAtSignal</a><br />
+      Predicate class that builds true point '(signal, area)' if area of 
+      type AREA_TYPE is before or after signal of type SIGNAL_TYPE.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="iLock_Geography.predicate_library.area.AreaAtArea-class.html" class="summary-name">AreaAtArea</a><br />
+      Predicate class that builds true point '(area_1, area_2)' if area_2 
+      is before or after area_1.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="iLock_Geography.predicate_library.area.AreaAfterArea-class.html" class="summary-name">AreaAfterArea</a><br />
+      Predicate class that builds true point '(area_1, area_2)' if area_2 
+      is after area_1 in the positive direction.
+    </td>
+  </tr>
+</table>
+<p class="indent-wrapped-lines"><b>Imports:</b>
+  <span title="RailyardFactory">RailyardFactory</span>,
+  <a href="iLock_Geography.geo_algorithms-module.html" title="iLock_Geography.geo_algorithms">alg</a>,
+  <a href="iLock_Geography.geo_predicate.GeoPredicate-class.html" title="iLock_Geography.geo_predicate.GeoPredicate">GeoPredicate</a>,
+  <a href="iLock_Geography.geo_error-module.html#geoAssert" title="iLock_Geography.geo_error.geoAssert">geoAssert</a>,
+  <span title="iLock_Geography.type_manager.INSIDE_TYPE_C">INSIDE_TYPE_C</span>,
+  <span title="iLock_Geography.type_manager.AREA_TYPE">AREA_TYPE</span>,
+  <span title="iLock_Geography.type_manager.SIGNAL_TYPE">SIGNAL_TYPE</span>,
+  <span title="iLock_Geography.typecheck.typedoc">typedoc</span>
+</p><br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Oct 23 11:27:02 2018
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>iLock_Geography.geo_algorithms.railyard</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;iLock_Geography ::
+        <a href="iLock_Geography.geo_algorithms-module.html">Package&nbsp;geo_algorithms</a> ::
+        Module&nbsp;railyard
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="iLock_Geography.geo_algorithms.railyard-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module railyard</h1><p class="nomargin-top"></p>
+<p>The module defines functions for manipulating railyard.</p>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">MutableRailyard | (MutableRailyard,                               
+      {IRailyardEntity:IRailyardEntity})</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.railyard-module.html#copyData" class="summary-sig-name">copyData</a>(<span class="summary-sig-arg">railyard</span>,
+        <span class="summary-sig-arg">refMap</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Return a copy of the data structures in the railyard, keeping 
+      relative references intact.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">MutableRailyard | (MutableRailyard,                                
+      {IRailyardEntity:IRailyardEntity})</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.railyard-module.html#restrict" class="summary-sig-name">restrict</a>(<span class="summary-sig-arg">railyard</span>,
+        <span class="summary-sig-arg">areaRestriction</span>,
+        <span class="summary-sig-arg">refMap</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">skipObjectTypes</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">intersectAreas</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Return a copy of the data structures in the railyard restricted to 
+      <code>areaRestriction</code>, keeping relative references intact.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple(MutableRailyard, [Relation])</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.railyard-module.html#filterCopy" class="summary-sig-name">filterCopy</a>(<span class="summary-sig-arg">railyard</span>,
+        <span class="summary-sig-arg">relations</span>,
+        <span class="summary-sig-arg">skipUserTypes</span>,
+        <span class="summary-sig-arg">deleteEmptyNodes</span>)</span><br />
+      Filter a copy of the data structures in the railyard.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">IRailyard</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.railyard-module.html#elimCrossings" class="summary-sig-name">elimCrossings</a>(<span class="summary-sig-arg">railyard</span>,
+        <span class="summary-sig-arg">crossingNodes</span>,
+        <span class="summary-sig-arg">areaNamer</span>,
+        <span class="summary-sig-arg">splitAreaTypes</span>,
+        <span class="summary-sig-arg">locked</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Eliminate crossing nodes in <code>crossingNodes</code> in the 
+      <code>railyard</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<p class="indent-wrapped-lines"><b>Imports:</b>
+  <span title="RailyardFactory">RF</span>,
+  <a href="iLock_Geography.geo_algorithms.area-module.html#createArea" title="iLock_Geography.geo_algorithms.area.createArea">createArea</a>,
+  <a href="iLock_Geography.geo_algorithms.area-module.html#connectedComponentsOfArea" title="iLock_Geography.geo_algorithms.area.connectedComponentsOfArea">connectedComponentsOfArea</a>,
+  <a href="iLock_Geography.geo_algorithms.element-module.html#outObjIter" title="iLock_Geography.geo_algorithms.element.outObjIter">outObjIter</a>,
+  <a href="iLock_Geography.geo_algorithms.element-module.html#nodeBoundaryIter" title="iLock_Geography.geo_algorithms.element.nodeBoundaryIter">nodeBoundaryIter</a>,
+  <a href="iLock_Geography.geo_algorithms.property-module.html#isGenericInside" title="iLock_Geography.geo_algorithms.property.isGenericInside">isGenericInside</a>,
+  <a href="iLock_Geography.geo_algorithms.property-module.html#isGenericOutside" title="iLock_Geography.geo_algorithms.property.isGenericOutside">isGenericOutside</a>,
+  <a href="iLock_Geography.geo_algorithms.property-module.html#isSignal" title="iLock_Geography.geo_algorithms.property.isSignal">isSignal</a>,
+  <a href="iLock_Geography.geo_algorithms.property-module.html#isSwitch" title="iLock_Geography.geo_algorithms.property.isSwitch">isSwitch</a>,
+  <a href="iLock_Geography.geo_algorithms.property-module.html#isDirection" title="iLock_Geography.geo_algorithms.property.isDirection">isDirection</a>,
+  <span title="iLock_Geography.typecheck.typedoc">typedoc</span>,
+  <a href="iLock_Geography.geo_util-module.html#stringIterable2set" title="iLock_Geography.geo_util.stringIterable2set">stringIterable2set</a>,
+  <a href="iLock_Geography.geo_util.MutableRailyard-class.html" title="iLock_Geography.geo_util.MutableRailyard">MutableRailyard</a>,
+  <a href="iLock_Geography.geo_error-module.html#geoError" title="iLock_Geography.geo_error.geoError">geoError</a>,
+  <a href="iLock_Geography.geo_error-module.html#geoAssert" title="iLock_Geography.geo_error.geoAssert">geoAssert</a>,
+  <span title="iLock_Geography.node_types.SSDX_TYPE">SSDX_TYPE</span>,
+  <span title="iLock_Geography.node_types.DSDX_TYPE">DSDX_TYPE</span>,
+  <a href="iLock_Geography.node_types-module.html#createSSDX" title="iLock_Geography.node_types.createSSDX">createSSDX</a>,
+  <a href="iLock_Geography.node_types-module.html#createDSDX" title="iLock_Geography.node_types.createDSDX">createDSDX</a>
+</p><br />
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="copyData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">copyData</span>(<span class="sig-arg">railyard</span>,
+        <span class="sig-arg">refMap</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a copy of the data structures in the railyard, keeping relative
+  references intact.</p>
+  <p>The function returns a <code>MutableRailyard</code> instance 
+  containing the copied data in unlocked form. If <code>refMap</code> is 
+  <code>true</code>, an extra element, mapping old to new references, is 
+  returned as the second return value.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>railyard</code></strong> (IRailyard) - The railyard to copy data from.</li>
+        <li><strong class="pname"><code>refMap</code></strong> (bool) - If true, <code>copyData</code> also returns a dictionary, mapping
+          old references to new references, as an extra second return 
+          value.</li>
+    </ul></dd>
+    <dt>Returns: MutableRailyard | (MutableRailyard,                               
+      {IRailyardEntity:IRailyardEntity})</dt>
+        <dd>Copy of railyard &quot;in unlocked pieces&quot;. The 
+          c{MutableRailyard} returned is a struct like class containing: 
+          the graph, the registered paths, the registered areas, and the 
+          auxiliary objects. Optionally, as a second return value, the map 
+          from old references to new references is included.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="restrict"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">restrict</span>(<span class="sig-arg">railyard</span>,
+        <span class="sig-arg">areaRestriction</span>,
+        <span class="sig-arg">refMap</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">skipObjectTypes</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">intersectAreas</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a copy of the data structures in the railyard restricted to 
+  <code>areaRestriction</code>, keeping relative references intact.</p>
+  <p>The function returns a c{MutableRailyard} instance containing the 
+  copied data in unlocked form. If <code>refMap</code> is 
+  <code>true</code>, an extra element, mapping old to new references, is 
+  returned as the second return value.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>railyard</code></strong> (IRailyard) - The railyard to copy data from.</li>
+        <li><strong class="pname"><code>areaRestriction</code></strong> (IGraph) - The area the copy is restricted to.</li>
+        <li><strong class="pname"><code>refMap</code></strong> (bool) - If true, <code>copyData</code> also returns a dictionary, mapping
+          old references to new references, as an extra second return 
+          value.</li>
+        <li><strong class="pname"><code>skipObjectTypes</code></strong> (Iterable(str) | none) - The Signal user types that should be legal on the boundary (and 
+          hence not copied).</li>
+        <li><strong class="pname"><code>intersectAreas</code></strong> (bool) - If false (the default), the restriction will include only areas 
+          that are contained in the <code>areaRestriction</code>. 
+          Otherwise, the restriction will also include the intersecting 
+          part of areas that are only partially in 
+          <code>areaRestriction</code>.</li>
+    </ul></dd>
+    <dt>Returns: MutableRailyard | (MutableRailyard,                                
+      {IRailyardEntity:IRailyardEntity})</dt>
+        <dd>Copy of railyard &quot;in unlocked pieces&quot;. The 
+          <code>MutableRailyard</code> returned is a struct like class 
+          containing: the graph, the registered paths, the registered 
+          areas, and the auxiliary objects. Optionally, as a second return 
+          value, the map from old references to new references is included.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="filterCopy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">filterCopy</span>(<span class="sig-arg">railyard</span>,
+        <span class="sig-arg">relations</span>,
+        <span class="sig-arg">skipUserTypes</span>,
+        <span class="sig-arg">deleteEmptyNodes</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Filter a copy of the data structures in the railyard.</p>
+  <p>The function returns a 2-tuple. The first element of the tuple is a 
+  <code>MutableRailyard</code> instance in unlocked form where all objects 
+  whose types in <code>skipUserTypes</code> are filtered out. If 
+  <code>deleteEmptyNodes</code> is <code>true</code>, the empty nodes of 
+  degree 2 are also filtered out.</p>
+  <p>If <code>deleteEmptyNodes</code> is <code>true</code>, the second 
+  element of the returned tuple is a copy of <code>relations</code> with 
+  the true points of each <code>Relation</code> instance in 
+  <code>relations</code> being modified due to the removal of empty nodes. 
+  Otherwise, the element is <code>relations</code> itself.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>railyard</code></strong> (IRailyard) - The railyard to copy from.</li>
+        <li><strong class="pname"><code>relations</code></strong> ([Relation]) - relations on the railyard components.</li>
+        <li><strong class="pname"><code>skipUserTypes</code></strong> (Iterable(str)) - objects of user type in <code>skipUserTypes</code> are filtered 
+          out in the the returned <code>MutableRailyard</code> instance.</li>
+        <li><strong class="pname"><code>deleteEmptyNodes</code></strong> (bool) - If true, empty nodes of degree 2 are filtered our in the returned
+          <code>MutableRailyard</code> instance.</li>
+    </ul></dd>
+    <dt>Returns: tuple(MutableRailyard, [Relation])</dt>
+        <dd>A tuple of a filtered copy of railyard &quot;in unlocked 
+          pieces&quot; and the relations on the railyard components in the 
+          filtered railyard.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="elimCrossings"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">elimCrossings</span>(<span class="sig-arg">railyard</span>,
+        <span class="sig-arg">crossingNodes</span>,
+        <span class="sig-arg">areaNamer</span>,
+        <span class="sig-arg">splitAreaTypes</span>,
+        <span class="sig-arg">locked</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Eliminate crossing nodes in <code>crossingNodes</code> in the 
+  <code>railyard</code>.</p>
+  <p>The function returns an <code>IRailyard</code> instance from 
+  <code>railyard</code> where the crossing nodes in 
+  <code>crossingNodes</code> are eliminated. The elimination of crossing 
+  nodes might cause areas of a user type in <code>splitAreaTypes</code> 
+  disconnected and <code>areaNamer</code> is a function to name these 
+  areas.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>railyard</code></strong> (IRailyard) - The railyard to manipulate.</li>
+        <li><strong class="pname"><code>crossingNodes</code></strong> (Iterable(INode)) - The crossing nodes to be eliminated.</li>
+        <li><strong class="pname"><code>areaNamer</code></strong> (any) - A callable having signature (IGraph) -&gt; str. 
+          <code>areaNamer</code> should return the desired names for the 
+          split areas of user type in <code>splitAreaTypes</code>.</li>
+        <li><strong class="pname"><code>splitAreaTypes</code></strong> (Iterable(str)) - areas of user type in <code>splitAreaTypes</code> are checked for
+          connectivity after the elimination of cross nodes in 
+          <code>crossingNodes</code>.</li>
+        <li><strong class="pname"><code>locked</code></strong> (bool) - If true, all IRailyardObject instance and INode instances in the 
+          returned railyard are locked.</li>
+    </ul></dd>
+    <dt>Returns: IRailyard</dt>
+        <dd>A copy of the <code>railyard</code> where the crossing nodes in 
+          <code>crossingNodes</code> are eliminated.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Oct 23 11:27:02 2018
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

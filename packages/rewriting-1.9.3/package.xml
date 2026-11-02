@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>rewriting</name>
+  <version>1.9.3</version>
+  <root>false</root>
+  <description>Rewriting system for Boolean expressions</description>
+  <dependencies>
+  </dependencies>
+</package>

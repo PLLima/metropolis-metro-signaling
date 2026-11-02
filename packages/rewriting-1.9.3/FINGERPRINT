@@ -1,0 +1,19 @@
+Signature-Version: 1.1
+Created-By: Prover-iLock Signer
+
+doc -
+doc/sphinx -
+doc/sphinx/index.rst d207bea346520efc40f6734f89af37dd1fc375ec
+package.xml c3934d0752de368bbac2ba785e1cf2168a35277b
+scripting -
+scripting/rewriting -
+scripting/rewriting/__init__.py da39a3ee5e6b4b0d3255bfef95601890afd80709
+scripting/rewriting/experimental.py 7bbb88b286d972bf30ab6e9d0605ce89605edc7e
+scripting/rewriting/normal.py be371411214cc43989e446f644a16b2d9ed3e568
+scripting/rewriting/program -
+scripting/rewriting/program/__init__.py da39a3ee5e6b4b0d3255bfef95601890afd80709
+scripting/rewriting/program/simplify.py bc64e7ed18d66a07bc36a32052e88b065b38d361
+scripting/rewriting/simplify.py 72aebe5b5ff9db397fedfb13e9dc797ec451d0ed
+scripting/rewriting/test_utils.py a0eb1fd64bece00de53ad89652e09b1603629791
+scripting/rewriting/tools.py 4d435719a8238059235dcc2a0a54fd88d3739d6e
+scripting/rewriting/util.py 679c9f2145716eda4319223d47d9c21234046306

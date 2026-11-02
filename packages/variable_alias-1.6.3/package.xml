@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>variable_alias</name>
+  <version>1.6.3</version>
+  <root>false</root>
+  <description>Utility to set aliases for iLock objects based on a xls or csv configuration</description>
+  <dependencies>
+    <package name="csvconfig" version="1.2.0" integrity="digest" fingerprint="bb6f2cdf0daf935922ecde20a0b3b73a6cef5d09" />
+    <package name="lcf_utils" version="2.1.0" integrity="digest" fingerprint="378c90d9330586301e4724c89a8708b6e1bb6e8d" />
+  </dependencies>
+  <expects>
+    <application.version value="4.22.4+" />
+  </expects>
+</package>

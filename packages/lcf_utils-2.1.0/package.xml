@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>lcf_utils</name>
+  <version>2.1.0</version>
+  <root>false</root>
+  <description>Provides utilities for working with LCF configuration files.</description>
+  <dependencies>
+    <package name="bool_expression_parser" version="3.0" integrity="digest" fingerprint="8bd7e0fecec70d3412f80dba37a46beba6086a83" />
+  </dependencies>
+</package>

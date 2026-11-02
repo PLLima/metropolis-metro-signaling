@@ -1,0 +1,17 @@
+Signature-Version: 1.1
+Created-By: Prover-iLock Signer
+
+doc -
+doc/sphinx -
+doc/sphinx/index.rst b34254cae08929222629e37e75f2b0fc18c51dc3
+package.xml c16d1af680d9e042534ed855f9d3d5c6d845682d
+scripting -
+scripting/csvconfig -
+scripting/csvconfig/README.txt 40da47fec91ea46292bdfa8f5354846385cd6b76
+scripting/csvconfig/__init__.py da39a3ee5e6b4b0d3255bfef95601890afd80709
+scripting/csvconfig/csvconfig.py eccd9d4be36ee11c12c979d8481bee0ee7eba2ca
+scripting/csvconfig/tests -
+scripting/csvconfig/tests/test.csv cb5577621e794d115d6efdbc9b727c3b194e7583
+scripting/csvconfig/tests/test_empty_cols.csv ebe480c6d9e20d34fb81a5f1de5f262b9a8209e4
+scripting/csvconfig/tests/test_empty_rows.csv 2c646023bb9c0c0624156d091b521eb04b402abb
+scripting/csvconfig/tests/testcases.py c5e87635cb5ee9d7bb399854ecdbc3a1e974103b

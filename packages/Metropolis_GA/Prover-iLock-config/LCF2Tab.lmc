@@ -1,0 +1,99 @@
+# This file describes how secondary LCF tables are to be calculated.
+# A table method calculates a new LCF table based on the railyard
+# and/or other LCF tables. See the iLock_Geography package for a description
+# of available table methods.
+{
+  format: "LCF2Tab-cfg-2.0",
+  table-types: [],
+  methods: [
+    { table:  "t_path_intersects_area",
+      method: "PathIntersectsAreaT",
+      args: {} },
+
+    { table: "t_path_containing_path",
+      method: "PathContainingPathT",
+      args: { prefix: false, suffix: false, strict: false, sameDir: true} },
+
+    { table: "t_facing_in_path",
+      method: "ObjectInPathT",
+      args: {facing: true} },
+
+    { table: "t_trailing_in_path",
+      method: "ObjectInPathT",
+      args: {facing: false} },
+
+    { table: "t_normal_in_path",
+      method: "SwitchInPathT",
+      args: {diverging: false} },
+
+    { table: "t_reverse_in_path",
+      method: "SwitchInPathT",
+      args: {diverging: true} },
+
+    { table: "t_right_straight",
+      method: "RightStraightT",
+      args: {} },
+
+    { table: "t_area_after_object",
+      method: "AreaAtSignalT",
+      args: {} },
+
+    { table: "t_area_before_object",
+      method: "AreaAtSignalT",
+      args: {after: false} },
+
+    { table: "t_start_object",
+      method: "AttributeT",
+      args: { attribute: "start_obj" } },
+
+    { table: "t_end_object",
+      method: "AttributeT",
+      args: { attribute: "end_obj" } },
+
+    { table: "t_all",
+      method: "DomainT",
+      args: { type: "BaseType" } },
+
+    { table: "t_path_contains_object",
+      method: "ObjectInPathT",
+      args: {} },
+
+    { table: "t_object_in_area",
+      method: "ObjectInAreaT",
+      args: {} },
+
+    { table: "t_area_intersects_area_by_edge",
+      method: "AreaIntersectsAreaT",
+      args: {} },
+
+    { table: "t_area_intersects_area_by_node",
+      method: "AreaIntersectsAreaT",
+      args: {nodeIntersection: true} },
+
+    { table: "t_path_intersects_path",
+      method: "PathIntersectsPathT",
+      args: {} },
+
+    { table: "t_path_opposes_path",
+      method: "PathIntersectsPathT",
+      args: {sameDirection: false} },
+
+    { table: "t_next_path",
+      method: "NextPathT",
+      args: {} },
+
+    # Derived tables
+    { table: "t_ID",
+      method: "ColumnProductT",
+      args: { table: "t_all",
+              selectCols: ["ry_obj", "ry_obj"] } },
+    { table: "t_area_contains_object",
+      method: "FilterProjectT",
+      args: { table: "t_object_in_area",
+              projectCols: ["area", "ry_inside_obj"] } }
+
+    # @TEMPLATE_PKG_REMOVE_BEGIN@
+    # Custom table methods
+    # @TEMPLATE_PKG_REMOVE_END@
+  ]
+}

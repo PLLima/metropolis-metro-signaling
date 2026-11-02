@@ -1,0 +1,6 @@
+PiSPEC 3.0
+
+class GDS_PROTECTION_AREA {
+inherit PROTECTION_AREA;
+
+}

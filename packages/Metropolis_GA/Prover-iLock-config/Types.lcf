@@ -1,0 +1,313 @@
+# This file describes what kind of railyard entities the railyard may be
+# built from, and the tables used to describe the railyard configuration.
+{
+  format: "LCF-2.0-package-data",
+  package: "Metropolis_GA",
+  descr: "Training package LCF types definition.",
+
+  # The node types describe the kind of nodes the railyard graph is built of.
+  # In essence, they describe how trains can travel. Node types are built in
+  # to Prover iLock. You cannot define your own node types.
+  node-types: [
+    {id: "CrossingNode",
+     descr: "Builtin Crossing Node Type",
+     degree: 4,
+     traversal: [[0, 2], [1, 3], [2, 0], [3, 1]]},
+    {id: "EndNode",
+     descr: "Builtin End Node Type",
+     degree: 1,
+     traversal: []},
+    {id: "PassageNode",
+     descr: "Builtin Passage Node Type",
+     degree: 2,
+     traversal: [[0, 1], [1, 0]]},
+    {id: "SwitchNode",
+     descr: "Builtin Switch Node Type",
+     degree: 3,
+     traversal: [[0, 1], [0, 2], [1, 0], [2, 0]]}
+  ],
+
+  # Object types describe the kind of objects that may occur in the
+  # railyard, what attributes they are required to have, and in which
+  # kind of nodes they may be placed. Object types are built into Prover
+  # iLock. You cannot define your own object types.
+  object-types: [
+    {id: "DirectedInsideObject",
+     descr: "Builtin Directed Inside Object Type",
+     allowed-node-types: ["PassageNode"],
+     required-attrs: ["DirectionLeg"]},
+    {id: "DirectionObject",
+     descr: "Builtin Direction Object Type",
+     allowed-node-types: [],
+     required-attrs: ["Positive"]},
+    { id: "GenericInsideObject",
+      descr: "Builtin Generic Inside Object Type",
+      allowed-node-types: ["CrossingNode",
+                           "EndNode",
+                           "PassageNode",
+                           "SwitchNode"],
+      required-attrs: []},
+    { id: "GenericOutsideObject",
+      descr: "Builtin Generic Outside Object Type",
+      allowed-node-types: [],
+      required-attrs: []},
+    { id: "CrossingObject",
+      descr: "Builtin Crossing Object type",
+      allowed-node-types: ["CrossingNode"],
+      required-attrs: []},
+    { id: "SwitchObject",
+      descr: "Builtin Switch Object Type",
+      allowed-node-types: ["SwitchNode"],
+      required-attrs: ["BentLeg"]}
+  ],
+
+  # User types is a user defined partition of the kind of areas, paths
+  # and objects that may be placed in the railyard. Each railyard entity
+  # in the railyard will have one of the user types defined below (or
+  # some user type defined in some other Types.lcf file in the project).
+  # The base-type field refers either to one of the object types defined
+  # above, or the builtin "Area" or "Path" types.
+  user-types: [
+    { id: "g_node",
+      base-type: "GenericInsideObject",
+      def: "Used to represent empty nodes in the compact format" },
+    { id: "g_ordinal", base-type: "GenericOutsideObject", def: "An ordinal number"},
+    { id: "g_signal", base-type: "DirectedInsideObject", def: "Signal"},
+    { id: "g_exit_signal", base-type: "DirectedInsideObject", def: "Exit signal"},
+    { id: "g_buffer_stop", base-type: "DirectedInsideObject", def: "Stop lamp"},
+    { id: "g_track_circuit", base-type: "Area", def: "Track circuit"},
+    { id: "g_track_circuit_delimiter", base-type: "GenericInsideObject", def : "Track circuit delimiter"},
+    { id: "g_track_crossing", base-type: "CrossingObject", def: "Railyard crossing"},
+    { id: "g_switch", base-type: "SwitchObject", def: "Three-legged switch"},
+    { id: "g_crossover", base-type: "Area", def: "Area containing the two switches of a crossover"},
+    { id: "g_dcrossover", base-type: "Area", def: "Area covering the two crossovers of a diamond crossover"},
+    { id: "g_route", base-type: "Path", def: "Train route"},
+    { id: "g_route_section", base-type: "Path", def: "Route section"},
+    { id: "g_protection_path", base-type: "Path", def: "Protection path"},
+    { id: "g_protection_area", base-type: "Area", def: "Protection area"}
+  ],
+
+  # Union types define a union of base and/or user types, which may be
+  # used to describe the type table columns.
+  union-types: [
+    # Union types defined in terms of object types.
+    { id: "BaseType",
+      user-base-types: ["Area",
+                        "Path",
+                        "GenericOutsideObject",
+                        "DirectionObject",
+                        "GenericInsideObject",
+                        "DirectedInsideObject",
+                        "CrossingObject",
+                        "SwitchObject"] },
+
+    { id: "InsideBaseType",
+      user-base-types: ["GenericInsideObject",
+                        "DirectedInsideObject",
+                        "CrossingObject",
+                        "SwitchObject"] },
+
+    { id: "DirectedBaseType",
+      user-base-types: ["DirectionObject",
+                        "DirectedInsideObject",
+                        "SwitchObject",
+                        "Path"] },
+
+    # Union types defined in terms of user types the types
+    # prefixed by "RY_" are used (hardcoded) in the python
+    # files in, particular in the railyard setup scripts,
+    # to access the types defined above.
+    { id: "RY_ORDINAL",
+      # Ordinal types
+      user-base-types: ["g_ordinal"] },
+
+    { id: "RY_ROUTE",
+      # Route types
+      user-base-types: ["g_route"] },
+
+    { id: "RY_TRACK_CIRCUIT",
+      # Track circuit types
+      user-base-types: ["g_track_circuit"] },
+
+    { id: "RY_MAIN_SIGNAL",
+      # Main signal types
+      user-base-types: ["g_signal"] },
+
+    { id: "RY_SIGNAL",
+      # Signal types
+      user-base-types: ["g_signal",
+                        "g_exit_signal"] },
+
+    { id: "RY_ROUTE_END",
+      # Route end object types
+      user-base-types: ["g_signal",
+                        "g_exit_signal",
+                        "g_buffer_stop"] },
+
+    { id: "RY_SWITCH",
+      # Switch types
+      user-base-types: ["g_switch"] },
+
+    { id: "RY_TRACK_CROSSING",
+      # Track crossing types
+      user-base-types: ["g_track_crossing"] },
+
+    { id: "RY_CROSSOVER",
+      # Crossover area types
+      user-base-types: [] },
+
+    { id: "RY_DIRECTION",
+      # Direction types
+      user-base-types: [] },
+
+    { id: "RY_TRACK_CIRCUIT_DELIMITER",
+      # Track circuit delimiter types
+      user-base-types: ["g_track_circuit_delimiter"] }
+
+  ],
+
+  # Table types describe the tables used to specify the specific
+  # application configuration. Tables come in two types, "primary" and
+  # "secondary". Secondary tables are tables that can be derived from the
+  # railyard graph and other LCF tables using a certified table method
+  # (see LCF2Tab.json). The content of secondary tables do not need to be
+  # reviewed; it is enough to review that the correct table method has
+  # been correctly applied. Primary tables make up all other tables. The
+  # contents of such tables must be reviewed if certification is going to
+  # be applied to the project.
+  table-types: [
+    # #########################################################
+    # Primary tables:
+    # 1. tables in tables.lcf that are created manually.
+    # 2. tables that are calculated and converted by predicates
+    #    that do not have the corresponding table methods.
+    # #########################################################
+
+    { id: "t_protection_area_paths",
+      primary: true,
+      signature: [["area", "g_protection_area"],
+                  ["path", "g_protection_path"]],
+      def: "Protection area 'area' is based on protection path 'path'." },
+    { id: "t_ordinal_value",
+      primary: true,
+      signature: [["ordinal", "g_ordinal"],
+                  ["value", "int"]],
+      def: "'ordinal' has the given 'value'." },
+    { id: "t_track_number",
+      primary: true,
+      signature: [["path", "Path"],
+                  ["track_circuit", "g_track_circuit"],
+                  ["track_number", "int"]],
+      def: "in 'path', track 'track_circuit' is number 'track_number' in order" },
+
+    # #########################################################
+    # Non-primary tables: tables that are calculated using
+    # table methods.
+    # #########################################################
+
+    { id: "t_start_object",
+      primary: false,
+      signature: [["path", "Path"],
+                  ["obj", "BaseType"]],
+      def: "'obj' is the start object of 'path'." },
+    { id: "t_end_object",
+      primary: false,
+      signature: [["path", "Path"],
+                  ["obj", "BaseType"]],
+      def: "'obj' is the end object of 'path'." },
+    { id: "t_right_straight",
+      primary: false,
+      signature: [["switch", "g_switch"]],
+      def: "the right leg of 'switch' is the straight leg" },
+    { id: "t_area_after_object",
+      primary: false,
+      signature: [["obj", "DirectedInsideObject"],
+                  ["area", "Area"]],
+      def: "area 'area' is immediately after 'obj'" },
+    { id: "t_area_before_object",
+      primary: false,
+      signature: [["obj", "DirectedInsideObject"],
+                  ["area", "Area"]],
+      def: "area 'area' is immediately before 'obj'" },
+    { id: "t_path_intersects_area",
+      primary: false,
+      signature: [["path", "Path"],
+                  ["area", "BaseType"]],
+      def: "'path' intersects with 'area'." },
+    { id: "t_path_intersects_path",
+      primary: false,
+      signature: [["path1", "Path"],
+                  ["path2", "Path"]],
+      def: "'path1' intersects with 'path2'." },
+    { id: "t_path_opposes_path",
+      primary: false,
+      signature: [["path1", "Path"],
+                  ["path2", "Path"]],
+      def: "'path1' intersects with 'path2', sharing at least one edge with opposite direction." },
+    { id: "t_path_containing_path",
+      primary: false,
+      signature: [["path1", "Path"],
+                  ["path2", "Path"]],
+      def: "'path1' contains 'path2' as a subpath." },
+    { id: "t_next_path",
+      primary: false,
+      signature: [["path1", "Path"],
+                  ["path2", "Path"]],
+      def: "'path1' is followed by 'path2'." },
+    { id: "t_facing_in_path",
+      primary: false,
+      signature: [["path", "Path"],
+                  ["ry_inside_obj", "BaseType"]],
+      def: "'ry_inside_obj' is a facing object in 'path'." },
+    { id: "t_trailing_in_path",
+      primary: false,
+      signature: [["path", "Path"],
+                  ["ry_inside_obj", "BaseType"]],
+      def: "'ry_inside_obj' is a trailing object in 'path'." },
+    { id: "t_normal_in_path",
+      primary: false,
+      signature: [["path", "Path"],
+                  ["switch", "SwitchObject"]],
+      def: "'path' traverses the straight leg of 'switch'." },
+    { id: "t_reverse_in_path",
+      primary: false,
+      signature: [["path", "Path"],
+                  ["switch", "SwitchObject"]],
+      def: "'path' traverses the bent leg of 'point_end'." },
+    { id: "t_path_contains_object",
+      primary: false,
+      signature: [["path", "Path"],
+                  ["ry_obj", "BaseType"]],
+      def: "'path' contains 'ry_obj'." },
+    { id: "t_object_in_area",
+      primary: false,
+      signature: [["ry_inside_obj", "InsideBaseType"],
+                  ["area", "Area"]],
+      def: "'ry_inside_obj' is contained in 'area'." },
+    { id: "t_area_contains_object",
+      primary: false,
+      signature: [["area", "Area"],
+                  ["ry_obj", "BaseType"]],
+      def: "'area' contains 'ry_obj'." },
+    { id: "t_area_intersects_area_by_edge",
+      primary: false,
+      signature: [["area1", "Area"],
+                  ["area2", "Area"]],
+      def: '"area1" shares at least one edge with "area2".' },
+    { id: "t_area_intersects_area_by_node",
+      primary: false,
+      signature: [["area1", "Area"],
+                  ["area2", "Area"]],
+      def: '"area1" shares at least one node with "area2".' },
+    { id: "t_all",
+      primary: false,
+      signature: [["ry_obj", "BaseType"]],
+      def: "'ry_obj' is a railyard object." },
+    { id: "t_ID",
+      primary: false,
+      signature: [["ry_obj_1", "BaseType"],
+                  ["ry_obj_2", "BaseType"]],
+      def: "'ry_obj_1' is identical to 'ry_obj_2'." }
+
+  ]
+}

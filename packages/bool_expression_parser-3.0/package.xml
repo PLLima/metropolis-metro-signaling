@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>bool_expression_parser</name>
+  <version>3.0</version>
+  <root>false</root>
+  <description>Parsing of propositional logic expressions.</description>
+  <dependencies />
+</package>

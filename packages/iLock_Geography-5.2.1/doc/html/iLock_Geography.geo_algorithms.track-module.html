@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>iLock_Geography.geo_algorithms.track</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;iLock_Geography ::
+        <a href="iLock_Geography.geo_algorithms-module.html">Package&nbsp;geo_algorithms</a> ::
+        Module&nbsp;track
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="iLock_Geography.geo_algorithms.track-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module track</h1><p class="nomargin-top"></p>
+<p>The module defines functions for track circuits.</p>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">none</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.track-module.html#checkSingleTrackCircuitCondition" class="summary-sig-name">checkSingleTrackCircuitCondition</a>(<span class="summary-sig-arg">railyard</span>,
+        <span class="summary-sig-arg">TCTypes</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">atMostOne</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">atLeastOne</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Check if every edge is contained in at most and/or at least one track
+      circuit.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">[IGraph]</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.track-module.html#generateMissingTrackCircuits" class="summary-sig-name">generateMissingTrackCircuits</a>(<span class="summary-sig-arg">railyard</span>,
+        <span class="summary-sig-arg">TCTypes</span>,
+        <span class="summary-sig-arg">delimUserTypes</span>,
+        <span class="summary-sig-arg">virtualTCType</span>,
+        <span class="summary-sig-arg">namer</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">areaRestriction</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Generate virtual track circuits covering all edges not contained in 
+      any track circuit.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">IPath | none</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.track-module.html#buildTrackCircuitPath" class="summary-sig-name">buildTrackCircuitPath</a>(<span class="summary-sig-arg">path</span>,
+        <span class="summary-sig-arg">railyard</span>,
+        <span class="summary-sig-arg">TCTypes</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">allowFork</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Function returning the &quot;shifted path&quot; of a given path.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<p class="indent-wrapped-lines"><b>Imports:</b>
+  <span title="RailyardFactory">RF</span>,
+  <a href="iLock_Geography.geo_algorithms.area-module.html#generateArea" title="iLock_Geography.geo_algorithms.area.generateArea">generateArea</a>,
+  <a href="iLock_Geography.geo_algorithms.element-module.html#oppositeNode" title="iLock_Geography.geo_algorithms.element.oppositeNode">oppositeNode</a>,
+  <span title="iLock_Geography.typecheck.typedoc">typedoc</span>,
+  <a href="iLock_Geography.geo_util-module.html#getUserTypesCharFunction" title="iLock_Geography.geo_util.getUserTypesCharFunction">getUserTypesCharFunction</a>,
+  <a href="iLock_Geography.geo_util.Memoize-class.html" title="iLock_Geography.geo_util.Memoize">Memoize</a>,
+  <a href="iLock_Geography.geo_error-module.html#geoError" title="iLock_Geography.geo_error.geoError">geoError</a>,
+  <a href="iLock_Geography.geo_error-module.html#geoAssert" title="iLock_Geography.geo_error.geoAssert">geoAssert</a>
+</p><br />
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="checkSingleTrackCircuitCondition"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">checkSingleTrackCircuitCondition</span>(<span class="sig-arg">railyard</span>,
+        <span class="sig-arg">TCTypes</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">atMostOne</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">atLeastOne</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if every edge is contained in at most and/or at least one track 
+  circuit.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>railyard</code></strong> (IRailyard) - The railyard we are examining.</li>
+        <li><strong class="pname"><code>TCTypes</code></strong> (Iterable(str)) - The user types of track circuits.</li>
+        <li><strong class="pname"><code>atMostOne</code></strong> (bool) - Configure test to check that every edge in <code>railyard</code> 
+          is contained in at most one track circuit.</li>
+        <li><strong class="pname"><code>atLeastOne</code></strong> (bool) - Configure test to check that every edge in <code>railyard</code> 
+          is contained in at least one track circuit.</li>
+    </ul></dd>
+    <dt>Returns: none</dt>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="generateMissingTrackCircuits"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">generateMissingTrackCircuits</span>(<span class="sig-arg">railyard</span>,
+        <span class="sig-arg">TCTypes</span>,
+        <span class="sig-arg">delimUserTypes</span>,
+        <span class="sig-arg">virtualTCType</span>,
+        <span class="sig-arg">namer</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">areaRestriction</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generate virtual track circuits covering all edges not contained in 
+  any track circuit.</p>
+  <p>This function returns a list of generated areas of user type 
+  <code>virtualTCType</code>. These areas cover all edges in the graph 
+  <code>areaRestriction</code> that are not contained in a registered area 
+  having user type in <code>TCTypes</code>. The generated areas are 
+  delimited by objects having user types in 
+  <code>delimUserTypes</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>railyard</code></strong> (IRailyard) - The railyard we are examining.</li>
+        <li><strong class="pname"><code>TCTypes</code></strong> (Iterable(str)) - The user types of track circuits.</li>
+        <li><strong class="pname"><code>delimUserTypes</code></strong> (Iterable(str)) - The user types of track circuit delimiters typically 
+          corresponding to the <code>TCTypes</code>.</li>
+        <li><strong class="pname"><code>virtualTCType</code></strong> (str) - The new type of the generated virtual track circuits.</li>
+        <li><strong class="pname"><code>namer</code></strong> (any | none) - A callable having signature (railyard, edge) -&gt; str. 
+          <code>namer</code> should return the desired name for the virtual
+          track circuit that will be generated from <code>edge</code>.</li>
+        <li><strong class="pname"><code>areaRestriction</code></strong> (IGraph | none) - The area the generated virtual track circuits are restricted to. 
+          Default is the full <code>railyard</code> graph.</li>
+    </ul></dd>
+    <dt>Returns: [IGraph]</dt>
+        <dd>The generated virtual track circuits covering the edges not 
+          belonging to a track circuit.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="buildTrackCircuitPath"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">buildTrackCircuitPath</span>(<span class="sig-arg">path</span>,
+        <span class="sig-arg">railyard</span>,
+        <span class="sig-arg">TCTypes</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">allowFork</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Function returning the &quot;shifted path&quot; of a given path.</p>
+  <p>The shift <i class="math">pS</i> of a path <i class="math">p</i> is 
+  obtained from <i class="math">p</i> as follows:</p>
+  <ul>
+    <li>
+      The starting point of <i class="math">p</i> is moved forward until it
+      touches the beginning of a track circuit, i.e. the segment after the 
+      starting point of <i class="math">pS</i> will be contained in a track
+      circuit beginning at the starting point of <i class="math">pS</i>, 
+      given that the length of <i class="math">pS</i> is not zero (in which
+      case None is returned). Note that this may move the starting point 
+      over segments not contained in track circuits.
+    </li>
+    <li>
+      If the last segment of <i class="math">p</i> is contained in a track 
+      circuit, the end point of <i class="math">p</i> is moved forward in 
+      the same way as the starting point of <i class="math">p</i>. In this 
+      process, the search forward might fork (typically over a switch). 
+      This gives an error if the parameter <code>allowFork</code> is False 
+      (the default). If <code>allowFork</code> is True, then the shifted 
+      path is forked along the lowest index.
+    </li>
+    <li>
+      If the last segment of <i class="math">p</i> is _not_ contained in a 
+      track circuit, the end point of <i class="math">p</i> is instead 
+      moved in the other direction, towards the beginning of the path, 
+      until a track circuit boundary is reached.
+    </li>
+  </ul>
+  <p>Thus <i class="math">pS</i> will either be None (if <i 
+  class="math">p</i> does not have any &quot;internal&quot; track circuits)
+  or it will have its first and last segment contained in some track 
+  circuit(s).</p>
+  <p>Also note that it is required that every track segment encountered is 
+  contained in at most one track circuit (as defined by the argument 
+  <code>TCTypes</code>).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (IPath) - The base path which the shifted path is calculated with respect 
+          to.</li>
+        <li><strong class="pname"><code>railyard</code></strong> (IRailyard) - The railyard were the shifted path is calculated (the 
+          <code>path</code> must be a path in the graph of 
+          <code>railyard</code>, but it does not have to be registered 
+          there).</li>
+        <li><strong class="pname"><code>TCTypes</code></strong> (Iterable(str) | str | none) - The user types that denote track circuits (subtypes of the base 
+          type Area). Note that a string argument will be, interpreted as a
+          1-tuple, not as a character-iterable. An argument of None will be
+          interpreted as &quot;no restriction&quot;, i.e. the same as if 
+          <code>TCTypes</code> is the set of all user subtypes of base type
+          Area.</li>
+        <li><strong class="pname"><code>allowFork</code></strong> (bool) - If True, then forking of the shifted end point is allowed.</li>
+    </ul></dd>
+    <dt>Returns: IPath | none</dt>
+        <dd>The shifted path, None if the shifted path has length 0.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Oct 23 11:27:02 2018
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,1194 @@
+{
+  "format" : "LCF-2.0-project-data",
+  "package" : "Metropolis_GA",
+  "project" : "Test",
+  "nodes" : [
+    {
+      "id" : "@101",
+      "node-type" : "EndNode"
+    },
+    {
+      "id" : "@103",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@108",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@110",
+      "node-type" : "EndNode"
+    },
+    {
+      "id" : "@111",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@114",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@118",
+      "node-type" : "EndNode"
+    },
+    {
+      "id" : "@120",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@13",
+      "node-type" : "SwitchNode"
+    },
+    {
+      "id" : "@135",
+      "node-type" : "EndNode"
+    },
+    {
+      "id" : "@137",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@143",
+      "node-type" : "EndNode"
+    },
+    {
+      "id" : "@145",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@15",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@21",
+      "node-type" : "SwitchNode"
+    },
+    {
+      "id" : "@23",
+      "node-type" : "SwitchNode"
+    },
+    {
+      "id" : "@28",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@3",
+      "node-type" : "SwitchNode"
+    },
+    {
+      "id" : "@31",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@34",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@37",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@40",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@43",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@46",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@49",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@5",
+      "node-type" : "SwitchNode"
+    },
+    {
+      "id" : "@52",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@55",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@58",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@61",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@71",
+      "node-type" : "SwitchNode"
+    },
+    {
+      "id" : "@73",
+      "node-type" : "SwitchNode"
+    },
+    {
+      "id" : "@8",
+      "node-type" : "EndNode"
+    },
+    {
+      "id" : "@87",
+      "node-type" : "PassageNode"
+    },
+    {
+      "id" : "@95",
+      "node-type" : "EndNode"
+    },
+    {
+      "id" : "@97",
+      "node-type" : "PassageNode"
+    }
+  ],
+  "edges" : [
+    {
+      "id" : "@10",
+      "edge" : [
+        [
+          "@8",
+          0
+        ],
+        [
+          "@114",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@104",
+      "edge" : [
+        [
+          "@103",
+          1
+        ],
+        [
+          "@101",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@109",
+      "edge" : [
+        [
+          "@108",
+          1
+        ],
+        [
+          "@13",
+          2
+        ]
+      ]
+    },
+    {
+      "id" : "@11",
+      "edge" : [
+        [
+          "@5",
+          0
+        ],
+        [
+          "@31",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@112",
+      "edge" : [
+        [
+          "@111",
+          1
+        ],
+        [
+          "@46",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@115",
+      "edge" : [
+        [
+          "@114",
+          1
+        ],
+        [
+          "@49",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@121",
+      "edge" : [
+        [
+          "@120",
+          1
+        ],
+        [
+          "@118",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@136",
+      "edge" : [
+        [
+          "@135",
+          0
+        ],
+        [
+          "@137",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@138",
+      "edge" : [
+        [
+          "@137",
+          1
+        ],
+        [
+          "@15",
+          1
+        ]
+      ]
+    },
+    {
+      "id" : "@14",
+      "edge" : [
+        [
+          "@13",
+          0
+        ],
+        [
+          "@28",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@146",
+      "edge" : [
+        [
+          "@145",
+          1
+        ],
+        [
+          "@52",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@16",
+      "edge" : [
+        [
+          "@15",
+          0
+        ],
+        [
+          "@108",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@2",
+      "edge" : [
+        [
+          "@110",
+          0
+        ],
+        [
+          "@111",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@20",
+      "edge" : [
+        [
+          "@143",
+          0
+        ],
+        [
+          "@145",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@22",
+      "edge" : [
+        [
+          "@21",
+          2
+        ],
+        [
+          "@58",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@24",
+      "edge" : [
+        [
+          "@23",
+          0
+        ],
+        [
+          "@61",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@25",
+      "edge" : [
+        [
+          "@21",
+          1
+        ],
+        [
+          "@55",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@29",
+      "edge" : [
+        [
+          "@28",
+          1
+        ],
+        [
+          "@21",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@32",
+      "edge" : [
+        [
+          "@31",
+          1
+        ],
+        [
+          "@13",
+          1
+        ]
+      ]
+    },
+    {
+      "id" : "@35",
+      "edge" : [
+        [
+          "@34",
+          1
+        ],
+        [
+          "@5",
+          1
+        ]
+      ]
+    },
+    {
+      "id" : "@38",
+      "edge" : [
+        [
+          "@37",
+          1
+        ],
+        [
+          "@40",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@4",
+      "edge" : [
+        [
+          "@3",
+          2
+        ],
+        [
+          "@37",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@41",
+      "edge" : [
+        [
+          "@40",
+          1
+        ],
+        [
+          "@43",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@44",
+      "edge" : [
+        [
+          "@43",
+          1
+        ],
+        [
+          "@71",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@47",
+      "edge" : [
+        [
+          "@46",
+          1
+        ],
+        [
+          "@3",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@50",
+      "edge" : [
+        [
+          "@49",
+          1
+        ],
+        [
+          "@5",
+          2
+        ]
+      ]
+    },
+    {
+      "id" : "@53",
+      "edge" : [
+        [
+          "@52",
+          1
+        ],
+        [
+          "@23",
+          2
+        ]
+      ]
+    },
+    {
+      "id" : "@56",
+      "edge" : [
+        [
+          "@55",
+          1
+        ],
+        [
+          "@23",
+          1
+        ]
+      ]
+    },
+    {
+      "id" : "@59",
+      "edge" : [
+        [
+          "@58",
+          1
+        ],
+        [
+          "@73",
+          2
+        ]
+      ]
+    },
+    {
+      "id" : "@6",
+      "edge" : [
+        [
+          "@3",
+          1
+        ],
+        [
+          "@34",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@62",
+      "edge" : [
+        [
+          "@61",
+          1
+        ],
+        [
+          "@120",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@72",
+      "edge" : [
+        [
+          "@71",
+          2
+        ],
+        [
+          "@97",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@74",
+      "edge" : [
+        [
+          "@73",
+          0
+        ],
+        [
+          "@103",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@75",
+      "edge" : [
+        [
+          "@71",
+          1
+        ],
+        [
+          "@87",
+          0
+        ]
+      ]
+    },
+    {
+      "id" : "@88",
+      "edge" : [
+        [
+          "@87",
+          1
+        ],
+        [
+          "@73",
+          1
+        ]
+      ]
+    },
+    {
+      "id" : "@98",
+      "edge" : [
+        [
+          "@97",
+          1
+        ],
+        [
+          "@95",
+          0
+        ]
+      ]
+    }
+  ],
+  "objects" : [
+    {
+      "id" : "1",
+      "user-type" : "g_switch",
+      "attrs" : {
+        "BentLeg" : "1"
+      },
+      "node" : "@3"
+    },
+    {
+      "id" : "2",
+      "user-type" : "g_switch",
+      "attrs" : {
+        "BentLeg" : "1"
+      },
+      "node" : "@5"
+    },
+    {
+      "id" : "3",
+      "user-type" : "g_switch",
+      "attrs" : {
+        "BentLeg" : "2"
+      },
+      "node" : "@13"
+    },
+    {
+      "id" : "4",
+      "user-type" : "g_switch",
+      "attrs" : {
+        "BentLeg" : "1"
+      },
+      "node" : "@21"
+    },
+    {
+      "id" : "5",
+      "user-type" : "g_switch",
+      "attrs" : {
+        "BentLeg" : "1"
+      },
+      "node" : "@23"
+    },
+    {
+      "id" : "6",
+      "user-type" : "g_switch",
+      "attrs" : {
+        "BentLeg" : "1"
+      },
+      "node" : "@73"
+    },
+    {
+      "id" : "7",
+      "user-type" : "g_switch",
+      "attrs" : {
+        "BentLeg" : "1"
+      },
+      "node" : "@71"
+    },
+    {
+      "id" : "B1",
+      "user-type" : "g_buffer_stop",
+      "attrs" : {
+        "DirectionLeg" : "0"
+      },
+      "node" : "@114"
+    },
+    {
+      "id" : "B2",
+      "user-type" : "g_buffer_stop",
+      "attrs" : {
+        "DirectionLeg" : "0"
+      },
+      "node" : "@137"
+    },
+    {
+      "id" : "B3",
+      "user-type" : "g_buffer_stop",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@120"
+    },
+    {
+      "id" : "B4",
+      "user-type" : "g_buffer_stop",
+      "attrs" : {
+        "DirectionLeg" : "0"
+      },
+      "node" : "@145"
+    },
+    {
+      "id" : "S02W",
+      "user-type" : "g_exit_signal",
+      "attrs" : {
+        "DirectionLeg" : "0"
+      },
+      "node" : "@111"
+    },
+    {
+      "id" : "S05E",
+      "user-type" : "g_exit_signal",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@103"
+    },
+    {
+      "id" : "S06E",
+      "user-type" : "g_exit_signal",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@97"
+    },
+    {
+      "id" : "S1",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@46"
+    },
+    {
+      "id" : "S10",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@108"
+    },
+    {
+      "id" : "S13",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "0"
+      },
+      "node" : "@97"
+    },
+    {
+      "id" : "S15",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@52"
+    },
+    {
+      "id" : "S17",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@111"
+    },
+    {
+      "id" : "S2",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "0"
+      },
+      "node" : "@40"
+    },
+    {
+      "id" : "S3",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@49"
+    },
+    {
+      "id" : "S5",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "0"
+      },
+      "node" : "@103"
+    },
+    {
+      "id" : "S6",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "0"
+      },
+      "node" : "@58"
+    },
+    {
+      "id" : "S7",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "0"
+      },
+      "node" : "@61"
+    },
+    {
+      "id" : "S8",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@43"
+    },
+    {
+      "id" : "S9",
+      "user-type" : "g_signal",
+      "attrs" : {
+        "DirectionLeg" : "1"
+      },
+      "node" : "@58"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-1",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@97"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-10",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@40"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-11",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@43"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-12",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@46"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-13",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@49"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-14",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@52"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-15",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@55"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-16",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@58"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-17",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@61"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-18",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@87"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-19",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@108"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-2",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@111"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-20",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@145"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-21",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@120"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-3",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@103"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-4",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@114"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-5",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@137"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-6",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@28"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-7",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@31"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-8",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@34"
+    },
+    {
+      "id" : "g_track_circuit_delimiter-9",
+      "user-type" : "g_track_circuit_delimiter",
+      "attrs" : {},
+      "node" : "@37"
+    }
+  ],
+  "paths" : [],
+  "areas" : [
+    {
+      "id" : "T1",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@3",
+        "@34",
+        "@37",
+        "@46"
+      ],
+      "edges" : [
+        "@4",
+        "@47",
+        "@6"
+      ]
+    },
+    {
+      "id" : "T10",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@108",
+        "@137",
+        "@15"
+      ],
+      "edges" : [
+        "@138",
+        "@16"
+      ]
+    },
+    {
+      "id" : "T11",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@23",
+        "@52",
+        "@55",
+        "@61"
+      ],
+      "edges" : [
+        "@24",
+        "@53",
+        "@56"
+      ]
+    },
+    {
+      "id" : "T12",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@111",
+        "@46"
+      ],
+      "edges" : [
+        "@112"
+      ]
+    },
+    {
+      "id" : "T13",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@120",
+        "@61"
+      ],
+      "edges" : [
+        "@62"
+      ]
+    },
+    {
+      "id" : "T2",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@37",
+        "@40"
+      ],
+      "edges" : [
+        "@38"
+      ]
+    },
+    {
+      "id" : "T20",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@110",
+        "@111"
+      ],
+      "edges" : [
+        "@2"
+      ]
+    },
+    {
+      "id" : "T23",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@145",
+        "@52"
+      ],
+      "edges" : [
+        "@146"
+      ]
+    },
+    {
+      "id" : "T25",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@101",
+        "@103"
+      ],
+      "edges" : [
+        "@104"
+      ]
+    },
+    {
+      "id" : "T26",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@95",
+        "@97"
+      ],
+      "edges" : [
+        "@98"
+      ]
+    },
+    {
+      "id" : "T3",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@40",
+        "@43"
+      ],
+      "edges" : [
+        "@41"
+      ]
+    },
+    {
+      "id" : "T4",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@43",
+        "@71",
+        "@87",
+        "@97"
+      ],
+      "edges" : [
+        "@44",
+        "@72",
+        "@75"
+      ]
+    },
+    {
+      "id" : "T5",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@114",
+        "@49"
+      ],
+      "edges" : [
+        "@115"
+      ]
+    },
+    {
+      "id" : "T6",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@31",
+        "@34",
+        "@49",
+        "@5"
+      ],
+      "edges" : [
+        "@11",
+        "@35",
+        "@50"
+      ]
+    },
+    {
+      "id" : "T7",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@108",
+        "@13",
+        "@28",
+        "@31"
+      ],
+      "edges" : [
+        "@109",
+        "@14",
+        "@32"
+      ]
+    },
+    {
+      "id" : "T8",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@21",
+        "@28",
+        "@55",
+        "@58"
+      ],
+      "edges" : [
+        "@22",
+        "@25",
+        "@29"
+      ]
+    },
+    {
+      "id" : "T9",
+      "user-type" : "g_track_circuit",
+      "attrs" : {},
+      "nodes" : [
+        "@103",
+        "@58",
+        "@73",
+        "@87"
+      ],
+      "edges" : [
+        "@59",
+        "@74",
+        "@88"
+      ]
+    }
+  ]
+}

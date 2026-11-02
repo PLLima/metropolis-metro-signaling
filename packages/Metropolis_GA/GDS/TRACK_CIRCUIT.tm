@@ -1,0 +1,6 @@
+PiSPEC 3.0
+
+class GDS_TRACK_CIRCUIT {
+inherit TRACK_CIRCUIT;
+
+}

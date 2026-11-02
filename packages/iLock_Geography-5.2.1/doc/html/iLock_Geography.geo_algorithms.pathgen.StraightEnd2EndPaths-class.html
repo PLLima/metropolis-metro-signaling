@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>iLock_Geography.geo_algorithms.pathgen.StraightEnd2EndPaths</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;iLock_Geography ::
+        <a href="iLock_Geography.geo_algorithms-module.html">Package&nbsp;geo_algorithms</a> ::
+        <a href="iLock_Geography.geo_algorithms.pathgen-module.html">Module&nbsp;pathgen</a> ::
+        Class&nbsp;StraightEnd2EndPaths
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="iLock_Geography.geo_algorithms.pathgen.StraightEnd2EndPaths-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class StraightEnd2EndPaths</h1><p class="nomargin-top"></p>
+<center>
+<center>  <map id="class_hierarchy_for_straighten" name="class_hierarchy_for_straighten">
+<area shape="rect" id="node1" href="iLock_Geography.geo_algorithms.pathgen.End2EndPaths-class.html" title="End2EndPaths" alt="" coords="5,5,115,31"/>
+<area shape="rect" id="node2" href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html" title="PathGenerator" alt="" coords="139,5,245,31"/>
+<area shape="rect" id="node3" href="iLock_Geography.geo_algorithms.pathgen.StraightEnd2EndPaths-class.html" title="StraightEnd2EndPaths" alt="" coords="269,5,424,31"/>
+</map>
+  <img src="class_hierarchy_for_straighten.gif" alt='' usemap="#class_hierarchy_for_straighten" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Return an object that is used to generate the path-tuple 
+  (startNodeIndex, edgeSequence, endNodeIndex) for each straight path in a 
+  railyard that starts from and ends in end nodes.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathgen.StraightEnd2EndPaths-class.html#isEdge" class="summary-sig-name">isEdge</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">processedNodeIndex</span>,
+        <span class="summary-sig-arg">newNodeIndex</span>)</span><br />
+      A callback function that determines if the edge from 
+      <code>processedNodeIndex</code> to <code>newNodeIndex</code> is a 
+      valid edge.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">none</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">railyard</span>,
+        <span class="summary-sig-arg">noPrefix</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">noSuffix</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">branch</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">posOrient</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Constructor.
+      <em>(Inherited from <a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html">iLock_Geography.geo_algorithms.pathgen.PathGenerator</a>)</em></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Iterable(tuple(NodeIndex, tuple(IEdge), NodeIndex))</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html#generate" class="summary-sig-name">generate</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Iterator over the path-tuples of valid paths in 
+      <code>railyard</code>.
+      <em>(Inherited from <a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html">iLock_Geography.geo_algorithms.pathgen.PathGenerator</a>)</em></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(NodeIndex, vtuple(IEdge), NodeIndex)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html#getPath" class="summary-sig-name">getPath</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return a path-tuple.
+      <em>(Inherited from <a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html">iLock_Geography.geo_algorithms.pathgen.PathGenerator</a>)</em></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="initPath"></a><span class="summary-sig-name">initPath</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialize attributes <code>startNodeIndex</code>, 
+      <code>endNodeIndex</code>, <code>edgeSequence</code> and 
+      <code>visited</code>.
+      <em>(Inherited from <a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html">iLock_Geography.geo_algorithms.pathgen.PathGenerator</a>)</em></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html#isBentLeg" class="summary-sig-name">isBentLeg</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">processedNodeIndex</span>)</span><br />
+      An utility function that determines if 
+      <code>processedNodeIndex</code> connects to a bent leg of a switch.
+      <em>(Inherited from <a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html">iLock_Geography.geo_algorithms.pathgen.PathGenerator</a>)</em></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathgen.End2EndPaths-class.html#isEndNodeIndex" class="summary-sig-name">isEndNodeIndex</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Determine if <code>endNodeIndex</code> is an end node index.
+      <em>(Inherited from <a href="iLock_Geography.geo_algorithms.pathgen.End2EndPaths-class.html">iLock_Geography.geo_algorithms.pathgen.End2EndPaths</a>)</em></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathgen.End2EndPaths-class.html#isStartNodeIndex" class="summary-sig-name">isStartNodeIndex</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">startNodeIndex</span>)</span><br />
+      Determine if <code>startNodeIndex</code> is a start node index.
+      <em>(Inherited from <a href="iLock_Geography.geo_algorithms.pathgen.End2EndPaths-class.html">iLock_Geography.geo_algorithms.pathgen.End2EndPaths</a>)</em></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">NodeIndex</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html#popPath" class="summary-sig-name">popPath</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Pop the last edge from <code>edgeSequence</code>.
+      <em>(Inherited from <a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html">iLock_Geography.geo_algorithms.pathgen.PathGenerator</a>)</em></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">none</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html#pushPath" class="summary-sig-name">pushPath</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">endNodeIndex</span>)</span><br />
+      Push the edge ending with <code>endNodeIndex</code> in 
+      <code>edgeSequence</code> if it is a valid edge (<code>isEdge</code> 
+      returns <code>true</code>).
+      <em>(Inherited from <a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html">iLock_Geography.geo_algorithms.pathgen.PathGenerator</a>)</em></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Properties</span></td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="isEdge"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isEdge</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">processedNodeIndex</span>,
+        <span class="sig-arg">newNodeIndex</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>A callback function that determines if the edge from 
+  <code>processedNodeIndex</code> to <code>newNodeIndex</code> is a valid 
+  edge.</p>
+  <p>An edge is valid by this class if</p>
+  <ul>
+    <li>
+      it is considered as an edge from <a 
+      href="iLock_Geography.geo_algorithms.pathgen.End2EndPaths-class.html"
+      class="link">End2EndPaths</a> and
+    </li>
+    <li>
+      <code>processedNodeIndex</code> does not connects to a bent leg of 
+      switch.
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>processedNodeIndex</code></strong> (NodeIndex) - The start node index that connects to the edge to be determined 
+          if it is a valid edge.</li>
+        <li><strong class="pname"><code>newNodeIndex</code></strong> (NodeIndex) - The end node index that connects to the edge to be determined if 
+          it is a valid edge.</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>Return <code>true</code> if the edge is valid.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="iLock_Geography.geo_algorithms.pathgen.PathGenerator-class.html#isEdge">PathGenerator.isEdge</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Oct 23 11:27:05 2018
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

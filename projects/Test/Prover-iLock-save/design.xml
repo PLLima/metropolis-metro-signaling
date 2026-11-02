@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="Test" plannerVersion="5.23">
+  <phase name="Layout" />
+  <activities>
+    <activity name="GenLayout" state="Unfinished" />
+    <activity name="Layout" state="Unfinished" />
+    <activity name="Generate" state="Unfinished" />
+    <activity name="GeneratorScript" state="Unfinished" />
+    <activity name="DistributionScript" state="Unfinished" />
+    <activity name="Distribution" state="Unfinished" />
+    <activity name="CheckDesign" state="Unfinished" />
+    <activity name="CodeScript" state="Unfinished" />
+    <activity name="Simulate" state="Unfinished" />
+    <activity name="AnalyzeLiveness" state="Unfinished" />
+    <activity name="AnalyzeStability" state="Unfinished" />
+    <activity name="TestCaseGeneration" state="Unfinished" />
+    <activity name="CheckSafetyRequirements" state="Unfinished" />
+    <activity name="RunScripts" state="Unfinished" />
+    <activity name="OpenConsole" state="Unfinished" />
+  </activities>
+  <instances>
+    <designInstances />
+    <testInstances>
+      <instance name="_INIT_" id="1" type="GTS_INIT" generated="false" staticInstance="true">
+        <attributes ProjectTreePath="Simulation/Static instances/GTS_INIT" />
+      </instance>
+    </testInstances>
+    <safetyInstances>
+      <instance name="requirements" id="1000001" type="REQUIREMENTS" generated="false" staticInstance="true">
+        <attributes ProjectTreePath="Verification/Static instances/REQUIREMENTS" />
+      </instance>
+    </safetyInstances>
+  </instances>
+  <associations />
+  <parameters />
+  <timers />
+</project>

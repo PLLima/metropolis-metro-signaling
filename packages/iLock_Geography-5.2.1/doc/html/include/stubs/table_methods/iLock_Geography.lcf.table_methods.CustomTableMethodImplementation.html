@@ -1,0 +1,182 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.20.12. iLock_Geography.lcf.table_methods.CustomTableMethodImplementation &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="8.20.12.1. iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__" href="CustomTableMethodImplementation/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__.html" />
+    <link rel="prev" title="8.20.11.4. iLock_Geography.lcf.table_methods.ColumnProductT.validateAgainstPackageData" href="ColumnProductT/iLock_Geography.lcf.table_methods.ColumnProductT.validateAgainstPackageData.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="CustomTableMethodImplementation/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__.html" title="8.20.12.1. iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ColumnProductT/iLock_Geography.lcf.table_methods.ColumnProductT.validateAgainstPackageData.html" title="8.20.11.4. iLock_Geography.lcf.table_methods.ColumnProductT.validateAgainstPackageData"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.lcf.table_methods.html" accesskey="U">8.20. iLock_Geography.lcf.table_methods</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ilock-geography-lcf-table-methods-customtablemethodimplementation">
+<h1>8.20.12. iLock_Geography.lcf.table_methods.CustomTableMethodImplementation<a class="headerlink" href="#ilock-geography-lcf-table-methods-customtablemethodimplementation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="iLock_Geography.lcf.table_methods.CustomTableMethodImplementation">
+<em class="property">class </em><code class="descclassname">iLock_Geography.lcf.table_methods.</code><code class="descname">CustomTableMethodImplementation</code><a class="headerlink" href="#iLock_Geography.lcf.table_methods.CustomTableMethodImplementation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for user supplied table methods.</p>
+<p>Subclasses must implement two methods, <em>rows</em> and <em>arity</em>. In addition to
+these methods, you may override <em>validateAgainstPackageData</em> in case your
+table method operates on other tables and need to know type information
+about them.</p>
+<p>The following attributes are available to subclasses:</p>
+<ul class="simple">
+<li><em>railyard</em>: The railyard (IRailyard).</li>
+</ul>
+<p>You may also call the predefined method getTable(name) to get the
+LCF table with the given name. This is the preferred method of
+reading table data, as it works also for locally defined tables
+and table method pipelines.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@arguments</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">ObjectsInNodesOfDegreeN</span><span class="p">(</span><span class="n">CustomTableMethodImplementation</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">degree</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">degree</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;&#39;degree&#39; must be greater than zero.&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_degree</span> <span class="o">=</span> <span class="n">degree</span>
+
+    <span class="k">def</span> <span class="nf">rows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">railyard</span><span class="o">.</span><span class="n">Graph</span><span class="o">.</span><span class="n">Nodes</span><span class="p">:</span>
+          <span class="k">if</span> <span class="n">rows</span><span class="o">.</span><span class="n">Degree</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_degree</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">Objects</span><span class="p">:</span>
+              <span class="n">rows</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">obj</span><span class="p">,))</span>
+
+        <span class="k">return</span> <span class="n">rows</span>
+
+    <span class="k">def</span> <span class="nf">arity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="CustomTableMethodImplementation/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__.html#iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__" title="iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</td>
+<td>x.__init__(…) initializes x; see help(type(x)) for signature</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="CustomTableMethodImplementation/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.arity.html#iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.arity" title="iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.arity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arity</span></code></a>()</td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">The number of columns in the generated table.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="CustomTableMethodImplementation/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.getTable.html#iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.getTable" title="iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.getTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTable</span></code></a>(name)</td>
+<td>Returns table data (in Python representation) for the table with the given name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="CustomTableMethodImplementation/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.rows.html#iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.rows" title="iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.rows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rows</span></code></a>()</td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">A list of tuples representing the rows of the table.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="CustomTableMethodImplementation/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.validateAgainstPackageData.html#iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.validateAgainstPackageData" title="iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.validateAgainstPackageData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validateAgainstPackageData</span></code></a>(lcfPackageData,&nbsp;…)</td>
+<td>Optional hook for validating the table methods against type system data.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ColumnProductT/iLock_Geography.lcf.table_methods.ColumnProductT.validateAgainstPackageData.html"
+                        title="previous chapter">8.20.11.4. iLock_Geography.lcf.table_methods.ColumnProductT.validateAgainstPackageData</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="CustomTableMethodImplementation/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__.html"
+                        title="next chapter">8.20.12.1. iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="CustomTableMethodImplementation/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__.html" title="8.20.12.1. iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.__init__"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ColumnProductT/iLock_Geography.lcf.table_methods.ColumnProductT.validateAgainstPackageData.html" title="8.20.11.4. iLock_Geography.lcf.table_methods.ColumnProductT.validateAgainstPackageData"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.lcf.table_methods.html" >8.20. iLock_Geography.lcf.table_methods</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>

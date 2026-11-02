@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.20. iLock_Geography.lcf.table_methods &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.20.1. iLock_Geography.lcf.table_methods.arguments" href="table_methods/iLock_Geography.lcf.table_methods.arguments.html" />
+    <link rel="prev" title="8.19.11.3. iLock_Geography.lcf.parse.TableFilter.table" href="parse/TableFilter/iLock_Geography.lcf.parse.TableFilter.table.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="table_methods/iLock_Geography.lcf.table_methods.arguments.html" title="8.20.1. iLock_Geography.lcf.table_methods.arguments"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="parse/TableFilter/iLock_Geography.lcf.parse.TableFilter.table.html" title="8.19.11.3. iLock_Geography.lcf.parse.TableFilter.table"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api_reference.html" accesskey="U">8. API reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-iLock_Geography.lcf.table_methods">
+<span id="ilock-geography-lcf-table-methods"></span><h1>8.20. iLock_Geography.lcf.table_methods<a class="headerlink" href="#module-iLock_Geography.lcf.table_methods" title="Permalink to this headline">¶</a></h1>
+<p>This module provides builtin table methods and helpers for creating
+custom table methods.</p>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.arguments.html#iLock_Geography.lcf.table_methods.arguments" title="iLock_Geography.lcf.table_methods.arguments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arguments</span></code></a>(**kwargs)</td>
+<td>Decorator providing argument validation for table methods.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.assertDistinctElements.html#iLock_Geography.lcf.table_methods.assertDistinctElements" title="iLock_Geography.lcf.table_methods.assertDistinctElements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertDistinctElements</span></code></a>(lst,&nbsp;attrib)</td>
+<td>Convenience function for table method argument validation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.assertNonEmpty.html#iLock_Geography.lcf.table_methods.assertNonEmpty" title="iLock_Geography.lcf.table_methods.assertNonEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNonEmpty</span></code></a>(lst,&nbsp;attrib)</td>
+<td>Convenience function for table method argument validation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.getTable.html#iLock_Geography.lcf.table_methods.getTable" title="iLock_Geography.lcf.table_methods.getTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTable</span></code></a>(tableName,&nbsp;localTables)</td>
+<td>Returns the LCF table named tableName if it has been registered in Prover iLock’s table store, or if it is a locally defined table.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.getTableSig.html#iLock_Geography.lcf.table_methods.getTableSig" title="iLock_Geography.lcf.table_methods.getTableSig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTableSig</span></code></a>(name,&nbsp;lcfPackageData,&nbsp;…)</td>
+<td>Returns the signature (the names and types of all columns) for the given table.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.opt.html#iLock_Geography.lcf.table_methods.opt" title="iLock_Geography.lcf.table_methods.opt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">opt</span></code></a>(type[,&nbsp;default])</td>
+<td>Used to specify that a table method argument is optional.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.AreaAtSignalT.html#iLock_Geography.lcf.table_methods.AreaAtSignalT" title="iLock_Geography.lcf.table_methods.AreaAtSignalT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AreaAtSignalT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.AreaInAreaT.html#iLock_Geography.lcf.table_methods.AreaInAreaT" title="iLock_Geography.lcf.table_methods.AreaInAreaT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AreaInAreaT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.AreaIntersectsAreaT.html#iLock_Geography.lcf.table_methods.AreaIntersectsAreaT" title="iLock_Geography.lcf.table_methods.AreaIntersectsAreaT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AreaIntersectsAreaT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.AssociatedDirectionT.html#iLock_Geography.lcf.table_methods.AssociatedDirectionT" title="iLock_Geography.lcf.table_methods.AssociatedDirectionT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AssociatedDirectionT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.ColumnProductT.html#iLock_Geography.lcf.table_methods.ColumnProductT" title="iLock_Geography.lcf.table_methods.ColumnProductT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColumnProductT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.CustomTableMethodImplementation.html#iLock_Geography.lcf.table_methods.CustomTableMethodImplementation" title="iLock_Geography.lcf.table_methods.CustomTableMethodImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomTableMethodImplementation</span></code></a>()</td>
+<td>Base class for user supplied table methods.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.DiffT.html#iLock_Geography.lcf.table_methods.DiffT" title="iLock_Geography.lcf.table_methods.DiffT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiffT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.DomainT.html#iLock_Geography.lcf.table_methods.DomainT" title="iLock_Geography.lcf.table_methods.DomainT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DomainT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.EndSignalT.html#iLock_Geography.lcf.table_methods.EndSignalT" title="iLock_Geography.lcf.table_methods.EndSignalT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EndSignalT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.FilterProjectT.html#iLock_Geography.lcf.table_methods.FilterProjectT" title="iLock_Geography.lcf.table_methods.FilterProjectT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FilterProjectT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.GeoPredBasedTableMethod.html#iLock_Geography.lcf.table_methods.GeoPredBasedTableMethod" title="iLock_Geography.lcf.table_methods.GeoPredBasedTableMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoPredBasedTableMethod</span></code></a>(predicate)</td>
+<td>Base class for table methods based on predicates defined in iLock_Geography.predicate_library.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.InnerJoinT.html#iLock_Geography.lcf.table_methods.InnerJoinT" title="iLock_Geography.lcf.table_methods.InnerJoinT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InnerJoinT</span></code></a>(args)</td>
+<td>Produces a new table by combining columns from two input tables when the values of certain columns match.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.IntersectT.html#iLock_Geography.lcf.table_methods.IntersectT" title="iLock_Geography.lcf.table_methods.IntersectT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IntersectT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.MatchT.html#iLock_Geography.lcf.table_methods.MatchT" title="iLock_Geography.lcf.table_methods.MatchT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatchT</span></code></a>(args)</td>
+<td>Creates a copy of a table with new columns that are created by exfiltrating data from a string column in the source table.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.NextAreaInPathT.html#iLock_Geography.lcf.table_methods.NextAreaInPathT" title="iLock_Geography.lcf.table_methods.NextAreaInPathT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NextAreaInPathT</span></code></a>(args)</td>
+<td>Produces a table of three columns [path, before, after], where “after” is the next area encountered after the area “before” in the path “path”.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.NextObjectT.html#iLock_Geography.lcf.table_methods.NextObjectT" title="iLock_Geography.lcf.table_methods.NextObjectT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NextObjectT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.NextPathT.html#iLock_Geography.lcf.table_methods.NextPathT" title="iLock_Geography.lcf.table_methods.NextPathT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NextPathT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.NthAreaInPathT.html#iLock_Geography.lcf.table_methods.NthAreaInPathT" title="iLock_Geography.lcf.table_methods.NthAreaInPathT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NthAreaInPathT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.ObjectInAreaT.html#iLock_Geography.lcf.table_methods.ObjectInAreaT" title="iLock_Geography.lcf.table_methods.ObjectInAreaT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ObjectInAreaT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.ObjectInPathT.html#iLock_Geography.lcf.table_methods.ObjectInPathT" title="iLock_Geography.lcf.table_methods.ObjectInPathT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ObjectInPathT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.PathContainingPathT.html#iLock_Geography.lcf.table_methods.PathContainingPathT" title="iLock_Geography.lcf.table_methods.PathContainingPathT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PathContainingPathT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.PathInAreaT.html#iLock_Geography.lcf.table_methods.PathInAreaT" title="iLock_Geography.lcf.table_methods.PathInAreaT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PathInAreaT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.PathIntersectsAreaT.html#iLock_Geography.lcf.table_methods.PathIntersectsAreaT" title="iLock_Geography.lcf.table_methods.PathIntersectsAreaT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PathIntersectsAreaT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.PathIntersectsPathT.html#iLock_Geography.lcf.table_methods.PathIntersectsPathT" title="iLock_Geography.lcf.table_methods.PathIntersectsPathT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PathIntersectsPathT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.PositiveT.html#iLock_Geography.lcf.table_methods.PositiveT" title="iLock_Geography.lcf.table_methods.PositiveT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PositiveT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.RightStraightT.html#iLock_Geography.lcf.table_methods.RightStraightT" title="iLock_Geography.lcf.table_methods.RightStraightT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RightStraightT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.StartSignalT.html#iLock_Geography.lcf.table_methods.StartSignalT" title="iLock_Geography.lcf.table_methods.StartSignalT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StartSignalT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.SwitchInPathT.html#iLock_Geography.lcf.table_methods.SwitchInPathT" title="iLock_Geography.lcf.table_methods.SwitchInPathT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SwitchInPathT</span></code></a>(args)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="table_methods/iLock_Geography.lcf.table_methods.UnionT.html#iLock_Geography.lcf.table_methods.UnionT" title="iLock_Geography.lcf.table_methods.UnionT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnionT</span></code></a>(args)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="parse/TableFilter/iLock_Geography.lcf.parse.TableFilter.table.html"
+                        title="previous chapter">8.19.11.3. iLock_Geography.lcf.parse.TableFilter.table</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="table_methods/iLock_Geography.lcf.table_methods.arguments.html"
+                        title="next chapter">8.20.1. iLock_Geography.lcf.table_methods.arguments</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="table_methods/iLock_Geography.lcf.table_methods.arguments.html" title="8.20.1. iLock_Geography.lcf.table_methods.arguments"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="parse/TableFilter/iLock_Geography.lcf.parse.TableFilter.table.html" title="8.19.11.3. iLock_Geography.lcf.parse.TableFilter.table"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api_reference.html" >8. API reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>

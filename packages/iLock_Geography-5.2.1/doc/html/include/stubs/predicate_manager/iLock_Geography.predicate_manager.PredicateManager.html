@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.35.1. iLock_Geography.predicate_manager.PredicateManager &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="8.35.1.1. iLock_Geography.predicate_manager.PredicateManager.__init__" href="PredicateManager/iLock_Geography.predicate_manager.PredicateManager.__init__.html" />
+    <link rel="prev" title="8.35. iLock_Geography.predicate_manager" href="../iLock_Geography.predicate_manager.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="PredicateManager/iLock_Geography.predicate_manager.PredicateManager.__init__.html" title="8.35.1.1. iLock_Geography.predicate_manager.PredicateManager.__init__"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../iLock_Geography.predicate_manager.html" title="8.35. iLock_Geography.predicate_manager"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.predicate_manager.html" accesskey="U">8.35. iLock_Geography.predicate_manager</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ilock-geography-predicate-manager-predicatemanager">
+<h1>8.35.1. iLock_Geography.predicate_manager.PredicateManager<a class="headerlink" href="#ilock-geography-predicate-manager-predicatemanager" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="iLock_Geography.predicate_manager.PredicateManager">
+<em class="property">class </em><code class="descclassname">iLock_Geography.predicate_manager.</code><code class="descname">PredicateManager</code><span class="sig-paren">(</span><em>railyard</em>, <em>useBuiltins=True</em><span class="sig-paren">)</span><a class="headerlink" href="#iLock_Geography.predicate_manager.PredicateManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>A predicate manager is used to maintain a collection of registered
+names and the associated predicate instances.</p>
+<p>Users who instantiate any predicate class, need to register the predicate
+instance with an unique name. The names and the associated predicates from
+<a class="reference internal" href="../iLock_Geography.builtins.html#module-iLock_Geography.builtins" title="iLock_Geography.builtins"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iLock_Geography.builtins</span></code></a> are automatically registered.</p>
+<dl class="docutils">
+<dt>Special methods that are implemented:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">__len__</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">__setitem__</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">__delitem__</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">__iter__</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">__contains__</span></code>.</li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="PredicateManager/iLock_Geography.predicate_manager.PredicateManager.__init__.html#iLock_Geography.predicate_manager.PredicateManager.__init__" title="iLock_Geography.predicate_manager.PredicateManager.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(railyard[,&nbsp;useBuiltins])</td>
+<td>Constructor.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="PredicateManager/iLock_Geography.predicate_manager.PredicateManager.newName.html#iLock_Geography.predicate_manager.PredicateManager.newName" title="iLock_Geography.predicate_manager.PredicateManager.newName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">newName</span></code></a>([nameTemplate])</td>
+<td>An utility function that returns a name which does not clashes with the registered ones.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="PredicateManager/iLock_Geography.predicate_manager.PredicateManager.railyard.html#iLock_Geography.predicate_manager.PredicateManager.railyard" title="iLock_Geography.predicate_manager.PredicateManager.railyard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">railyard</span></code></a>()</td>
+<td>Return the associated railyard object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="PredicateManager/iLock_Geography.predicate_manager.PredicateManager.typeManager.html#iLock_Geography.predicate_manager.PredicateManager.typeManager" title="iLock_Geography.predicate_manager.PredicateManager.typeManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typeManager</span></code></a>()</td>
+<td>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeManager</span></code> object which is created on the instantiation of <code class="docutils literal notranslate"><span class="pre">PredicateManager</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../iLock_Geography.predicate_manager.html"
+                        title="previous chapter">8.35. iLock_Geography.predicate_manager</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PredicateManager/iLock_Geography.predicate_manager.PredicateManager.__init__.html"
+                        title="next chapter">8.35.1.1. iLock_Geography.predicate_manager.PredicateManager.__init__</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="PredicateManager/iLock_Geography.predicate_manager.PredicateManager.__init__.html" title="8.35.1.1. iLock_Geography.predicate_manager.PredicateManager.__init__"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../iLock_Geography.predicate_manager.html" title="8.35. iLock_Geography.predicate_manager"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.predicate_manager.html" >8.35. iLock_Geography.predicate_manager</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>

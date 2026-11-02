@@ -1,0 +1,212 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.18.8. iLock_Geography.lcf.api.LCFWorkflow &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="8.18.8.1. iLock_Geography.lcf.api.LCFWorkflow.__init__" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.__init__.html" />
+    <link rel="prev" title="8.18.7. iLock_Geography.lcf.api.parseStoredLCF2Tab" href="iLock_Geography.lcf.api.parseStoredLCF2Tab.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.__init__.html" title="8.18.8.1. iLock_Geography.lcf.api.LCFWorkflow.__init__"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="iLock_Geography.lcf.api.parseStoredLCF2Tab.html" title="8.18.7. iLock_Geography.lcf.api.parseStoredLCF2Tab"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.lcf.api.html" accesskey="U">8.18. iLock_Geography.lcf.api</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ilock-geography-lcf-api-lcfworkflow">
+<h1>8.18.8. iLock_Geography.lcf.api.LCFWorkflow<a class="headerlink" href="#ilock-geography-lcf-api-lcfworkflow" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="iLock_Geography.lcf.api.LCFWorkflow">
+<em class="property">class </em><code class="descclassname">iLock_Geography.lcf.api.</code><code class="descname">LCFWorkflow</code><span class="sig-paren">(</span><em>railyard</em>, <em>importedLayout</em>, <em>useDefaultTypesFile=False</em><span class="sig-paren">)</span><a class="headerlink" href="#iLock_Geography.lcf.api.LCFWorkflow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configuration object for for generating PiSPEC and populating LCF tables.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>railyard</strong> (<em>IRailyard</em>) – Railyard to operate on.</li>
+<li><strong>importedLayout</strong> (<em>bool</em>) – Whether the railyard is imported (<code class="docutils literal notranslate"><span class="pre">True</span></code>), or
+comes from iLock’s layout editor (<code class="docutils literal notranslate"><span class="pre">False</span></code>). In
+the latter case, generated PiSPEC objects will
+be associated to the corresponding editor
+objects.</li>
+<li><strong>useDefaultTypesFile</strong> (<em>bool</em>) – Whether to use the type data that has been loaded by Prover iLock
+(typically from “Prover-iLock-config/Types.lcf” in the top package)
+or not. Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code> for backwards compatibility reasons,
+but users with Prover iLock 4.23+ are encouraged to set this to <code class="docutils literal notranslate"><span class="pre">True</span></code>
+rather than using <code class="docutils literal notranslate"><span class="pre">addTypes</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.__init__.html#iLock_Geography.lcf.api.LCFWorkflow.__init__" title="iLock_Geography.lcf.api.LCFWorkflow.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(railyard,&nbsp;importedLayout[,&nbsp;…])</td>
+<td>x.__init__(…) initializes x; see help(type(x)) for signature</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.addInstanceValidationRules.html#iLock_Geography.lcf.api.LCFWorkflow.addInstanceValidationRules" title="iLock_Geography.lcf.api.LCFWorkflow.addInstanceValidationRules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addInstanceValidationRules</span></code></a>(lcf2inst)</td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type lcf2inst:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.addLCF2Inst.html#iLock_Geography.lcf.api.LCFWorkflow.addLCF2Inst" title="iLock_Geography.lcf.api.LCFWorkflow.addLCF2Inst"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addLCF2Inst</span></code></a>(lcf2inst)</td>
+<td>Add instantiation rules.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.addLCF2Par.html#iLock_Geography.lcf.api.LCFWorkflow.addLCF2Par" title="iLock_Geography.lcf.api.LCFWorkflow.addLCF2Par"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addLCF2Par</span></code></a>(lcf2par)</td>
+<td>Add parameter/predicate population rules.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.addLCF2Tab.html#iLock_Geography.lcf.api.LCFWorkflow.addLCF2Tab" title="iLock_Geography.lcf.api.LCFWorkflow.addLCF2Tab"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addLCF2Tab</span></code></a>(lcf2tab)</td>
+<td>Add table calculation rules.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.addPostCallback.html#iLock_Geography.lcf.api.LCFWorkflow.addPostCallback" title="iLock_Geography.lcf.api.LCFWorkflow.addPostCallback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addPostCallback</span></code></a>(callback)</td>
+<td>Add a callback that is to be run after all LCF flow instantiation has been completed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.addPrimaryTable.html#iLock_Geography.lcf.api.LCFWorkflow.addPrimaryTable" title="iLock_Geography.lcf.api.LCFWorkflow.addPrimaryTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addPrimaryTable</span></code></a>(table)</td>
+<td>Add a table as a primary table.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.addTableMethod.html#iLock_Geography.lcf.api.LCFWorkflow.addTableMethod" title="iLock_Geography.lcf.api.LCFWorkflow.addTableMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTableMethod</span></code></a>(name,&nbsp;impl)</td>
+<td>Register a user supplied table method.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.addTypes.html#iLock_Geography.lcf.api.LCFWorkflow.addTypes" title="iLock_Geography.lcf.api.LCFWorkflow.addTypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTypes</span></code></a>(typesLCF)</td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type typesLCF:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.getAncestors.html#iLock_Geography.lcf.api.LCFWorkflow.getAncestors" title="iLock_Geography.lcf.api.LCFWorkflow.getAncestors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAncestors</span></code></a>(piType)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.modifyRailyard.html#iLock_Geography.lcf.api.LCFWorkflow.modifyRailyard" title="iLock_Geography.lcf.api.LCFWorkflow.modifyRailyard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modifyRailyard</span></code></a>(callback)</td>
+<td>Calls the given callback with the railyard, and then checks that only objects of known user types have been added.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.run.html#iLock_Geography.lcf.api.LCFWorkflow.run" title="iLock_Geography.lcf.api.LCFWorkflow.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</td>
+<td>Generate PiSPEC instances and populate predicates based on the provided LCF configuration data.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.namespaceSeparator.html#iLock_Geography.lcf.api.LCFWorkflow.namespaceSeparator" title="iLock_Geography.lcf.api.LCFWorkflow.namespaceSeparator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">namespaceSeparator</span></code></a></td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="iLock_Geography.lcf.api.parseStoredLCF2Tab.html"
+                        title="previous chapter">8.18.7. iLock_Geography.lcf.api.parseStoredLCF2Tab</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.__init__.html"
+                        title="next chapter">8.18.8.1. iLock_Geography.lcf.api.LCFWorkflow.__init__</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LCFWorkflow/iLock_Geography.lcf.api.LCFWorkflow.__init__.html" title="8.18.8.1. iLock_Geography.lcf.api.LCFWorkflow.__init__"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="iLock_Geography.lcf.api.parseStoredLCF2Tab.html" title="8.18.7. iLock_Geography.lcf.api.parseStoredLCF2Tab"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.lcf.api.html" >8.18. iLock_Geography.lcf.api</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>

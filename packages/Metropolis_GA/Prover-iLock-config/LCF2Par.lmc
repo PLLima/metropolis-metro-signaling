@@ -1,0 +1,88 @@
+# This file configures how PiSPEC parameters are populated. An example
+# configuration rule may look like:
+#
+#    { dest-param: "PATH@sw_left",
+#      lcf-table: "t_left_in_path",
+#      table-cols: ["path", "switch"] }
+#
+# This says that the parameter sw_left of the PiSPEC class PATH shall be
+# populated with the contents of the table "g_left_in_path", by taking
+# the "path" and "switch" columns from that table. The "table-cols" field
+# is optional and defaults to all columns of the table in the order they
+# are defined.
+#
+# For integer parameters, you have to specify which column acts as the
+# return column, and the argument columns must be specified with "table-cols":
+#    { dest-param: "TRACK_CIRCUIT@length",
+#      lcf-table: "t_tc_length",
+#      table-cols: ["tc"],
+#      return-col: "length",
+#      default: 0 }
+# Note the "default" parameter. If left out, it will be checked that the
+# parameter is exhaustive.
+{
+  format: "LCF2Par-cfg-2.0",
+  par-rules: [
+    { dest-param: "ORDINAL@value",
+      lcf-table: "t_ordinal_value",
+      return-col: "value",
+      table-cols: ["ordinal"] },
+
+    # @TEMPLATE_PKG_REMOVE_BEGIN@
+    # @TEMPLATE_PKG_REMOVE_END@
+    { dest-param: "PATH@intersects",
+      lcf-table: "t_path_intersects_path" },
+    { dest-param: "PATH@opposes",
+      lcf-table: "t_path_opposes_path" },
+    { dest-param: "PATH@follows",
+      lcf-table: "t_next_path" },
+    { dest-param: "PATH@subpath",
+      lcf-table: "t_path_containing_path" },
+    { dest-param: "PATH@tracks",
+      lcf-table: "t_path_intersects_area" },
+    { dest-param: "PATH@objects",
+      lcf-table: "t_path_contains_object" },
+    { dest-param: "PATH@facing",
+      lcf-table: "t_facing_in_path" },
+    { dest-param: "PATH@trailing",
+      lcf-table: "t_trailing_in_path" },
+    { dest-param: "PATH@switches_normal",
+      lcf-table: "t_normal_in_path" },
+    { dest-param: "PATH@switches_reverse",
+      lcf-table: "t_reverse_in_path" },
+    { dest-param: "PATH@track_number",
+      lcf-table: "t_track_number",
+      return-col: "track_number",
+      default: -1,
+      table-cols: ["path", "track_circuit"] },
+
+    { dest-param: "SWITCH@right_straight",
+      lcf-table: "t_right_straight" },
+
+    { dest-param: "SIGNAL@track_after",
+      lcf-table: "t_area_after_object" },
+    { dest-param: "SIGNAL@track_before",
+      lcf-table: "t_area_before_object" },
+
+    { dest-param: "AREA@objects",
+      lcf-table: "t_area_contains_object" },
+    { dest-param: "AREA@intersects_by_edge",
+      lcf-table: "t_area_intersects_area_by_edge"},
+    { dest-param: "AREA@intersects_by_node",
+      lcf-table: "t_area_intersects_area_by_node"},
+
+    { dest-param: "ROUTE@start_signal",
+      lcf-table: "t_start_object" },
+    { dest-param: "ROUTE@end_object",
+      lcf-table: "t_end_object" },
+
+    { dest-param: "PROTECTION_AREA@paths",
+      lcf-table: "t_protection_area_paths" },
+
+    { dest-param: "PROTECTION_PATH@start_object",
+      lcf-table: "t_start_object" },
+    { dest-param: "PROTECTION_PATH@end_object",
+      lcf-table: "t_end_object" }
+
+  ]
+}

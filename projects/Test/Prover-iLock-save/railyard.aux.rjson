@@ -1,0 +1,817 @@
+{
+  "nodes" : [
+    {
+      "id" : "@101",
+      "x" : 660,
+      "y" : 160
+    },
+    {
+      "id" : "@103",
+      "x" : 640,
+      "y" : 160
+    },
+    {
+      "id" : "@108",
+      "x" : 280,
+      "y" : 100
+    },
+    {
+      "id" : "@110",
+      "x" : 0,
+      "y" : 240
+    },
+    {
+      "id" : "@111",
+      "x" : 20,
+      "y" : 240
+    },
+    {
+      "id" : "@114",
+      "x" : 110,
+      "y" : 160
+    },
+    {
+      "id" : "@118",
+      "x" : 700,
+      "y" : 80
+    },
+    {
+      "id" : "@120",
+      "x" : 640,
+      "y" : 80
+    },
+    {
+      "id" : "@13",
+      "x" : 340,
+      "y" : 160
+    },
+    {
+      "id" : "@135",
+      "x" : 160,
+      "y" : 80
+    },
+    {
+      "id" : "@137",
+      "x" : 199,
+      "y" : 80
+    },
+    {
+      "id" : "@143",
+      "x" : 340,
+      "y" : 80
+    },
+    {
+      "id" : "@145",
+      "x" : 360,
+      "y" : 80
+    },
+    {
+      "id" : "@15",
+      "x" : 260,
+      "y" : 80
+    },
+    {
+      "id" : "@21",
+      "x" : 420,
+      "y" : 160
+    },
+    {
+      "id" : "@23",
+      "x" : 500,
+      "y" : 80
+    },
+    {
+      "id" : "@28",
+      "x" : 380,
+      "y" : 160
+    },
+    {
+      "id" : "@3",
+      "x" : 180,
+      "y" : 240
+    },
+    {
+      "id" : "@31",
+      "x" : 300,
+      "y" : 160
+    },
+    {
+      "id" : "@34",
+      "x" : 220,
+      "y" : 200
+    },
+    {
+      "id" : "@37",
+      "x" : 240,
+      "y" : 240
+    },
+    {
+      "id" : "@40",
+      "x" : 340,
+      "y" : 240
+    },
+    {
+      "id" : "@43",
+      "x" : 460,
+      "y" : 240
+    },
+    {
+      "id" : "@46",
+      "x" : 110,
+      "y" : 240
+    },
+    {
+      "id" : "@49",
+      "x" : 180,
+      "y" : 160
+    },
+    {
+      "id" : "@5",
+      "x" : 260,
+      "y" : 160
+    },
+    {
+      "id" : "@52",
+      "x" : 450,
+      "y" : 80
+    },
+    {
+      "id" : "@55",
+      "x" : 460,
+      "y" : 120
+    },
+    {
+      "id" : "@58",
+      "x" : 500,
+      "y" : 160
+    },
+    {
+      "id" : "@61",
+      "x" : 540,
+      "y" : 80
+    },
+    {
+      "id" : "@71",
+      "x" : 520,
+      "y" : 240
+    },
+    {
+      "id" : "@73",
+      "x" : 600,
+      "y" : 160
+    },
+    {
+      "id" : "@8",
+      "x" : 80,
+      "y" : 160
+    },
+    {
+      "id" : "@87",
+      "x" : 560,
+      "y" : 200
+    },
+    {
+      "id" : "@95",
+      "x" : 620,
+      "y" : 240
+    },
+    {
+      "id" : "@97",
+      "x" : 600,
+      "y" : 240
+    }
+  ],
+  "objects" : [
+    {
+      "id" : "1",
+      "x" : 180,
+      "y" : 240,
+      "label-x" : 180,
+      "label-y" : 250,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "2",
+      "x" : 260,
+      "y" : 160,
+      "label-x" : 260,
+      "label-y" : 145,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "3",
+      "x" : 340,
+      "y" : 160,
+      "label-x" : 340,
+      "label-y" : 170,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "4",
+      "x" : 420,
+      "y" : 160,
+      "label-x" : 420,
+      "label-y" : 170,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "5",
+      "x" : 500,
+      "y" : 80,
+      "label-x" : 500,
+      "label-y" : 65,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "6",
+      "x" : 600,
+      "y" : 160,
+      "label-x" : 600,
+      "label-y" : 145,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "7",
+      "x" : 520,
+      "y" : 240,
+      "label-x" : 520,
+      "label-y" : 250,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "B1",
+      "x" : 110,
+      "y" : 180,
+      "label-x" : 115,
+      "label-y" : 170,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "B2",
+      "x" : 199,
+      "y" : 59,
+      "label-x" : 204,
+      "label-y" : 49,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "B3",
+      "x" : 640,
+      "y" : 100,
+      "label-x" : 615,
+      "label-y" : 90,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "B4",
+      "x" : 359,
+      "y" : 99,
+      "label-x" : 360,
+      "label-y" : 90,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S02W",
+      "x" : 20,
+      "y" : 220,
+      "label-x" : 20,
+      "label-y" : 195,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S05E",
+      "x" : 639,
+      "y" : 139,
+      "label-x" : 610,
+      "label-y" : 120,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S06E",
+      "x" : 600,
+      "y" : 220,
+      "label-x" : 570,
+      "label-y" : 210,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S1",
+      "x" : 110,
+      "y" : 260,
+      "label-x" : 95,
+      "label-y" : 250,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S10",
+      "x" : 290,
+      "y" : 90,
+      "label-x" : 295,
+      "label-y" : 75,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S13",
+      "x" : 600,
+      "y" : 260,
+      "label-x" : 605,
+      "label-y" : 250,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S15",
+      "x" : 450,
+      "y" : 50,
+      "label-x" : 425,
+      "label-y" : 35,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S17",
+      "x" : 20,
+      "y" : 260,
+      "label-x" : 25,
+      "label-y" : 265,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S2",
+      "x" : 340,
+      "y" : 260,
+      "label-x" : 340,
+      "label-y" : 245,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S3",
+      "x" : 180,
+      "y" : 130,
+      "label-x" : 180,
+      "label-y" : 135,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S5",
+      "x" : 640,
+      "y" : 180,
+      "label-x" : 640,
+      "label-y" : 175,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S6",
+      "x" : 500,
+      "y" : 180,
+      "label-x" : 500,
+      "label-y" : 165,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S7",
+      "x" : 540,
+      "y" : 50,
+      "label-x" : 540,
+      "label-y" : 35,
+      "drawing-dir" : "left",
+      "layer" : 0
+    },
+    {
+      "id" : "S8",
+      "x" : 460,
+      "y" : 260,
+      "label-x" : 460,
+      "label-y" : 265,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "S9",
+      "x" : 500,
+      "y" : 140,
+      "label-x" : 505,
+      "label-y" : 120,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-1",
+      "x" : 600,
+      "y" : 240,
+      "label-x" : 600,
+      "label-y" : 225,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-10",
+      "x" : 340,
+      "y" : 240,
+      "label-x" : 340,
+      "label-y" : 225,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-11",
+      "x" : 460,
+      "y" : 240,
+      "label-x" : 460,
+      "label-y" : 225,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-12",
+      "x" : 110,
+      "y" : 240,
+      "label-x" : 110,
+      "label-y" : 225,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-13",
+      "x" : 180,
+      "y" : 160,
+      "label-x" : 180,
+      "label-y" : 145,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-14",
+      "x" : 450,
+      "y" : 80,
+      "label-x" : 450,
+      "label-y" : 65,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-15",
+      "x" : 460,
+      "y" : 120,
+      "label-x" : 460,
+      "label-y" : 105,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-16",
+      "x" : 500,
+      "y" : 160,
+      "label-x" : 500,
+      "label-y" : 145,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-17",
+      "x" : 540,
+      "y" : 80,
+      "label-x" : 540,
+      "label-y" : 65,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-18",
+      "x" : 560,
+      "y" : 200,
+      "label-x" : 560,
+      "label-y" : 185,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-19",
+      "x" : 280,
+      "y" : 100,
+      "label-x" : 280,
+      "label-y" : 85,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-2",
+      "x" : 20,
+      "y" : 240,
+      "label-x" : 20,
+      "label-y" : 225,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-20",
+      "x" : 360,
+      "y" : 80,
+      "label-x" : 360,
+      "label-y" : 65,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-21",
+      "x" : 640,
+      "y" : 80,
+      "label-x" : 640,
+      "label-y" : 65,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-3",
+      "x" : 640,
+      "y" : 160,
+      "label-x" : 640,
+      "label-y" : 145,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-4",
+      "x" : 110,
+      "y" : 160,
+      "label-x" : 110,
+      "label-y" : 145,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-5",
+      "x" : 200,
+      "y" : 80,
+      "label-x" : 200,
+      "label-y" : 65,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-6",
+      "x" : 380,
+      "y" : 160,
+      "label-x" : 380,
+      "label-y" : 145,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-7",
+      "x" : 300,
+      "y" : 160,
+      "label-x" : 300,
+      "label-y" : 145,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-8",
+      "x" : 220,
+      "y" : 200,
+      "label-x" : 220,
+      "label-y" : 185,
+      "drawing-dir" : "right",
+      "layer" : 0
+    },
+    {
+      "id" : "g_track_circuit_delimiter-9",
+      "x" : 240,
+      "y" : 240,
+      "label-x" : 240,
+      "label-y" : 225,
+      "drawing-dir" : "right",
+      "layer" : 0
+    }
+  ],
+  "areas" : [
+    {
+      "id" : "T1",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 140,
+      "label-y" : 220,
+      "root" : "@47",
+      "layer" : 0
+    },
+    {
+      "id" : "T10",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 250,
+      "label-y" : 60,
+      "root" : "@138",
+      "layer" : 0
+    },
+    {
+      "id" : "T11",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 470,
+      "label-y" : 60,
+      "root" : "@53",
+      "layer" : 0
+    },
+    {
+      "id" : "T12",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 50,
+      "label-y" : 220,
+      "root" : "@112",
+      "layer" : 0
+    },
+    {
+      "id" : "T13",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 570,
+      "label-y" : 60,
+      "root" : "@62",
+      "layer" : 0
+    },
+    {
+      "id" : "T2",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 280,
+      "label-y" : 220,
+      "root" : "@38",
+      "layer" : 0
+    },
+    {
+      "id" : "T20",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : -20,
+      "label-y" : 240,
+      "root" : "@2",
+      "layer" : 0
+    },
+    {
+      "id" : "T23",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 400,
+      "label-y" : 60,
+      "root" : "@146",
+      "layer" : 0
+    },
+    {
+      "id" : "T25",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 650,
+      "label-y" : 160,
+      "root" : "@104",
+      "layer" : 0
+    },
+    {
+      "id" : "T26",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 610,
+      "label-y" : 240,
+      "root" : "@98",
+      "layer" : 0
+    },
+    {
+      "id" : "T3",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 400,
+      "label-y" : 220,
+      "root" : "@41",
+      "layer" : 0
+    },
+    {
+      "id" : "T4",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 490,
+      "label-y" : 220,
+      "root" : "@44",
+      "layer" : 0
+    },
+    {
+      "id" : "T5",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 120,
+      "label-y" : 140,
+      "root" : "@115",
+      "layer" : 0
+    },
+    {
+      "id" : "T6",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 230,
+      "label-y" : 140,
+      "root" : "@50",
+      "layer" : 0
+    },
+    {
+      "id" : "T7",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 350,
+      "label-y" : 140,
+      "root" : "@14",
+      "layer" : 0
+    },
+    {
+      "id" : "T8",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 460,
+      "label-y" : 140,
+      "root" : "@25",
+      "layer" : 0
+    },
+    {
+      "id" : "T9",
+      "area-type" : "delimited",
+      "delimiter-types" : [
+        "g_track_circuit_delimiter"
+      ],
+      "label-x" : 550,
+      "label-y" : 140,
+      "root" : "@59",
+      "layer" : 0
+    }
+  ],
+  "paths" : [],
+  "view" : {
+    "x" : -173,
+    "y" : -25,
+    "zoom" : 1.5,
+    "track-grid-size" : 20,
+    "background-images" : [],
+    "layers" : [
+      {
+        "id" : 0,
+        "name" : "(default)",
+        "show-labels" : true,
+        "show-objects" : true,
+        "show-areas" : false,
+        "show-paths" : false,
+        "show-level-crossings" : true
+      }
+    ]
+  }
+}

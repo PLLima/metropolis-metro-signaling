@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.38.1. iLock_Geography.type_manager.TypeManager &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="8.38.1.1. iLock_Geography.type_manager.TypeManager.__init__" href="TypeManager/iLock_Geography.type_manager.TypeManager.__init__.html" />
+    <link rel="prev" title="8.38. iLock_Geography.type_manager" href="../iLock_Geography.type_manager.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="TypeManager/iLock_Geography.type_manager.TypeManager.__init__.html" title="8.38.1.1. iLock_Geography.type_manager.TypeManager.__init__"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../iLock_Geography.type_manager.html" title="8.38. iLock_Geography.type_manager"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.type_manager.html" accesskey="U">8.38. iLock_Geography.type_manager</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ilock-geography-type-manager-typemanager">
+<h1>8.38.1. iLock_Geography.type_manager.TypeManager<a class="headerlink" href="#ilock-geography-type-manager-typemanager" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="iLock_Geography.type_manager.TypeManager">
+<em class="property">class </em><code class="descclassname">iLock_Geography.type_manager.</code><code class="descname">TypeManager</code><span class="sig-paren">(</span><em>railyard</em><span class="sig-paren">)</span><a class="headerlink" href="#iLock_Geography.type_manager.TypeManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>A type manager constructs the base types and compound types
+for the railyard components of a railyard.</p>
+<p>It provides a number of convenience functions for
+accessing the railyard components’ base types, compound types and
+user types.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="TypeManager/iLock_Geography.type_manager.TypeManager.__init__.html#iLock_Geography.type_manager.TypeManager.__init__" title="iLock_Geography.type_manager.TypeManager.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(railyard)</td>
+<td>Constructor.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="TypeManager/iLock_Geography.type_manager.TypeManager.dumpUserType2BaseType.html#iLock_Geography.type_manager.TypeManager.dumpUserType2BaseType" title="iLock_Geography.type_manager.TypeManager.dumpUserType2BaseType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dumpUserType2BaseType</span></code></a>()</td>
+<td>Print the content of the map from user types to base types.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="TypeManager/iLock_Geography.type_manager.TypeManager.getAllTypes.html#iLock_Geography.type_manager.TypeManager.getAllTypes" title="iLock_Geography.type_manager.TypeManager.getAllTypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAllTypes</span></code></a>()</td>
+<td>Return an iterator object that iterates all type objects.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="TypeManager/iLock_Geography.type_manager.TypeManager.getBaseType.html#iLock_Geography.type_manager.TypeManager.getBaseType" title="iLock_Geography.type_manager.TypeManager.getBaseType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBaseType</span></code></a>(userTypeName)</td>
+<td>Return the base type object for the name of user type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="TypeManager/iLock_Geography.type_manager.TypeManager.getType.html#iLock_Geography.type_manager.TypeManager.getType" title="iLock_Geography.type_manager.TypeManager.getType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getType</span></code></a>(typeName)</td>
+<td>Return the type object for <code class="docutils literal notranslate"><span class="pre">typeName</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="TypeManager/iLock_Geography.type_manager.TypeManager.isNameTree.html#iLock_Geography.type_manager.TypeManager.isNameTree" title="iLock_Geography.type_manager.TypeManager.isNameTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNameTree</span></code></a>(nameTree)</td>
+<td>A membership function that tests if all name(s) in <code class="docutils literal notranslate"><span class="pre">nameTree</span></code> have the corresponding railyard objects in the considered railyard.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="TypeManager/iLock_Geography.type_manager.TypeManager.nameTree2ryObjectTree.html#iLock_Geography.type_manager.TypeManager.nameTree2ryObjectTree" title="iLock_Geography.type_manager.TypeManager.nameTree2ryObjectTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nameTree2ryObjectTree</span></code></a>(nameTree)</td>
+<td>Return the railyard objects that correspond to the name(s) in <code class="docutils literal notranslate"><span class="pre">nameTree</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="TypeManager/iLock_Geography.type_manager.TypeManager.railyard.html#iLock_Geography.type_manager.TypeManager.railyard" title="iLock_Geography.type_manager.TypeManager.railyard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">railyard</span></code></a>()</td>
+<td>Return the railyard object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../iLock_Geography.type_manager.html"
+                        title="previous chapter">8.38. iLock_Geography.type_manager</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="TypeManager/iLock_Geography.type_manager.TypeManager.__init__.html"
+                        title="next chapter">8.38.1.1. iLock_Geography.type_manager.TypeManager.__init__</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="TypeManager/iLock_Geography.type_manager.TypeManager.__init__.html" title="8.38.1.1. iLock_Geography.type_manager.TypeManager.__init__"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../iLock_Geography.type_manager.html" title="8.38. iLock_Geography.type_manager"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.type_manager.html" >8.38. iLock_Geography.type_manager</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>

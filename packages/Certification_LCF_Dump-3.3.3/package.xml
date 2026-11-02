@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>Certification_LCF_Dump</name>
+  <version>3.3.3</version>
+  <root>false</root>
+  <description>Provides export of LCF configuration files to Prover Certifier.</description>
+  <dependencies>
+    <package name="iLock_Geography" version="5.2.1" integrity="digest" fingerprint="e6f1cd13ad6b1e601f9826f49ad8d839b3c9a5f5" />
+    <package name="lcf_utils" version="2.1.0" integrity="digest" fingerprint="378c90d9330586301e4724c89a8708b6e1bb6e8d" />
+    <package name="om_integration" version="2.4" integrity="digest" fingerprint="45e4c2aa777d9b74cba559ef5a1ada26be018d44" />
+  </dependencies>
+</package>

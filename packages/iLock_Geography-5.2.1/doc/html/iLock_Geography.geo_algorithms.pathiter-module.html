@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>iLock_Geography.geo_algorithms.pathiter</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;iLock_Geography ::
+        <a href="iLock_Geography.geo_algorithms-module.html">Package&nbsp;geo_algorithms</a> ::
+        Module&nbsp;pathiter
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="iLock_Geography.geo_algorithms.pathiter-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module pathiter</h1><p class="nomargin-top"></p>
+<p>The module defines functions and classes that return different 
+  iterators over paths.</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="iLock_Geography.geo_algorithms.pathiter.ObjectIter-class.html" class="summary-name">ObjectIter</a><br />
+      An iterable over all objects in a path that are of given types.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="iLock_Geography.geo_algorithms.pathiter.SwitchIter-class.html" class="summary-name">SwitchIter</a><br />
+      An iterable over switch objects in <code>path</code> that satisfy the
+      specified condition.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="iLock_Geography.geo_algorithms.pathiter.DirObjectIter-class.html" class="summary-name">DirObjectIter</a><br />
+      An iterable over directed objects in <code>path</code> that satisfy 
+      the specified condition.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Iterable((NodeIndex, NodeIndex))</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathiter-module.html#edgeIter" class="summary-sig-name">edgeIter</a>(<span class="summary-sig-arg">path</span>)</span><br />
+      Iterator over pairs of node indices corresponding to the edges in 
+      <code>path</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Iterable(IGraph)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathiter-module.html#areaIter" class="summary-sig-name">areaIter</a>(<span class="summary-sig-arg">path</span>,
+        <span class="summary-sig-arg">railyard</span>,
+        <span class="summary-sig-arg">types</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Iterator over areas of user type in <code>types</code> along 
+      <code>path</code> in <code>railyard</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Iterable((int, INode, int))</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathiter-module.html#nodeConnectorIter" class="summary-sig-name">nodeConnectorIter</a>(<span class="summary-sig-arg">path</span>)</span><br />
+      Iterator over <a name="index-node_connector"></a><i 
+      class="indexterm">node-connector</i>s of <code>path</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Iterable((int, IRailyardComponent, int))</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="iLock_Geography.geo_algorithms.pathiter-module.html#objectConnectorIter" class="summary-sig-name">objectConnectorIter</a>(<span class="summary-sig-arg">path</span>)</span><br />
+      Iterator over <a name="index-object_connector"></a><i 
+      class="indexterm">object-connector</i>s of <code>path</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<p class="indent-wrapped-lines"><b>Imports:</b>
+  <span title="PredefinedAttributes.ATTRIBUTE_DIRECTION_LEG">ATTRIBUTE_DIRECTION_LEG</span>,
+  <span title="PredefinedAttributes.ATTRIBUTE_BENT_LEG">ATTRIBUTE_BENT_LEG</span>,
+  <a href="iLock_Geography.geo_algorithms.property-module.html#isSwitch" title="iLock_Geography.geo_algorithms.property.isSwitch">isSwitch</a>,
+  <a href="iLock_Geography.geo_algorithms.property-module.html#isSignal" title="iLock_Geography.geo_algorithms.property.isSignal">isSignal</a>,
+  <a href="iLock_Geography.geo_algorithms.element-module.html#nodeIter" title="iLock_Geography.geo_algorithms.element.nodeIter">nodeIter</a>,
+  <span title="iLock_Geography.typecheck.typedoc">typedoc</span>,
+  <a href="iLock_Geography.geo_util-module.html#getUserTypesCharFunction" title="iLock_Geography.geo_util.getUserTypesCharFunction">getUserTypesCharFunction</a>,
+  <a href="iLock_Geography.geo_error-module.html#geoAssert" title="iLock_Geography.geo_error.geoAssert">geoAssert</a>
+</p><br />
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="edgeIter"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">edgeIter</span>(<span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Iterator over pairs of node indices corresponding to the edges in 
+  <code>path</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (IPath) - The path from which nodes are iterated.</li>
+    </ul></dd>
+    <dt>Returns: Iterable((NodeIndex, NodeIndex))</dt>
+        <dd>An iterator returning the pairs of node indices of the edges in 
+          <code>path</code>.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="areaIter"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">areaIter</span>(<span class="sig-arg">path</span>,
+        <span class="sig-arg">railyard</span>,
+        <span class="sig-arg">types</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Iterator over areas of user type in <code>types</code> along 
+  <code>path</code> in <code>railyard</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (IPath) - The path along which areas are iterated.</li>
+        <li><strong class="pname"><code>railyard</code></strong> (IRailyard) - The railyard containing the areas that are iterated.</li>
+        <li><strong class="pname"><code>types</code></strong> (Iterable(str) | str | none) - The user types that are the subtypes of the base type Area. Note 
+          that a string argument will be, interpreted as a 1-tuple, not as 
+          a character-iterable. An argument of None will be interpreted as 
+          &quot;no restriction&quot;, i.e. all user subtypes of base type 
+          Area are considered.</li>
+    </ul></dd>
+    <dt>Returns: Iterable(IGraph)</dt>
+        <dd>An iterator returning the areas (of user type in 
+          <code>types</code>) along <code>path</code> in 
+          <code>railyard</code>.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="nodeConnectorIter"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">nodeConnectorIter</span>(<span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Iterator over <a name="index-node_connector"></a><i 
+  class="indexterm">node-connector</i>s of <code>path</code>.</p>
+  <p>A node-connector of a path is a 3-tuple (inIndex, node, outIndex) 
+  where inIndex and outIndex are the indices that connect to the two edges 
+  joined at the node in the path. When the node is the start (end) node of 
+  the path, the corresponding inIndex (outIndex) is None.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (IPath) - The path from which node-connectors are iterated.</li>
+    </ul></dd>
+    <dt>Returns: Iterable((int, INode, int))</dt>
+        <dd>An iterator returning the node-connector tuples of 
+          <code>path</code>.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="objectConnectorIter"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">objectConnectorIter</span>(<span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Iterator over <a name="index-object_connector"></a><i 
+  class="indexterm">object-connector</i>s of <code>path</code>.</p>
+  <p>An object-connector of a path is a 3-tuple (index, obj, outIndex) 
+  where inIndex and outIndex are indices that connect to the two edges 
+  joined at the node containing obj in the path. Similar to <a 
+  href="iLock_Geography.geo_algorithms.pathiter-module.html#nodeConnectorIter"
+  class="link">nodeConnectorIter</a>, when the node containing the obj is 
+  the start (end) node of the path, the corresponding inIndex (outIndex) is
+  None.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (IPath) - The path from which object-connectors are iterated.</li>
+    </ul></dd>
+    <dt>Returns: Iterable((int, IRailyardComponent, int))</dt>
+        <dd>An iterator returning the object-connector tuples of 
+          <code>path</code>.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@typedoc</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >iLock_Geography</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Oct 23 11:27:02 2018
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

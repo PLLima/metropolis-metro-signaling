@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>ilock_utils</name>
+  <version>3.0</version>
+  <description>Prover iLock utility package.</description>
+  <dependencies>
+  </dependencies>
+</package>

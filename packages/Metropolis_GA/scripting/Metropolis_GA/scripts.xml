@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<script_configurations>
+
+  <!-- DOCUMENTER MODULE -->
+  <state value="tools">
+    <role value="exporter">
+
+      <script name="Generate certification data"
+              file="documenter_module/certification_data.py">
+        <info>Generate SA data in HLL format.
+        </info>
+        <group value="Settings">
+          <parameter label="Folder for generated output"
+                     name="CertDirName"
+                     type="Directory"
+                     default="certification"/>
+          <parameter label="Remove generated files on error(s)"
+                     name="StrictMode"
+                     type="Bool"
+                     default="True" />
+        </group>
+      </script>
+
+      <script name="Generate MQTT config"
+              file="documenter_module/mqtt_config.py">
+        <info>Generate MQTT config for the project.
+        </info>
+      </script>
+
+    </role>
+  </state>
+
+  <!-- CODER MODULE -->
+  <state value="tools">
+    <role value="exporter">
+
+      <script name="Generate Code"
+              file="coder_module.py">
+        <info>Generate code</info>
+        <capability value="CoderModule"/>
+      </script>
+
+    </role>
+  </state>
+
+</script_configurations>

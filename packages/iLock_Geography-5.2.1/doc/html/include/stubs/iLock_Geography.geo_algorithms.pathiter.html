@@ -1,0 +1,143 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.7. iLock_Geography.geo_algorithms.pathiter &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.7.1. iLock_Geography.geo_algorithms.pathiter.areaIter" href="pathiter/iLock_Geography.geo_algorithms.pathiter.areaIter.html" />
+    <link rel="prev" title="8.6.16. iLock_Geography.geo_algorithms.pathgen.sentinel" href="pathgen/iLock_Geography.geo_algorithms.pathgen.sentinel.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pathiter/iLock_Geography.geo_algorithms.pathiter.areaIter.html" title="8.7.1. iLock_Geography.geo_algorithms.pathiter.areaIter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pathgen/iLock_Geography.geo_algorithms.pathgen.sentinel.html" title="8.6.16. iLock_Geography.geo_algorithms.pathgen.sentinel"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api_reference.html" accesskey="U">8. API reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-iLock_Geography.geo_algorithms.pathiter">
+<span id="ilock-geography-geo-algorithms-pathiter"></span><h1>8.7. iLock_Geography.geo_algorithms.pathiter<a class="headerlink" href="#module-iLock_Geography.geo_algorithms.pathiter" title="Permalink to this headline">¶</a></h1>
+<p>The module defines functions and classes that return different iterators over
+paths.</p>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pathiter/iLock_Geography.geo_algorithms.pathiter.areaIter.html#iLock_Geography.geo_algorithms.pathiter.areaIter" title="iLock_Geography.geo_algorithms.pathiter.areaIter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">areaIter</span></code></a>(path,&nbsp;railyard[,&nbsp;types])</td>
+<td>Iterator over areas of user type in <code class="docutils literal notranslate"><span class="pre">types</span></code> along <code class="docutils literal notranslate"><span class="pre">path</span></code> in <code class="docutils literal notranslate"><span class="pre">railyard</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pathiter/iLock_Geography.geo_algorithms.pathiter.edgeIter.html#iLock_Geography.geo_algorithms.pathiter.edgeIter" title="iLock_Geography.geo_algorithms.pathiter.edgeIter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgeIter</span></code></a>(path)</td>
+<td>Iterator over pairs of node indices corresponding to the edges in <code class="docutils literal notranslate"><span class="pre">path</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pathiter/iLock_Geography.geo_algorithms.pathiter.nodeConnectorIter.html#iLock_Geography.geo_algorithms.pathiter.nodeConnectorIter" title="iLock_Geography.geo_algorithms.pathiter.nodeConnectorIter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodeConnectorIter</span></code></a>(path)</td>
+<td>Iterator over X{node-connector}s of <code class="docutils literal notranslate"><span class="pre">path</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pathiter/iLock_Geography.geo_algorithms.pathiter.objectConnectorIter.html#iLock_Geography.geo_algorithms.pathiter.objectConnectorIter" title="iLock_Geography.geo_algorithms.pathiter.objectConnectorIter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">objectConnectorIter</span></code></a>(path)</td>
+<td>Iterator over X{object-connector}s of <code class="docutils literal notranslate"><span class="pre">path</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pathiter/iLock_Geography.geo_algorithms.pathiter.DirObjectIter.html#iLock_Geography.geo_algorithms.pathiter.DirObjectIter" title="iLock_Geography.geo_algorithms.pathiter.DirObjectIter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DirObjectIter</span></code></a>(path,&nbsp;facing[,&nbsp;types])</td>
+<td>An iterable over directed objects in <code class="docutils literal notranslate"><span class="pre">path</span></code> that satisfy the specified condition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pathiter/iLock_Geography.geo_algorithms.pathiter.ObjectIter.html#iLock_Geography.geo_algorithms.pathiter.ObjectIter" title="iLock_Geography.geo_algorithms.pathiter.ObjectIter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ObjectIter</span></code></a>(path[,&nbsp;types])</td>
+<td>An iterable over all objects in a path that are of given types.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pathiter/iLock_Geography.geo_algorithms.pathiter.SwitchIter.html#iLock_Geography.geo_algorithms.pathiter.SwitchIter" title="iLock_Geography.geo_algorithms.pathiter.SwitchIter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SwitchIter</span></code></a>(path[,&nbsp;diverging,&nbsp;facing])</td>
+<td>An iterable over switch objects in <code class="docutils literal notranslate"><span class="pre">path</span></code> that satisfy the specified condition.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pathgen/iLock_Geography.geo_algorithms.pathgen.sentinel.html"
+                        title="previous chapter">8.6.16. iLock_Geography.geo_algorithms.pathgen.sentinel</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pathiter/iLock_Geography.geo_algorithms.pathiter.areaIter.html"
+                        title="next chapter">8.7.1. iLock_Geography.geo_algorithms.pathiter.areaIter</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pathiter/iLock_Geography.geo_algorithms.pathiter.areaIter.html" title="8.7.1. iLock_Geography.geo_algorithms.pathiter.areaIter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pathgen/iLock_Geography.geo_algorithms.pathgen.sentinel.html" title="8.6.16. iLock_Geography.geo_algorithms.pathgen.sentinel"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api_reference.html" >8. API reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,359 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>1. General Prover iLock Configuration &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Revision history" href="revision_history.html" />
+    <link rel="prev" title="Documentation" href="../index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="revision_history.html" title="7. Revision history"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">iLock_Geography  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="general-prover-ilock-configuration">
+<h1>1. General Prover iLock Configuration<a class="headerlink" href="#general-prover-ilock-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The configuration of the interlocking application under development,
+splits into two types:</p>
+<ol class="arabic">
+<li><p class="first">Generic Application Configuration (GAC)</p>
+<p>This resides below the <code class="docutils literal notranslate"><span class="pre">Prover-iLock-config</span></code> folder of the top
+package in the Generic Application (GA),</p>
+</li>
+<li><p class="first">Specific Application Configuration (SAC)</p>
+<p>This resides below the project folder for each Specific Application (SA).</p>
+</li>
+</ol>
+<div class="section" id="layout-configuration-format">
+<h2>1.1. Layout Configuration Format<a class="headerlink" href="#layout-configuration-format" title="Permalink to this headline">¶</a></h2>
+<p>The Layout Configuration Format (LCF) is a family of review friendly
+JSON based configuration file formats,
+of which 3 are relevant in this context, one generic and two specific ones.
+These formats normally cover most of the application configuration.</p>
+<ul class="simple">
+<li>The GAC file <code class="docutils literal notranslate"><span class="pre">Types.lcf</span></code> contains the <em>railyard type system</em> and the list
+of <em>LCF table headers</em> required in projects using the GA.</li>
+<li>The SAC file <code class="docutils literal notranslate"><span class="pre">Railyard.lcf</span></code> contains the <em>railyard layout</em> and all the
+objects associated to it.</li>
+<li>The <em>LCF table format</em> is a format for representing SAC data in the
+form of simple Excel-like tables.</li>
+</ul>
+<p>The railyard type system includes all node types in the railyard graph
+and the user types (and their base types) of all railyard objects.</p>
+<p>The set of LCF table headers in the file <code class="docutils literal notranslate"><span class="pre">Types.lcf</span></code> specify precisely
+which tables should be present. Each table header specifies a table name
+identifier, and the names and required types of the columns in the table.</p>
+<p>The LCF table format is used to represent the content of the tables declared
+in <code class="docutils literal notranslate"><span class="pre">Types.lcf</span></code>.</p>
+<p>Each table is either <em>primary</em> or <em>secondary</em>:</p>
+<ol class="arabic simple">
+<li><em>Primary tables</em> contain configuration data that is manually
+reviewed for correctness (even though some consistency checks typically
+are performed). These are files written and reviewed by the end users
+when creating the SA. They are given as input to Prover iLock (and
+Prover Certifier, if used).
+A typical example of a primary table could be a control table.</li>
+<li><em>Secondary tables</em> contain configuration data that is automatically
+computed and checked. It consists of information derived from primary
+tables and the railyard layout. These are internal tables specified
+and computationally implemented as a part of the GA development.
+This part of the GA development spans over both Prover iLock and Prover
+Certifier (if used). Secondary tables are not seen by end users
+developing the SA; they are <em>internal</em> to the process, both in Prover
+iLock (and in Prover Certifier). A typical example of a secondary table
+could be a specification of which track circuits are part of which routes.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="package-input">
+<h1>2. Package Input<a class="headerlink" href="#package-input" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="railyard">
+<h2>2.1. Railyard<a class="headerlink" href="#railyard" title="Permalink to this headline">¶</a></h2>
+<p>The package operates on the generic railyard structure defined in Prover-iLock.
+An instance of this railyard structure is used as input to ILock_Geography.
+Typically, this instance is either imported from the layout editor in
+Prover-iLock, or is constructed from external data by some script placed in
+another package.</p>
+<p>A railyard contains minimally the <em>track layout graph</em>, decorated with the
+objects of the yard. This includes auxiliary data that might not correspond to
+a physical placement in the yard. The railyard structure also contains two
+containers, one for <em>paths</em> and one for <em>areas</em>.</p>
+<p>Paths can be of arbitrary type and are used to model any sort of path
+in the track layout that admits continuous train movement: routes, lines,
+overlaps, etc.</p>
+<p>Areas can be of arbitrary type and are used to model any sort of (possibly
+disconnected) sub-graph of the track layout: interlockings, stations, track
+circuits, level crossings, etc.</p>
+</div>
+<div class="section" id="primary-tables">
+<h2>2.2. Primary Tables<a class="headerlink" href="#primary-tables" title="Permalink to this headline">¶</a></h2>
+<p>All the primary LCF tables specified in <code class="docutils literal notranslate"><span class="pre">Types.lcf</span></code> are required as input.</p>
+</div>
+</div>
+<div class="section" id="package-output">
+<h1>3. Package Output<a class="headerlink" href="#package-output" title="Permalink to this headline">¶</a></h1>
+<p>The main use of the package is to create a <em>PiSPEC instance model</em> of the
+geography, in Prover-iLock. A PiSPEC instance model consists of</p>
+<ul class="simple">
+<li>named instances of PiSPEC classes,</li>
+<li>calculated parameters in PiSPEC, and</li>
+<li>attributes on instances.</li>
+</ul>
+<p>One of the main inputs to the process of creating the PiSPEC instance model,
+is the <em>finalized railyard</em>. It is also an output in its own right, e.g. used
+with Prover Certifier when performing sign-off verification.</p>
+</div>
+<div class="section" id="other-ga-configuration-files">
+<h1>4. Other GA Configuration Files<a class="headerlink" href="#other-ga-configuration-files" title="Permalink to this headline">¶</a></h1>
+<p>The file <code class="docutils literal notranslate"><span class="pre">graphics.tm</span></code> that resides in the GDS contains the
+configuration of the layout editor. It specifies the <em>user types</em> of all
+objects that are handled in the layout editor. For each user type, it’s
+graphical type, it’s location in the project, it’s toolbar icon, and it’s
+vector-graphical presentation in the GUI, is specified.</p>
+<p>From the graphical type, the railyard <em>base type</em> of the user type can be
+inferred. The set of user types and their corresponding base types, is the
+part from this configuration that has relevance in the context of
+ILock_Geography.</p>
+<p>Note that the user types and base types derived from <code class="docutils literal notranslate"><span class="pre">graphics.tm</span></code> must be
+a consistent subset of the user types and base types in <code class="docutils literal notranslate"><span class="pre">Types.lcf</span></code>.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">LCF2Inst.lmc</span></code> describes how to generate PiSPEC instances from the
+railyard entities.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">LCF2Par.lmc</span></code> specifies how to populate the parameters of the
+generated PiSPEC instances from LCF tables.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">LCF2Tab.lmc</span></code> describes how to populate the secondary LCF tables
+using a set of predefined, Prover Certifier compatible, table methods.</p>
+</div>
+<div class="section" id="package-content">
+<h1>5. Package Content<a class="headerlink" href="#package-content" title="Permalink to this headline">¶</a></h1>
+<p>The package provides generic functionality for</p>
+<ol class="arabic simple">
+<li>searching and calculating in the railyard,</li>
+<li>defining and calculating predicates over the railyard (<em>railyard
+predicates</em>), and</li>
+<li>creating a PiSPEC instance model from the railyard.</li>
+</ol>
+<div class="section" id="searching-and-calculating">
+<h2>5.1. Searching and Calculating<a class="headerlink" href="#searching-and-calculating" title="Permalink to this headline">¶</a></h2>
+<p>The package contains a variety of algorithms for searching, in particular for
+paths and areas. These can be used to specify almost any types of conditions
+and find all paths or areas satisfying them.</p>
+<p>There are also many algorithms for calculating different properties, e.g.
+overlaps, protection objects, boundaries and intersections of areas.</p>
+<p>All of these algorithms are found in <code class="docutils literal notranslate"><span class="pre">geo_algorithms</span></code>.</p>
+<p>One important use of these algorithms is to define and check required railyard
+properties.</p>
+</div>
+<div class="section" id="defining-and-calculating-railyard-predicates">
+<h2>5.2. Defining and Calculating railyard Predicates<a class="headerlink" href="#defining-and-calculating-railyard-predicates" title="Permalink to this headline">¶</a></h2>
+<p>Railyard predicates are used to describe geographical relationships between
+instances. They typically appear as parameters of PiSPEC classes.</p>
+<p>The package provides a number of Prover Certifier compatible <em>table methods</em>
+to compute such predicates. The typical way of filling in secondary LCF tables
+is to specify a table method in a <code class="docutils literal notranslate"><span class="pre">LCF2Tab.lmc</span></code> file, e.g.:</p>
+<div class="code json highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nb">format</span><span class="p">:</span> <span class="s2">&quot;LCF2Tab-cfg-2.0&quot;</span><span class="p">,</span>
+  <span class="n">content</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="n">table</span><span class="p">:</span> <span class="s2">&quot;g_normal_in_path&quot;</span><span class="p">,</span>
+      <span class="n">method</span><span class="p">:</span> <span class="s2">&quot;SwitchInPathT&quot;</span><span class="p">,</span>
+      <span class="n">args</span><span class="p">:</span> <span class="p">{</span><span class="n">diverging</span><span class="p">:</span> <span class="n">false</span><span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The full list of supported table methods is documented in the
+<a class="reference download internal" href="../_downloads/lfd-lib.pdf" download=""><code class="xref download docutils literal notranslate"><span class="pre">Table</span> <span class="pre">Method</span> <span class="pre">Library</span></code></a> document.</p>
+<p>One could then use the calculated table to fill in PiSPEC instance
+parameters. How to populate parameters are typically specified in a
+<code class="docutils literal notranslate"><span class="pre">LCF2Par.lmc</span></code> file. The example below shows how to populate the
+<code class="docutils literal notranslate"><span class="pre">require_normal</span></code> parameter of the PiSPEC class <code class="docutils literal notranslate"><span class="pre">ROUTE_SECTION</span></code>
+based on the table <code class="docutils literal notranslate"><span class="pre">g_normal_in_path</span></code>. Note that both primary and secondary
+tables may be used to populate parameters.</p>
+<div class="code json highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nb">format</span><span class="p">:</span> <span class="s2">&quot;LCF2Par-cfg-2.0&quot;</span><span class="p">,</span>
+  <span class="n">content</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="n">dest</span><span class="o">-</span><span class="n">param</span><span class="p">:</span> <span class="s2">&quot;ROUTE_SECTION@require_normal&quot;</span><span class="p">,</span>
+      <span class="n">lcf</span><span class="o">-</span><span class="n">table</span><span class="p">:</span> <span class="s2">&quot;g_normal_in_path&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-pispec-instance-model">
+<h2>5.3. Creating PiSPEC Instance Model<a class="headerlink" href="#creating-pispec-instance-model" title="Permalink to this headline">¶</a></h2>
+<p>PiSPEC instances are created from the entities in the railyard. The rules
+for how to do this are specified in a <code class="docutils literal notranslate"><span class="pre">LCF2Inst.lmc</span></code> file:</p>
+<div class="code json highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nb">format</span><span class="p">:</span> <span class="s2">&quot;LCF2Inst-cfg-2.0&quot;</span><span class="p">,</span>
+  <span class="n">content</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="n">user</span><span class="o">-</span><span class="nb">type</span><span class="p">:</span> <span class="s2">&quot;g_route_section&quot;</span><span class="p">,</span>
+      <span class="n">instances</span><span class="p">:</span> <span class="p">[{</span><span class="n">dest</span><span class="o">-</span><span class="nb">type</span><span class="p">:</span> <span class="s2">&quot;ROUTE_SECTION&quot;</span><span class="p">}]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The example above says that a <code class="docutils literal notranslate"><span class="pre">ROUTE_SECTION</span></code> instance shall be generated
+for each railyard entity with user type <code class="docutils literal notranslate"><span class="pre">g_route_section</span></code>.</p>
+</div>
+</div>
+<div class="section" id="package-usage">
+<h1>6. Package Usage<a class="headerlink" href="#package-usage" title="Permalink to this headline">¶</a></h1>
+<p>A typical usage process is as follows:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">LCFTableAPI</span>
+
+<span class="kn">from</span> <span class="nn">iLock_Geography.railyard_import</span> <span class="kn">import</span> <span class="n">fromLayoutEditor</span>
+<span class="kn">import</span> <span class="nn">iLock_Geography.lcf.api</span> <span class="kn">import</span> <span class="nn">LCFWorkflow</span>
+
+<span class="n">railyard</span> <span class="n">fromLayoutEditor</span><span class="p">(</span><span class="n">mutable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">railyard</span><span class="p">(</span><span class="n">locked</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">workflow</span> <span class="o">=</span> <span class="n">LCFWorkflow</span><span class="p">(</span><span class="n">railyard</span><span class="p">,</span> <span class="n">importedLayout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                       <span class="n">useDefaultTypesFile</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tables</span> <span class="o">=</span> <span class="n">LCFTableAPI</span><span class="o">.</span><span class="n">ParseTables</span><span class="p">([</span><span class="s2">&quot;/path/to/tables.lcf&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Tables</span>
+<span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
+  <span class="n">workflow</span><span class="o">.</span><span class="n">addPrimaryTable</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">modifyRailyard</span><span class="p">(</span><span class="n">callback_that_adds_objects</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">addLCF2Inst</span><span class="p">(</span><span class="s2">&quot;/path/to/LCF2Inst.lmc&quot;</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">addLCF2Par</span><span class="p">(</span><span class="s2">&quot;/path/to/LCF2Par.lmc&quot;</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">addLCF2Tab</span><span class="p">(</span><span class="s2">&quot;/path/to/LCF2Tab.lmc&quot;</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first"><em>Creation of initial railyard</em></p>
+<p>Create the initial railyard graph by importing it from file or,
+more typically, by retrieving it from the layout editor using a call
+to the iLock_Geography API (<code class="docutils literal notranslate"><span class="pre">railyard_import.fromLayoutEditor</span></code>).</p>
+</li>
+<li><p class="first"><em>Create a LCFWorkflow object</em></p>
+<p>This object manages the creation of PiSPEC instances in accordance to the
+provided configuration files.</p>
+</li>
+<li><p class="first"><em>Load primary LCF tables</em></p>
+<p>Import all the primary LCF tables to be used for extending the railyard
+or calculating parameters.</p>
+</li>
+<li><p class="first"><em>Creation of finalized railyard</em></p>
+<p>Finalize the railyard structure by optionally using algorithms in the
+package (located in <code class="docutils literal notranslate"><span class="pre">geo_algorithms</span></code>) and/or data from the primary
+LCF tables for finding more paths and/or finding more areas.</p>
+<p>Check that the railyard satisfies required properties, using
+algorithms in the package.</p>
+</li>
+<li><p class="first"><em>Add configuration files for generating PiSPEC</em></p>
+<p>This includes adding any <code class="docutils literal notranslate"><span class="pre">LCF2Inst.lmc</span></code>, <code class="docutils literal notranslate"><span class="pre">LCF2Par.lmc</span></code> and
+<code class="docutils literal notranslate"><span class="pre">LCF2Tab.lmc</span></code> files.</p>
+</li>
+<li><p class="first"><em>Call LCFWorkflow.run to generate the PiSPEC instances</em></p>
+</li>
+</ol>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1. General Prover iLock Configuration</a><ul>
+<li><a class="reference internal" href="#layout-configuration-format">1.1. Layout Configuration Format</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#package-input">2. Package Input</a><ul>
+<li><a class="reference internal" href="#railyard">2.1. Railyard</a></li>
+<li><a class="reference internal" href="#primary-tables">2.2. Primary Tables</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#package-output">3. Package Output</a></li>
+<li><a class="reference internal" href="#other-ga-configuration-files">4. Other GA Configuration Files</a></li>
+<li><a class="reference internal" href="#package-content">5. Package Content</a><ul>
+<li><a class="reference internal" href="#searching-and-calculating">5.1. Searching and Calculating</a></li>
+<li><a class="reference internal" href="#defining-and-calculating-railyard-predicates">5.2. Defining and Calculating railyard Predicates</a></li>
+<li><a class="reference internal" href="#creating-pispec-instance-model">5.3. Creating PiSPEC Instance Model</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#package-usage">6. Package Usage</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="revision_history.html"
+                        title="next chapter">7. Revision history</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="revision_history.html" title="7. Revision history"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">iLock_Geography  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>

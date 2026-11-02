@@ -1,0 +1,122 @@
+# This file is used to configure what PiSPEC instances to generate from
+# the entities in the railyard. A instantiation rule may look as follows:
+#
+#   { user-type: "g_track_circuit",
+#     instances: [
+#       { dest-type: "TRACK_CIRCUIT" },
+#       { dest-type: "TCI", filter: "has_tci", category: "tci" }
+#      ] }
+#
+# The example rule above states that (up to) two PiSPEC instances shall
+# be generated for each entity of the user type "g_track_circuit". One
+# instance of PiSPEC class TRACK_CIRCUIT, and one of type TCI. A TCI
+# instance will only be generated if the railyard entity is listed in
+# the filter table "has_tci". A negative filter, stating that an instance
+# should only be generated if the railyard entity is _not_ in the filter
+# table, can be specified by prepending a tilde (~) to the table name,
+# e.g. "~has_tci". Filters are optional.
+#   All entries but one in the "instances" list must have a category. The
+# entry without a "category" field is considered the main instance, and
+# will get the same name as the railyard entity itself. The others will
+# be named "<entity-name>@<category>". The category must be unique within
+# the "instances" list.
+#   It is OK to not generate any PiSPEC instances for a railyard entity.
+# In this case, the "instances" list is left empty.
+{
+  format: "LCF2Inst-cfg-2.0",
+  content: [
+    { user-type: "g_ordinal",
+      instances: [
+        {dest-type: "ORDINAL"}
+      ] },
+
+    { user-type: "g_signal",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "SIGNAL"}
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_exit_signal",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "EXIT_SIGNAL"}
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_buffer_stop",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "BUFFER_STOP"}
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_track_circuit",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "TRACK_CIRCUIT"}
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_node",
+      instances: [
+      ] },
+
+    { user-type: "g_track_circuit_delimiter",
+      instances: [
+      ] },
+
+    { user-type: "g_track_crossing",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "TRACK_CROSSING"}
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_switch",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "SWITCH" }
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_crossover",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "CROSSOVER" }
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_dcrossover",
+      instances: [
+      ] },
+
+    { user-type: "g_route",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "ROUTE"}
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_route_section",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "ROUTE_SECTION"}
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_protection_path",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "PROTECTION_PATH"}
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] },
+
+    { user-type: "g_protection_area",
+      instances: [
+        # @TEMPLATE_PKG_REMOVE_BEGIN@
+        {dest-type: "PROTECTION_AREA"}
+        # @TEMPLATE_PKG_REMOVE_END@
+      ] }
+  ]
+}

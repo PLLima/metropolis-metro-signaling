@@ -1,0 +1,64 @@
+{
+  "default-switch-type": "g_switch",
+  "default-crossing-type": "g_track_crossing",
+  "background-color": "#f5f5f5",
+  "track-color": "#000000",
+  "track-width": 1,
+  "path-width": 2,
+  "area-width": 2,
+  "switch-edge-distance": 6,
+  "user-types": [
+    { "user-type": "g_track_circuit",
+      "folder": "Track circuits",
+      "icon": "Metropolis_GA@icons/g_track_circuit.bmp",
+      "delimiter-type": "g_track_circuit_delimiter",
+      "label-font": {
+        "bold": true
+      },
+      "colors": {
+        "Occupied": "#ff0000",
+        "Locked": "#00ff00"
+      } },
+    { "user-type": "g_track_circuit_delimiter",
+      "folder": "Delimiters",
+      "hide-labels": true,
+      "icon": "Metropolis_GA@icons/g_track_circuit_delimiter.bmp",
+      "graphics": "Metropolis_GA@graphics/g_track_circuit_delimiter.svg" },
+    { "user-type": "g_signal",
+      "folder": "Signals",
+      "icon": "Metropolis_GA@icons/g_signal.bmp",
+      "graphics": "Metropolis_GA@graphics/g_signal.svg" },
+    { "user-type": "g_exit_signal",
+      "folder": "Signals",
+      "icon": "Metropolis_GA@icons/g_exit_signal.bmp",
+      "graphics": "Metropolis_GA@graphics/g_exit_signal.svg" },
+    { "user-type": "g_buffer_stop",
+      "folder": "Buffer stops",
+      "icon": "Metropolis_GA@icons/g_buffer_stop.bmp",
+      "graphics": "Metropolis_GA@graphics/g_buffer_stop.svg" },
+    { "user-type": "g_switch",
+      "folder": "Switches",
+      "hide": true,
+      "icon": "Metropolis_GA@icons/g_switch.bmp",
+      "graphics": "Metropolis_GA@graphics/g_switch.svg" },
+    { "user-type": "g_track_crossing",
+      "folder": "Crossings",
+      "hide": true,
+      "icon": "Metropolis_GA@icons/g_track_crossing.bmp",
+      "graphics": "Metropolis_GA@graphics/g_track_crossing.svg" },
+    { "user-type": "g_route",
+      "folder": "Routes",
+      "hide": true,
+      "icon": "Metropolis_GA@icons/g_route.bmp",
+      "colors": {
+        "Requested": "#AAAAAA"
+      } },
+    { "user-type": "g_route_section",
+      "folder": "Route sections",
+      "hide": true,
+      "colors": {
+        "Requested": "#AAAAAA",
+        "Locked": "#00AA00" }
+    }
+  ]
+}

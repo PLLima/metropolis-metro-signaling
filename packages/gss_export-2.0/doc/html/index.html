@@ -1,0 +1,257 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Documentation &#8212; gss_export  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Revision history" href="include/revision_history.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="include/revision_history.html" title="1. Revision history"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">gss_export  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<p>The gss_export package exports the Prover iLock GSS as HLL.</p>
+<p>The following files are produced:</p>
+<ul class="simple">
+<li>SafetyProperties.hll: Contains the requirement definitions and the
+safety property proof obligations.</li>
+<li>Deviations.hll: Contains requirement deviation definitions.</li>
+<li>Sorts.hll: Defines the types used in quantifiers and functions.</li>
+<li>DeclarationsINT.hll: Contains function declarations for functions to
+access variables of the object model.</li>
+<li>DeclarationsPAR.hll: Contains function declarations for functions to
+access parameters of the object model.</li>
+<li>Pre.hll: Contains auxilliary variables for making expressions using
+the PRE operator have a well-defined value in the first cycle.</li>
+<li>Lemmas.hll: Contains auxilliary proof obligations to help the proof engine.</li>
+</ul>
+<p>The exported HLL files do not make up a complete HLL system. In particular, it
+is up to the users of this package to provide definitions for the the functions
+declared in DeclararationsINT.hll and DeclarationsPAR.hll.</p>
+<p>The content of gss_export is owned by Prover Technology AB.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="include/revision_history.html">1. Revision history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="include/api_reference.html">2. API reference</a></li>
+</ul>
+</div>
+<div class="section" id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">UtilityAPI</span>
+
+<span class="kn">from</span> <span class="nn">gss_export.api</span> <span class="kn">import</span> <span class="n">export_gss</span>
+<span class="kn">from</span> <span class="nn">gss_export.config</span> <span class="kn">import</span> <span class="n">Config</span><span class="p">,</span> <span class="n">Reporter</span>
+
+<span class="k">def</span> <span class="nf">report_note</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+  <span class="n">UtilityAPI</span><span class="o">.</span><span class="n">LogNote</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">report_warning</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+  <span class="n">UtilityAPI</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">report_error</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+  <span class="n">UtilityAPI</span><span class="o">.</span><span class="n">LogError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+
+<span class="n">reporter</span> <span class="o">=</span> <span class="n">Reporter</span><span class="p">(</span><span class="n">report_note</span><span class="p">,</span> <span class="n">report_warning</span><span class="p">,</span> <span class="n">report_error</span><span class="p">)</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+    <span class="n">out_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/out/dir&quot;</span><span class="p">,</span>
+    <span class="n">req_class_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;SAFETY_PROGRAM&quot;</span><span class="p">],</span>
+    <span class="n">reporter</span><span class="o">=</span><span class="n">reporter</span><span class="p">,</span>
+    <span class="n">generic_header</span><span class="o">=</span><span class="s2">&quot;This is safety critical data. Do not modify.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">config</span><span class="o">.</span><span class="n">req_prefix</span> <span class="o">=</span> <span class="s2">&quot;GSS-&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">export_gss</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GSS data exported to /path/to/out/dir&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="restrictions-on-pispec-gss">
+<h2>Restrictions on PiSPEC GSS<a class="headerlink" href="#restrictions-on-pispec-gss" title="Permalink to this headline">¶</a></h2>
+<p>In order for translation to be successful, the PiSPEC GSS must adhere to a few rules.</p>
+<ul class="simple">
+<li>Only safety properties starting with a specified prefix (default “GSS-”) will be
+exported. All other safety properties are interpreted as lemmas. This is because
+there is no distinction in PiSPEC between safety properties and lemmas.</li>
+<li>Only types, functions, parameters and variables referred to (directly or
+indirectly) by such safety properties will be present in Sorts.hll,
+DeclarationsINT.hll, and DeclarationsPAR.hll.</li>
+<li>Only PiSPEC functions that are not overriden (i.e. have a single
+implementation) may be used. Note that this applies transitively.</li>
+<li>Functions with the same name, but different arity, in the same class
+may not be used. This is to preserve the PiSPEC name in HLL, without
+risking collisions.</li>
+<li>A parameter can only be used if it has a single source. i.e. it can only be
+inherited from one place if multiple inheritance is used.</li>
+<li>All variables, functions, safety properties, and equations across all GSS
+classes to be exported must have a unique name. This is because they will be
+merged into one single namespace, and we want to use the same names in PiSPEC
+and HLL.</li>
+<li>For the moment, the PiSPEC COND operator is not supported.</li>
+<li>Deviations may only refer to types and functions that are also referred to by
+the GSS. This is because deviations are SA (specific application) data,
+whereas the GSS itself is GA (generic application) data. The presence of
+deviations in a project should not affect the GA.</li>
+</ul>
+</div>
+<div class="section" id="using-deviations">
+<h2>Using deviations<a class="headerlink" href="#using-deviations" title="Permalink to this headline">¶</a></h2>
+<p>By default, no deviations are used. Set <cite>deviations_filename</cite> of the <cite>Config</cite> object
+if you want to use deviations.</p>
+</div>
+<div class="section" id="special-variables">
+<h2>Special variables<a class="headerlink" href="#special-variables" title="Permalink to this headline">¶</a></h2>
+<p>Variables marked with the PiSPEC attribute “SpecialVariable” are treated
+in a special way:</p>
+<ul class="simple">
+<li>If the value of the attribute is “Init”, the variable will be mapped to
+an expression that is true in the first cycle, and false in subsequent cycles.</li>
+<li>All other values of the attribute are ignored. In particular, the package does
+not support the values “StableState” and “FailureMode” at the moment.</li>
+</ul>
+</div>
+<div class="section" id="overview-of-translation">
+<h2>Overview of translation<a class="headerlink" href="#overview-of-translation" title="Permalink to this headline">¶</a></h2>
+<p>Each safety requirement is mapped to one HLL proof obligation, one HLL function
+defining the safety requirement itself, and one HLL function defining deviations
+for the safety requirement. We use the following PiSPEC to illustrate this
+translation process:</p>
+<div class="highlight-PiSPEC notranslate"><div class="highlight"><pre><span></span>class SAFETY_PROGRAM {
+Prove:
+ &quot;GSS-simple-req&quot; := true;
+ &quot;GSS-univerally-quantified-req&quot; :=
+   ALL si: true;
+}
+</pre></div>
+</div>
+<p>For the PiSPEC above, the translator would output the following
+SafetyProperties.hll</p>
+<div class="highlight-hll notranslate"><div class="highlight"><pre><span></span>Declarations:
+  bool &#39;GSS-simple-req&#39;;
+  bool &#39;GSS-universally-quantified-req&#39;(SIGNAL);
+
+Definitions:
+  &#39;GSS-simple-req&#39; :=
+    TRUE;
+
+  &#39;GSS-universally-quantified-req&#39;(si) :=
+    TRUE;
+
+Declarations:
+  bool &#39;PO_GSS-simple-req&#39;;
+  bool &#39;PO_universally-quantified-req&#39;;
+
+Definitions:
+  &#39;PO_GSS-simple-req&#39; :=
+    ~DEVIATIONS::&#39;DEV_GSS-simple-req&#39; -&gt;
+      &#39;GSS-simple-req&#39;;
+
+  &#39;PO_GSS-simple-req&#39; :=
+    ALL si:SIGNAL (
+      ~DEVIATIONS::&#39;DEV_GSS-universally-quantified-req&#39;(si) -&gt;
+        &#39;GSS-universally-quantified-req&#39;(si);
+
+Proof obligations:
+  &#39;PO_GSS-simple-req&#39;;
+  &#39;PO_GSS-univerally-quantified-req&#39;;
+</pre></div>
+</div>
+<p>As illustrated above, safety requirements starting with a universal quantifier
+are translated to functions taking a parameter of the type quantified over. This
+is so that the deviation and requirement can talk about the same instance.</p>
+<p>“DEV_GSS-simple-req” and “DEV_GSS-universally-quantified” are defined in
+Deviations.hll, and default to <cite>FALSE</cite> if no deviation has been specified.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentation</a><ul>
+<li><a class="reference internal" href="#basic-usage">Basic usage</a></li>
+<li><a class="reference internal" href="#restrictions-on-pispec-gss">Restrictions on PiSPEC GSS</a></li>
+<li><a class="reference internal" href="#using-deviations">Using deviations</a></li>
+<li><a class="reference internal" href="#special-variables">Special variables</a></li>
+<li><a class="reference internal" href="#overview-of-translation">Overview of translation</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="include/revision_history.html"
+                        title="next chapter">1. Revision history</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="include/revision_history.html" title="1. Revision history"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">gss_export  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

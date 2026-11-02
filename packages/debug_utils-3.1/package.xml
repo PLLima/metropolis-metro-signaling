@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>debug_utils</name>
+  <version>3.1</version>
+  <description>Prover iLock debugging utils</description>
+  <dependencies>
+    <package name="bool_expression_parser" version="3.0" integrity="digest" fingerprint="8bd7e0fecec70d3412f80dba37a46beba6086a83" />
+  </dependencies>
+  <expects>
+    <application.version value="5.8.0+" />
+  </expects>
+</package>

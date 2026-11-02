@@ -1,0 +1,175 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.22. iLock_Geography.pispec_configurator &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.22.1.1. iLock_Geography.pispec_configurator.lists2dict" href="pispec_configurator/iLock_Geography.pispec_configurator.lists2dict.html" />
+    <link rel="prev" title="8.21.2. iLock_Geography.node_types.createSSDX" href="node_types/iLock_Geography.node_types.createSSDX.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pispec_configurator/iLock_Geography.pispec_configurator.lists2dict.html" title="8.22.1.1. iLock_Geography.pispec_configurator.lists2dict"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="node_types/iLock_Geography.node_types.createSSDX.html" title="8.21.2. iLock_Geography.node_types.createSSDX"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api_reference.html" accesskey="U">8. API reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-iLock_Geography.pispec_configurator">
+<span id="ilock-geography-pispec-configurator"></span><h1>8.22. iLock_Geography.pispec_configurator<a class="headerlink" href="#module-iLock_Geography.pispec_configurator" title="Permalink to this headline">¶</a></h1>
+<p>pispec_configurator.py</p>
+<p>This module contains the PiSPECConfigurator class and
+the rule classes (rule, geoInstRule, piInstRule and
+piPredRule).</p>
+<div class="section" id="to-do">
+<h2>8.22.1. To-do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Store rules in the UtilityAPI storage.</li>
+<li>Retreive the rules in the T-phase and produce
+documentation.</li>
+<li>Have some tag, in the PiSPECCOnfigurator and in
+the individual rules, which can keep track of
+which package is using the PiSPECConfigurator
+at the moment. The tag should be documented
+in the rules.</li>
+<li>Extend piInstRule-doc with functionality to retreive
+configuration-information from outside files,
+e.g. graphics.tm.</li>
+<li>The origin-information (inspect.currentframe()) could
+be wiewed nicer.</li>
+<li>Investigate why line number of the frame record
+is always 1; solve it!</li>
+</ul>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pispec_configurator/iLock_Geography.pispec_configurator.lists2dict.html#iLock_Geography.pispec_configurator.lists2dict" title="iLock_Geography.pispec_configurator.lists2dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lists2dict</span></code></a>(items,&nbsp;values)</td>
+<td>Small helping function for changing two lists into a dictionary.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pispec_configurator/iLock_Geography.pispec_configurator.GeoInstRule.html#iLock_Geography.pispec_configurator.GeoInstRule" title="iLock_Geography.pispec_configurator.GeoInstRule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoInstRule</span></code></a>(from_type,&nbsp;geo_type,&nbsp;doc)</td>
+<td>Class containing a creation rule of geography object subtypes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pispec_configurator/iLock_Geography.pispec_configurator.PiInstRule.html#iLock_Geography.pispec_configurator.PiInstRule" title="iLock_Geography.pispec_configurator.PiInstRule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PiInstRule</span></code></a>(geo_type,&nbsp;pi_type,&nbsp;geo_regexp,&nbsp;…)</td>
+<td>Class containing a rule about PiSPEC instantiation from geography object.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pispec_configurator/iLock_Geography.pispec_configurator.PiPredRule.html#iLock_Geography.pispec_configurator.PiPredRule" title="iLock_Geography.pispec_configurator.PiPredRule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PiPredRule</span></code></a>(geo_name,&nbsp;pi_name,&nbsp;pi_signature,&nbsp;doc)</td>
+<td>Class describing a rule how to create a pispec predicate.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pispec_configurator/iLock_Geography.pispec_configurator.PiSPECConfigurator.html#iLock_Geography.pispec_configurator.PiSPECConfigurator" title="iLock_Geography.pispec_configurator.PiSPECConfigurator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PiSPECConfigurator</span></code></a>()</td>
+<td>The PiSPECConfigurator class</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pispec_configurator/iLock_Geography.pispec_configurator.Rule.html#iLock_Geography.pispec_configurator.Rule" title="iLock_Geography.pispec_configurator.Rule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rule</span></code></a>(fromtype,&nbsp;totype,&nbsp;doc)</td>
+<td>Base class for GeoInstRule, PiInstRule and PiPredRule.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pispec_configurator/iLock_Geography.pispec_configurator.Rules.html#iLock_Geography.pispec_configurator.Rules" title="iLock_Geography.pispec_configurator.Rules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rules</span></code></a>()</td>
+<td>Dictinary sorted by a tuple.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">8.22. iLock_Geography.pispec_configurator</a><ul>
+<li><a class="reference internal" href="#to-do">8.22.1. To-do</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="node_types/iLock_Geography.node_types.createSSDX.html"
+                        title="previous chapter">8.21.2. iLock_Geography.node_types.createSSDX</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pispec_configurator/iLock_Geography.pispec_configurator.lists2dict.html"
+                        title="next chapter">8.22.1.1. iLock_Geography.pispec_configurator.lists2dict</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pispec_configurator/iLock_Geography.pispec_configurator.lists2dict.html" title="8.22.1.1. iLock_Geography.pispec_configurator.lists2dict"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="node_types/iLock_Geography.node_types.createSSDX.html" title="8.21.2. iLock_Geography.node_types.createSSDX"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api_reference.html" >8. API reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>

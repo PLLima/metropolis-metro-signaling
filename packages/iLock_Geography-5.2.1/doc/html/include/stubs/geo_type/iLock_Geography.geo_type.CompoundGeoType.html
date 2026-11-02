@@ -1,0 +1,135 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.15.1. iLock_Geography.geo_type.CompoundGeoType &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="8.15.1.1. iLock_Geography.geo_type.CompoundGeoType.__init__" href="CompoundGeoType/iLock_Geography.geo_type.CompoundGeoType.__init__.html" />
+    <link rel="prev" title="8.15. iLock_Geography.geo_type" href="../iLock_Geography.geo_type.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="CompoundGeoType/iLock_Geography.geo_type.CompoundGeoType.__init__.html" title="8.15.1.1. iLock_Geography.geo_type.CompoundGeoType.__init__"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../iLock_Geography.geo_type.html" title="8.15. iLock_Geography.geo_type"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.geo_type.html" accesskey="U">8.15. iLock_Geography.geo_type</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ilock-geography-geo-type-compoundgeotype">
+<h1>8.15.1. iLock_Geography.geo_type.CompoundGeoType<a class="headerlink" href="#ilock-geography-geo-type-compoundgeotype" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="iLock_Geography.geo_type.CompoundGeoType">
+<em class="property">class </em><code class="descclassname">iLock_Geography.geo_type.</code><code class="descname">CompoundGeoType</code><span class="sig-paren">(</span><em>name</em>, <em>*subTypes</em><span class="sig-paren">)</span><a class="headerlink" href="#iLock_Geography.geo_type.CompoundGeoType" title="Permalink to this definition">¶</a></dt>
+<dd><p>A CompoundGeoType models a compound geography type that consists of
+several subtypes.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="CompoundGeoType/iLock_Geography.geo_type.CompoundGeoType.__init__.html#iLock_Geography.geo_type.CompoundGeoType.__init__" title="iLock_Geography.geo_type.CompoundGeoType.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(name,&nbsp;*subTypes)</td>
+<td>Constructor.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="CompoundGeoType/iLock_Geography.geo_type.CompoundGeoType.getBaseTypes.html#iLock_Geography.geo_type.CompoundGeoType.getBaseTypes" title="iLock_Geography.geo_type.CompoundGeoType.getBaseTypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBaseTypes</span></code></a>()</td>
+<td>Return an iterator object that can iterate over all the base types contained by this compound type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="CompoundGeoType/iLock_Geography.geo_type.CompoundGeoType.getUserTypes.html#iLock_Geography.geo_type.CompoundGeoType.getUserTypes" title="iLock_Geography.geo_type.CompoundGeoType.getUserTypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUserTypes</span></code></a>()</td>
+<td>Return a set of user types supported by the base types contained in this compound type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="CompoundGeoType/iLock_Geography.geo_type.CompoundGeoType.isBasic.html#iLock_Geography.geo_type.CompoundGeoType.isBasic" title="iLock_Geography.geo_type.CompoundGeoType.isBasic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isBasic</span></code></a>()</td>
+<td>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if this object (<code class="docutils literal notranslate"><span class="pre">self</span></code>) is a base type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="CompoundGeoType/iLock_Geography.geo_type.CompoundGeoType.name.html#iLock_Geography.geo_type.CompoundGeoType.name" title="iLock_Geography.geo_type.CompoundGeoType.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a>()</td>
+<td>Return the name of this compound type.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../iLock_Geography.geo_type.html"
+                        title="previous chapter">8.15. iLock_Geography.geo_type</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="CompoundGeoType/iLock_Geography.geo_type.CompoundGeoType.__init__.html"
+                        title="next chapter">8.15.1.1. iLock_Geography.geo_type.CompoundGeoType.__init__</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="CompoundGeoType/iLock_Geography.geo_type.CompoundGeoType.__init__.html" title="8.15.1.1. iLock_Geography.geo_type.CompoundGeoType.__init__"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../iLock_Geography.geo_type.html" title="8.15. iLock_Geography.geo_type"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">iLock_Geography  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >8. API reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../iLock_Geography.geo_type.html" >8.15. iLock_Geography.geo_type</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>

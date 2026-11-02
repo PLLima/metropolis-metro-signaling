@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>om_integration</name>
+  <version>2.4</version>
+  <root>false</root>
+  <description>Configuration of safety program integration with the object model.</description>
+  <dependencies>
+    <package name="lcf_utils" version="2.1.0" integrity="digest" fingerprint="378c90d9330586301e4724c89a8708b6e1bb6e8d" />
+    <package name="variable_alias" version="1.6.3" integrity="digest" fingerprint="b3de97a44d638b2cd3396a49b941dc0739590a06" />
+  </dependencies>
+</package>

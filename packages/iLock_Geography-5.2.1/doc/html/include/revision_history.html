@@ -1,0 +1,480 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>7. Revision history &#8212; iLock_Geography  documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8. API reference" href="api_reference.html" />
+    <link rel="prev" title="1. General Prover iLock Configuration" href="description.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api_reference.html" title="8. API reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="description.html" title="1. General Prover iLock Configuration"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">iLock_Geography  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="revision-history">
+<h1>7. Revision history<a class="headerlink" href="#revision-history" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-1-4">
+<h2>7.1. Version 1.4<a class="headerlink" href="#version-1-4" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Added support for new switch types; Single side diamond crossing
+and double side diamond crossing.</li>
+<li>Added pispec_configurator. Storing and documentation of instance
+and predicate rules and handling of the PiSPEC generation.</li>
+<li>Various bug fixes.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-1">
+<h2>7.2. Version 1.4.1<a class="headerlink" href="#version-1-4-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Bug fixes.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-2">
+<h2>7.3. Version 1.4.2<a class="headerlink" href="#version-1-4-2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Bug fixes.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-3">
+<h2>7.4. Version 1.4.3<a class="headerlink" href="#version-1-4-3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Added geo predicate ‘Positive(dirObj)’ and a corresponding built-in
+‘g_positive’.</li>
+<li>Fixed 2 bugs in the class ‘SwitchIter’ dealing with the corner case
+of paths beginning or ending in switch nodes.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-4">
+<h2>7.5. Version 1.4.4<a class="headerlink" href="#version-1-4-4" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Added attributes for railyard node coordinates and for railyard
+objects contained in nodes.</li>
+<li>Added automatic setting of the coordinate attribute for an object
+in a node, given that the node has its coordinate attribute set.
+This feature is implemented in ‘MutableRailyard’ which will be
+automatically used if the railyard is created using
+‘railyard_import.fromLayoutEditor’ (the recommended way when using
+the layout editor).</li>
+<li>Path shifting has been disabled (only used in the first modular
+project).</li>
+<li>Now the railyard used when producing PiSPEC is stored in ‘CurrentRailyard’
+in the ‘LayoutEditorAPI’.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-5">
+<h2>7.6. Version 1.4.5<a class="headerlink" href="#version-1-4-5" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Fixed bug that prevented import of iLock_Geography in the T phase.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-6">
+<h2>7.7. Version 1.4.6<a class="headerlink" href="#version-1-4-6" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Removed _GeoPredicatePathShift and refactor its subclasses.</li>
+<li>Add functionality to distinguish start and end objects for paths when
+building the corresponding predicates.</li>
+<li>Added documentation to geo_attributes, geo_type and type_manager.</li>
+<li>Refactored geo_algorithm.py as a sub-package and added documentation.</li>
+<li>Fixed the bugs in different modules.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-7">
+<h2>7.8. Version 1.4.7<a class="headerlink" href="#version-1-4-7" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Add Constant, NthAreaInPath, Union and other predicates</li>
+<li>Add several GeoPredicates to better support demo</li>
+<li>Adding preliminary support for LCF flow</li>
+<li>Add module lcf2pispec</li>
+<li>Add a method to convert GeoPredicate to LCF table</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-8">
+<h2>7.9. Version 1.4.8<a class="headerlink" href="#version-1-4-8" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Remove redundant GeoPredicates from predicate library</li>
+<li>Fixed typecheck errors</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-9">
+<h2>7.10. Version 1.4.9<a class="headerlink" href="#version-1-4-9" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Refactor out predicate_library as a package.</li>
+<li>Documentation of public modules is done.</li>
+<li>Minor issues fixed.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-4-10">
+<h2>7.11. Version 1.4.10<a class="headerlink" href="#version-1-4-10" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Bugfix in orient_railyard function; now supports crossings.</li>
+<li>Expose the restriction and edgCondition arguments of the NextObject
+predicate.</li>
+<li>geo_algorithms.railyard:restrict can now optionally include areas that are
+intersecting the restriction, not only areas fully contained in the
+restriction.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-5">
+<h2>7.12. Version 1.5<a class="headerlink" href="#version-1-5" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Add support for generating PiSPEC instances and populating predicates
+based on LCF2Tab.json, LCF2Ins.json and LCF2Par.json files. The lcf2pispec
+module has been deprecated.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-5-1">
+<h2>7.13. Version 1.5.1<a class="headerlink" href="#version-1-5-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Bugfix for FilterProjectT; could not filter on columns containing railyard entities.</li>
+<li>Use lcf_utils 1.0.1 to fix crash when parsing RJSON on systems with a .NET framework &lt; 4.7.1</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-5-2">
+<h2>7.14. Version 1.5.2<a class="headerlink" href="#version-1-5-2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Bug fix: Support dumping files containing non-ascii characters.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-1-6">
+<h2>7.15. Version 1.6<a class="headerlink" href="#version-1-6" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Add support for using the default Types.lcf file loaded by Prover iLock.</li>
+<li>Remove the unofficial crlf module.</li>
+<li>Remove the unofficial xml module.</li>
+<li>Add support for Prover iLock’s 2019 layout editor.</li>
+<li>Bugfix: A parameter may only be specified once in LCF2Par.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-2-0">
+<h2>7.16. Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>LCFWorkflow.run will no longer dump files to the “generated-lcf-files” in
+the project directory. Instead, the file contents are stored in Prover
+iLock’s persistent storage.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-2-0-1">
+<h2>7.17. Version 2.0.1<a class="headerlink" href="#version-2-0-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Fixed bug where FilterProjectT failed to work if filterCols referred to
+a column with a nullable type.</li>
+<li>Implemented stricter checking of the values of requiredValues in FilterProjectT.</li>
+<li>There is now stricter type checking of filter tables, in order to provide better
+error messages.</li>
+<li>There is now a better error message when a filter table has not been populated.</li>
+<li>Fixed crash when FilterProjectT was used without specifying projectCols.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-2-1">
+<h2>7.18. Version 2.1<a class="headerlink" href="#version-2-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Added table method FilterTypeProjectT.</li>
+<li>Added table method InnerJoinT.</li>
+<li>Added table method NextAreaInPathT.</li>
+<li>PiSPEC instances generated with the LCF workflow are now always placed
+under their corresponding railyard instance in the project tree.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-2-1-1">
+<h2>7.19. Version 2.1.1<a class="headerlink" href="#version-2-1-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Made the posOrient argument to NextObjectT optional, as specified in the LFC.</li>
+<li>Python 3 compatibility</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-2-2">
+<h2>7.20. Version 2.2<a class="headerlink" href="#version-2-2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Added support for the LCF2Inst-cfg-2.0 format. Instantiation rules
+are now stored in this format in Prover iLock’s persistent storage.</li>
+<li>Added support for the LCF2Par-cfg-2.0 format. Parameter rules are now
+stored in this format in Prover iLock’s persistent storage.</li>
+<li>Added rudimentary support for the LCF2Tab-cfg-2.0 format. Local table
+declarations and table method pipelines are not supported. Table rules
+are now stored in this format in Prover iLock’s persistent storage.</li>
+<li>Added support for the LCF-2.0-packaga-data format. The type system is
+now stored in this format in Prover iLock’s persistent storage.</li>
+<li>The minimal required Prover iLock version is now 5.11.1, in order to
+support LCF 2.0.</li>
+<li>Upgrade lcf_utils to version 2.0</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-3-0">
+<h2>7.21. Version 3.0<a class="headerlink" href="#version-3-0" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>The requiredValues argument of FilterProjectT has been renamed to
+conditions, in order to be compliant with the lcf2hll toolchain.
+This is a backwards incompatible change.</li>
+<li>FilterProjectT can now be used to filter columns by regular expressions
+or by type.</li>
+<li>FilterTypeProjectT has been removed in favor of FilterProjectT with
+kind=type.</li>
+<li>The long deprecated lcf.lcf2pispec module has been removed.</li>
+<li>The joinCols1 and joinCols2 arguments of InnerJoinT have been merged into
+a single joinCols argument. This is a backwards incompatible change.
+Likewise, projectCols now takes a list of two-element lists to specify
+the table to select the projection column from. Again, this change was
+made in order for compliance with the lcf2hll toolchain.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-4-0">
+<h2>7.22. Version 4.0<a class="headerlink" href="#version-4-0" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>The field “content” in LCF2Tab has been renamed to “methods”, in order to
+comply with the specification for the LCF2Tab-cfg-2.0 format.</li>
+<li>The field “content” in LCF2Par has been renamed to “par-rules”, in order to
+comply with the specification for the LCF2Par-cfg-2.0 format.</li>
+<li>The areaUserTypes of table method NextAreaInPathT is now mandatory in order
+to comply with lfd-lib.</li>
+<li>Improved the error message for the error where a lcf table column used
+in lcf2par contains null values.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-5-0">
+<h2>7.23. Version 5.0<a class="headerlink" href="#version-5-0" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Added support for integer parameters.</li>
+<li>Added support for local table type declarations in LCF2Tab.</li>
+<li>Added support for table method pipeines in LCF2Tab.</li>
+<li>Added table method MatchT.</li>
+<li>Implemented type containment check for parameters. This means that if a
+table with signature [lcf_type_a, lcf_type_b] is mapped on a PiSPEC
+parameter with signature [PiClassA, PiClassB], the check only passes if
+all instances of PiClassA originate from a lcf entity with type
+lcf_type_a (or a subtype of it), and all instances of PiClassB originate
+from a lcf entity with type lcf_type_b (or a subtype). This ensures the
+table may cover the entire domain of the parameter.</li>
+<li>lcf.api.parseStoredLCF2Tab now returns an instance of LCF2TabConfig
+instead of a list of TabRule instances. This is a backwards incompatible
+change.</li>
+<li>lcf.parse.PredRule has been renamed to ParRule. This is a backwards
+incompatible change.</li>
+<li>All accessor methods of lcf.parse.InstRule, ParRule, TabRule, and TabFilter
+have been turned into properties instead of methods. This is a backwards
+incompatible change.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-5-0-1">
+<h2>7.24. Version 5.0.1<a class="headerlink" href="#version-5-0-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Fixed misspelling of field “regexp” (it was incorrectly “regex”) in
+table method FilterProjectT.</li>
+<li>Added the possibility to assign “ordinal” objects with a value in an
+attribute (for later translation into a LCF table)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-5-0-2">
+<h2>7.25. Version 5.0.2<a class="headerlink" href="#version-5-0-2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Updated lcf_utils version.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-5-1">
+<h2>7.26. Version 5.1<a class="headerlink" href="#version-5-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Made it possible to implement custom table methods operating on other
+tables. This is achieved by:<ul>
+<li>adding an optional hook method <em>validateAgainstPackageData</em> which can
+be used to obtain type information for tables in the system.</li>
+<li>adding a helper method <em>getTable</em> for reading the contents of a LCF
+table.</li>
+<li>exposing <em>lcf.table_methods.getTableSig</em> for getting the signature
+of a table.</li>
+</ul>
+</li>
+<li>Fixed a bug in how boundary nodes were calculated for the ObjectInAreaT
+table method. This only affects uses of ObjectInAreaT where the innerStrict
+argument is used.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-5-2">
+<h2>7.27. Version 5.2<a class="headerlink" href="#version-5-2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Made the Path Generator API more consistent. It is now possible to call
+the method <cite>generate</cite> of all Path Generator classes without any arguments.
+Rather, the same arguments can be supplied to the constructor instead.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-5-2-1">
+<h2>7.28. Version 5.2.1<a class="headerlink" href="#version-5-2-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Bugfix; now also DirObj2EndPaths can be used without giving arguments to
+the <cite>generate</cite> method.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">7. Revision history</a><ul>
+<li><a class="reference internal" href="#version-1-4">7.1. Version 1.4</a></li>
+<li><a class="reference internal" href="#version-1-4-1">7.2. Version 1.4.1</a></li>
+<li><a class="reference internal" href="#version-1-4-2">7.3. Version 1.4.2</a></li>
+<li><a class="reference internal" href="#version-1-4-3">7.4. Version 1.4.3</a></li>
+<li><a class="reference internal" href="#version-1-4-4">7.5. Version 1.4.4</a></li>
+<li><a class="reference internal" href="#version-1-4-5">7.6. Version 1.4.5</a></li>
+<li><a class="reference internal" href="#version-1-4-6">7.7. Version 1.4.6</a></li>
+<li><a class="reference internal" href="#version-1-4-7">7.8. Version 1.4.7</a></li>
+<li><a class="reference internal" href="#version-1-4-8">7.9. Version 1.4.8</a></li>
+<li><a class="reference internal" href="#version-1-4-9">7.10. Version 1.4.9</a></li>
+<li><a class="reference internal" href="#version-1-4-10">7.11. Version 1.4.10</a></li>
+<li><a class="reference internal" href="#version-1-5">7.12. Version 1.5</a></li>
+<li><a class="reference internal" href="#version-1-5-1">7.13. Version 1.5.1</a></li>
+<li><a class="reference internal" href="#version-1-5-2">7.14. Version 1.5.2</a></li>
+<li><a class="reference internal" href="#version-1-6">7.15. Version 1.6</a></li>
+<li><a class="reference internal" href="#version-2-0">7.16. Version 2.0</a></li>
+<li><a class="reference internal" href="#version-2-0-1">7.17. Version 2.0.1</a></li>
+<li><a class="reference internal" href="#version-2-1">7.18. Version 2.1</a></li>
+<li><a class="reference internal" href="#version-2-1-1">7.19. Version 2.1.1</a></li>
+<li><a class="reference internal" href="#version-2-2">7.20. Version 2.2</a></li>
+<li><a class="reference internal" href="#version-3-0">7.21. Version 3.0</a></li>
+<li><a class="reference internal" href="#version-4-0">7.22. Version 4.0</a></li>
+<li><a class="reference internal" href="#version-5-0">7.23. Version 5.0</a></li>
+<li><a class="reference internal" href="#version-5-0-1">7.24. Version 5.0.1</a></li>
+<li><a class="reference internal" href="#version-5-0-2">7.25. Version 5.0.2</a></li>
+<li><a class="reference internal" href="#version-5-1">7.26. Version 5.1</a></li>
+<li><a class="reference internal" href="#version-5-2">7.27. Version 5.2</a></li>
+<li><a class="reference internal" href="#version-5-2-1">7.28. Version 5.2.1</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="description.html"
+                        title="previous chapter">1. General Prover iLock Configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api_reference.html"
+                        title="next chapter">8. API reference</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api_reference.html" title="8. API reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="description.html" title="1. General Prover iLock Configuration"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">iLock_Geography  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, Prover Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.8.
+    </div>
+  </body>
+</html>
