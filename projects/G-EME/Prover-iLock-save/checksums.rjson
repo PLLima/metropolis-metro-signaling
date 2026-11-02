@@ -1,2 +1,5 @@
 hash-algorithm: "sha256"
-project-file-checksums: []
+project-file-checksums:
+  -
+    file: "config/io_g-eme.rjson"
+    checksum: "0D7F846067ADE367171209DB7DDE697C10ED9612FE37C7FC1F4547A08685A4E3"

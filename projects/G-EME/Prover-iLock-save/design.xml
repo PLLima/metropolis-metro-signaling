@@ -12,7 +12,7 @@
     <activity name="CodeScript" state="Finished" />
     <activity name="Simulate" state="Unfinished" />
     <activity name="TestCaseGeneration" state="Unfinished" />
-    <activity name="CheckSafetyRequirements" state="Unfinished" />
+    <activity name="CheckSafetyRequirements" state="Finished" />
     <activity name="RunScripts" state="Unfinished" />
     <activity name="OpenConsole" state="Unfinished" />
   </activities>
@@ -39465,43 +39465,43 @@
     </parameter>
   </parameters>
   <timers>
+    <timer instanceId="5000009" instanceName="S4-S6" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000012" instanceName="S5-SeG2-PEX-W" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000015" instanceName="S7-SeG1-EME-E" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000004" instanceName="S10-SeG2-EME-E" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000003" instanceName="S10-S-p6b" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000013" instanceName="S6-S10" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000014" instanceName="S7-S10" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000005" instanceName="S11-S9" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000016" instanceName="S8-S5" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000018" instanceName="S9-S5" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000001" instanceName="S-p6-S8" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000017" instanceName="S8-SeG2-PEX-W" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000011" instanceName="S5-SeG1-PEX-W" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000007" instanceName="S2-S4" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000002" instanceName="S1-S3" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000008" instanceName="S3-S7" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000010" instanceName="S4-S7" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="5000006" instanceName="S12-S8" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
     <timer instanceId="8000003" instanceName="sw-7" timerName="NormalTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
     <timer instanceId="8000003" instanceName="sw-7" timerName="ReverseTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
+    <timer instanceId="15000003" instanceName="sw-7@gts" timerName="MovementNormalComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="15000003" instanceName="sw-7@gts" timerName="MovementReverseComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
     <timer instanceId="8000001" instanceName="sw_10" timerName="NormalTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
     <timer instanceId="8000001" instanceName="sw_10" timerName="ReverseTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
-    <timer instanceId="8000005" instanceName="sw-9" timerName="NormalTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
-    <timer instanceId="8000005" instanceName="sw-9" timerName="ReverseTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
     <timer instanceId="15000001" instanceName="sw_10@gts" timerName="MovementNormalComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
     <timer instanceId="15000001" instanceName="sw_10@gts" timerName="MovementReverseComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000005" instanceName="S11-S9" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
     <timer instanceId="8000004" instanceName="sw-8" timerName="NormalTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
     <timer instanceId="8000004" instanceName="sw-8" timerName="ReverseTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
     <timer instanceId="15000004" instanceName="sw-8@gts" timerName="MovementNormalComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
     <timer instanceId="15000004" instanceName="sw-8@gts" timerName="MovementReverseComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000017" instanceName="S8-SeG2-PEX-W" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="15000002" instanceName="sw-6@gts" timerName="MovementNormalComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="15000002" instanceName="sw-6@gts" timerName="MovementReverseComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="15000003" instanceName="sw-7@gts" timerName="MovementNormalComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="15000003" instanceName="sw-7@gts" timerName="MovementReverseComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
     <timer instanceId="8000002" instanceName="sw-6" timerName="NormalTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
     <timer instanceId="8000002" instanceName="sw-6" timerName="ReverseTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
+    <timer instanceId="15000002" instanceName="sw-6@gts" timerName="MovementNormalComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="15000002" instanceName="sw-6@gts" timerName="MovementReverseComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
+    <timer instanceId="8000005" instanceName="sw-9" timerName="NormalTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
+    <timer instanceId="8000005" instanceName="sw-9" timerName="ReverseTimeout" setTime="5" setUnit="SEC" resetTime="0" resetUnit="MSEC" timerType="FIXED" />
     <timer instanceId="15000005" instanceName="sw-9@gts" timerName="MovementNormalComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
     <timer instanceId="15000005" instanceName="sw-9@gts" timerName="MovementReverseComplete" setTime="3" setUnit="SEC" resetTime="0" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000009" instanceName="S4-S6" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000011" instanceName="S5-SeG1-PEX-W" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000003" instanceName="S10-S-p6b" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000008" instanceName="S3-S7" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000004" instanceName="S10-SeG2-EME-E" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000018" instanceName="S9-S5" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000001" instanceName="S-p6-S8" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000007" instanceName="S2-S4" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000010" instanceName="S4-S7" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000012" instanceName="S5-SeG2-PEX-W" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000006" instanceName="S12-S8" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000014" instanceName="S7-S10" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000016" instanceName="S8-S5" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000013" instanceName="S6-S10" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000015" instanceName="S7-SeG1-EME-E" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
-    <timer instanceId="5000002" instanceName="S1-S3" timerName="ReleaseTimer" setTime="0" setUnit="SEC" resetTime="30" resetUnit="SEC" timerType="FIXED" />
   </timers>
 </project>

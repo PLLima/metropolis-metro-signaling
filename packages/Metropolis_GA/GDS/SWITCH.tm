@@ -159,7 +159,7 @@ Equations:
   NormalTimeout := SELF.MoveNormal;
 
   MoveReverse :=
-    SELF.CommandedReverse & ~SELF.DetectedNormal &
+    SELF.CommandedReverse & ~SELF.DetectedReverse &
     (SELF.start_move_reverse # SELF.MoveReverse) &
     ~SELF.ReverseTimeout;
 
