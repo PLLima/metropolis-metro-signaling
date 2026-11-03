@@ -289,4 +289,37 @@ Prove:
         )
     );
 
+  """
+  Requirement EXIT 1: If the line output of an exit signal is set, then all of the
+  following holds:
+  1. The signal is not end locked.
+  2. The signal is not commanded to proceed.
+  """
+  EXIT_1 :=
+    ALL esi( 
+      esi.LineOutput   ->
+        ~esi.end_locked &
+        ~CommandedProceed(esi)
+
+    );
+  """
+  Requirement EXIT 2: If an exit signal is commanded to proceed, then all of the
+  following holds:
+  1. The signal is end locked.
+  2. The line inputs is set.
+  3. The line track circuit is vacant.
+  """
+  EXIT_2 :=
+    ALL esi(
+      CommandedProceed(esi)->
+        end_locked(esi) 
+        &
+        esi.LineInput
+        &
+        ALL tc (track_after(esi,tc) -> 
+          Clear(tc))
+          
+
+    );
+
 }
