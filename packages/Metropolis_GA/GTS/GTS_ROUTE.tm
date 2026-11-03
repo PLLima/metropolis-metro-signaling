@@ -164,7 +164,8 @@ TestCase:
   """
   TEST_CASE_3
   foreach(rt:SELF.gds_inst)
-  if (rt.ends_at_exit_signal) {
+  foreach(esi:rt.end_object)
+  if (exit_signal(esi)) {
     
     """ 1. [Action] Initialize the system. """
     init_system();
@@ -209,16 +210,11 @@ TestCase:
     """ 5. [Expect] The flank of the route is protected. """
     expect rt.protected_flank;
 
-    """ 6. [Action] Set the line input of the exit signal to false """
-    foreach(esi:rt.end_object)
-    if (exit_signal(esi)) {
-      esi.LineInput := false;
-    }
+    """ 6. [Action] Set the line input of the exit signal $name(esi) to false """
+    esi.LineInput := false;
 
     """ 7. [Expect] The line output of the exit signal is true during 5s """
-    expect ALL esi:rt.end_object (
-      exit_signal(esi) -> esi.LineOutput
-    ) during 5 SEC;
+    expect esi.LineOutput during 5 SEC;
 
     """ 8. [Action] Request the route. """
     rt.RouteRequested := true;
@@ -229,10 +225,7 @@ TestCase:
     expect ~rt.set during 30 SEC;
 
     """ 10. [Action] Set the line input of the exit signal to true """
-    foreach(esi:rt.end_object)
-    if (exit_signal(esi)) {
-      esi.LineInput := true;
-    }
+    esi.LineInput := true;
 
     """ 11. [Action] Request the route. """
     rt.RouteRequested := true;
@@ -248,8 +241,6 @@ TestCase:
     ) within 1 SEC;
 
     """ 14. [Expect] The line output of the exit signal is false during 5s """
-    expect ALL esi:rt.end_object (
-      exit_signal(esi) -> ~esi.LineOutput
-    ) during 5 SEC;
+    expect ~esi.LineOutput during 5 SEC;
   }
 }
