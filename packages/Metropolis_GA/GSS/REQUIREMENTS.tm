@@ -209,6 +209,18 @@ Prove:
         ~MoveReverse(sw)
     );
 
+    """
+  If a route section becomes ready to release, then it's occupied.
+  """
+  GSS_08 :=
+    ALL rts (
+      rts.ReadyToRelease & PRE ~rts.ReadyToRelease -> 
+        ALL tc (
+          tracks(rts, tc) ->
+          ~tc.Clear
+        )
+    );
+  
   """
   If a route section is ready to release, then it is locked
   """
@@ -216,6 +228,29 @@ Prove:
     ALL rts (
       ReadyToRelease(rts) ->
         PRE Locked(rts)
+    );
+
+  """
+  If a route section releases, then it is clear of occupancy and ready to release.
+
+  The requirement ensures that the route section releases only after the train has passed it, provided it does not reverse
+  direction.
+  """
+  GSS_10 :=
+    // Applies to every route section
+    ALL rts (
+      // Skip the first cycle, where PRE has no real previous value
+      ~SELF.initial_cycle &
+      // A release: locked in the previous cycle, not locked in this one
+      PRE Locked(rts) &
+      ~Locked(rts) ->
+        // All tracks of the route section are clear when it releases
+        ALL tc (
+          tracks(rts, tc) ->
+            Clear(tc)
+        ) &
+        PRE ReadyToRelease(rts) // ReadyToRelease is what triggers the release and is reset in the same
+        // cycle, so it must be checked in the previous cycle
     );
 
   """
