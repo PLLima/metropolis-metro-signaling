@@ -195,6 +195,15 @@ Prove:
     );
 
   """
+  If a route section is ready to release, then it is locked
+  """
+ GSS_09 :=
+    ALL rts (
+      ReadyToRelease(rts) ->
+        PRE Locked(rts)
+    );
+
+  """
   The track after an exit signal shall always be an exit track.
   """
   DATACHECK_01 :=
