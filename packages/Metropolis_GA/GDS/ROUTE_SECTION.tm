@@ -45,7 +45,7 @@ Equations:
   """
   ReadyToRelease :=
     SELF.Locked & (
-      SELF.clear #
+      ~SELF.clear #
       SELF.ReadyToRelease
     );
 

@@ -154,7 +154,7 @@ TestCase:
 
     """ Assert that the locking of the last route section is released. """
     expect ALL rts:rt.route_sections ALL tc:rt.last_track (
-      tracks(rts, tc) -> rts.Locked
+      tracks(rts, tc) -> ~rts.Locked
     );
   }
 }

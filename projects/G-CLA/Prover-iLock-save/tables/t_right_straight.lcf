@@ -1,9 +1,0 @@
-format: "LCF-2.0-project-table"
-package: "Metropolis_GA"
-project: "G-CLA"
-tables:
-  -
-    type: "t_right_straight"
-    rows: [["sw-18"], ["sw-19"]]
-    descr: "the right leg of 'switch' is the straight leg"
-descr: "the right leg of 'switch' is the straight leg"
