@@ -194,6 +194,18 @@ Prove:
         ~MoveReverse(sw)
     );
 
+    """
+  If a route section becomes ready to release, then it's occupied.
+  """
+  GSS_08 :=
+    ALL rts (
+      rts.ReadyToRelease & PRE ~rts.ReadyToRelease -> 
+        ALL tc (
+          tracks(rts, tc) ->
+          ~tc.Clear
+        )
+    );
+  
   """
   The track after an exit signal shall always be an exit track.
   """
