@@ -11,10 +11,8 @@ Equations:
   enter the line.
   """
   LineOutput :=
-    ~SOME rt (
-      end_object(rt, SELF) &
-      set(rt)
-    ) &
+    ~end_locked(SELF) &
+    ~CommandedProceed(SELF) &
     ALL tc:SELF.track_after tc.Clear;
 
   CommandedProceed :=

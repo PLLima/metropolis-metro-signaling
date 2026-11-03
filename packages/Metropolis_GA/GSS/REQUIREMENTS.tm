@@ -158,9 +158,9 @@ Prove:
         SOME bs:rt.end_object true #
         SOME esi:rt.end_object (
           esi.LineInput & 
-          SOME tc (
+          ALL tc (
             track_after(esi, tc) ->
-            tc.Clear
+            Clear(tc)
           )
         ) #
         SOME si1:rt.end_object (
@@ -223,9 +223,9 @@ Prove:
   GSS_08 :=
     ALL rts (
       rts.ReadyToRelease & PRE ~rts.ReadyToRelease -> 
-        ALL tc (
-          tracks(rts, tc) ->
-          ~tc.Clear
+        SOME tc (
+          tracks(rts, tc) &
+          ~Clear(tc)
         )
     );
   
@@ -235,7 +235,7 @@ Prove:
  GSS_09 :=
     ALL rts (
       ReadyToRelease(rts) ->
-        PRE Locked(rts)
+        Locked(rts)
     );
 
   """
@@ -308,12 +308,12 @@ Prove:
   2. The signal is not commanded to proceed.
   """
   EXIT_1 :=
-    ALL esi( 
-      esi.LineOutput   ->
-        ~esi.end_locked &
+    ALL esi ( 
+      esi.LineOutput ->
+        ~end_locked(esi) &
         ~CommandedProceed(esi)
-
     );
+  
   """
   Requirement EXIT 2: If an exit signal is commanded to proceed, then all of the
   following holds:
@@ -324,14 +324,12 @@ Prove:
   EXIT_2 :=
     ALL esi(
       CommandedProceed(esi)->
-        end_locked(esi) 
-        &
-        esi.LineInput
-        &
-        ALL tc (track_after(esi,tc) -> 
-          Clear(tc))
-          
-
+        end_locked(esi) &
+        esi.LineInput &
+        ALL tc (
+          track_after(esi,tc) -> 
+          Clear(tc)
+        )
     );
 
 }
