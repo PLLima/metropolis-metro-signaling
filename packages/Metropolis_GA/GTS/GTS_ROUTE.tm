@@ -157,4 +157,99 @@ TestCase:
       tracks(rts, tc) -> ~rts.Locked
     );
   }
+
+TestCase:
+  """ 
+  Test Case 3: Line block interface for exit signals. 
+  """
+  TEST_CASE_3
+  foreach(rt:SELF.gds_inst)
+  if (rt.ends_at_exit_signal) {
+    
+    """ 1. [Action] Initialize the system. """
+    init_system();
+
+    """ 2. [Action] Request every switch in the route in its proper position. """
+    foreach(sw:rt.switches_normal) {
+      sw.RequestedNormal := true;
+    }
+    foreach(sw:rt.switches_reverse) {
+      sw.RequestedReverse := true;
+    }
+    wait 1 SEC;
+    foreach(sw:rt.objects) {
+      sw.RequestedNormal := false;
+      sw.RequestedReverse := false;
+    }
+
+    """ 3. [Action] Request a sufficient set of protective switches (which might be empty) in their protective positions. """
+    foreach(pa:rt.protection_areas)
+    if (pa.minimal) {
+      foreach(sw1:pa.switches_normal) {
+        sw1.RequestedNormal := true;
+      }
+      foreach(sw1:pa.switches_reverse) {
+        sw1.RequestedReverse := true;
+      }
+      wait 1 SEC;
+      foreach(sw1:pa.switches_normal) {
+        sw1.RequestedNormal := false;
+      }
+      foreach(sw1:pa.switches_reverse) {
+        sw1.RequestedReverse := false;
+      }
+    }
+
+    """ 4. [Expect] All switches in the route are in proper correspondence. """
+    expect ALL sw:rt.objects (
+      (switches_normal(rt, sw) -> sw.correspondence_normal) &
+      (switches_reverse(rt, sw) -> sw.correspondence_reverse)
+    ) within 5 SEC;
+
+    """ 5. [Expect] The flank of the route is protected. """
+    expect rt.protected_flank;
+
+    """ 6. [Action] Set the line input of the exit signal to false """
+    foreach(esi:rt.end_object)
+    if (exit_signal(esi)) {
+      esi.LineInput := false;
+    }
+
+    """ 7. [Expect] The line output of the exit signal is true during 5s """
+    expect ALL esi:rt.end_object (
+      exit_signal(esi) -> esi.LineOutput
+    ) during 5 SEC;
+
+    """ 8. [Action] Request the route. """
+    rt.RouteRequested := true;
+    wait 1 SEC;
+    rt.RouteRequested := false;
+
+    """ 9. [Expect] The route does not become locked during 30s """
+    expect ~rt.set during 30 SEC;
+
+    """ 10. [Action] Set the line input of the exit signal to true """
+    foreach(esi:rt.end_object)
+    if (exit_signal(esi)) {
+      esi.LineInput := true;
+    }
+
+    """ 11. [Action] Request the route. """
+    rt.RouteRequested := true;
+    wait 1 SEC;
+    rt.RouteRequested := false;
+
+    """ 12. [Expect] The route becomes locked within 5s """
+    expect rt.set within 5 SEC;
+
+    """ 13. [Expect] The start signal of the route shows proceed within 1s """
+    expect ALL si:rt.start_signal (
+      si.ShowsProceed
+    ) within 1 SEC;
+
+    """ 14. [Expect] The line output of the exit signal is false during 5s """
+    expect ALL esi:rt.end_object (
+      exit_signal(esi) -> ~esi.LineOutput
+    ) during 5 SEC;
+  }
 }
