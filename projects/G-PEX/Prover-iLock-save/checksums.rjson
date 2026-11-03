@@ -1,5 +1,0 @@
-hash-algorithm: "sha256"
-project-file-checksums:
-  -
-    file: "config/io_g-pex.rjson"
-    checksum: "BB755732240BAD8402D965B04366459DA4CD706AAEFE4A35C56830E791E1BDF8"

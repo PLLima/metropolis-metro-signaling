@@ -100,4 +100,50 @@ Timers:
   MovementNormalComplete  (SET = 3 SEC, CLEAR = 0 SEC, FIXED);
   MovementReverseComplete (SET = 3 SEC, CLEAR = 0 SEC, FIXED);
 
+// ==========================================================================
+// Testcases
+// ==========================================================================
+TestCase:
+  """ 
+  Test Case 2: The purpose of this test is to test manual switch throwing and 
+  that the switch cannot be moved when the track circuit of the switch is occupied 
+  """
+  MANUAL_SWITCH_THROWING
+  foreach(sw:SELF.gds_inst) {
+    """ Initialize the system. """
+    init_system();
+
+    """ 1. [Action] Request the switch to reverse position """
+    sw.RequestedReverse := true;
+    sw.RequestedNormal := false;
+
+    """ 2. [Expect] The switch loses normal detection within 1s """
+    expect ~sw.DetectedNormal within 1 SEC;
+
+    """ 3. [Expect] The switch gains reverse detection within 5s """
+    expect sw.DetectedReverse within 5 SEC;
+
+    """ 4. [Action] Request the switch to normal position """
+    sw.RequestedNormal := true;
+    sw.RequestedReverse := false;
+
+    """ 5. [Expect] The switch loses reverse detection within 1s """
+    expect ~sw.DetectedReverse within 1 SEC;
+
+    """ 6. [Expect] The switch gains normal detection within 5s """
+    expect sw.DetectedNormal within 5 SEC;
+
+    """ 7. [Action] Occupy the track circuit that contains the switch """
+    foreach(tc:sw.track) {
+      tc.Clear := false;
+    }
+    wait 1 SEC;
+
+    """ 8. [Action] Request the switch to reverse position """
+    sw.RequestedReverse := true;
+    sw.RequestedNormal := false;
+
+    """ 9. [Expect] The switch stays in normal position during 60s """
+    expect sw.DetectedNormal during 60 SEC;
+  }
 }
