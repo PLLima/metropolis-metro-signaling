@@ -331,28 +331,32 @@ TestCase:
 
     """
     12. [Expect] The start signal is neither commanded to proceed nor shows
-    proceed within 1 s.
+    proceed.
     """
     expect ALL si:rt.start_signal (
       ~si.CommandedProceed & ~si.ShowsProceed
-    ) within 1 SEC;
+    );
 
     """ 13. [Expect] The route is not set. """
     expect ~rt.set;
 
-    """ 14. [Expect] All route sections stay locked during the following 25 s. """
-    expect ALL rts:rt.route_sections (
-      rts.Locked
-    ) during 25 SEC;
+    """
+    14. [Expect] During the following 28 s, all route sections stay locked
+    and the start signal is not commanded to proceed.
+    """
+    expect (
+      (ALL rts:rt.route_sections rts.Locked) &
+      (ALL si:rt.start_signal ~si.CommandedProceed)
+    ) during 28 SEC;
 
     """
-    15. [Expect] During the following 6 s, the route sections are either all
+    15. [Expect] During the following 4 s, the route sections are either all
     locked or all unlocked at every instant, i.e. they release simultaneously.
     """
     expect ALL rts1:rt.route_sections ALL rts2:rt.route_sections (
       (rts1.Locked & rts2.Locked) #
       (~rts1.Locked & ~rts2.Locked)
-    ) during 6 SEC;
+    ) during 4 SEC;
 
     """ 16. [Expect] All route sections of the route are unlocked. """
     expect ALL rts:rt.route_sections (
