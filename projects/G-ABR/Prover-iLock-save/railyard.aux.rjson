@@ -501,15 +501,7 @@ view:
   y: -8
   zoom: 0.8999999761581421
   track-grid-size: 20
-  background-images:
-    -
-      alias: "Screenshot 2026-11-02 132215.png"
-      x: 0
-      y: 0
-      show: "always"
-      opacity: 0.25
-      rotation: 0
-      scale: 1
+  background-images: []
 shapes:
   labels: []
   lines: []
