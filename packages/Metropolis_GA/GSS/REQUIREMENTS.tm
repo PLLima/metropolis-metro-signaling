@@ -54,12 +54,27 @@ Prove:
     );
 
   """
+  Route sections which share tracks cannot be locked at the same
+  time.
+  """
+  
+  GSS_02 :=
+    ALL rts1
+    ALL rts2(
+      (~(rts1=rts2) &
+      SOME tc(
+       tracks(rts1,tc) & tracks(rts2,tc))  -> 
+        ~(rts1.Locked & rts2.Locked)));
+
+
+  """
   If a signal that is the start of a set route is commanded to proceed, then
   the switches in the route are detected in their correct positions.
 
   The switchess in the route are given by the relations Switch In
   Normal/Reverse relations from the route sections in the route.
   """
+
   GSS_03 :=
     ALL si
     ALL rt
