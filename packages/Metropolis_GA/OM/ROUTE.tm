@@ -25,6 +25,14 @@ Inputs:
   """
   RouteRequested;
 
+  """
+  Manual release of the route is requested. Input from the office system.
+  When received, the start signal of the route stops being commanded to
+  proceed and the 30s release timer starts. When the timer has expired, all
+  route sections of the route are released simultaneously.
+  """
+  ReleaseRequested;
+  
 Functions: // Static
 
   """
@@ -80,7 +88,7 @@ Functions: // Static
   bool ends_at_exit_signal :=
     SOME esi:SELF.end_object true;
 
-    """
+  """
   The route can release immediately upon receiving a manual request,
   if it is not occupied and no trains are detected in the approach
   paths of its start signal.
@@ -88,7 +96,7 @@ Functions: // Static
   bool immediate_manual_release := false;
 
   """
-  The route ends at a stop lamp.
+  The route ends at a buffer stop.
   """
   bool ends_at_buffer_stop :=
     SOME bs:SELF.end_object true;
@@ -96,10 +104,12 @@ Functions: // Static
 Functions: // Dynamic
 
   """
-  The route is set, i.e. all its route sections are locked.
+  The route is set, i.e. all its route sections are locked and the manual
+  release timer is not running.
   """
   bool set :=
-    ALL rts:SELF.route_sections rts.Locked;
+    (ALL rts:SELF.route_sections rts.Locked) &
+    ~SELF.ReleaseTimer;
 
   """
   The route is ready to lock. This will lock all its route sections and
@@ -147,16 +157,18 @@ Equations:
   bool PreReleaseTimer := SELF.ReleaseTimer;
 
   """
-  The 30s timer for manual release is active. It engages when a 
-  manual release request is received, but not if the immediate
-  release conditions are satisfied.
+  The 30s timer for manual release is active. It starts when ReleaseRequested
+  is received, unless the immediate release conditions are satisfied, and
+  stops after 30 seconds. While it is active the route is not set.
   """
   bool ReleaseTimer;
 
 Attributes:
 
   InteractiveType : RouteRequested["Pulse 0.5, Toggle"];
+  InteractiveType : ReleaseRequested["Pulse 0.5, Toggle"];
 
   NormalValue : RouteRequested["False"];
+  NormalValue : ReleaseRequested["False"];
 
 }
