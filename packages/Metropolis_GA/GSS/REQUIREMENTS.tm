@@ -142,10 +142,12 @@ Prove:
 
   """
   If a signal that is the start of a set route is commanded to
-  proceed, then either the route ends at a buffer stop, ends at an
-  exit signal, the end signal is commanded to proceed, or there is
-  a protective area for the end signal that is protective (front
-  protection)
+  proceed, then either:
+  - the route ends at a buffer stop;
+  - the route ends at an exit signal with the line input set and a vacant line track;
+  - the end signal is commanded to proceed;
+  - there is a protective area for the end signal that is protective (front
+  protection).
   """
   GSS_06 :=
     ALL si
@@ -154,7 +156,13 @@ Prove:
       start_signal(rt, si) &
       set(rt) ->
         SOME bs:rt.end_object true #
-        SOME esi:rt.end_object true #
+        SOME esi:rt.end_object (
+          esi.LineInput & 
+          SOME tc (
+            track_after(esi, tc) ->
+            tc.Clear
+          )
+        ) #
         SOME si1:rt.end_object (
           CommandedProceed(si1) # PRE CommandedProceed(si1) #
           SOME pa (
