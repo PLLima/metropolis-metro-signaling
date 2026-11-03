@@ -31,13 +31,17 @@ Functions:
   until the release conditions are fulfilled.
   """
   bool manual_unlocking :=
-    false;
+    SOME rt (
+      route_sections(rt, SELF) &
+      rt.JustUnlocked
+    );
 
 Equations:
 
   Locked :=
     (SELF.lock_commanded # SELF.Locked) &
-    ~SELF.release;
+    ~SELF.release &
+    ~SELF.manual_unlocking;
 
   """
   A route section becomes ready to release if it is occupied. It stays ready to

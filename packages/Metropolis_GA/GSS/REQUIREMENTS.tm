@@ -251,7 +251,11 @@ Prove:
       ~SELF.initial_cycle &
       // A release: locked in the previous cycle, not locked in this one
       PRE Locked(rts) &
-      ~Locked(rts) ->
+      ~Locked(rts) &
+      ~SOME rt(
+        route_sections(rt, rts) &
+        rt.JustUnlocked
+      ) ->
         // All tracks of the route section are clear when it releases
         ALL tc (
           tracks(rts, tc) ->

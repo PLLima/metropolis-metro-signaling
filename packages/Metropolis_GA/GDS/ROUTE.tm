@@ -53,7 +53,14 @@ Functions:
 
 Equations:
 
-  ReleaseTimer := true;
+"""
+  The release timer input: a manual release is requested for a route that is
+  locked, and no immediate release applies.
+  """
+  ReleaseTimer :=
+    SELF.ReleaseRequested &
+    (ALL rts:SELF.route_sections rts.Locked) &
+    ~SELF.immediate_manual_release;
 
 Timers:
 

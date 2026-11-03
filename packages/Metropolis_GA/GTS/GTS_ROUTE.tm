@@ -243,4 +243,120 @@ TestCase:
     """ 14. [Expect] The line output of the exit signal is false during 5s """
     expect ~esi.LineOutput during 5 SEC;
   }
+
+TestCase:
+  """
+  Test Case 4: Manual release. The purpose of this test is to test 
+  that a manual release request removes the proceed command at once
+  and releases all route sections simultaneously after the 30 s delay.
+  """
+  TEST_CASE_4
+  foreach(rt:SELF.gds_inst) {
+
+    """ 1. [Action] Initialize the system. """
+    init_system();
+
+    """ 2. [Action] Request every switch in the route in its proper position. """
+    foreach(sw:rt.switches_normal) {
+      sw.RequestedNormal := true;
+    }
+    foreach(sw:rt.switches_reverse) {
+      sw.RequestedReverse := true;
+    }
+    wait 1 SEC;
+    foreach(sw:rt.objects) {
+      sw.RequestedNormal := false;
+      sw.RequestedReverse := false;
+    }
+
+    """ 3. [Action] Request a sufficient set of protective switches (which might be empty) in their protective positions. """
+    foreach(pa:rt.protection_areas)
+    if (pa.minimal) {
+      foreach(sw1:pa.switches_normal) {
+        sw1.RequestedNormal := true;
+      }
+      foreach(sw1:pa.switches_reverse) {
+        sw1.RequestedReverse := true;
+      }
+      wait 1 SEC;
+      foreach(sw1:pa.switches_normal) {
+        sw1.RequestedNormal := false;
+      }
+      foreach(sw1:pa.switches_reverse) {
+        sw1.RequestedReverse := false;
+      }
+    }
+
+    """ 4. [Action] If the route ends in an exit signal, set the line input of the exit signal to true. """
+    foreach(esi:rt.end_object)
+    if (exit_signal(esi)) {
+      esi.LineInput := true;
+    }
+
+    """ 5. [Expect] All switches in the route are in proper correspondence. """
+    expect ALL sw:rt.objects (
+      (switches_normal(rt, sw) -> sw.correspondence_normal) &
+      (switches_reverse(rt, sw) -> sw.correspondence_reverse)
+    ) within 5 SEC;
+
+    """ 6. [Expect] The flank of the route is protected. """
+    expect rt.protected_flank;
+
+    """
+    7. [Expect] If the route does not end in a buffer stop or an exit signal,
+    the front of the route is protected.
+    """
+    expect (
+      ~rt.ends_at_buffer_stop &
+      ~rt.ends_at_exit_signal
+    ) -> rt.protected_front;
+
+    """ 8. [Action] Request the route. """
+    rt.RouteRequested := true;
+    wait 1 SEC;
+    rt.RouteRequested := false;
+
+    """ 9. [Expect] The route is set. """
+    expect rt.set;
+
+    """ 10. [Expect] The start signal is commanded to proceed and shows proceed. """
+    expect ALL si:rt.start_signal (
+      si.CommandedProceed & si.ShowsProceed
+    );
+
+    """ 11. [Action] Request release of the route. """
+    rt.ReleaseRequested := true;
+    wait 1 SEC;
+    rt.ReleaseRequested := false;
+
+    """
+    12. [Expect] The start signal is neither commanded to proceed nor shows
+    proceed within 1 s.
+    """
+    expect ALL si:rt.start_signal (
+      ~si.CommandedProceed & ~si.ShowsProceed
+    ) within 1 SEC;
+
+    """ 13. [Expect] The route is not set. """
+    expect ~rt.set;
+
+    """ 14. [Expect] All route sections stay locked during the following 25 s. """
+    expect ALL rts:rt.route_sections (
+      rts.Locked
+    ) during 25 SEC;
+
+    """
+    15. [Expect] During the following 6 s, the route sections are either all
+    locked or all unlocked at every instant, i.e. they release simultaneously.
+    """
+    expect ALL rts1:rt.route_sections ALL rts2:rt.route_sections (
+      (rts1.Locked & rts2.Locked) #
+      (~rts1.Locked & ~rts2.Locked)
+    ) during 6 SEC;
+
+    """ 16. [Expect] All route sections of the route are unlocked. """
+    expect ALL rts:rt.route_sections (
+      ~rts.Locked
+    );
+  }
 }
