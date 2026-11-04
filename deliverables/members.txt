@@ -1,4 +1,29 @@
-Tiago Closs - 
-Gabriel da Costa - 
-Pedro Lubaszewski Lima - 
-Sebastián Pari Medina - 
+Tiago Closs
+Role: Station Modeling (SA), Simulation & Safety Formalization
+- Built the interlocking models for stations G-EME (Emerson) and G-PEX (Parc des Expositions).
+- Formalized safety requirement GSS_10 (route section release condition) in PiSPEC.
+- Configured and executed the interactive multi-station line simulation over MQTT (MPS-27, MPS-28).
+- Contributed to formal verification, the technical report, and the presentation.
+
+Gabriel da Costa
+Role: Station Modeling (SA), Generic Design & Testing
+- Built the interlocking models for stations G-CLA (Clarke) and G-TEC (Technopôle).
+- Extended the Object Model (OM) and Generic Design (GDS) to support manual route release.
+- Developed GTS test suites for switch throwing, the line block interface, and manual release.
+- Formalized requirement GSS_09 and corrected definitions for GSS_01, GSS_03, and GSS_07.
+- Configured and executed the interactive multi-station line simulation over MQTT (MPS-27, MPS-28).
+- Contributed to the technical report and the presentation.
+
+Pedro Lubaszewski Lima
+Role: Project Architecture, Station Modeling (SA) & Safety Verification
+- Managed repository structure, project workflow, and documentation.
+- Built the interlocking model for station G-ABR (Abrial).
+- Formalized and refined safety requirements GSS_06, GSS_08, and line block exit signals (EXIT_1, EXIT_2).
+- Debugged and verified the generic design and line block interface in Prover iLock (MPS-18, MPS-20).
+- Contributed to the technical report and the presentation.
+
+Sebastián Pari Medina
+Role: Safety Specification (GSS) & Model Checking
+- Formalized safety requirements GSS_02 (mutual exclusion of shared tracks) and line block exit signals (EXIT_1, EXIT_2) in PiSPEC.
+- Carried out formal verification and counterexample analysis using Prover iLock Verifier.
+- Contributed to the technical report and the presentation.
