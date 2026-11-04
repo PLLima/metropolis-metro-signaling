@@ -26,4 +26,5 @@ Sebastián Pari Medina
 Role: Safety Specification (GSS) & Model Checking
 - Formalized safety requirements GSS_02 (mutual exclusion of shared tracks) and line block exit signals (EXIT_1, EXIT_2) in PiSPEC.
 - Carried out formal verification and counterexample analysis using Prover iLock Verifier.
+- Configured and executed the interactive multi-station line simulation over MQTT (MPS-27, MPS-28).
 - Contributed to the technical report and the presentation.
