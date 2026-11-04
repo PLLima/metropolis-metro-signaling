@@ -33,5 +33,5 @@
     }
   ],
   port: 1883,
-  server: "mqtt.prover.com"
+  server: "localhost"
 }
