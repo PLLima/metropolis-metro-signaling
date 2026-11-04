@@ -25,7 +25,7 @@ def __pp(o1, o2):
 
 def write_rjson(rjson_name, inbound, outbound, program_name=None, prefix=None):
     rjson_dict = dict()
-    rjson_dict['server'] = 'mqtt.prover.com'
+    rjson_dict['server'] = os.environ.get('METROPOLIS_MQTT_SERVER', 'localhost')
     rjson_dict['port'] = 1883
     io_dict_out = dict()
     io_dict_out['program'] = program_name
