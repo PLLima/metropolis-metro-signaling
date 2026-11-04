@@ -497,9 +497,9 @@ areas:
 paths: []
 comments: []
 view:
-  x: 363
-  y: -8
-  zoom: 0.8999999761581421
+  x: 473
+  y: 114
+  zoom: 1.2000000476837158
   track-grid-size: 20
   background-images: []
 shapes:

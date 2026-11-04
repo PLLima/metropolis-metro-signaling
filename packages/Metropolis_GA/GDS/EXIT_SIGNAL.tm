@@ -15,7 +15,14 @@ Equations:
     ~CommandedProceed(SELF) &
     ALL tc:SELF.track_after tc.Clear;
 
+  """
+  Requirement EXIT 2: the exit signal is commanded to proceed only when it is
+  end locked, the line input from the neighbouring station is set and the
+  line track circuit is vacant.
+  """
   CommandedProceed :=
-    false;
+    end_locked(SELF) &
+    SELF.LineInput &
+    SOME tc:SELF.track_after tc.Clear;
 
 }
