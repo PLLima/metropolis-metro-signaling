@@ -8,7 +8,9 @@ Equations:
   The line output is true when this interlocking is not using the line: no
   route ending at this exit signal is set, and the line track circuit is
   clear of occupancy. The neighbouring interlocking may then let trains
-  enter the line.
+  enter the line. The line-clear condition keeps the line reserved while a 
+  train is on it, after the last route section has released and the signal 
+  is no longer end locked.
   """
   LineOutput :=
     ~end_locked(SELF) &

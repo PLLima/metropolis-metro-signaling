@@ -121,6 +121,8 @@ TestCase:
     expect ~sw.DetectedNormal within 1 SEC;
 
     """ 3. [Expect] The switch gains reverse detection within 4s """
+    // the simulated switch needs 3 s to move so 4s is needed.
+    // The test assumes the switch starts in normal position.
     expect sw.DetectedReverse within 4 SEC;
 
     """ 4. [Action] Request the switch to normal position """

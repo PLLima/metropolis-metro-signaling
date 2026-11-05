@@ -243,6 +243,9 @@ TestCase:
     """ 14. [Expect] The line output of the exit signal is false during 5s """
     expect ~esi.LineOutput during 5 SEC;
 
+    // Clean-up, releases the route before the next iteration.
+    // The 35 s wait covers the ~30.5 s release delay.
+
     """ 15. [Action] Request manual release of the route. """
     rt.ReleaseRequested := true;
     wait 1 SEC;
@@ -363,6 +366,8 @@ TestCase:
     15. [Expect] During the following 4 s, the route sections are either all
     locked or all unlocked at every instant, i.e. they release simultaneously.
     """
+    // The release is expected about 31 s after the request (30 s after the 1 s pulse ends),
+    // which falls inside this 4 s window.
     expect ALL rts1:rt.route_sections ALL rts2:rt.route_sections (
       ((rts1.Locked & rts2.Locked) # (~rts1.Locked & ~rts2.Locked)) &
       (ALL si:rt.start_signal ~si.CommandedProceed)

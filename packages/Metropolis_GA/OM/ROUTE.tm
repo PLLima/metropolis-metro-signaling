@@ -91,7 +91,7 @@ Functions: // Static
   """
   The route can release immediately upon receiving a manual request,
   if it is not occupied and no trains are detected in the approach
-  paths of its start signal.
+  paths of its start signal. Not implemented, describes the intended behaviour.
   """
   bool immediate_manual_release := false;
 
@@ -144,11 +144,14 @@ Equations:
   force its route sections to do the same. This either happens after
   the 30s release timer has expired, or immediately, based on certain conditions.
   """
+  // Defined in the OM rather than the GDS because GSS_10 refers to it.
   bool JustUnlocked :=
     (SELF.PreReleaseTimer & ~SELF.ReleaseTimer) #
     (SELF.ReleaseRequested & SELF.immediate_manual_release);
+
   """
   The 30s timer for manual release was active in the previous cycle.
+  Holds ReleaseTimer from the previous cycle (same pattern as PreCommandedNormal in GDS_SWITCH).
   """
   bool PreReleaseTimer := SELF.ReleaseTimer;
 

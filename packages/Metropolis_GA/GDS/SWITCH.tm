@@ -87,6 +87,7 @@ Functions: // Dynamic
   bool protects_signal :=
     SOME si
     SOME pa
+    // since every station has at least one switch
     SOME sw (
       protects_signal(pa, si) & (
         switches_normal(pa, SELF) #
