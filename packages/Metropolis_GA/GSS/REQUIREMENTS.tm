@@ -157,17 +157,18 @@ Prove:
       set(rt) ->
         SOME bs:rt.end_object true #
         SOME esi:rt.end_object (
-          esi.LineInput & 
-          ALL tc (
-            track_after(esi, tc) ->
-            Clear(tc)
-          )
+          esi.LineInput &
+          SOME tc:esi.track_after tc.Clear
         ) #
+        // Exit signals are excluded from the last two cases, an exit signal is
+        // accepted as end object only with the line input set and a vacant line track.
         SOME si1:rt.end_object (
-          CommandedProceed(si1) #
-          SOME pa (
-            protects_signal(pa, si1) &
-            protective(pa)
+          ~EXIT_SIGNAL(si1) & (
+            CommandedProceed(si1) #
+            SOME pa (
+              protects_signal(pa, si1) &
+              protective(pa)
+            )
           )
         )
     );
@@ -238,7 +239,6 @@ Prove:
 
   """
   If a route section releases, then it is clear of occupancy and ready to release.
-
   The requirement ensures that the route section releases only after the train has passed it, provided it does not reverse
   direction.
   """
@@ -250,9 +250,18 @@ Prove:
       // A release: locked in the previous cycle, not locked in this one
       PRE Locked(rts) &
       ~Locked(rts) &
-      ~SOME rt(
+      // A section unlocked because a containing route's release timer
+      // just expired, and not held by another route, is not checked .
+      ~SOME rt (
         route_sections(rt, rts) &
-        rt.JustUnlocked
+        rt.JustUnlocked &
+        ~rt.immediate_manual_release &
+        ~SOME rt1 (
+          ~(rt1 = rt) &
+          route_sections(rt1, rts) &
+          PRE rt1.Holding &
+          ~rt1.JustUnlocked
+        )
       ) ->
         // All tracks of the route section are clear when it releases
         ALL tc (
@@ -320,14 +329,11 @@ Prove:
   3. The line track circuit is vacant.
   """
   EXIT_2 :=
-    ALL esi(
-      CommandedProceed(esi)->
+    ALL esi (
+      CommandedProceed(esi) ->
         end_locked(esi) &
         esi.LineInput &
-        ALL tc (
-          track_after(esi,tc) -> 
-          Clear(tc)
-        )
+        SOME tc:esi.track_after tc.Clear
     );
 
 }

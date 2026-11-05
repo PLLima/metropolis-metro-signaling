@@ -1,5 +1,5 @@
 PiSPEC 3.0
-
+// Placeholder for approach locking/immediate release; not used
 class GDS_APPROACH_PATH {
 inherit APPROACH_PATH;
 
