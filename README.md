@@ -154,13 +154,22 @@ metropolis-metro-signaling/
 ├── .gitignore                          # Clean build exclusions (LaTeX, binaries, logs)
 ├── deliverables/
 │   ├── members.txt                     # Team members and detailed engineering roles
+│   ├── ref.bib                         # Academic and technical bibliography
+│   ├── gss/                            # Generic Safety Specification report (PDF + LaTeX)
+│   ├── gts/                            # Generic Test Specification report (PDF + LaTeX)
+│   ├── om/                             # Object Model documentation (PDF + LaTeX)
+│   ├── logo/
+│   │   ├── LogoCS.pdf                  # CentraleSupélec institutional logo
+│   │   ├── LogoMetropolis.pdf          # City of Metropolis Transport Department vector logo
+│   │   └── LogoProver.pdf              # Prover Technology brand vector logo
+│   ├── img/                            # Visual assets and simulation captures
+│   │   ├── simulation_1.png            # Abrial approach simulation capture (t=108.0s)
+│   │   ├── simulation_2.png            # Abrial line block occupation capture (t=160.6s)
+│   │   └── simulation_3.png            # Clarke arrival & scissors crossover capture (t=320.4s)
 │   ├── report/
 │   │   ├── report.tex                  # Comprehensive LaTeX project report
-│   │   ├── ref.bib                     # Academic and technical bibliography
-│   │   ├── logo/
-│   │   │   ├── LogoCS.pdf              # CentraleSupélec institutional logo
-│   │   │   └── LogoProver.pdf          # Prover Technology brand vector logo
-│   │   └── img/                        # Visual assets and schematics
+│   │   ├── report.pdf                  # Compiled SIL 4 engineering report (10 pages)
+│   │   └── clean.bat                   # Script to clean auxiliary build files
 │   └── slides/                         # Final defense presentation materials
 ├── docs/                               # System documentation and city technical dossiers
 │   ├── Metropolis-Renovation-reseau-metro.pdf
