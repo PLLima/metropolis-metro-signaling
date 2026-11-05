@@ -117,7 +117,6 @@ _minted*/
 .latexmkrc.tmp
 
 # ====================================================================
-# VSCode Configuration Files
+# VSCode Configuration & Utility Scripts
 # ====================================================================
-/.vscode
 clean.bat
