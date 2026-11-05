@@ -13,13 +13,11 @@ Procedures:
   Initialize system.
   """
   init_system() {
+    """ Set all tracks clear. """
+    foreach(tc) { tc.Clear := true; }
 
-    """
-    Set all tracks clear.
-    """
-    foreach(tc) {
-      tc.Clear := true;
-    }
-
+    """ Set the line input of every exit signal. """
+    foreach(esi) { esi.LineInput := true; }
   }
+  
 }

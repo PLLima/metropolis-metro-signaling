@@ -11,7 +11,7 @@ Functions:
     ALL tc:SELF.tracks tc.Clear;
 
   """
-  The locking of the track circuit releases if it has been occupied and now
+  The route section releases if it has been occupied and now
   is clear from occupancy.
   """
   bool release :=
@@ -27,8 +27,7 @@ Functions:
     );
 
   """
-  A route section becomes locked if commanded to lock. It stays locked
-  until the release conditions are fulfilled.
+  It is true when a containing route has just been manually unlocked
   """
   bool manual_unlocking :=
     SOME rt (
@@ -37,7 +36,10 @@ Functions:
     );
 
 Equations:
-
+  """
+  A route section becomes locked if commanded to lock. It stays locked
+  until the release conditions are fulfilled.
+  """
   Locked :=
     (SELF.lock_commanded # SELF.Locked) &
     ~SELF.release &

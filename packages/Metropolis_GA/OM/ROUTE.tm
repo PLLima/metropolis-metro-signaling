@@ -139,18 +139,14 @@ Functions: // Dynamic
   bool protected_flank;
 
 Equations:
-
   """
   The route stops being locked by a manual release request and will 
   force its route sections to do the same. This either happens after
   the 30s release timer has expired, or immediately, based on certain conditions.
   """
-  //Ordering of equations matters when trying to use this for 
-  //previous cycle memory.
   bool JustUnlocked := 
     (SELF.PreReleaseTimer & ~SELF.ReleaseTimer) #
     SELF.immediate_manual_release;
-  
   """
   The 30s timer for manual release was active in the previous cycle.
   """

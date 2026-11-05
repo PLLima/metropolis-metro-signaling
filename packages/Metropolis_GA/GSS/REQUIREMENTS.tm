@@ -222,17 +222,15 @@ Prove:
   """
   GSS_08 :=
     ALL rts (
-      rts.ReadyToRelease & PRE ~rts.ReadyToRelease -> 
-        SOME tc (
-          tracks(rts, tc) &
-          ~Clear(tc)
-        )
+      ~SELF.initial_cycle &
+      rts.ReadyToRelease & PRE ~rts.ReadyToRelease ->
+        SOME tc ( tracks(rts, tc) & ~Clear(tc) )
     );
   
   """
   If a route section is ready to release, then it is locked
   """
- GSS_09 :=
+  GSS_09 :=
     ALL rts (
       ReadyToRelease(rts) ->
         Locked(rts)

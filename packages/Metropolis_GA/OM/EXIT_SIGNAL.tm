@@ -18,7 +18,7 @@ Equations:
 
   """
   Output to neighbouring station indicating that this exit signal is at stop
-  and not end locked.
+  and not end locked and the line track circuit is clear.
   """
   LineOutput;
 

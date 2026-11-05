@@ -145,5 +145,6 @@ TestCase:
 
     """ 9. [Expect] The switch stays in normal position during 60s """
     expect sw.DetectedNormal during 60 SEC;
+    sw.RequestedReverse := false;
   }
 }

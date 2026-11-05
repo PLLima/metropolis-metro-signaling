@@ -221,8 +221,8 @@ TestCase:
     wait 1 SEC;
     rt.RouteRequested := false;
 
-    """ 9. [Expect] The route does not become locked during 30s """
-    expect ~rt.set during 30 SEC;
+    """ 9. [Expect] No section of the route becomes locked during 30s """
+    expect (ALL rts:rt.route_sections ~rts.Locked) during 30 SEC;
 
     """ 10. [Action] Set the line input of the exit signal to true """
     esi.LineInput := true;
@@ -242,6 +242,16 @@ TestCase:
 
     """ 14. [Expect] The line output of the exit signal is false during 5s """
     expect ~esi.LineOutput during 5 SEC;
+
+    """ 15. [Action] Request manual release of the route. """
+    rt.ReleaseRequested := true;
+    wait 1 SEC;
+    rt.ReleaseRequested := false;
+    wait 35 SEC;
+
+    """ 16. [Expect] All route sections of the route are unlocked. """
+    expect ALL rts:rt.route_sections ~rts.Locked;
+
   }
 
 TestCase:
@@ -354,8 +364,8 @@ TestCase:
     locked or all unlocked at every instant, i.e. they release simultaneously.
     """
     expect ALL rts1:rt.route_sections ALL rts2:rt.route_sections (
-      (rts1.Locked & rts2.Locked) #
-      (~rts1.Locked & ~rts2.Locked)
+      ((rts1.Locked & rts2.Locked) # (~rts1.Locked & ~rts2.Locked)) &
+      (ALL si:rt.start_signal ~si.CommandedProceed)
     ) during 4 SEC;
 
     """ 16. [Expect] All route sections of the route are unlocked. """

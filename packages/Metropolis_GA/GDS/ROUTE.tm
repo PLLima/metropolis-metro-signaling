@@ -5,26 +5,22 @@ inherit ROUTE;
 
 Functions:
 
-  bool ready_to_lock :=
-    SELF.RouteRequested &
-    SELF.protected_flank & (
-      SELF.protected_front #
-      SOME si:SELF.end_object si.CommandedProceed
-    ) &
-    ALL rts:SELF.conflicting_route_section ~rts.Locked &
-    ALL tc:SELF.tracks tc.Clear &
-    ALL sw:SELF.switches_normal sw.correspondence_normal &
-    ALL sw:SELF.switches_reverse sw.correspondence_reverse;
+bool ready_to_lock :=
+  SELF.RouteRequested &
+  SELF.protected_flank &
+  SELF.protected_front &
+  ALL rts:SELF.conflicting_route_section ~rts.Locked &
+  ALL tc:SELF.tracks tc.Clear &
+  ALL sw:SELF.switches_normal sw.correspondence_normal &
+  ALL sw:SELF.switches_reverse sw.correspondence_reverse;
 
   bool ready_to_proceed :=
-    SELF.set &
-    SELF.protected_flank & (
-      SELF.protected_front #
-      SOME si:SELF.end_object si.CommandedProceed
-    ) &
-    ALL tc:SELF.tracks tc.Clear &
-    ALL sw:SELF.switches_normal sw.correspondence_normal &
-    ALL sw:SELF.switches_reverse sw.correspondence_reverse;
+  SELF.set &
+  SELF.protected_flank &
+  SELF.protected_front &
+  ALL tc:SELF.tracks tc.Clear &
+  ALL sw:SELF.switches_normal sw.correspondence_normal &
+  ALL sw:SELF.switches_reverse sw.correspondence_reverse;
 
   bool protected_front :=
     SELF.ends_at_buffer_stop #
