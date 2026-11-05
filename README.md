@@ -171,6 +171,8 @@ metropolis-metro-signaling/
 │   │   ├── report.pdf                  # Compiled SIL 4 engineering report (10 pages)
 │   │   └── clean.bat                   # Script to clean auxiliary build files
 │   └── slides/                         # Final defense presentation materials
+│       ├── slides.tex                  # 16-frame Beamer presentation (Prover visual identity)
+│       └── slides.pdf                  # 10-minute engineering defense with Q&A backup slides
 ├── docs/                               # System documentation and city technical dossiers
 │   ├── Metropolis-Renovation-reseau-metro.pdf
 │   ├── Metropolis-Backlog-MPS.pdf
@@ -201,13 +203,11 @@ metropolis-metro-signaling/
 - **Prover PSL & Verifier**: For automated SIL 4 formal verification and inductive invariant proofs.
 - **Prover Studio**: Visual Studio Code extension for PiSPEC generic specification development.
 - **Local MQTT Broker**: Eclipse Mosquitto or embedded Prover MQTT broker listening on `localhost:1883`.
-- **LaTeX Environment**: TeX Live / Overleaf with `pdflatex` and `biber` to compile `deliverables/report/report.tex`.
+- **LaTeX Environment**: TeX Live / Overleaf with `pdflatex` and `bibtex` to compile `deliverables/report/report.tex` and `deliverables/slides/slides.tex`.
 
 ---
 
 ## 👥 Team Members & Role Distribution
-
-*Sorted in alphabetical order by surname:*
 
 ### **Tiago Closs**
 * **Role:** Station Modeling (SA), Line Simulation & Safety Formalization

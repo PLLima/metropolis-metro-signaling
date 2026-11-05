@@ -18,14 +18,14 @@
     left=2cm,
     right=2cm,
     top=2.2cm,
-    bottom=1.8cm,
+    bottom=1.7cm,
     headheight=25pt,
     headsep=11pt,
     footskip=20pt
 ]{geometry}
 
 \setlength{\parindent}{0.75cm}
-\setlength{\parskip}{0.04cm}
+\setlength{\parskip}{0.02cm}
 
 % =========================================================
 % MATHEMATICS AND ENGINEERING
@@ -176,14 +176,14 @@
 % REFERENCES AND HYPERLINKS
 % =========================================================
 \usepackage[
-    backend=biber,
+    backend=bibtex,
     style=ieee,
     sorting=none
 ]{biblatex}
 
 \addbibresource{../ref.bib}
-\setlength\bibitemsep{1.5pt}
-\AtBeginBibliography{\footnotesize}
+\setlength\bibitemsep{0.5pt}
+\AtBeginBibliography{\scriptsize}
 
 \usepackage[
     colorlinks=true,
@@ -523,7 +523,7 @@ Dynamic testing validates the behavioral sequencing, real-time delays, and multi
 Writing and passing the test suites required crucial corrections across the Generic Design Specification (GDS) and Object Model (OM). In particular, during the implementation of Test Case 2, we found that switch reverse movement in \texttt{SWITCH.tm} was inhibited by an inverted guard (\texttt{\textasciitilde DetectedNormal}), which was corrected to \texttt{\textasciitilde DetectedReverse}. For Test Case 3, we extended \texttt{EXIT\_SIGNAL.tm} with \texttt{LineInput} and \texttt{LineOutput} and implemented inter-station equations in \texttt{GDS/EXIT\_SIGNAL.tm}. For Test Case 4, we augmented \texttt{OM/ROUTE.tm} with \texttt{ReleaseRequested} and \texttt{ReleaseTimer}, conditioned \texttt{Set} on an inactive countdown, and updated \texttt{GDS/ROUTE\_SECTION.tm} so that \texttt{rt.JustUnlocked} triggers simultaneous unlocking across all locked sections.
 
 \subsection{Test Case 2 (MPS-13): Manual Switch Throwing Under Occupancy}
-Implemented in \texttt{packages/Metropolis\_GA/GTS/GTS\_SWITCH.tm}, this test verifies manual switch operation: requests to throw an idle switch between normal and reverse positions are executed within 5 seconds, whereas identical commands issued while the containing track circuit is occupied are strictly rejected, holding the switch immovable for 60 seconds:
+Implemented in \texttt{packages/Metropolis\_GA/GTS/GTS\_SWITCH.tm}, this test verifies manual switch operation: requests to throw an idle switch between normal and reverse positions are executed within 4 seconds (tested against physical 3.0s switch throwing time), whereas identical commands issued while the containing track circuit is occupied are strictly rejected, holding the switch immovable for 60 seconds:
 
 \begin{lstlisting}[caption={PiSPEC test procedure for Test Case 2 in GTS\_SWITCH.tm.}]
 TestCase: MANUAL_SWITCH_THROWING
@@ -531,11 +531,11 @@ foreach (sw:SELF.gds_inst) {
   init_system();
   sw.RequestedReverse := true; sw.RequestedNormal := false;
   expect ~sw.DetectedNormal within 1 SEC;
-  expect sw.DetectedReverse within 5 SEC;
+  expect sw.DetectedReverse within 4 SEC;
 
   sw.RequestedNormal := true; sw.RequestedReverse := false;
   expect ~sw.DetectedReverse within 1 SEC;
-  expect sw.DetectedNormal within 5 SEC;
+  expect sw.DetectedNormal within 4 SEC;
 
   foreach (tc:sw.track) { tc.Clear := false; }
   wait 1 SEC;
@@ -709,7 +709,7 @@ By decoupling generic signaling principles from site-specific topologies and lev
 % =========================================================
 % REFERENCES
 % =========================================================
-\vspace{0.4cm}
+\vspace{0.1cm}
 \printbibliography[title={References}]
 
 \end{document}
