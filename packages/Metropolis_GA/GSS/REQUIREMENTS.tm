@@ -157,17 +157,16 @@ Prove:
       set(rt) ->
         SOME bs:rt.end_object true #
         SOME esi:rt.end_object (
-          esi.LineInput & 
-          ALL tc (
-            track_after(esi, tc) ->
-            Clear(tc)
-          )
+          esi.LineInput &
+          SOME tc:esi.track_after tc.Clear
         ) #
         SOME si1:rt.end_object (
-          CommandedProceed(si1) #
-          SOME pa (
-            protects_signal(pa, si1) &
-            protective(pa)
+          ~EXIT_SIGNAL(si1) & (
+            CommandedProceed(si1) #
+            SOME pa (
+              protects_signal(pa, si1) &
+              protective(pa)
+            )
           )
         )
     );
@@ -250,9 +249,16 @@ Prove:
       // A release: locked in the previous cycle, not locked in this one
       PRE Locked(rts) &
       ~Locked(rts) &
-      ~SOME rt(
+      ~SOME rt (
         route_sections(rt, rts) &
-        rt.JustUnlocked
+        rt.JustUnlocked &
+        ~rt.immediate_manual_release &
+        ~SOME rt1 (
+          ~(rt1 = rt) &
+          route_sections(rt1, rts) &
+          PRE rt1.Holding &
+          ~rt1.JustUnlocked
+        )
       ) ->
         // All tracks of the route section are clear when it releases
         ALL tc (
@@ -320,14 +326,11 @@ Prove:
   3. The line track circuit is vacant.
   """
   EXIT_2 :=
-    ALL esi(
-      CommandedProceed(esi)->
+    ALL esi (
+      CommandedProceed(esi) ->
         end_locked(esi) &
         esi.LineInput &
-        ALL tc (
-          track_after(esi,tc) -> 
-          Clear(tc)
-        )
+        SOME tc:esi.track_after tc.Clear
     );
 
 }

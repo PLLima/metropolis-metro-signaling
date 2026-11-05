@@ -144,9 +144,9 @@ Equations:
   force its route sections to do the same. This either happens after
   the 30s release timer has expired, or immediately, based on certain conditions.
   """
-  bool JustUnlocked := 
+  bool JustUnlocked :=
     (SELF.PreReleaseTimer & ~SELF.ReleaseTimer) #
-    SELF.immediate_manual_release;
+    (SELF.ReleaseRequested & SELF.immediate_manual_release);
   """
   The 30s timer for manual release was active in the previous cycle.
   """
@@ -158,6 +158,13 @@ Equations:
   stops after 30 seconds. While it is active the route is not set.
   """
   bool ReleaseTimer;
+
+  """
+  The route holds its locking: it was locked by its own request and still
+  has at least one locked route section. Cleared when its manual release
+  completes.
+  """
+  Holding;
 
 Attributes:
 

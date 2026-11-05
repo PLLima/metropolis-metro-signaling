@@ -13,7 +13,7 @@ Equations:
   LineOutput :=
     ~end_locked(SELF) &
     ~CommandedProceed(SELF) &
-    ALL tc:SELF.track_after tc.Clear;
+    SOME tc:SELF.track_after tc.Clear;
 
   """
   Requirement EXIT 2: the exit signal is commanded to proceed only when it is

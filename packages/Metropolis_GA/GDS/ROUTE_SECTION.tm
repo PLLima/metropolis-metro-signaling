@@ -32,7 +32,14 @@ Functions:
   bool manual_unlocking :=
     SOME rt (
       route_sections(rt, SELF) &
-      rt.JustUnlocked
+      rt.JustUnlocked &
+      ~SOME rt1 (
+        ~(rt1 = rt) &
+        route_sections(rt1, SELF) & (
+          rt1.Holding & ~rt1.JustUnlocked #
+          rt1.ready_to_lock
+        )
+      )
     );
 
 Equations:

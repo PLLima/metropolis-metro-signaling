@@ -49,14 +49,25 @@ bool ready_to_lock :=
 
 Equations:
 
-"""
+  """
   The release timer input: a manual release is requested for a route that is
   locked, and no immediate release applies.
   """
   ReleaseTimer :=
     SELF.ReleaseRequested &
-    (ALL rts:SELF.route_sections rts.Locked) &
+    SOME rts:SELF.route_sections rts.Locked &
+    ~SOME rt1 (
+      ~(rt1 = SELF) &
+      set(rt1) &
+      SOME rts:SELF.route_sections route_sections(rt1, rts)
+    ) &
     ~SELF.immediate_manual_release;
+
+  Holding :=
+    SELF.ready_to_lock #
+    SELF.Holding &
+    SOME rts:SELF.route_sections rts.Locked &
+    ~SELF.JustUnlocked;
 
 Timers:
 
