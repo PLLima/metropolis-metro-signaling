@@ -120,3 +120,4 @@ _minted*/
 # VSCode Configuration Files
 # ====================================================================
 /.vscode
+clean.bat
