@@ -164,7 +164,7 @@ Prove:
           )
         ) #
         SOME si1:rt.end_object (
-          CommandedProceed(si1) # PRE CommandedProceed(si1) #
+          CommandedProceed(si1) #
           SOME pa (
             protects_signal(pa, si1) &
             protective(pa)
