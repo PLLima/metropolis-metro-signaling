@@ -1277,7 +1277,7 @@ foreach(sw:SELF.gds_inst) {
       \vspace{-1mm}
       \begin{proverbox}{Broker}
         \smallfont
-        By default Prover iLock uses \texttt{mqtt.prover.com}, normally turned off. Backlog MPS-28: for the broker embedded in Prover iLock, replace it by \texttt{localhost} in \texttt{config/io\_<project>.rjson}.
+        By default Prover iLock uses \texttt{mqtt.prover.com}, that was not working. For Backlog MPS-28, we replace it by \texttt{localhost} in \texttt{config/io\_<project>.rjson}, allowing us to use the broker embedded in Prover iLock.
       \end{proverbox}
     \end{column}
   \end{columns}

@@ -631,7 +631,8 @@ Test Case 4 sets each route as in Test Case 1 (with the line input set if the ro
 \label{sec:simulation}
 % =========================================================
 
-For the line simulation each project is opened in its own Prover iLock instance with the interactive simulator running, and the Communication tab connects it to an MQTT broker.
+For the line simulation each project is opened in its own Prover iLock instance with the interactive simulator running, and the Communication tab connects it to an MQTT broker embedded in Prover iLock, with the server set to "localhost".
+
 Exit signals whose names differ only in the final \code{E} or \code{W} are paired automatically, so the line output of one becomes the line input of the other, and the line track circuit, which has the same name in both projects, is shared: occupying \code{VG1-ABR} in the Abrial simulator also shows it occupied in Clarke.
 
 At each border we checked the sequence that Test Case 3 checks for a single station, but this time driven by the real neighbour: the sending station could only clear its exit signal with the line input set, the opposite exit signal in the receiving station lost its line input as soon as the route was locked, and the line was announced free again only after the train had left the line track. \Cref{fig:sim_abr_approach,fig:sim_abr_depart,fig:sim_cla_entry} show a train passing from Emerson through Abrial into Clarke; runs of the same kind were made over the whole line, from a platform of Parc des Expositions to the terminus at Technop\^ole.
