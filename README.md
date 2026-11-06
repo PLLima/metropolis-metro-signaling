@@ -1,4 +1,4 @@
-# Metropolis Metro Signaling --- Line G Interlocking System
+# Metropolis Metro Signaling – Line G Interlocking System
 
 [![CentraleSupélec](https://img.shields.io/badge/CentraleSupélec-EI%202026-B11116?style=flat-square)](https://www.centralesupelec.fr/)
 [![Prover iLock](https://img.shields.io/badge/Prover-iLock%20%7C%20Studio-0A2540?style=flat-square)](https://www.prover.com/)
@@ -44,9 +44,9 @@ Line G runs west-to-east ($W \to E$) along a double-track corridor (Track 2 East
 
 | # | Station Name | Project Code | Station Type | Switches | Signals | Interchanges |
 |---|--------------|--------------|--------------|:--------:|:-------:|:------------:|
-| 1 | **Parc des Expositions** | `G-PEX` | Terminus (5 platform tracks, dead-end buffers) | 5 | 15 | --- |
+| 1 | **Parc des Expositions** | `G-PEX` | Terminus (5 platform tracks, dead-end buffers) | 5 | 15 | None |
 | 2 | **Emerson** | `G-EME` | Double crossover + siding track ($P_6$) | 5 | 18 | Line H |
-| 3 | **Abrial** | `G-ABR` | 4-track passing station + 2 dead-end sidings ($P_9, P_{10}$) | 6 | 20 | --- |
+| 3 | **Abrial** | `G-ABR` | 4-track passing station + 2 dead-end sidings ($P_9, P_{10}$) | 6 | 20 | None |
 | 4 | **Clarke** | `G-CLA` | Scissors crossover + siding track ($P_{11}$) | 5 | 15 | Line D |
 | 5 | **Technopôle** | `G-TEC` | Fan-shaped terminus (5 platform tracks) | 5 | 22 | Line C |
 | **Total** | | | **5 Interlocking Stations** | **26** | **90** | |
@@ -171,8 +171,8 @@ metropolis-metro-signaling/
 │   │   ├── report.pdf                  # Compiled SIL 4 engineering report (10 pages)
 │   │   └── clean.bat                   # Script to clean auxiliary build files
 │   └── slides/                         # Final defense presentation materials
-│       ├── slides.tex                  # 16-frame Beamer presentation (Prover visual identity)
-│       └── slides.pdf                  # 10-minute engineering defense with Q&A backup slides
+│       ├── slides.tex                  # Beamer deck (22 presentation slides + 7 dedicated Q&A backup slides)
+│       └── slides.pdf                  # 10-minute engineering defense presentation with simulation backup
 ├── docs/                               # System documentation and city technical dossiers
 │   ├── Metropolis-Renovation-reseau-metro.pdf
 │   ├── Metropolis-Backlog-MPS.pdf
@@ -209,7 +209,7 @@ metropolis-metro-signaling/
 
 ## 👥 Team Members & Role Distribution
 
-### **Tiago Closs**
+### **Tiago dos Santos Closs**
 * **Role:** Station Modeling (SA), Line Simulation & Safety Formalization
 * Modeled interlocking stations `G-EME` (Emerson) and `G-PEX` (Parc des Expositions).
 * Formalized safety requirement `GSS_10` (route section release condition with `PRE` operator) in PiSPEC.
@@ -239,12 +239,16 @@ metropolis-metro-signaling/
 * Performed formal verification and counterexample analysis using Prover iLock Verifier.
 * Contributed to formal verification, technical reporting, and presentation.
 
+### **Project Supervisors (Prover Technology)**
+* **Nicolas Aucouturier** (`Nicolas.Aucouturier@prover.com`)
+* **Kenza Kraibi** (`Kenza.Kraibi@prover.com`)
+
 ---
 
 ## 📚 References & Norms
 
-1. **CENELEC EN 50128:2011** --- *Railway applications: Communication, signalling and processing systems --- Software for railway control and protection systems.*
-2. **Prover Technology** --- *Prover iLock Documentation: PiSPEC Language Reference Manual*, Stockholm, 2026.
-3. **Prover Technology** --- *Signaling Design Automation (SDA): From Specification to Verified Interlocking*, 2026.
-4. **Ville de Metropolis, DMT** --- *Programme Renouvellement Signalisation: Dossier Technique*, Réf. DMT/RS/2026-11, 2026.
-5. **E. M. Clarke, E. A. Emerson, and J. Sifakis** --- *Model Checking: Algorithmic Verification and Debugging*, Communications of the ACM, 52(11):74–84, 2009.
+1. **CENELEC EN 50128:2011** – *Railway applications: Communication, signalling and processing systems – Software for railway control and protection systems.*
+2. **Prover Technology** – *Prover iLock Documentation: PiSPEC Language Reference Manual*, Stockholm, 2026.
+3. **Prover Technology** – *Signaling Design Automation (SDA): From Specification to Verified Interlocking*, 2026.
+4. **Ville de Metropolis, DMT** – *Programme Renouvellement Signalisation: Dossier Technique*, Réf. DMT/RS/2026-11, 2026.
+5. **E. M. Clarke, E. A. Emerson, and J. Sifakis** – *Model Checking: Algorithmic Verification and Debugging*, Communications of the ACM, 52(11):74–84, 2009.

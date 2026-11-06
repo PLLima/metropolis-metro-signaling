@@ -1,4 +1,4 @@
-Tiago Closs
+Tiago dos Santos Closs
 Role: Station Modeling (SA), Line Simulation & Safety Formalization
 - Modeled the interlocking stations G-EME (Emerson) and G-PEX (Parc des Expositions).
 - Formalized safety requirement GSS_10 (route section release condition) in PiSPEC.
