@@ -53,7 +53,7 @@
 \fancyhead[L]{\raisebox{1.5mm}{\color{Muted}\fontsize{7.2}{8.5}\selectfont
   Metropolis $\cdot$ Programme Renouvellement Signalisation $\cdot$ GTS}}
 \fancyhead[R]{\ConfidentialBox}
-\fancyfoot[R]{\color{Muted}\fontsize{7.5}{9}\selectfont\thepage\,/\,2}
+\fancyfoot[R]{\color{Muted}\fontsize{7.5}{9}\selectfont\thepage\,/\,4}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -209,8 +209,8 @@ The purpose of this test is to test manual switch throwing and to verify that a 
   \textbf{For each switch:}
   \begin{teststeps}
     \item \textnormal{[Action]} Request the switch to reverse position.
-    \item \textnormal{[Expect]} The switch loses normal detection within 4s.
-    \item \textnormal{[Expect]} The switch gains reverse detection within 1s.
+    \item \textnormal{[Expect]} The switch loses normal detection within 1s.
+    \item \textnormal{[Expect]} The switch gains reverse detection within 4s.
     \item \textnormal{[Action]} Request the switch to normal position.
     \item \textnormal{[Expect]} The switch loses reverse detection within 1s.
     \item \textnormal{[Expect]} The switch gains normal detection within 4s.
