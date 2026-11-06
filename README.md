@@ -8,7 +8,7 @@
 
 Engineering team project for the modernization of the **Metropolis Metro signaling network**, conducted in partnership with **CentraleSupélec** and **Prover Technology**. 
 
-**Engineering Group 7** is responsible for the design, formal safety verification, and distributed simulation of **Line G**, connecting *Parc des Expositions* to *Technopôle* across five computer-based interlocking stations.
+**Engineering Group 7** is responsible for the design, formal safety verification and distributed simulation of **Line G**, connecting *Parc des Expositions* to *Technopôle* across five computer-based interlocking stations.
 
 ---
 
@@ -32,7 +32,7 @@ The transport authority, the City of Metropolis Mobility and Transport Departmen
 
 To ensure provable zero-defect safety under strict CENELEC EN 50128 standards, the authority adopted Prover's **Signaling Design Automation (SDA)** methodology. This project delivers:
 1. **Specific Applications (SA)**: Complete interlocking station models drawn from track schematics.
-2. **Generic Application (GA)**: Scalable railway logic, safety properties, and test suites written in **PiSPEC**.
+2. **Generic Application (GA)**: Scalable railway logic, safety properties and test suites written in **PiSPEC**.
 3. **Formal Verification**: Mathematical model checking (100% PROVED) via Prover PSL.
 4. **Interactive Simulation**: Full-line multi-station MQTT train simulation across physical borders.
 
@@ -91,7 +91,7 @@ All engineering tasks from the Metropolis Backlog (MPS) were resolved:
   - Drew and compiled layouts for all five Line G stations in Prover iLock Layout Editor (L-Phase).
   - Validated transitions to Tool Phase (T-Phase) with complete topological attribute checks.
 - **MPS-4 (Formalizing Safety Requirements):**
-  - Formalized requirements `GSS_02`, `GSS_08`, `GSS_09`, and `GSS_10` using universal/existential quantifiers and the temporal operator `PRE`.
+  - Formalized requirements `GSS_02`, `GSS_08`, `GSS_09` and `GSS_10` using universal/existential quantifiers and the temporal operator `PRE`.
 - **MPS-13 (Adding Test Cases):**
   - Authored Test Case 2 (`GTS_SWITCH.tm`) verifying that occupied track circuits lock switches against manual throw requests.
 - **MPS-16 (Line Block Interface):**
@@ -118,13 +118,13 @@ All 12 formal safety properties achieved mathematical proof (**100% PROVED**) wi
 | `GSS_03` | All switches in a cleared route match required correspondence positions | **PROVED** |
 | `GSS_04` | All track circuits within a cleared route are clear of occupancy | **PROVED** |
 | `GSS_05` | Flank protection is established and protective for all switches in the route | **PROVED** |
-| `GSS_06` | Route end protection: buffer stop, line block clear, proceeding signal, or front protection | **PROVED** |
+| `GSS_06` | Route end protection: buffer stop, line block clear, proceeding signal or front protection | **PROVED** |
 | `GSS_07` | Switches cannot move if locked in a route section or serving as protective objects | **PROVED** |
 | `GSS_08` | Route sections can only become ready to release if occupied by a train | **PROVED** |
 | `GSS_09` | Route sections must be locked to be ready to release | **PROVED** |
 | `GSS_10` | Route section release requires track clearance and previous-cycle release readiness | **PROVED** |
 | `EXIT_1` | Exit signal `LineOutput` is only asserted when unreserved and uncommanded | **PROVED** |
-| `EXIT_2` | Exit signal can only clear to proceed if end-locked, line input is true, and line is vacant | **PROVED** |
+| `EXIT_2` | Exit signal can only clear to proceed if end-locked, line input is true and line is vacant | **PROVED** |
 
 ---
 
@@ -141,7 +141,7 @@ All 12 formal safety properties achieved mathematical proof (**100% PROVED**) wi
 ```
 
 The interactive simulation verifies end-to-end line operation:
-- Trains spawn on terminus platform tracks, acquire cleared routes, traverse intermediate crossovers, and transfer cleanly across boundary blocks.
+- Trains spawn on terminus platform tracks, acquire cleared routes, traverse intermediate crossovers and transfer cleanly across boundary blocks.
 - Border signal status ($SeG1/2\text{-}XXX\text{-}E/W$) and boundary track circuits ($VG1/2\text{-}XXX$) synchronize in real-time over MQTT topics.
 
 ---
@@ -168,10 +168,10 @@ metropolis-metro-signaling/
 │   │   └── simulation_3.png            # Clarke arrival & scissors crossover capture (t=320.4s)
 │   ├── report/
 │   │   ├── report.tex                  # Comprehensive LaTeX project report
-│   │   ├── report.pdf                  # Compiled SIL 4 engineering report (10 pages)
+│   │   ├── report.pdf                  # Compiled SIL 4 engineering report (13 pages)
 │   │   └── clean.bat                   # Script to clean auxiliary build files
 │   └── slides/                         # Final defense presentation materials
-│       ├── slides.tex                  # Beamer deck (22 presentation slides + 7 dedicated Q&A backup slides)
+│       ├── slides.tex                  # Beamer deck (19 presentation slides + 12 dedicated Q&A backup slides)
 │       └── slides.pdf                  # 10-minute engineering defense presentation with simulation backup
 ├── docs/                               # System documentation and city technical dossiers
 │   ├── Metropolis-Renovation-reseau-metro.pdf
@@ -186,7 +186,7 @@ metropolis-metro-signaling/
 │   │   ├── GSS/                        # Generic Safety Specification rules
 │   │   ├── GTS/                        # Generic Test Specification testcases
 │   │   └── scripting/                  # Python simulation & MQTT configuration
-│   └── [Prover toolchain libraries]    # Supporting LCF, SEIF, and integration packages
+│   └── [Prover toolchain libraries]    # Supporting LCF, SEIF and integration packages
 └── projects/                           # Specific Applications (Line G)
     ├── G-PEX/                          # Parc des Expositions Interlocking Project
     ├── G-EME/                          # Emerson Interlocking Project
@@ -199,7 +199,7 @@ metropolis-metro-signaling/
 
 ## 🛠️ Toolchain & Setup
 
-- **Prover iLock (v5.29+)**: For station layout editing, topological compilation, and interactive simulation.
+- **Prover iLock (v5.29+)**: For station layout editing, topological compilation and interactive simulation.
 - **Prover PSL & Verifier**: For automated SIL 4 formal verification and inductive invariant proofs.
 - **Prover Studio**: Visual Studio Code extension for PiSPEC generic specification development.
 - **Local MQTT Broker**: Eclipse Mosquitto or embedded Prover MQTT broker listening on `localhost:1883`.
@@ -214,22 +214,22 @@ metropolis-metro-signaling/
 * Modeled interlocking stations `G-EME` (Emerson) and `G-PEX` (Parc des Expositions).
 * Formalized safety requirement `GSS_10` (route section release condition with `PRE` operator) in PiSPEC.
 * Configured and executed the multi-station interactive simulation over MQTT (MPS-27, MPS-28).
-* Contributed to formal verification, technical reporting, and presentation.
+* Contributed to formal verification, technical reporting and presentation.
 
 ### **Gabriel da Costa**
 * **Role:** Station Modeling (SA), Generic Design & Testing
 * Modeled interlocking stations `G-CLA` (Clarke) and `G-TEC` (Technopôle).
 * Extended the Object Model (OM) and Generic Design (GDS) for manual route release (MPS-21, MPS-22, MPS-24).
-* Implemented GTS test cases for switch throwing (Test Case 2), line block (Test Case 3), and manual release (Test Case 4).
-* Formalized requirement `GSS_09` and corrected definitions for `GSS_01`, `GSS_03`, and `GSS_07`.
+* Implemented GTS test cases for switch throwing (Test Case 2), line block (Test Case 3) and manual release (Test Case 4).
+* Formalized requirement `GSS_09` and corrected definitions for `GSS_01`, `GSS_03` and `GSS_07`.
 * Configured and executed the multi-station interactive simulation over MQTT (MPS-27, MPS-28).
 * Contributed to technical reporting and presentation.
 
 ### **Pedro Lubaszewski Lima**
 * **Role:** Project Architecture, Station Modeling (SA) & Safety Verification
-* Managed repository architecture, development workflow, and technical documentation.
+* Managed repository architecture, development workflow and technical documentation.
 * Modeled interlocking station `G-ABR` (Abrial).
-* Formalized and strengthened requirements `GSS_06`, `GSS_08`, `EXIT_1`, and `EXIT_2` in PiSPEC.
+* Formalized and strengthened requirements `GSS_06`, `GSS_08`, `EXIT_1` and `EXIT_2` in PiSPEC.
 * Debugged and verified the generic design and line block interface in Prover iLock (MPS-18, MPS-20).
 * Contributed to technical reporting and presentation.
 
@@ -237,7 +237,7 @@ metropolis-metro-signaling/
 * **Role:** Safety Specification (GSS) & Model Checking
 * Formalized safety requirements `GSS_02` (mutual exclusion of shared tracks) and `EXIT_1` / `EXIT_2` in PiSPEC.
 * Performed formal verification and counterexample analysis using Prover iLock Verifier.
-* Contributed to formal verification, technical reporting, and presentation.
+* Contributed to formal verification, technical reporting and presentation.
 
 ### **Project Supervisors (Prover Technology)**
 * **Nicolas Aucouturier** (`Nicolas.Aucouturier@prover.com`)
@@ -251,4 +251,4 @@ metropolis-metro-signaling/
 2. **Prover Technology** – *Prover iLock Documentation: PiSPEC Language Reference Manual*, Stockholm, 2026.
 3. **Prover Technology** – *Signaling Design Automation (SDA): From Specification to Verified Interlocking*, 2026.
 4. **Ville de Metropolis, DMT** – *Programme Renouvellement Signalisation: Dossier Technique*, Réf. DMT/RS/2026-11, 2026.
-5. **E. M. Clarke, E. A. Emerson, and J. Sifakis** – *Model Checking: Algorithmic Verification and Debugging*, Communications of the ACM, 52(11):74–84, 2009.
+5. **E. M. Clarke, E. A. Emerson and J. Sifakis** – *Model Checking: Algorithmic Verification and Debugging*, Communications of the ACM, 52(11):74–84, 2009.

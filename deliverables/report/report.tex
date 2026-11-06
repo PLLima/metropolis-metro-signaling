@@ -2,24 +2,6 @@
 \pdfminorversion=7
 
 % =========================================================
-% EXTRA REFERENCES (written next to main.tex at compile time;
-% kept separate so that ../ref.bib is left untouched)
-% =========================================================
-\begin{filecontents*}[overwrite]{ref_extra.bib}
-@manual{metropolis_dossier,
-  title        = {Metropolis -- R{\'e}novation du r{\'e}seau de m{\'e}tro: dossier technique},
-  organization = {Ville de Metropolis, Direction de la mobilit{\'e} et des transports},
-  note         = {Ref. DMT/RS/2026-11, rev. 1.0},
-  year         = {2026}
-}
-@manual{pispec_ref,
-  title        = {Prover iLock Documentation -- {PiSPEC} Language Reference},
-  organization = {Prover Technology},
-  note         = {Available from the Help/Documentation menu of Prover iLock}
-}
-\end{filecontents*}
-
-% =========================================================
 % LANGUAGE AND FONT
 % =========================================================
 \usepackage[english]{babel}
@@ -212,7 +194,6 @@
 ]{biblatex}
 
 \addbibresource{../ref.bib}
-\addbibresource{ref_extra.bib}
 \setlength\bibitemsep{1.5pt}
 \AtBeginBibliography{\footnotesize}
 
@@ -271,7 +252,7 @@
 
     {\Large\bfseries\color{ProverMadison} CentraleSupélec \par}
     \vspace{0.3cm}
-    {\large\bfseries\color{ProverMadison} Engineering Integration Project (EI) --- In Partnership with Prover Technology\par}
+    {\large\bfseries\color{ProverMadison} Engineering Integration Project (EI) -- In Partnership with Prover Technology\par}
 
     \vspace{2.0cm}
 
@@ -287,7 +268,7 @@
     \vspace{0.5cm}
 
     \begin{tabular}{cc}
-        \textbf{\color{ProverMadison} Tiago CLOSS} & \textbf{\color{ProverMadison} Gabriel DA COSTA} \\
+        \textbf{\color{ProverMadison} Tiago DOS SANTOS CLOSS} & \textbf{\color{ProverMadison} Gabriel DA COSTA} \\
         \vspace{0.15cm} & \vspace{0.15cm} \\
         \textbf{\color{ProverMadison} Pedro LUBASZEWSKI LIMA} & \textbf{\color{ProverMadison} Sebastián PARI MEDINA}
     \end{tabular}
@@ -345,10 +326,10 @@ The station layouts were split among three of us for MPS-2 and MPS-3, and the ep
 \toprule
 \textbf{Member} & \textbf{Stations} & \textbf{Main contributions} \\
 \midrule
-Tiago Closs & \code{G-PEX}, \code{G-EME} & Requirement 10 (MPS-11, MPS-12); set-up of the connected simulation and check of the line block behavior across borders (MPS-27, MPS-28). \\
+Tiago dos Santos Closs & \code{G-PEX}, \code{G-EME} & Requirement 10 (MPS-11, MPS-12); set-up of the connected simulation and check of the line block behavior across borders (MPS-27, MPS-28). \\
 Gabriel da Costa & \code{G-CLA}, \code{G-TEC} & Manual release in the OM and GDS (MPS-22, MPS-24); Test Cases 2, 3 and 4 (MPS-14, MPS-19, MPS-23); Requirement 9 (MPS-9, MPS-10); coordination of the simulation (MPS-28). \\
 Pedro Lubaszewski Lima & \code{G-ABR} & Repository and workflow; Requirements 6 and 8 (MPS-7, MPS-8, MPS-17); EXIT 1 and EXIT 2 (MPS-18); correction of the exit signal equations (MPS-20). \\
-Sebastián Pari Medina & --- & Requirement 2 (MPS-5, MPS-6); EXIT 1 and EXIT 2 (MPS-18); proof runs and counterexample analysis; execution of the line simulation (MPS-28). \\
+Sebastián Pari Medina & -- & Requirement 2 (MPS-5, MPS-6); EXIT 1 and EXIT 2 (MPS-18); proof runs and counterexample analysis; execution of the line simulation (MPS-28). \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -371,7 +352,7 @@ OM  & \code{ROUTE} & Input \code{ReleaseRequested}, timer \code{ReleaseTimer}, s
 OM  & \code{ROUTE_SECTION} & Function \code{manual_unlocking} & MPS-22 \\
 GDS & \code{SWITCH} & Wrong guard of \code{MoveReverse} corrected & MPS-3 \\
 GDS & \code{ROUTE_SECTION} & \code{ReadyToRelease} armed by occupancy; \code{Locked} also released by manual unlocking & MPS-3, 24 \\
-GDS & \code{ROUTE} & Exit case of \code{protected_front}; equations of \code{ReleaseTimer} and \code{Holding} & MPS-20, 24, 26 \\
+GDS & \code{ROUTE} & Exit case of \code{protected_front}; \code{ReleaseTimer} and \code{Holding} equations & MPS-20, 24, 26 \\
 GDS & \code{EXIT_SIGNAL} & \code{LineOutput} based on end locking; line input added to \code{CommandedProceed} & MPS-20 \\
 GSS & \code{REQUIREMENTS} & Req.~2, 8, 9, 10 formalized; Req.~3 corrected; Req.~6 strengthened; EXIT 1, EXIT 2 added; manual release case in Req.~10 & MPS-3 to 26 \\
 GTS & \code{GTS_SWITCH} & Test Case 2 & MPS-14 \\
@@ -651,13 +632,9 @@ Test Case 4 sets each route as in Test Case 1 (with the line input set if the ro
 % =========================================================
 
 For the line simulation each project is opened in its own Prover iLock instance with the interactive simulator running, and the Communication tab connects it to an MQTT broker.
-% TODO: state which broker was used: mqtt.prover.com (on request to Prover)
-% or the broker embedded in Prover iLock (server set to "localhost" in
-% config/io_<project_name>.rjson), and on how many machines.
 Exit signals whose names differ only in the final \code{E} or \code{W} are paired automatically, so the line output of one becomes the line input of the other, and the line track circuit, which has the same name in both projects, is shared: occupying \code{VG1-ABR} in the Abrial simulator also shows it occupied in Clarke.
 
 At each border we checked the sequence that Test Case 3 checks for a single station, but this time driven by the real neighbour: the sending station could only clear its exit signal with the line input set, the opposite exit signal in the receiving station lost its line input as soon as the route was locked, and the line was announced free again only after the train had left the line track. \Cref{fig:sim_abr_approach,fig:sim_abr_depart,fig:sim_cla_entry} show a train passing from Emerson through Abrial into Clarke; runs of the same kind were made over the whole line, from a platform of Parc des Expositions to the terminus at Technop\^ole.
-% TODO: check the signal names quoted in the three captions against the screenshots.
 
 \begin{figure}[H]
     \centering
@@ -698,16 +675,16 @@ One detail of the simulator setup matters beyond the simulation. In \code{EXIT_S
 \toprule
 \textbf{Requirement} & \textbf{Subject} & \textbf{Change} & \textbf{Task} \\
 \midrule
-\code{GSS_01} (1, 2) & Proceed only with a unique set route, or an end-locked exit signal & unchanged & --- \\
+\code{GSS_01} (1, 2) & Proceed only with a unique set route, or an end-locked exit signal & unchanged & -- \\
 \code{GSS_02} & Sections sharing a track never locked together & formalized & MPS-5, 6 \\
 \code{GSS_03} & Switches detected in their route positions & corrected & MPS-3 \\
-\code{GSS_04}, \code{GSS_05} & Route tracks clear; flank protection & unchanged & --- \\
+\code{GSS_04}, \code{GSS_05} & Route tracks clear; flank protection & unchanged & -- \\
 \code{GSS_06} & Front protection and line condition & strengthened & MPS-17 \\
-\code{GSS_07} & Switch movement lock-out & unchanged & --- \\
+\code{GSS_07} & Switch movement lock-out & unchanged & -- \\
 \code{GSS_08}, \code{GSS_09} & Ready to release implies occupied, locked & formalized & MPS-7 to 10 \\
 \code{GSS_10} & Release only behind a train & formalized, extended & MPS-11, 12, 26 \\
 \code{EXIT_1}, \code{EXIT_2} & Line output and exit signal proceed & new & MPS-18 \\
-\code{DATACHECK_01}--\code{03} & Placement of exit signals and exit tracks & unchanged & --- \\
+\code{DATACHECK_01}--\code{03} & Placement of exit signals and exit tracks & unchanged & -- \\
 \bottomrule
 \end{tabularx}
 \end{table}

@@ -1,9 +1,10 @@
 \documentclass[aspectratio=169,10pt]{beamer}
 
 % =============================================================================
-% METROPOLIS METRO SIGNALING - LINE G FINAL DEFENSE PRESENTATION
+% METROPOLIS METRO SIGNALING - LINE G FINAL DEFENSE
 % Engineering Group 7: CentraleSupélec & Prover Technology
-% 10-Minute Timed Defense with Dedicated Q&A Backup Slides
+% Main part: ~10 min. Backup slides after \appendix for the questions.
+% Content follows report.pdf and the delivered PiSPEC sources.
 % =============================================================================
 
 \usepackage[utf8]{inputenc}
@@ -16,10 +17,11 @@
 \usepackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc,decorations.pathreplacing}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{appendixnumberbeamer} % backup slides numbered separately
 
 % -----------------------------------------------------------------------------
 % PROVER & CENTRALESUPÉLEC COLOR PALETTE
@@ -62,6 +64,24 @@
 
 \pdfstringdefDisableCommands{\def\translate#1{#1}}
 
+% Text sizes used throughout (one place to tune readability)
+\newcommand{\bodyfont}{\fontsize{7.8}{9.6}\selectfont}
+\newcommand{\smallfont}{\fontsize{7}{8.6}\selectfont}
+\newcommand{\tinyfont}{\fontsize{6.2}{7.5}\selectfont}
+
+% Compact lists inside cards
+\makeatletter
+\def\@listi{\leftmargin\leftmargini \topsep 1.2pt \partopsep 0pt \parsep 0pt \itemsep 1.2pt}
+\let\@listI\@listi
+\def\@listii{\leftmargin\leftmarginii \topsep 0pt \partopsep 0pt \parsep 0pt \itemsep 0.6pt}
+\makeatother
+\setlength{\leftmargini}{1.15em}
+\setlength{\leftmarginii}{1em}
+
+% Ragged-right table columns
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
 % Clean frametitle with Prover Logo on right and tight teal rule
 \setbeamerfont{frametitle}{series=\bfseries,size=\fontsize{11}{12.5}}
 \setbeamerfont{framesubtitle}{size=\fontsize{7}{8.2}}
@@ -87,7 +107,7 @@
   \vspace*{1mm}%
 }
 
-% Clean, well-spaced footline matching slide margins exactly
+% Footline; page count of the main part is computed by beamer
 \setbeamertemplate{footline}{%
   \begin{beamercolorbox}[wd=\paperwidth,ht=3.2mm,dp=2.2mm,leftskip=8mm,rightskip=8mm]{footline}%
     \fontsize{6.5}{7.8}\selectfont\color{ProverSlate}%
@@ -95,29 +115,40 @@
     \hfill%
     \color{ProverNavy}\textbf{Line G Interlocking $\cdot$ Engineering Group 7}%
     \hfill%
-    \color{ProverSlate}\insertframenumber{} / 22%
+    \color{ProverSlate}\insertframenumber{} / \inserttotalframenumber%
   \end{beamercolorbox}%
 }
+
+% Number of backup frames, written to the .aux at the end of the run
+\makeatletter
+\providecommand{\backuptotal}{?}
+\AtEndDocument{\immediate\write\@auxout{\gdef\string\backuptotal{\the\c@framenumber}}}
+\makeatother
 
 % -----------------------------------------------------------------------------
 % LISTINGS SPECIFICATION FOR PISPEC
 % -----------------------------------------------------------------------------
 \lstdefinelanguage{PiSPEC}{
-  keywords={class,inherit,Functions,Equations,Timers,Prove,TestCase,expect,within,during,wait,foreach,true,false,ALL,SOME,PRE},
+  keywords={class,inherit,Functions,Equations,Timers,Prove,TestCase,expect,within,during,wait,foreach,if,true,false,ALL,SOME,PRE,bool,SEC,SET,CLEAR,FIXED},
   keywordstyle=\color{ProverNavy}\bfseries,
-  ndkeywords={SELF,ReleaseRequested,RouteRequested,Locked,Clear,CommandedProceed,DetectedNormal,DetectedReverse,LineInput,LineOutput,Holding},
-  ndkeywordstyle=\color{ProverTeal}\bfseries,
+  ndkeywords={SELF,ReleaseRequested,RouteRequested,ReleaseTimer,PreReleaseTimer,JustUnlocked,Holding,Locked,ReadyToRelease,Clear,CommandedProceed,LineInput,LineOutput,DetectedNormal,DetectedReverse,RequestedNormal,RequestedReverse,MoveReverse,InitialCycle},
+  ndkeywordstyle=\color{ProverTeal!80!black}\bfseries,
   sensitive=true,
   comment=[l]{//},
   morecomment=[s]{/*}{*/},
   morecomment=[s]{"""}{"""},
   commentstyle=\color{ProverSlate}\itshape,
   stringstyle=\color{MetroOrange},
-  basicstyle=\fontsize{6.2}{7.4}\ttfamily,
+  basicstyle=\fontsize{6.6}{7.9}\ttfamily,
   breaklines=true,
   tabsize=2,
-  showstringspaces=false
+  showstringspaces=false,
+  columns=fullflexible,
+  keepspaces=true,
+  aboveskip=0pt,
+  belowskip=0pt
 }
+\lstset{language=PiSPEC}
 
 % -----------------------------------------------------------------------------
 % TCOLORBOX CARD DEFINITIONS
@@ -127,13 +158,14 @@
   colback=CardBg,
   colframe=CardBorder,
   coltitle=ProverNavy,
-  fonttitle=\bfseries\fontsize{7.5}{8.8}\selectfont\raggedright,
+  fonttitle=\bfseries\fontsize{8}{9.4}\selectfont\raggedright,
   title={#2},
   arc=1.2mm,
   boxrule=0.5pt,
   valign=center,
-  left=1.5mm,right=1.5mm,top=1.2mm,bottom=1.2mm,
-  toptitle=0.6mm,bottomtitle=0.6mm,
+  left=1.8mm,right=1.8mm,top=1.1mm,bottom=1.1mm,
+  toptitle=0.55mm,bottomtitle=0.55mm,
+  before upper={\raggedright},
   #1
 }
 
@@ -142,13 +174,14 @@
   colback=AlertRed!5,
   colframe=AlertRed!40,
   coltitle=AlertRed,
-  fonttitle=\bfseries\fontsize{7.5}{8.8}\selectfont,
+  fonttitle=\bfseries\fontsize{8}{9.4}\selectfont,
   title={#2},
   arc=1.2mm,
   boxrule=0.5pt,
   valign=center,
-  left=1.5mm,right=1.5mm,top=1.2mm,bottom=1.2mm,
-  toptitle=0.6mm,bottomtitle=0.6mm,
+  left=1.8mm,right=1.8mm,top=1.1mm,bottom=1.1mm,
+  toptitle=0.55mm,bottomtitle=0.55mm,
+  before upper={\raggedright},
   #1
 }
 
@@ -156,155 +189,61 @@
   enhanced,
   colback=SafeGreen!5,
   colframe=SafeGreen!40,
-  coltitle=SafeGreen,
-  fonttitle=\bfseries\fontsize{7.5}{8.8}\selectfont,
+  coltitle=SafeGreen!85!black,
+  fonttitle=\bfseries\fontsize{8}{9.4}\selectfont,
   title={#2},
   arc=1.2mm,
   boxrule=0.5pt,
   valign=center,
-  left=1.5mm,right=1.5mm,top=1.2mm,bottom=1.2mm,
-  toptitle=0.6mm,bottomtitle=0.6mm,
+  left=1.8mm,right=1.8mm,top=1.1mm,bottom=1.1mm,
+  toptitle=0.55mm,bottomtitle=0.55mm,
+  before upper={\raggedright},
+  #1
+}
+
+% Code card (no title) for PiSPEC listings
+\newtcolorbox{codebox}[1][]{
+  enhanced,
+  colback=CodeBg,
+  colframe=CardBorder,
+  arc=1.2mm,
+  boxrule=0.5pt,
+  left=1.5mm,right=1.5mm,top=0.8mm,bottom=0.8mm,
   #1
 }
 
 % -----------------------------------------------------------------------------
-% AGENDA TRANSITION SLIDE MACRO WITH HYPERLINKS
-% #1 = 0: Overview (all active and clickable)
-% #1 = 1 to 5: Section #1 active, others dimmed
+% AGENDA SLIDE WITH HYPERLINKS
+% \agendaslide{0}: overview (all items active and clickable)
+% \agendaslide{n}: item n highlighted, others dimmed (section transition)
 % -----------------------------------------------------------------------------
+\newcommand{\agendaitem}[5]{% #1 current, #2 index, #3 target label, #4 title, #5 description
+  \ifnum#1=#2\relax
+    \def\agfill{ProverNavy}\def\agdraw{ProverTeal}\def\agtitle{white}\def\agtext{white!90!black}\def\aglw{0.8pt}%
+  \else\ifnum#1=0\relax
+    \def\agfill{CardBg}\def\agdraw{ProverTeal!60}\def\agtitle{ProverNavy}\def\agtext{DarkText}\def\aglw{0.6pt}%
+  \else
+    \def\agfill{CardBg!50}\def\agdraw{CardBorder!50}\def\agtitle{MutedGray!60}\def\agtext{MutedGray!45}\def\aglw{0.4pt}%
+  \fi\fi
+  \node[fill=\agfill, draw=\agdraw, line width=\aglw, anchor=north west] at (0,{-(#2-1)*1.22cm}) {%
+    \hyperlink{#3}{%
+      \begin{tabular}{@{}p{0.91\textwidth}@{}}
+        \fontsize{8.2}{9.6}\selectfont\textbf{\color{\agtitle}#2. #4}\\[1.5pt]
+        \fontsize{6.9}{8}\selectfont\color{\agtext}#5
+      \end{tabular}%
+    }%
+  };%
+}
+
 \newcommand{\agendaslide}[1]{%
-  \begin{frame}{Table of Contents}{Presentation Structure}
-    \vspace*{1.2mm}
+  \begin{frame}{Outline}
+    \vspace*{1.5mm}
     \begin{tikzpicture}[every node/.style={text width=0.94\textwidth, rounded corners=1.5mm, inner sep=3.8pt, align=left}]
-      % Item 1
-      \ifnum#1=1
-        \node[fill=ProverNavy, draw=ProverTeal, line width=0.8pt, text=white] (s1) {
-          \hyperlink{sec_topology}{%
-            \fontsize{7.8}{9.2}\selectfont \textbf{\color{white}1. Network Topology and Station Modeling} \\[1pt]
-            \fontsize{6.5}{7.6}\selectfont\color{white!90} Line G operational corridor, station layouts, SDA methodology and G-ABR modeling%
-          }
-        };
-      \else
-        \ifnum#1=0
-          \node[fill=CardBg, draw=ProverTeal!60, line width=0.6pt] (s1) {
-            \hyperlink{sec_topology}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{ProverNavy}1. Network Topology and Station Modeling} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{DarkText} Line G operational corridor, station layouts, SDA methodology and G-ABR modeling%
-            }
-          };
-        \else
-          \node[fill=CardBg!50, draw=CardBorder!50, line width=0.4pt] (s1) {
-            \hyperlink{sec_topology}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{MutedGray!60}1. Network Topology and Station Modeling} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{MutedGray!45} Line G operational corridor, station layouts, SDA methodology and G-ABR modeling%
-            }
-          };
-        \fi
-      \fi
-
-      % Item 2
-      \ifnum#1=2
-        \node[fill=ProverNavy, draw=ProverTeal, line width=0.8pt, text=white, below=2mm of s1] (s2) {
-          \hyperlink{sec_design}{%
-            \fontsize{7.8}{9.2}\selectfont \textbf{\color{white}2. Generic Application Design and Testing} \\[1pt]
-            \fontsize{6.5}{7.6}\selectfont\color{white!90} Safe manual route release logic, inter-station line block protocol and GTS test cases%
-          }
-        };
-      \else
-        \ifnum#1=0
-          \node[fill=CardBg, draw=ProverTeal!60, line width=0.6pt, below=2mm of s1] (s2) {
-            \hyperlink{sec_design}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{ProverNavy}2. Generic Application Design and Testing} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{DarkText} Safe manual route release logic, inter-station line block protocol and GTS test cases%
-            }
-          };
-        \else
-          \node[fill=CardBg!50, draw=CardBorder!50, line width=0.4pt, below=2mm of s1] (s2) {
-            \hyperlink{sec_design}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{MutedGray!60}2. Generic Application Design and Testing} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{MutedGray!45} Safe manual route release logic, inter-station line block protocol and GTS test cases%
-            }
-          };
-        \fi
-      \fi
-
-      % Item 3
-      \ifnum#1=3
-        \node[fill=ProverNavy, draw=ProverTeal, line width=0.8pt, text=white, below=2mm of s2] (s3) {
-          \hyperlink{sec_verification}{%
-            \fontsize{7.8}{9.2}\selectfont \textbf{\color{white}3. Formal Safety Specification and Verification} \\[1pt]
-            \fontsize{6.5}{7.6}\selectfont\color{white!90} 12 CENELEC EN 50128 invariant properties, PiSPEC refinements and inductive proof insights%
-          }
-        };
-      \else
-        \ifnum#1=0
-          \node[fill=CardBg, draw=ProverTeal!60, line width=0.6pt, below=2mm of s2] (s3) {
-            \hyperlink{sec_verification}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{ProverNavy}3. Formal Safety Specification and Verification} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{DarkText} 12 CENELEC EN 50128 invariant properties, PiSPEC refinements and inductive proof insights%
-            }
-          };
-        \else
-          \node[fill=CardBg!50, draw=CardBorder!50, line width=0.4pt, below=2mm of s2] (s3) {
-            \hyperlink{sec_verification}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{MutedGray!60}3. Formal Safety Specification and Verification} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{MutedGray!45} 12 CENELEC EN 50128 invariant properties, PiSPEC refinements and inductive proof insights%
-            }
-          };
-        \fi
-      \fi
-
-      % Item 4
-      \ifnum#1=4
-        \node[fill=ProverNavy, draw=ProverTeal, line width=0.8pt, text=white, below=2mm of s3] (s4) {
-          \hyperlink{sec_simulation}{%
-            \fontsize{7.8}{9.2}\selectfont \textbf{\color{white}4. Distributed Simulation and Demonstration} \\[1pt]
-            \fontsize{6.5}{7.6}\selectfont\color{white!90} Multi-station MQTT architecture and full-line train traversal screen recording%
-          }
-        };
-      \else
-        \ifnum#1=0
-          \node[fill=CardBg, draw=ProverTeal!60, line width=0.6pt, below=2mm of s3] (s4) {
-            \hyperlink{sec_simulation}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{ProverNavy}4. Distributed Simulation and Demonstration} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{DarkText} Multi-station MQTT architecture and full-line train traversal screen recording%
-            }
-          };
-        \else
-          \node[fill=CardBg!50, draw=CardBorder!50, line width=0.4pt, below=2mm of s3] (s4) {
-            \hyperlink{sec_simulation}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{MutedGray!60}4. Distributed Simulation and Demonstration} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{MutedGray!45} Multi-station MQTT architecture and full-line train traversal screen recording%
-            }
-          };
-        \fi
-      \fi
-
-      % Item 5
-      \ifnum#1=5
-        \node[fill=ProverNavy, draw=ProverTeal, line width=0.8pt, text=white, below=2mm of s4] (s5) {
-          \hyperlink{sec_problems}{%
-            \fontsize{7.8}{9.2}\selectfont \textbf{\color{white}5. Problems Encountered and Project Conclusion} \\[1pt]
-            \fontsize{6.5}{7.6}\selectfont\color{white!90} Baseline GA logic defects, clock cycle anomalies, race condition solutions and conclusions%
-          }
-        };
-      \else
-        \ifnum#1=0
-          \node[fill=CardBg, draw=ProverTeal!60, line width=0.6pt, below=2mm of s4] (s5) {
-            \hyperlink{sec_problems}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{ProverNavy}5. Problems Encountered and Project Conclusion} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{DarkText} Baseline GA logic defects, clock cycle anomalies, race condition solutions and conclusions%
-            }
-          };
-        \else
-          \node[fill=CardBg!50, draw=CardBorder!50, line width=0.4pt, below=2mm of s4] (s5) {
-            \hyperlink{sec_problems}{%
-              \fontsize{7.8}{9.2}\selectfont \textbf{\color{MutedGray!60}5. Problems Encountered and Project Conclusion} \\[1pt]
-              \fontsize{6.5}{7.6}\selectfont\color{MutedGray!45} Baseline GA logic defects, clock cycle anomalies, race condition solutions and conclusions%
-            }
-          };
-        \fi
-      \fi
+      \agendaitem{#1}{1}{sec_lineg}{Line G and our starting point}{Five stations, the pilot generic application, and what we changed in it}
+      \agendaitem{#1}{2}{sec_debug}{Debugging the pilot GA and formalizing requirements}{Three defects in the baseline, Requirements 2, 8, 9 and 10 (MPS-3 to MPS-12)}
+      \agendaitem{#1}{3}{sec_extend}{Extending the GA}{Line block interface, manual route release, Test Cases 2, 3 and 4 (MPS-13 to MPS-26)}
+      \agendaitem{#1}{4}{sec_simulation}{Simulation of the complete line}{Five connected interlockings, one train from Emerson to Clarke (MPS-27, MPS-28)}
+      \agendaitem{#1}{5}{sec_results}{Results and conclusion}{What is proved, what is only tested, and what is left to do}
     \end{tikzpicture}
   \end{frame}
 }
@@ -315,7 +254,7 @@
 \begin{document}
 
 % -----------------------------------------------------------------------------
-% SLIDE 1: TITLE SLIDE (Mirrors report.tex Cover Page)
+% TITLE SLIDE (mirrors the report cover page)
 % -----------------------------------------------------------------------------
 {
 \setbeamertemplate{footline}{}
@@ -364,597 +303,495 @@
 }
 
 % -----------------------------------------------------------------------------
-% SLIDE 2: PRESENTATION CONTENTS OVERVIEW (Clickable)
+% OUTLINE (clickable)
 % -----------------------------------------------------------------------------
 \agendaslide{0}
 
 % =============================================================================
-% SECTION 1: NETWORK TOPOLOGY AND STATION MODELING
+% SECTION 1: LINE G AND OUR STARTING POINT
 % =============================================================================
 \agendaslide{1}
 
 % -----------------------------------------------------------------------------
-% SLIDE 3: LINE G TOPOLOGY & OPERATIONAL CONTEXT
+% LINE G TOPOLOGY AND SCOPE
 % -----------------------------------------------------------------------------
-\begin{frame}[label=sec_topology]{Line G Network Topology}{Modernization of five interlocking stations under SIL 4 standards}
-  \begin{columns}[c]
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{Industrial Scope and Network Context}
-        \begin{itemize}\setlength{\itemsep}{0.8pt}\fontsize{6.8}{8}\selectfont
-          \item Modernization of Metropolis Line G connecting the western exhibition park to the eastern tech hub.
-          \item Zero route collision, continuous flank protection and strict switch correspondence before clearing signals.
-          \item \textbf{Key Assets Across Line G:}
-            \begin{itemize}\fontsize{6.2}{7.4}\selectfont
-              \item \textbf{5} Interlocking Stations (SAs)
-              \item \textbf{26} Point Machines (Switches)
-              \item \textbf{90} Light Signals (Routes, Shunts and Exits)
-              \item \textbf{16} Platform and Siding Tracks
-            \end{itemize}
-        \end{itemize}
-      \end{proverbox}
-      \vspace{-2mm}
-      \begin{safebox}{Line Key Performance Indicator}
-        \centering\fontsize{6.8}{8}\selectfont
-        \textbf{100\% Safety Property Proof} across all five stations without deadlocks.
-      \end{safebox}
-    \end{column}
+\begin{frame}[label=sec_lineg]{Line G: five stations, five interlockings}{Parc des Expositions $\to$ Technopôle $\cdot$ one Prover iLock project per station}
+  \centering
+  \begin{tikzpicture}[x=1mm,y=1mm,
+      sta/.style={draw=ProverNavy, fill=white, line width=0.7pt, rounded corners=1.5pt, minimum width=17mm, minimum height=7.5mm, inner sep=1pt, align=center},
+      ic/.style={circle, draw=MetroOrange, fill=MetroOrange!12, inner sep=0.6pt, minimum size=3.4mm, font=\fontsize{5.8}{6.5}\selectfont\bfseries\color{MetroOrange}},
+      bord/.style={font=\fontsize{5.6}{6.6}\selectfont\color{ProverSlate}, align=center}]
+    % two tracks: track 2 on top, track 1 below (dossier convention)
+    \draw[ProverSlate!70, line width=0.9pt] (2,1.6) -- (142,1.6);
+    \draw[ProverSlate!70, line width=0.9pt] (2,-1.6) -- (142,-1.6);
+    \foreach \x/\code/\name in {10/PEX/Parc des Expositions, 41/EME/Emerson, 72/ABR/Abrial, 103/CLA/Clarke, 134/TEC/Technopôle}{
+      \node[sta] at (\x,0) {\fontsize{7.4}{8.4}\selectfont\bfseries\color{ProverNavy}G-\code};
+      \node[font=\fontsize{6}{7}\selectfont\color{DarkText}] at (\x,-6.6) {\name};
+    }
+    \foreach \x/\code in {25.5/PEX, 56.5/EME, 87.5/ABR, 118.5/CLA}{
+      \node[bord] at (\x,5.2) {VG1/VG2-\code};
+      \draw[ProverTeal, line width=0.6pt] (\x,-2.6) -- (\x,2.6);
+    }
+    \node[ic] at (41,6.0) {H};
+    \node[ic] at (103,6.0) {D};
+    \node[ic] at (134,6.0) {C};
+    \node[font=\fontsize{5.6}{6.6}\selectfont\color{ProverSlate}, anchor=west] at (2,-11) {Main direction W $\to$ E $\cdot$ line track at each border: \texttt{VG1}/\texttt{VG2-<code of the west station>}};
+    \node[font=\fontsize{5.6}{6.6}\selectfont\color{MetroOrange!90!black}, anchor=east] at (142,-11) {\textbf{H}, \textbf{D}, \textbf{C}: interchanges with lines H, D, C};
+  \end{tikzpicture}
 
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{Station Breakdown: West to East (Line G)}
-        \fontsize{6.5}{7.6}\selectfont
-        \begin{tabularx}{\linewidth}{lXcc}
+  \vspace{2mm}
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      \begin{proverbox}{The five layouts (dossier technique)}
+        \smallfont
+        \begin{tabularx}{\linewidth}{@{}lLcc@{}}
           \toprule
-          \textbf{Station} & \textbf{Typology} & \textbf{Sw.} & \textbf{Sig.} \\
+          \textbf{Project} & \textbf{Layout} & \textbf{Sw.} & \textbf{Sig.} \\
           \midrule
-          \textbf{G-PEX} & Terminus (5 platforms) & 5 & 15 \\
-          \textbf{G-EME} & Double Crossover + Line H & 5 & 18 \\
-          \textbf{G-ABR} & Loop station + 2 sidings & 6 & 20 \\
-          \textbf{G-CLA} & Scissors Crossover + Line D & 5 & 15 \\
-          \textbf{G-TEC} & Fan Terminus (5 platforms) & 5 & 22 \\
+          G-PEX & Terminus with five platforms & 5 & 15 \\
+          G-EME & Two crossovers, siding on track 2 (east) & 5 & 18 \\
+          G-ABR & Passing station with two dead-end sidings & 6 & 20 \\
+          G-CLA & Scissors crossover, siding on track 2 (west) & 5 & 15 \\
+          G-TEC & Fan-shaped terminus with five platforms & 5 & 22 \\
+          \midrule
+          \multicolumn{2}{@{}l}{Line G, with 16 platform or siding tracks} & 26 & 90 \\
           \bottomrule
         \end{tabularx}
       \end{proverbox}
+    \end{column}
 
-      \vspace{0.8mm}
-      \centering
-      \begin{tikzpicture}[scale=0.82, every node/.style={transform shape}]
-        \node[draw=ProverNavy, fill=CardBg, rounded corners, inner sep=2.5pt, font=\fontsize{6.5}{7.5}\selectfont\bfseries] (pex) {G-PEX};
-        \node[draw=ProverNavy, fill=CardBg, rounded corners, inner sep=2.5pt, font=\fontsize{6.5}{7.5}\selectfont\bfseries, right=6mm of pex] (eme) {G-EME};
-        \node[draw=ProverNavy, fill=ProverNavy, text=white, rounded corners, inner sep=2.5pt, font=\fontsize{6.5}{7.5}\selectfont\bfseries, right=6mm of eme] (abr) {G-ABR};
-        \node[draw=ProverNavy, fill=CardBg, rounded corners, inner sep=2.5pt, font=\fontsize{6.5}{7.5}\selectfont\bfseries, right=6mm of abr] (cla) {G-CLA};
-        \node[draw=ProverNavy, fill=CardBg, rounded corners, inner sep=2.5pt, font=\fontsize{6.5}{7.5}\selectfont\bfseries, right=6mm of cla] (tec) {G-TEC};
-
-        \draw[<->, thick, ProverTeal] (pex) -- node[above, font=\fontsize{5}{6}\selectfont] {VG1/2} (eme);
-        \draw[<->, thick, ProverTeal] (eme) -- node[above, font=\fontsize{5}{6}\selectfont] {VG1/2} (abr);
-        \draw[<->, thick, ProverTeal] (abr) -- node[above, font=\fontsize{5}{6}\selectfont] {VG1/2} (cla);
-        \draw[<->, thick, ProverTeal] (cla) -- node[above, font=\fontsize{5}{6}\selectfont] {VG1/2} (tec);
-      \end{tikzpicture}\par
+    \begin{column}{0.42\textwidth}
+      \begin{proverbox}{Our backlog (6 epics, 22 issues)}
+        \smallfont
+        \begin{tabularx}{\linewidth}{@{}l@{\hspace{1.5mm}}L@{}}
+          MPS-1  & Configure and debug the interlockings \\
+          MPS-4  & Formalize Req.~2, 8, 9 and 10 \\
+          MPS-13 & Test case for switch throwing \\
+          MPS-16 & Line block interface between stations \\
+          MPS-21 & Manual route release \\
+          MPS-27 & Simulation of the connected line \\
+        \end{tabularx}\par
+        \vspace{1.2mm}
+        {\color{ProverSlate}Starting point: \texttt{Metropolis\_GA} from the earlier pilot project.}
+      \end{proverbox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% SLIDE 4: SDA METHODOLOGY & STATION MODELING
+% WHAT WE CHANGED IN THE GENERIC APPLICATION
 % -----------------------------------------------------------------------------
-\begin{frame}{Signaling Design Automation (SDA)}{Decoupling generic interlocking rules from specific station layouts}
-  \begin{columns}[c]
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{The SDA Formal Paradigm}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.8}{8}\selectfont
-          \item \textbf{Generic Application (GA):}
-            Reusable signaling logic written in PiSPEC:
-            \begin{itemize}\fontsize{6.2}{7.4}\selectfont
-              \item \textbf{OM}: Abstract topological object definitions
-              \item \textbf{GDS}: Dynamic equations and safety timers
-              \item \textbf{GSS}: Formal safety invariants to prove
-              \item \textbf{GTS}: Behavioral simulation test suite
-            \end{itemize}
-          \item \textbf{Specific Application (SA):}
-            Instantiated automatically from station track plans (\texttt{.isy}):
-            \begin{itemize}\fontsize{6.2}{7.4}\selectfont
-              \item Zero custom code written per station
-              \item Guaranteed portability and consistency
-            \end{itemize}
-        \end{itemize}
-      \end{proverbox}
-    \end{column}
+\begin{frame}{What we changed in Metropolis\_GA}{One GA instantiated on five layouts: each change re-proved and re-tested on all five projects}
+  \centering
+  \begin{tikzpicture}[x=1mm,y=1mm,
+      blk/.style={draw=ProverNavy, fill=CardBg, rounded corners=1.5pt, line width=0.6pt, align=center, inner sep=1.6pt, font=\fontsize{6.4}{7.6}\selectfont, minimum height=7.5mm},
+      arr/.style={-{Latex[length=1.5mm]}, ProverTeal, line width=0.8pt}]
+    \node[blk, text width=34mm] (ga) at (17,0) {\textbf{\color{ProverNavy}Metropolis\_GA} in PiSPEC\\ OM $\cdot$ GDS $\cdot$ GSS $\cdot$ GTS};
+    \node[blk, text width=30mm] (lay) at (57,0) {\textbf{\color{ProverNavy}Station layout}\\ drawn in Prover iLock};
+    \node[blk, text width=30mm, fill=ProverNavy, text=white] (sa) at (95,0) {\textbf{5 projects}\\ G-PEX \dots\ G-TEC};
+    \node[blk, text width=24mm, minimum height=4mm] (ver) at (130,2.6) {\textbf{Verifier}: GSS proofs};
+    \node[blk, text width=24mm, minimum height=4mm] (sim) at (130,-2.6) {\textbf{Simulator}: GTS tests};
+    \draw[arr] (ga) -- node[above, font=\tinyfont\color{ProverSlate}] {+} (lay);
+    \draw[arr] (lay) -- (sa);
+    \draw[arr] (sa.east) -- (ver.west);
+    \draw[arr] (sa.east) -- (sim.west);
+  \end{tikzpicture}
 
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{G-ABR (Abrial) Topological Modeling}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.8}{8}\selectfont
-          \item Modeled the most complex intermediate station on Line G:
-            \begin{itemize}\fontsize{6.2}{7.4}\selectfont
-              \item Main through tracks \texttt{T23} and \texttt{T24}
-              \item Siding spurs \texttt{P9} and \texttt{P10} protected by derailers
-              \item 6 switches (\texttt{sw-11} to \texttt{sw-16}) forming double bypass
-            \end{itemize}
-          \item \textbf{Challenge:} Ensuring non-conflicting shunt movements to sidings \texttt{P9}/\texttt{P10} while mainline expresses traverse through \texttt{P7}/\texttt{P8}.
-        \end{itemize}
-      \end{proverbox}
-
-      \begin{safebox}{Engineering Best Practice}
-        \fontsize{6.5}{7.8}\selectfont
-        Separation of safety logic (GSS) from implementation (GDS) enabled immediate discovery of design edge cases early in the lifecycle.
-      \end{safebox}
-    \end{column}
-  \end{columns}
+  \vspace{0.8mm}
+  \begin{proverbox}[top=0.7mm,bottom=0.7mm]{Modified files, with respect to the pilot version}
+    \smallfont
+    \renewcommand{\arraystretch}{0.98}
+    \begin{tabularx}{\linewidth}{@{}l@{\hspace{2mm}}l@{\hspace{2mm}}L@{\hspace{2mm}}r@{}}
+      \toprule
+      \textbf{Part} & \textbf{File} & \textbf{Change} & \textbf{Task} \\
+      \midrule
+      OM  & \texttt{ROUTE} & \texttt{ReleaseRequested}, \texttt{ReleaseTimer}, \texttt{PreReleaseTimer}, \texttt{JustUnlocked}, \texttt{Holding}; \texttt{set} requires the timer stopped & MPS-22 \\
+      OM  & \texttt{ROUTE\_SECTION} & Function \texttt{manual\_unlocking} & MPS-22 \\
+      GDS & \texttt{SWITCH} & Wrong guard of \texttt{MoveReverse} corrected & MPS-3 \\
+      GDS & \texttt{ROUTE\_SECTION} & \texttt{ReadyToRelease} armed by occupancy; \texttt{Locked} also cleared by manual unlocking & MPS-3, 24 \\
+      GDS & \texttt{ROUTE} & Exit case of \texttt{protected\_front}; \texttt{ReleaseTimer} and \texttt{Holding} & MPS-20, 24, 26 \\
+      GDS & \texttt{EXIT\_SIGNAL} & \texttt{LineOutput} from end locking; line input in \texttt{CommandedProceed} & MPS-20 \\
+      GSS & \texttt{REQUIREMENTS} & Req.~2, 8, 9, 10 formalized; 3 corrected; 6 strengthened; \texttt{EXIT\_1}, \texttt{EXIT\_2} added; manual-release case in Req.~10 & MPS-3 to 26 \\
+      GTS & \texttt{GTS\_SWITCH} & Test Case 2 & MPS-14 \\
+      GTS & \texttt{GTS\_ROUTE} & Test Cases 3 and 4 & MPS-19, 23 \\
+      \bottomrule
+    \end{tabularx}\par
+    \vspace{0.6mm}
+    {\tinyfont\color{ProverSlate}MPS-2: layouts drawn by hand, switches placed by the tool, \texttt{DATACHECK\_01}--\texttt{03} run when entering the tools phase. Informal OM, GSS and GTS documents updated to match.\par}
+  \end{proverbox}
 \end{frame}
 
 % =============================================================================
-% SECTION 2: GENERIC APPLICATION DESIGN AND TESTING
+% SECTION 2: DEBUGGING THE PILOT GA AND FORMALIZING REQUIREMENTS
 % =============================================================================
 \agendaslide{2}
 
 % -----------------------------------------------------------------------------
-% SLIDE 5: OM & GDS ADDITIONS: SAFE MANUAL ROUTE RELEASE
+% THREE DEFECTS IN THE PILOT GA (MPS-3)
 % -----------------------------------------------------------------------------
-\begin{frame}[fragile,label=sec_design]{Manual Route Release Design}{Safe route cancellation with 30-second delay and overlap protection}
-  \begin{columns}[c]
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{The Engineering Challenge (MPS-21 to MPS-26)}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.8}{8}\selectfont
-          \item Dispatchers require canceling locked routes when trains are halted or rerouted.
-          \item \textbf{Safety Hazard:} An immediate release could derail an approaching train or move a switch under rolling stock.
-          \item \textbf{Engineered Solution in GDS:}
-            \begin{itemize}\fontsize{6.2}{7.4}\selectfont
-              \item 30-second fixed off-delay countdown (\texttt{ReleaseTimer})
-              \item \texttt{Holding} latch to maintain lock on shared sections
-              \item Re-requested routes during countdown remain blocked
-            \end{itemize}
-        \end{itemize}
-      \end{proverbox}
-
-      \begin{safebox}{Release Invariant}
-        \fontsize{6.5}{7.8}\selectfont
-        \textbf{Mutual Exclusion:} If another set route shares a section with the releasing route, the shared section is \emph{never} released prematurely.
-      \end{safebox}
-    \end{column}
-
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{PiSPEC Formal Implementation (GDS\_ROUTE.tm)}
-\begin{lstlisting}[language=PiSPEC,basicstyle=\fontsize{5.8}{7}\ttfamily]
-ReleaseTimer :=
-  SELF.ReleaseRequested &
-  SOME rts:SELF.route_sections rts.Locked &
-  ~SOME rt1 (
-    ~(rt1 = SELF) & set(rt1) &
-    SOME rts:SELF.route_sections route_sections(rt1, rts)
-  ) &
-  ~SELF.immediate_manual_release;
-
-Holding :=
-  SELF.ready_to_lock #
-  SELF.Holding & SOME rts:SELF.route_sections rts.Locked &
-  ~SELF.JustUnlocked;
-
-Timers:
-  ReleaseTimer (SET=0 SEC, CLEAR=30 SEC, FIXED);
+\begin{frame}[fragile,label=sec_debug]{Three defects in the pilot GA}{MPS-3 $\cdot$ found with Test Case 1 and the proofs on our stations, and while writing Test Case 2}
+  \begin{columns}[T]
+    \begin{column}{0.325\textwidth}
+      \begin{proverbox}[equal height group=defects]{1 $\cdot$ \texttt{GDS\_SWITCH}}
+        \begin{codebox}
+\begin{lstlisting}[basicstyle=\fontsize{6.2}{7.4}\ttfamily]
+MoveReverse :=
+  SELF.CommandedReverse &
+  ~SELF.DetectedReverse & ...
+// pilot: ~SELF.DetectedNormal
 \end{lstlisting}
+        \end{codebox}
+        \smallfont
+        A switch lying in normal, the one that has to move, never got the reverse command.\par
+        \vspace{1mm}
+        \textbf{Found by} Test Cases 1 and 2. No proof fails.
+      \end{proverbox}
+    \end{column}
+    \begin{column}{0.325\textwidth}
+      \begin{proverbox}[equal height group=defects]{2 $\cdot$ \texttt{GDS\_ROUTE\_SECTION}}
+        \begin{codebox}
+\begin{lstlisting}[basicstyle=\fontsize{6.2}{7.4}\ttfamily]
+ReadyToRelease :=
+  SELF.Locked & (~SELF.clear #
+    SELF.ReadyToRelease);
+// pilot: armed by SELF.clear
+\end{lstlisting}
+        \end{codebox}
+        \smallfont
+        \texttt{clear} is true on a vacant section: ready to release as soon as locked, released before any train entered.\par
+        \vspace{1mm}
+        \textbf{Found by} Test Case 1, then a direct counterexample of Req.~8.
+      \end{proverbox}
+    \end{column}
+    \begin{column}{0.325\textwidth}
+      \begin{proverbox}[equal height group=defects]{3 $\cdot$ GSS, Requirement 3}
+        \begin{codebox}
+\begin{lstlisting}[basicstyle=\fontsize{6.2}{7.4}\ttfamily]
+ALL sw (
+  (switches_normal(rts, sw) ->
+     DetectedNormal(sw)) & ...
+// pilot: both negated
+\end{lstlisting}
+        \end{codebox}
+        \smallfont
+        Switches of a cleared route were required \emph{not} to be detected in their route positions.\par
+        \vspace{1mm}
+        \textbf{Found by} the proof, failing on every station. Removing the two negations is enough.
       \end{proverbox}
     \end{column}
   \end{columns}
+
+  \vspace{0.4mm}
+  \begin{alertbox}[top=0.7mm,bottom=0.7mm]{Defect 1 passes every proof}
+    \smallfont
+    Requirement 7 only says when a switch must \emph{not} move, and a switch that never moves satisfies it. Only a test shows that the design does too little.
+  \end{alertbox}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% SLIDE 6: LINE BLOCK INTERFACE & HANDSHAKE
+% FORMALIZING REQUIREMENTS 2, 8, 9 AND 10 (MPS-4)
 % -----------------------------------------------------------------------------
-\begin{frame}{Line Block Interface and Exit Signals}{Boundary handshake protocol protecting inter-station tracks}
-  \begin{columns}[c]
+\begin{frame}[fragile]{Formalizing Requirements 2, 8, 9 and 10}{MPS-4 $\cdot$ ``becomes'' and ``releases'' are edges, written with \texttt{PRE} (value in the previous cycle)}
+  \begin{columns}[T]
     \begin{column}{0.50\textwidth}
-      \begin{proverbox}{Line Block Boundary Handshake Logic}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.8}{8}\selectfont
-          \item Stations coordinate across boundary tracks (\texttt{VG1}, \texttt{VG2}) using bidirectional interface variables:
-            \begin{itemize}\fontsize{6.2}{7.4}\selectfont
-              \item \texttt{LineOutput}: Transmitted to neighbor when block is free
-              \item \texttt{LineInput}: Received from neighbor authorizing dispatch
-            \end{itemize}
-          \item \textbf{Safety Conditioning in Exit Signals:}
-            \begin{itemize}\fontsize{6.2}{7.4}\selectfont
-              \item Exit signal clears to green \emph{if and only if}:
-                \begin{itemize}\fontsize{6}{7}\selectfont
-                  \item Route end-locking is established
-                  \item \texttt{LineInput} is asserted by adjacent station
-                  \item Intermediate line track circuit is fully clear
-                \end{itemize}
-            \end{itemize}
-        \end{itemize}
-      \end{proverbox}
+      \begin{codebox}
+\begin{lstlisting}
+GSS_02 := ALL rts1 ALL rts2 (
+  ~(rts1 = rts2) &
+  SOME tc (tracks(rts1, tc) & tracks(rts2, tc)) ->
+    ~(rts1.Locked & rts2.Locked));
+
+GSS_08 := ALL rts (
+  ~SELF.initial_cycle &
+  rts.ReadyToRelease & PRE ~rts.ReadyToRelease ->
+    SOME tc (tracks(rts, tc) & ~Clear(tc)));
+
+GSS_09 := ALL rts (
+  ReadyToRelease(rts) -> Locked(rts));
+
+// before manual release (final version: backup)
+GSS_10 := ALL rts (
+  ~SELF.initial_cycle &
+  PRE Locked(rts) & ~Locked(rts) ->
+    ALL tc (tracks(rts, tc) -> Clear(tc)) &
+    PRE ReadyToRelease(rts));
+\end{lstlisting}
+      \end{codebox}
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{proverbox}{Exit Signal GDS Equation (\texttt{EXIT\_SIGNAL.tm})}
-        \fontsize{6.8}{8}\selectfont
-        \begin{equation*}
-          \begin{aligned}
-            \texttt{LineOutput} := & \sim\texttt{end\_locked(SELF)} \\
-            & \land \sim\texttt{CommandedProceed(SELF)} \\
-            & \land \texttt{SOME tc:SELF.track\_after} \\
-            & \qquad \texttt{tc.Clear}
-          \end{aligned}
-        \end{equation*}
-        \vspace{-2mm}
-        \begin{itemize}\setlength{\itemsep}{1pt}\fontsize{6.5}{7.6}\selectfont
-          \item Keeps the line track reserved while a train travels between stations, even after departure route sections unlock.
+      \centering
+      \begin{tikzpicture}[x=8mm,y=1mm, font=\tinyfont]
+        \fill[ProverTeal!12] (2,-17.5) rectangle (3,3);
+        \fill[MetroOrange!16] (3,-17.5) rectangle (4,3);
+        \foreach \i/\l in {0/t-3,1/t-2,2/t-1,3/t,4/t+1}{
+          \node[color=ProverSlate] at (\i+0.5,4.6) {$\l$};
+          \draw[CardBorder] (\i,-17.5) -- (\i,3);
+        }
+        \draw[CardBorder] (5,-17.5) -- (5,3);
+        \node[anchor=east] at (-0.1,0.5) {\texttt{Locked}};
+        \draw[ProverNavy, line width=0.9pt] (0,2) -- (3,2) -- (3,-1) -- (5,-1);
+        \node[anchor=east] at (-0.1,-6) {\texttt{ReadyToRelease}};
+        \draw[ProverNavy, line width=0.9pt] (0,-7.5) -- (1,-7.5) -- (1,-4.5) -- (3,-4.5) -- (3,-7.5) -- (5,-7.5);
+        \node[anchor=east] at (-0.1,-12.5) {\texttt{Clear(tc)}};
+        \draw[ProverNavy, line width=0.9pt] (0,-11) -- (1,-11) -- (1,-14) -- (3,-14) -- (3,-11) -- (5,-11);
+        \node[color=ProverTeal!80!black, font=\fontsize{5.6}{6.6}\selectfont\bfseries] at (2.5,-16) {\texttt{PRE}};
+        \node[color=MetroOrange!90!black, font=\fontsize{5.6}{6.6}\selectfont\bfseries] at (3.5,-16) {release};
+        \node[color=ProverSlate, font=\fontsize{5.6}{6.6}\selectfont] at (2,-12.5) {occupied};
+      \end{tikzpicture}\par
+      \vspace{0.2mm}
+      \begin{proverbox}[top=0.7mm,bottom=0.7mm]{Choices behind the formulas}
+        \begin{itemize}\smallfont
+          \item \textbf{Req.~2}: without \texttt{\textasciitilde(rts1 = rts2)}, every locked section conflicts with itself.
+          \item \textbf{Req.~8}: \texttt{SOME tc}, not \texttt{ALL tc} as in our first draft: the latch arms on the first occupied circuit of the section.
+          \item \textbf{Req.~9}: immediate, \texttt{Locked} is a conjunct of \texttt{ReadyToRelease}. Kept as a guard.
+          \item \textbf{Req.~10}: \texttt{ReadyToRelease} falls in the release cycle $t$, so it is checked under \texttt{PRE}.
+          \item \texttt{PRE} is meaningless in cycle 0 (our first Req.~10 counterexample): \texttt{\textasciitilde initial\_cycle}.
         \end{itemize}
       \end{proverbox}
-
-      \begin{alertbox}{Critical Fix Implemented}
-        \fontsize{6.5}{7.6}\selectfont
-        Exit signals were decoupled from generic signal protection areas, preventing false clearances on station boundaries.
-      \end{alertbox}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% -----------------------------------------------------------------------------
-% SLIDE 7: GTS AUTOMATED TEST SUITE EXECUTION
-% -----------------------------------------------------------------------------
-\begin{frame}{Automated Dynamic Testing (GTS)}{Behavioral test cases validating timing delays and safety boundaries}
-  \begin{columns}[c]
-    \begin{column}{0.55\textwidth}
-      \begin{proverbox}{Test Suite Coverage Across Line G}
-        \fontsize{6.5}{7.8}\selectfont
-        \begin{tabularx}{\linewidth}{lXcc}
-          \toprule
-          \textbf{Test} & \textbf{Focus Description} & \textbf{Time} & \textbf{Result} \\
-          \midrule
-          \textbf{TC 1} & Standard route setting, locking and release & 45\,s & \textbf{\color{SafeGreen}PASS} \\
-          \textbf{TC 2} & Switch throw ($<1\text{s}$ loss, $<4\text{s}$ det), lock & 35\,s & \textbf{\color{SafeGreen}PASS} \\
-          \textbf{TC 3} & Line block exit signal and line reservation & 55\,s & \textbf{\color{SafeGreen}PASS} \\
-          \textbf{TC 4} & Manual release: 30s delay and multi-section & 60\,s & \textbf{\color{SafeGreen}PASS} \\
-          \bottomrule
-        \end{tabularx}
-      \end{proverbox}
-    \end{column}
-
-    \begin{column}{0.43\textwidth}
-      \begin{proverbox}{Timing Realism in Test Case 2}
-        \begin{itemize}\setlength{\itemsep}{1.5pt}\fontsize{6.5}{7.6}\selectfont
-          \item Switch simulated throwing time: \textbf{3.0\,s}.
-          \item Expectation window tuned to \textbf{4.0\,s} to prevent false test timeouts while validating real electromechanical behavior.
-        \end{itemize}
-      \end{proverbox}
-
-      \begin{safebox}{Test Suite Conclusion}
-        \centering\fontsize{7}{8.2}\selectfont
-        \textbf{100\% Pass Rate} achieved across all five Line G project stations in Prover iLock simulation harness.
-      \end{safebox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % =============================================================================
-% SECTION 3: FORMAL SAFETY SPECIFICATION AND VERIFICATION
+% SECTION 3: EXTENDING THE GA
 % =============================================================================
 \agendaslide{3}
 
 % -----------------------------------------------------------------------------
-% SLIDE 8: FORMAL SAFETY SPECIFICATION (GSS) STRATEGY
+% LINE BLOCK INTERFACE (MPS-16 TO MPS-20)
 % -----------------------------------------------------------------------------
-\begin{frame}[label=sec_verification]{Formal Safety Specification (GSS)}{Mathematical verification using Prover iLock Verifier}
-  \begin{columns}[c]
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{Defense-in-Depth Verification Layers}
-        \begin{enumerate}\setlength{\itemsep}{1.2pt}\fontsize{6.5}{7.6}\selectfont
-          \item \textbf{Layer 1: Signal Authority}
-            \begin{itemize}\fontsize{6}{7}\selectfont
-              \item \texttt{GSS\_01}: Proceed aspect implies unique, locked route
-            \end{itemize}
-          \item \textbf{Layer 2: Conflict and Flank Protection}
-            \begin{itemize}\fontsize{6}{7}\selectfont
-              \item \texttt{GSS\_02}: Shared tracks mutually exclusive
-              \item \texttt{GSS\_03}: Switches locked in correspondence
-              \item \texttt{GSS\_05}: Flank protection established and stable
-            \end{itemize}
-          \item \textbf{Layer 3: Track Occupancy and End Protection}
-            \begin{itemize}\fontsize{6}{7}\selectfont
-              \item \texttt{GSS\_04}: Route tracks vacant before clearance
-              \item \texttt{GSS\_06}: Route end protection (buffer / signal / line)
-              \item \texttt{GSS\_07}: Locked switches cannot move
-            \end{itemize}
-          \item \textbf{Layer 4: Release and Inter-Station Safety}
-            \begin{itemize}\fontsize{6}{7}\selectfont
-              \item \texttt{GSS\_08}--\texttt{GSS\_10}: Sequential train-guided release
-              \item \texttt{EXIT\_1}--\texttt{EXIT\_2}: Boundary line block safety
-            \end{itemize}
-        \end{enumerate}
-      \end{proverbox}
-    \end{column}
+\begin{frame}[fragile,label=sec_extend]{Line block interface between neighbouring interlockings}{MPS-16 to MPS-20 $\cdot$ single-circuit line track, exit signal back to back with the entry signal of the station}
+  \centering
+  \begin{tikzpicture}[x=1mm,y=1mm,
+      sig/.style={circle, draw=ProverNavy, fill=white, line width=0.6pt, inner sep=0pt, minimum size=1.9mm},
+      lab/.style={font=\fontsize{5.9}{6.9}\selectfont\color{DarkText}}]
+    % station regions
+    \node[font=\fontsize{7}{8}\selectfont\bfseries\color{ProverNavy}, anchor=west] at (1,12) {G-ABR (Abrial)};
+    \node[font=\fontsize{7}{8}\selectfont\bfseries\color{ProverNavy}, anchor=east] at (141,12) {G-CLA (Clarke)};
+    % the two Booleans
+    \draw[{Latex[length=1.8mm]}-{Latex[length=1.8mm]}, ProverTeal, line width=0.8pt] (58,10) -- (100,10);
+    \node[lab, color=ProverTeal!80!black, anchor=south] at (79,10.6) {\texttt{LineOutput} of each exit signal $\to$ \texttt{LineInput} of the other};
+    \node[lab, color=ProverSlate, anchor=north] at (79,9.3) {\textit{``this interlocking is not using the line''}};
+    % track 1
+    \draw[ProverSlate!60, line width=0.9pt] (1,0) -- (141,0);
+    % route towards the exit signal: first section released, last section locked
+    \draw[ProverSlate!40, line width=2.4pt] (14,0) -- (36,0);
+    \draw[ProverNavy, line width=2.4pt] (36.6,0) -- (58,0);
+    \node[lab, color=ProverSlate] at (25,-3.4) {first section: released};
+    \node[lab, color=ProverNavy] at (46,-3.4) {last section: locked};
+    \fill[MetroOrange, rounded corners=0.6pt] (42,1.3) rectangle (53,3.5);
+    \node[lab, color=MetroOrange!90!black, anchor=south] at (47.5,3.6) {train};
+    % line track
+    \node[lab, color=ProverSlate] at (79,-3.4) {line track \texttt{VG1-ABR}, vacant};
+    \draw[ProverTeal, line width=0.6pt] (58,-1.8) -- (58,1.8);
+    \draw[ProverTeal, line width=0.6pt] (100,-1.8) -- (100,1.8);
+    % signals at the borders
+    \node[sig] at (58,-3.0) {}; \node[lab, anchor=north] at (58,-4.2) {SeG1-ABR-E};
+    \node[sig] at (58,3.0) {};  \node[lab, anchor=west] at (59.5,3.4) {S11};
+    \node[sig] at (100,3.0) {}; \node[lab, anchor=east] at (98.5,3.4) {SeG1-ABR-W};
+    \node[sig] at (100,-3.0) {};\node[lab, anchor=north] at (100,-4.2) {S1};
+    % state annotation: the EXIT_1 counterexample
+    \node[draw=AlertRed!50, fill=AlertRed!5, rounded corners=1pt, align=left, inner sep=1.5pt, font=\fontsize{5.8}{6.8}\selectfont, text width=33mm, anchor=north west] at (102,-1) {%
+      \textbf{\color{AlertRed}EXIT\_1 counterexample}, pilot equation\\
+      \texttt{set(rt)} false, \texttt{end\_locked} true\\
+      ``no set route'' $\Rightarrow$ \texttt{LineOutput} true:\\
+      Clarke could lock a route onto \texttt{VG1-ABR}};
+  \end{tikzpicture}
 
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{Why Formal Verification over Testing?}
-        \begin{itemize}\setlength{\itemsep}{1.5pt}\fontsize{6.8}{8}\selectfont
-          \item \textbf{Testing} demonstrates the presence of bugs in specific sampled traces.
-          \item \textbf{Formal Verification} mathematically proves the absence of hazardous states across the entire state space ($>10^{30}$ states).
-          \item Inductive invariant proofs verify that safety holds for all reachable cycles $t \to t+1$.
+  \vspace{0.2mm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.51\textwidth}
+      \begin{codebox}[top=0.5mm,bottom=0.5mm]
+\begin{lstlisting}[basicstyle=\fontsize{5.9}{6.9}\ttfamily]
+// GDS_EXIT_SIGNAL, final equations
+LineOutput :=
+  ~end_locked(SELF) & ~CommandedProceed(SELF) &
+  SOME tc:SELF.track_after tc.Clear;
+CommandedProceed :=
+  end_locked(SELF) & SELF.LineInput &
+  SOME tc:SELF.track_after tc.Clear;
+// end_locked: train still in the station
+// vacancy:    train on the line track
+\end{lstlisting}
+      \end{codebox}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{proverbox}[top=0.5mm,bottom=0.5mm]{Requirements}
+        \fontsize{6.8}{8.0}\selectfont
+        \begin{itemize}
+          \item \texttt{EXIT\_1}: line output set $\Rightarrow$ not end locked, not proceed.
+          \item \texttt{EXIT\_2}: proceed $\Rightarrow$ end locked, line input set, line track vacant.
+          \item Req.~6, exit case: was \texttt{SOME esi:rt.end\_object true}, too weak and proved without complaint. Now line input set and line track vacant; same condition added to \texttt{protected\_front}.
         \end{itemize}
       \end{proverbox}
-
-      \begin{safebox}{SIL 4 Regulatory Standard}
-        \centering\fontsize{7}{8.2}\selectfont
-        Complies with \textbf{CENELEC EN 50128} requirements for safety-critical railway interlocking software.
-      \end{safebox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% SLIDE 9: MATHEMATICAL REFINEMENTS & CRITICAL REQUIREMENTS
+% MANUAL ROUTE RELEASE (MPS-21 TO MPS-26)
 % -----------------------------------------------------------------------------
-\begin{frame}{Mathematical Safety Refinements}{Resolving counterexamples in route end protection and release}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{Route End Protection (\texttt{GSS\_06}, MPS-17)}
-        \fontsize{6}{7.2}\selectfont
-        Tri-partite disjunction covering all three terminus topologies:
-        \begin{align*}
-          \texttt{Set}(rt) \implies & \texttt{SOME bs:rt.end\_object true} \quad\text{\color{ProverSlate}(Buffer Stop)} \\
-          \# & \texttt{SOME esi:rt.end\_object (esi.LineInput} \\
-             & \quad \land \texttt{SOME tc:esi.track\_after tc.Clear)} \quad\text{\color{ProverNavy}(Exit)} \\
-          \# & \texttt{SOME si1:rt.end\_object (~EXIT\_SIGNAL(si1)} \\
-             & \quad \land (\texttt{CommandedProceed}(si1) \lor \texttt{protective}))
-        \end{align*}
-        \vspace{-2.5mm}
-        \begin{itemize}\setlength{\itemsep}{1pt}\fontsize{6}{7.2}\selectfont
-          \item Strict exclusion ($\sim\texttt{EXIT\_SIGNAL}$) guarantees exit signals cannot masquerade as standard signals with protection areas.
-        \end{itemize}
+\begin{frame}{Manual route release with a 30\,s delay}{MPS-21 to MPS-26 $\cdot$ start signal to stop at once, all sections released together 30\,s later}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \begin{proverbox}{Timing in Test Case 4 (1\,s request pulse)}
+        \centering
+        \begin{tikzpicture}[x=1.24mm,y=1mm, font=\tinyfont]
+          \foreach \t in {0,29,31,33}{
+            \draw[CardBorder] (\t,-27) -- (\t,3);
+            \node[color=ProverSlate, font=\fontsize{5.4}{6.4}\selectfont] at (\t,-29) {\t};
+          }
+          \node[color=ProverSlate, font=\fontsize{5.4}{6.4}\selectfont, anchor=west] at (34.5,-29) {s};
+          % rows
+          \node[anchor=east] at (-4.5,1)   {\texttt{ReleaseRequested}};
+          \draw[ProverNavy, line width=0.9pt] (-4,-0.5) -- (0,-0.5) -- (0,2.5) -- (1,2.5) -- (1,-0.5) -- (36,-0.5);
+          \node[anchor=east] at (-4.5,-5)  {\texttt{ReleaseTimer}};
+          \draw[MetroOrange, line width=0.9pt] (-4,-6.5) -- (0,-6.5) -- (0,-3.5) -- (31,-3.5) -- (31,-6.5) -- (36,-6.5);
+          \node[anchor=east] at (-4.5,-11) {\texttt{set(rt)}};
+          \draw[ProverNavy, line width=0.9pt] (-4,-9.5) -- (0,-9.5) -- (0,-12.5) -- (36,-12.5);
+          \node[anchor=east] at (-4.5,-17) {start signal};
+          \draw[ProverNavy, line width=0.9pt] (-4,-15.5) -- (0,-15.5) -- (0,-18.5) -- (36,-18.5);
+          \node[anchor=east] at (-4.5,-23) {sections \texttt{Locked}};
+          \draw[SafeGreen!80!black, line width=0.9pt] (-4,-21.5) -- (31,-21.5) -- (31,-24.5) -- (36,-24.5);
+          % annotations
+          \draw[{Latex[length=1.2mm]}-{Latex[length=1.2mm]}, MetroOrange] (1,0.8) -- node[above, font=\fontsize{5.4}{6.4}\selectfont, color=MetroOrange!90!black] {off-delay: 30\,s after the request ends} (31,0.8);
+          \draw[decorate, decoration={brace, mirror, amplitude=1.1mm}, ProverSlate] (1,-31) -- node[below=1.2mm, xshift=-3mm, font=\fontsize{5.4}{6.4}\selectfont, color=ProverSlate] {step 14: all locked, 28\,s} (29,-31);
+          \draw[decorate, decoration={brace, mirror, amplitude=1.1mm}, AlertRed!70] (29,-31) -- (33,-31);
+          \node[font=\fontsize{5.4}{6.4}\selectfont, color=AlertRed!80!black, anchor=north east, align=right] at (36,-32.6) {step 15: all or\\ none locked, 4\,s};
+        \end{tikzpicture}\par
+        \vspace{0.3mm}
+        {\tinyfont\color{ProverSlate}Release at about 31\,s; about 30.5\,s with the 0.5\,s pulse of the interactive simulator.\par}
       \end{proverbox}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{Sequential Release Semantics (\texttt{GSS\_10})}
-        \fontsize{6.2}{7.4}\selectfont
-        Section release requires previous cycle readiness:
-        \begin{equation*}
-          \begin{aligned}
-            & \texttt{PRE Locked}(rts) \land \sim\texttt{Locked}(rts) \land \sim\texttt{ManualUnlock}(rts) \\
-            & \implies \texttt{Clear}(rts.\text{tracks}) \land \mathbf{PRE}\,\texttt{ready\_to\_release}(rts)
-          \end{aligned}
-        \end{equation*}
-        \begin{itemize}\setlength{\itemsep}{1pt}\fontsize{6.2}{7.2}\selectfont
-          \item Utilizes the \textbf{\texttt{PRE}} temporal operator.
-          \item Exempts manual release countdown expiration while maintaining strict train-occupancy requirements during normal traffic.
+    \begin{column}{0.43\textwidth}
+      \begin{proverbox}{Design}
+        \begin{itemize}\smallfont
+          \item \texttt{set} := all sections locked \texttt{\&} \texttt{\textasciitilde ReleaseTimer}: the start signal drops as soon as the timer starts.
+          \item A request is ignored if another \emph{set} route shares a section with this one.
+          \item At expiry, a section unlocks only if no other route holds it (\texttt{Holding}) or is locking it.
+          \item Re-requesting during the countdown does not cancel the release.
         \end{itemize}
       \end{proverbox}
-
-      \begin{safebox}{Formal Rigor}
-        \fontsize{6.5}{7.6}\selectfont
-        Eliminated all four initial counterexamples reported during the pilot baseline.
-      \end{safebox}
+      \vspace{-1mm}
+      \begin{alertbox}{Consequence for the GSS}
+        \smallfont
+        Req.~10 failed, as expected. We exempted only releases caused by an expired timer, on sections no other route held. The 30\,s delay itself is in no requirement: only Test Case 4 checks it.
+      \end{alertbox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% SLIDE 10: VERIFICATION THOUGHT PROCESS & ARCHITECTURAL SOUNDNESS
+% TEST CASES (MPS-14, MPS-19, MPS-23)
 % -----------------------------------------------------------------------------
-\begin{frame}{Formal Proof Strategy and Insights}{Mathematical rigor ensuring zero-defect safety across Line G}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{The Inductive Verification Thought Process}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.5}{7.6}\selectfont
-          \item \textbf{Mathematical Formulation:} Translated human-readable safety principles into non-ambiguous first-order logic formulas with temporal quantifiers.
-          \item \textbf{1-Step Induction ($k=1$):}
-            \begin{itemize}\fontsize{6}{7}\selectfont
-              \item Proved that each invariant holds at initialization ($t = 0$).
-              \item Proved that if an invariant holds at cycle $t$, it strictly holds at cycle $t + 1$.
-            \end{itemize}
-          \item \textbf{Architectural Inductivity:}
-            Zero manual auxiliary lemmas were required, proving the intrinsic soundness of our Generic Design Specification.
-        \end{itemize}
-      \end{proverbox}
-    \end{column}
-
-    \begin{column}{0.48\textwidth}
-      \begin{safebox}{Exhaustive Proof Results Across All 5 Stations}
-        \begin{itemize}\setlength{\itemsep}{1.5pt}\fontsize{6.5}{7.6}\selectfont
-          \item \textbf{Total Proof Goals:} 60 / 60 (12 properties $\times$ 5 SAs).
-          \item \textbf{Success Rate:} \textbf{100\% PROVED} without counterexamples.
-          \item \textbf{Proof Engines:} Automated SAT/SMT k-induction in Prover iLock Verifier.
-          \item \textbf{Solver Runtime:} Under 90 seconds total for the entire line.
-        \end{itemize}
-      \end{safebox}
-
-      \begin{proverbox}{Industrial Certification Readiness}
-        \fontsize{6.5}{7.6}\selectfont
-        Provides absolute mathematical guarantees against train collision, point motor operation under rolling stock and premature release.
-      \end{proverbox}
-    \end{column}
-  \end{columns}
+\begin{frame}{Test cases in the GTS}{MPS-14, MPS-19, MPS-23 $\cdot$ run in the Prover iLock simulator; all four test cases pass}
+  \begin{proverbox}[notitle]{}
+    \smallfont
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabularx}{\linewidth}{@{}P{27mm}P{22mm}LL@{}}
+      \toprule
+      \textbf{Test case} & \textbf{Runs for} & \textbf{Checks} & \textbf{What we had to decide} \\
+      \midrule
+      \textbf{1} \texttt{RUN\_ROUTE}\newline {\tinyfont\color{ProverSlate}pilot, unchanged} & each route & Route set, start signal proceed, sections released behind a train & Nothing; it revealed defects 1 and 2 \\
+      \textbf{2} \texttt{MANUAL\_SWITCH\_}\newline\texttt{THROWING} & each switch & Throw to reverse and back; with its track occupied, a reverse request is refused for 60\,s & Gaining detection within \textbf{4\,s}, not the 1\,s of the backlog: the simulated switch needs 3\,s. Only check of the occupancy lock, which no requirement covers \\
+      \textbf{3} \texttt{TEST\_CASE\_3} & each route ending at an exit signal & Line input false: no section locked for 30\,s. Line input true: set within 5\,s, proceed within 1\,s, line output false & Added a clean-up (manual release, 35\,s wait), otherwise the next route is blocked by locked sections. TC 3 therefore depends on manual release \\
+      \textbf{4} \texttt{TEST\_CASE\_4} & each route & Signal to stop at once, sections locked for 28\,s, then all-or-none for 4\,s, then all unlocked & Windows placed around the expected release at about 31\,s (previous slide) \\
+      \bottomrule
+    \end{tabularx}
+  \end{proverbox}
 \end{frame}
 
 % =============================================================================
-% SECTION 4: DISTRIBUTED SIMULATION AND DEMONSTRATION
+% SECTION 4: SIMULATION OF THE COMPLETE LINE
 % =============================================================================
 \agendaslide{4}
 
 % -----------------------------------------------------------------------------
-% SLIDE 11: MULTI-STATION DISTRIBUTED SIMULATION VIA MQTT
+% LINE SIMULATION (MPS-27, MPS-28)
 % -----------------------------------------------------------------------------
-\begin{frame}[label=sec_simulation]{Distributed MQTT Simulation Architecture}{Coupling five autonomous Prover iLock instances in real time}
-  \begin{columns}[c]
-    \begin{column}{0.44\textwidth}
-      \begin{proverbox}{Decentralized Architecture}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.5}{7.6}\selectfont
-          \item \textbf{Process Independence:} Each station runs in an isolated Prover iLock simulation process.
-          \item \textbf{Local Message Broker:} Standard broker running on \texttt{localhost:1883}, eliminating cloud network latency.
-          \item \textbf{Border Telemetry Synchronization:}
-            \begin{itemize}\fontsize{6}{7}\selectfont
-              \item Boundary signals: \texttt{SeG1/2-XXX-E/W}
-              \item Boundary tracks: \texttt{VG1/2-XXX}
-            \end{itemize}
-          \item \textbf{Deterministic Exchange:} Sub-millisecond state replication across station boundaries.
-        \end{itemize}
-      \end{proverbox}
+\begin{frame}[label=sec_simulation]{Simulation of the complete line}{MPS-27, MPS-28 $\cdot$ five Prover iLock instances connected through an MQTT broker}
+  \centering
+  \begin{minipage}[t]{0.325\linewidth}\centering
+    \includegraphics[width=\linewidth,height=2.32cm,keepaspectratio]{../img/simulation_1.png}\par
+    \vspace{0.5mm}{\tinyfont\textbf{108.0\,s}: train on \texttt{VG1-EME}; at Abrial, routes set through P8 with S1, S7 and SeG1-ABR-E at proceed\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.325\linewidth}\centering
+    \includegraphics[width=\linewidth,height=2.32cm,keepaspectratio]{../img/simulation_2.png}\par
+    \vspace{0.5mm}{\tinyfont\textbf{160.6\,s}: train on \texttt{VG1-ABR}, Abrial released behind it; occupancy shared with Clarke\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.325\linewidth}\centering
+    \includegraphics[width=\linewidth,height=2.32cm,keepaspectratio]{../img/simulation_3.png}\par
+    \vspace{0.5mm}{\tinyfont\textbf{320.4\,s}: entering Clarke; route locked across the scissors crossover towards SeG2-CLA-E\par}
+  \end{minipage}
 
-      \vspace*{1.5mm}
-      \begin{safebox}{Validation Outcome}
-        \fontsize{6.5}{7.6}\selectfont
-        Successful train transfer across all four boundary blocks without collision or packet drop.
-      \end{safebox}
-    \end{column}
-
-    \begin{column}{0.54\textwidth}
-      \begin{proverbox}{Distributed Interlocking Architecture}
-        \centering\vspace{1mm}
-        \begin{tikzpicture}[
-          x=1cm, y=1cm,
-          sta/.style={draw=ProverNavy, fill=white, line width=0.8pt, rounded corners=2pt, font=\fontsize{6}{7.2}\selectfont\bfseries, inner sep=2.5pt, minimum width=0.92cm, minimum height=0.45cm, align=center},
-          bus/.style={draw=SafeGreen!85!black, fill=SafeGreen!12, line width=0.8pt, rounded corners=2pt, font=\fontsize{5.2}{6.2}\selectfont\bfseries\color{SafeGreen!90!black}, inner sep=2pt, minimum width=5.1cm, minimum height=0.38cm, align=center},
-          broker/.style={draw=SafeGreen!80!black, fill=SafeGreen!8, line width=0.8pt, rounded corners=3pt, font=\fontsize{6.5}{7.8}\selectfont\bfseries, inner sep=3pt, align=center, text width=5.0cm}
-        ]
-          % Header for rail layer
-          \node[font=\fontsize{5.2}{6.2}\selectfont\bfseries\color{ProverSlate}] at (2.8, 3.85) {Line G Inter-Station Boundary Segments (VG1 / VG2)};
-
-          % Double rails behind stations
-          \draw[double, double distance=1.4pt, ProverNavy, line width=0.6pt] (0.3, 3.25) -- (5.3, 3.25);
-
-          % 5 Station Nodes
-          \node[sta] (pex) at (0.4, 3.25) {G-PEX};
-          \node[sta] (eme) at (1.6, 3.25) {G-EME};
-          \node[sta] (abr) at (2.8, 3.25) {G-ABR};
-          \node[sta] (cla) at (4.0, 3.25) {G-CLA};
-          \node[sta] (tec) at (5.2, 3.25) {G-TEC};
-
-          % Bus Node
-          \node[bus] (bus) at (2.8, 2.05) {MQTT Real-Time Telemetry Bus};
-
-          % Vertical station drop arrows to bus top
-          \draw[<->, >=Latex, SafeGreen!80!black, line width=0.7pt] (pex.south) -- (pex.south |- bus.north);
-          \draw[<->, >=Latex, SafeGreen!80!black, line width=0.7pt] (eme.south) -- (eme.south |- bus.north);
-          \draw[<->, >=Latex, SafeGreen!80!black, line width=0.7pt] (abr.south) -- (abr.south |- bus.north);
-          \draw[<->, >=Latex, SafeGreen!80!black, line width=0.7pt] (cla.south) -- (cla.south |- bus.north);
-          \draw[<->, >=Latex, SafeGreen!80!black, line width=0.7pt] (tec.south) -- (tec.south |- bus.north);
-
-          % Broker Node
-          \node[broker] (broker) at (2.8, 0.6) {
-            Embedded Local MQTT Broker (Mosquitto) \\[2pt]
-            \fontsize{5}{6}\selectfont\normalfont\color{DarkText} Host: \texttt{localhost:1883} \quad $\cdot$ \quad Deterministic QoS 0 \\[1pt]
-            \fontsize{4.8}{5.8}\selectfont\color{SafeGreen!70!black} Topics: \texttt{metropolis/line\_g/telemetry/\{signals,tracks\}}
-          };
-
-          % Central link between bus and broker
-          \draw[<->, >=Latex, SafeGreen!90!black, line width=1.2pt] (bus.south) -- (broker.north)
-            node[midway, left=2mm, font=\fontsize{4.8}{5.8}\selectfont\bfseries\color{SafeGreen!80!black}] {Publish / Subscribe}
-            node[midway, right=2mm, font=\fontsize{4.8}{5.8}\selectfont\bfseries\color{SafeGreen!80!black}] {TCP/IP Port 1883};
-        \end{tikzpicture}
-      \end{proverbox}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% -----------------------------------------------------------------------------
-% SLIDE 12: OPERATIONAL TRAIN TRAVERSAL DEMONSTRATION
-% -----------------------------------------------------------------------------
-\begin{frame}{Operational Traversal Demonstration}{Continuous train run from Abrial to Clarke in Prover iLock}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{Recorded Traversal Scenario Highlights}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.5}{7.6}\selectfont
-          \item \textbf{Phase 1 – Departure at Station Abrial ($t = 108\text{s}$):}
-            Train traverses Track 1 into platform track \texttt{P8}. Switches \texttt{sw-12} and \texttt{sw-14} aligned; flank protection held on \texttt{P10}.
-          \item \textbf{Phase 2 – Boundary Block Handover ($t = 160\text{s}$):}
-            Exit signal \texttt{S11} clears into line block \texttt{VG1-ABR}. Sequential train-guided unlocking releases behind the train.
-          \item \textbf{Phase 3 – Scissors Crossover at Clarke ($t = 320\text{s}$):}
-            Train arrives at Clarke via scissors crossover (\texttt{sw-18}, \texttt{sw-19}), parking safely at platform track \texttt{T35}.
+  \vspace{1mm}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{proverbox}[top=0.8mm,bottom=0.8mm]{How the projects are connected}
+        \begin{itemize}\smallfont
+          \item Exit signals whose names differ only in the final E/W are paired: the \texttt{LineOutput} of one becomes the \texttt{LineInput} of the other.
+          \item The line track has the same name in both projects, so its occupancy is shared.
+          \item A naming error passes every proof, since the verifier sees one station. It only shows up here.
         \end{itemize}
       \end{proverbox}
     \end{column}
-
-    \begin{column}{0.48\textwidth}
-      \begin{alertbox}{Simulation Video Demonstration}
-        \centering\fontsize{7.5}{9}\selectfont
-        \textbf{Live Operational Demonstration} \\[3pt]
-        \fontsize{6.5}{7.8}\selectfont\normalfont\color{DarkText}
-        We now present a continuous screen recording of the multi-station simulation in Prover iLock Simulator showing the entire traversal in real time.
-      \end{alertbox}
-
-      \vspace*{1mm}
-      \begin{safebox}{Detailed Simulation Captures}
-        \centering\fontsize{6.5}{7.8}\selectfont
-        Timestamped captures of each simulation phase are archived in \textbf{Backup Slides 1, 2 and 3}.
+    \begin{column}{0.49\textwidth}
+      \begin{safebox}[top=0.8mm,bottom=0.8mm]{Checked at each border, with the real neighbour}
+        \begin{itemize}\smallfont
+          \item The sending station clears its exit signal only with the line input set.
+          \item The opposite exit signal loses its line input as soon as the route is locked.
+          \item The line is free again only after the train has left the line track.
+          \item Runs over the whole line, from a PEX platform to the TEC terminus.
+        \end{itemize}
       \end{safebox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % =============================================================================
-% SECTION 5: PROBLEMS ENCOUNTERED AND PROJECT CONCLUSION
+% SECTION 5: RESULTS AND CONCLUSION
 % =============================================================================
 \agendaslide{5}
 
 % -----------------------------------------------------------------------------
-% SLIDE 13: PROBLEMS ENCOUNTERED 1 (GA BUGS & TEST TIMING)
+% VERIFICATION RESULTS AND LIMITATIONS
 % -----------------------------------------------------------------------------
-\begin{frame}[label=sec_problems]{Problems Encountered: Baseline GA Defects and Test Timing}{Resolving latent logic defects discovered during GTS implementation}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{1. Inverted Switch Reverse Throw Guard (\texttt{SWITCH.tm})}
-        \begin{itemize}\setlength{\itemsep}{1pt}\fontsize{6.2}{7.4}\selectfont
-          \item \textbf{The Defect:} Baseline equation for \texttt{MoveReverse} required \texttt{\textasciitilde DetectedNormal}. When a switch rested in normal position, the command deadlocked!
-          \item \textbf{Engineering Solution:} Corrected guard to \texttt{\textasciitilde DetectedReverse}, enabling proper motor command energization.
-        \end{itemize}
-      \end{proverbox}
-
-      \begin{proverbox}{2. Dynamic Release Occupancy Latch (\texttt{ROUTE\_SECTION})}
-        \begin{itemize}\setlength{\itemsep}{1pt}\fontsize{6.2}{7.4}\selectfont
-          \item \textbf{The Defect:} Latch \texttt{ReadyToRelease} was conditioned on \texttt{Clear}. In signaling convention, \texttt{Clear=true} denotes a vacant track, arming release on empty tracks!
-          \item \textbf{Engineering Solution:} Added negation \texttt{\textasciitilde Clear} so release arms strictly upon train axle shunt.
-        \end{itemize}
-      \end{proverbox}
+\begin{frame}[label=sec_results]{What the proofs establish, and what they do not}{Final run of the Prover iLock Verifier on G-PEX, G-EME, G-ABR, G-CLA and G-TEC}
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      \begin{safebox}{All 16 properties proved on all five projects}
+        \smallfont
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabularx}{\linewidth}{@{}P{17mm}L@{}}
+          Formalized   & \texttt{GSS\_02}, \texttt{GSS\_08}, \texttt{GSS\_09}, \texttt{GSS\_10} \\
+          Strengthened & \texttt{GSS\_06} (line condition) \\
+          Corrected    & \texttt{GSS\_03} \\
+          Extended     & \texttt{GSS\_10} (manual release case) \\
+          New          & \texttt{EXIT\_1}, \texttt{EXIT\_2} \\
+          Unchanged    & \texttt{GSS\_01\_1}, \texttt{GSS\_01\_2}, \texttt{GSS\_04}, \texttt{GSS\_05}, \texttt{GSS\_07}, \texttt{DATACHECK\_01}--\texttt{03} \\
+        \end{tabularx}
+      \end{safebox}
+      \vspace{-1mm}
+      \begin{alertbox}{Only covered by tests}
+        \smallfont
+        Switches actually move (defect 1) $\cdot$ an occupied switch refuses requests (TC 2) $\cdot$ manual release waits 30\,s (TC 4).
+      \end{alertbox}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{3. Spurious Negations in Switch Verification (\texttt{GSS\_03})}
-        \begin{itemize}\setlength{\itemsep}{1pt}\fontsize{6.2}{7.4}\selectfont
-          \item \textbf{The Defect:} Baseline specification required switches along a set route \emph{not} to be detected in position.
-          \item \textbf{Engineering Solution:} Removed both inverted tilde operators, aligning the formula with physical interlocking rules.
-        \end{itemize}
+    \begin{column}{0.51\textwidth}
+      \begin{proverbox}{A proof covers one interlocking}
+        \smallfont
+        Occupancy, switch detection, operator requests and the line input are free inputs. The properties hold whatever the neighbour sends, but say nothing about the pair.\par
+        \vspace{0.8mm}
+        ``No train sent onto a line track from both ends'' follows from \texttt{EXIT\_1} and \texttt{EXIT\_2} on both sides only if the link is faithful and fast enough. That argument is ours, not the verifier's.
       \end{proverbox}
-
-      \begin{proverbox}{4. Mechanical Switch Throw Timing (\texttt{GTS\_SWITCH})}
-        \begin{itemize}\setlength{\itemsep}{1pt}\fontsize{6.2}{7.4}\selectfont
-          \item \textbf{The Challenge:} Simulated point machine requires 3.0\,s of physical travel time. Overly tight test bounds caused false test failures.
-          \item \textbf{Engineering Solution:} Tuned expectation window to 4.0\,s, validating real mechanical operation.
-        \end{itemize}
-      \end{proverbox}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% -----------------------------------------------------------------------------
-% SLIDE 14: PROBLEMS ENCOUNTERED 2 (TEMPORAL SEMANTICS & LINE BLOCK RACES)
-% -----------------------------------------------------------------------------
-\begin{frame}{Problems Encountered: Temporal Semantics and Line Block Races}{Overcoming clock cycle boundaries and boundary interface race conditions}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{5. Discrete Cycle Boundaries and the \texttt{PRE} Operator (\texttt{GSS\_10})}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.2}{7.4}\selectfont
-          \item \textbf{The Defect:} Requirement \texttt{GSS\_10} evaluates state at cycle $t - 1$ using $\mathbf{PRE}$. At system boot ($t = 0$), history is undefined, yielding spurious counterexamples.
-          \item \textbf{Engineering Solution:} Explicitly conditioned evaluations on \texttt{\textasciitilde initial\_cycle}, restricting verification to well-defined operational cycles.
-        \end{itemize}
-      \end{proverbox}
-
-      \begin{proverbox}{6. Exit Signal Approach Locking Race Condition (MPS-18)}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.2}{7.4}\selectfont
-          \item \textbf{The Defect:} Baseline \texttt{LineOutput} only evaluated \texttt{set(rt)}. As soon as an entering train shunted the first track, \texttt{set(rt)} dropped to false, prematurely declaring the line block vacant!
-          \item \textbf{Engineering Solution:} Substituted with \texttt{\textasciitilde end\_locked \& \textasciitilde CommandedProceed}, keeping the line locked until full train traversal.
-        \end{itemize}
-      \end{proverbox}
-    \end{column}
-
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{7. Quantifier Scope in Track Occupancy (\texttt{GSS\_08})}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.2}{7.4}\selectfont
-          \item \textbf{The Defect:} Required all track circuits in a section to be occupied simultaneously (\texttt{ALL tc}).
-          \item \textbf{Engineering Solution:} Corrected quantifier to \texttt{SOME tc}, accommodating progressive train traversal.
-        \end{itemize}
-      \end{proverbox}
-
-      \begin{proverbox}{8. Local MQTT Broker Redirection (MPS-28)}
-        \begin{itemize}\setlength{\itemsep}{1.2pt}\fontsize{6.2}{7.4}\selectfont
-          \item \textbf{The Defect:} Default configuration pointed to unreachable cloud endpoint \texttt{mqtt.prover.com}.
-          \item \textbf{Engineering Solution:} Redirected all station definitions to embedded broker on \texttt{localhost:1883}.
+      \vspace{-1mm}
+      \begin{proverbox}{Open points at the borders}
+        \begin{itemize}\smallfont
+          \item No arbitration: two stations locking towards the same line within one delay block each other. Safe, but $\geq$\,30\,s lost.
+          \item \texttt{LineInput} starts true, so an unconnected neighbour looks like a free line.
         \end{itemize}
       \end{proverbox}
     \end{column}
@@ -962,27 +799,36 @@ Timers:
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% SLIDE 15: CONCLUSION AND PERSPECTIVES
+% CONCLUSION
 % -----------------------------------------------------------------------------
-\begin{frame}{Conclusion and Perspectives}{Summary of Line G engineering achievements and deployment readiness}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \begin{safebox}{Key Engineering Achievements}
-        \begin{itemize}\setlength{\itemsep}{1.5pt}\fontsize{6.5}{7.6}\selectfont
-          \item \textbf{5 Interlocking Stations} fully modeled and verified from civil schematics without individual source code duplication.
-          \item \textbf{12 Safety Invariants} proven mathematically (100\% PROVED across all 60 proof goals) with zero counterexamples.
-          \item \textbf{4 Automated Test Cases} fully verified and passing in simulation.
-          \item \textbf{Multi-Station Interactive Simulation} synchronized via MQTT across the entire Line G corridor.
+\begin{frame}{Conclusion}{}
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      \begin{safebox}{Delivered}
+        \begin{itemize}\setlength{\itemsep}{2pt}\bodyfont
+          \item Five interlockings configured; three defects of the pilot GA corrected.
+          \item Req.~2, 8, 9, 10 formalized, Req.~6 strengthened, \texttt{EXIT\_1} and \texttt{EXIT\_2} added. All proved on the five stations.
+          \item GA extended with a line block interface and a delayed manual release.
+          \item Test Cases 2, 3 and 4 written; all test cases pass.
+          \item Complete line simulated with connected interlockings.
         \end{itemize}
       \end{safebox}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{Industrial Perspectives}
-        \begin{itemize}\setlength{\itemsep}{1.5pt}\fontsize{6.5}{7.6}\selectfont
-          \item \textbf{Scalability:} Generic Application principles (OM/GDS/GSS) can be instantiated directly across the remaining 7 lines of the Metropolis network.
-          \item \textbf{SIL 4 Assurance:} Mathematical verification eliminates reliance on incomplete empirical testing.
-          \item \textbf{Readiness:} Line G interlocking logic is fully validated and ready for target hardware compilation.
+    \begin{column}{0.51\textwidth}
+      \begin{proverbox}{What we learned}
+        \begin{itemize}\smallfont
+          \item A requirement that is too strong fails at once. One that is too weak (old exit case of Req.~6), or a design that does too little (switch guard), passes. We found those by reading critically and by testing.
+          \item A manual release forces an exception in a safety requirement. Keep it narrow, and pair it with a test for what the requirement no longer says.
+        \end{itemize}
+      \end{proverbox}
+      \vspace{-1mm}
+      \begin{proverbox}{Next steps}
+        \begin{itemize}\smallfont
+          \item Immediate release when no train approaches (hook \texttt{immediate\_manual\_release} and \texttt{APPROACH\_PATH} in place).
+          \item Timed requirement for the 30\,s delay.
+          \item Fail-safe line input: a missing or stale message means ``line not free''.
+          \item Verification model of two neighbours and the link.
         \end{itemize}
       \end{proverbox}
     \end{column}
@@ -990,27 +836,26 @@ Timers:
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% SLIDE 16: REFERENCES
+% REFERENCES
 % -----------------------------------------------------------------------------
-\begin{frame}{References}{Key standards and technical literature}
+\begin{frame}{References}{}
   \vspace*{1.5mm}
-  \begin{proverbox}{Normative Standards and Project Documents}
-    \fontsize{6.8}{8.4}\selectfont
+  \begin{proverbox}{Project documents and tools}
+    \fontsize{7.2}{8.8}\selectfont
     \begin{enumerate}\setlength{\itemsep}{2.5pt}
-      \item \textbf{CENELEC EN 50128:2011}, \textit{Railway applications - Communication, signalling and processing systems - Software for railway control and protection systems}.
+      \item \textbf{Ville de Metropolis, DMT}, \textit{Programme renouvellement signalisation: Rénovation du réseau de métro -- dossier technique}, Ref. DMT/RS/2026-11, 2026.
       \item \textbf{Prover Technology}, \textit{Signaling Design Automation (SDA): From Specification to Verified Interlocking}, Stockholm, 2026.
-      \item \textbf{Prover Technology}, \textit{Prover iLock Documentation: PiSPEC Language Reference Manual}, 2026.
-      \item \textbf{Ville de Metropolis, DMT}, \textit{Metropolis GA Update - Backlog MPS: Engineering Specifications and Tasks}, CentraleSupélec and Prover Technology, 2026.
-      \item \textbf{E. M. Clarke, E. A. Emerson and J. Sifakis}, \textit{Model Checking: Algorithmic Verification and Debugging}, Communications of the ACM, 52(11):74-84, 2009.
-      \item \textbf{C. Baier and J.-P. Katoen}, \textit{Principles of Model Checking}, MIT Press, 2008.
+      \item \textbf{Prover Technology}, \textit{Prover iLock documentation -- PiSPEC language reference}, Help/Documentation menu of Prover iLock.
+      \item \textbf{Ville de Metropolis \& Prover Technology}, \textit{Metropolis GA update -- Backlog MPS: Engineering specifications and tasks}, 2026.
+      \item \textbf{G. da Costa, T. Closs, P. Lubaszewski Lima, S. Pari Medina}, \textit{Metropolis metro signaling network -- Line G engineering repository}, \url{https://github.com/PLLima/metropolis-metro-signaling}. PiSPEC sources and updated \texttt{om.pdf} v0.3, \texttt{gss.pdf} v2.1, \texttt{gts.pdf} v2.0, delivered with the report.
     \end{enumerate}
   \end{proverbox}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% SLIDE 17: THANK YOU & CONTACT INFORMATION
+% QUESTIONS AND CONTACTS
 % -----------------------------------------------------------------------------
-\begin{frame}{Questions and Discussion}{Engineering defense and contact information}
+\begin{frame}{Questions}{}
   \vspace*{1mm}
   \begin{columns}[c]
     \begin{column}{0.54\textwidth}
@@ -1034,30 +879,27 @@ Timers:
         \fontsize{6.8}{8.4}\selectfont
         \begin{itemize}\setlength{\itemsep}{3pt}
           \item \textbf{\color{DarkText}Nicolas Aucouturier} \\
-            {\fontsize{6}{7.2}\selectfont\color{ProverSlate}Prover Technology \\
-            \color{ProverTeal}\href{mailto:Nicolas.Aucouturier@prover.com}{\texttt{Nicolas.Aucouturier@prover.com}}}
+            {\fontsize{6}{7.2}\selectfont\color{ProverTeal}\href{mailto:Nicolas.Aucouturier@prover.com}{\texttt{Nicolas.Aucouturier@prover.com}}}
           \item \textbf{\color{DarkText}Kenza Kraibi} \\
-            {\fontsize{6}{7.2}\selectfont\color{ProverSlate}Prover Technology \\
-            \color{ProverTeal}\href{mailto:Kenza.Kraibi@prover.com}{\texttt{Kenza.Kraibi@prover.com}}}
+            {\fontsize{6}{7.2}\selectfont\color{ProverTeal}\href{mailto:Kenza.Kraibi@prover.com}{\texttt{Kenza.Kraibi@prover.com}}}
         \end{itemize}
       \end{proverbox}
 
       \vspace*{1.5mm}
-      \begin{safebox}{Open for Questions}
-        \centering\fontsize{7.5}{9.2}\selectfont
-        \textbf{Thank you for your attention!} \\[2pt]
-        \color{DarkText}We welcome questions from the engineering jury.
+      \begin{safebox}[notitle]{}
+        \centering\fontsize{8.5}{10}\selectfont
+        \textbf{Thank you. Questions?}
       \end{safebox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % =============================================================================
-% APPENDIX: BACKUP SLIDES (FOR THE 5-MINUTE Q&A SESSION)
+% APPENDIX: BACKUP SLIDES (FOR THE QUESTIONS)
 % =============================================================================
 \appendix
 
-% Custom Footline for Backup Slides
+% Footline for backup slides (numbered separately by appendixnumberbeamer)
 \setbeamertemplate{footline}{%
   \begin{beamercolorbox}[wd=\paperwidth,ht=3.2mm,dp=2.2mm,leftskip=8mm,rightskip=8mm]{footline}%
     \fontsize{6.5}{7.8}\selectfont\color{ProverSlate}%
@@ -1065,129 +907,151 @@ Timers:
     \hfill%
     \color{ProverNavy}\textbf{Line G Interlocking $\cdot$ Engineering Group 7}%
     \hfill%
-    \color{ProverSlate}Backup \the\numexpr\insertframenumber-22\relax{} / 7%
+    \color{ProverSlate}Backup \insertframenumber{} / \backuptotal%
   \end{beamercolorbox}%
 }
 
 % -----------------------------------------------------------------------------
-% BACKUP SLIDE 1: SIMULATION CAPTURE 1 - APPROACH AT ABRIAL
+% BACKUP: TEAM ORGANIZATION
 % -----------------------------------------------------------------------------
-\begin{frame}{Backup: Simulation Step 1 - Departure at Abrial}{Approach from VG1-EME into platform track P8 at time t = 108.0s}
-  \centering
-  \includegraphics[width=0.92\linewidth,height=4.8cm,keepaspectratio]{../img/simulation_1.png}\par
-  \vspace*{1.5mm}
-  \begin{proverbox}{Engineering Observations at t = 108.0s}
-    \fontsize{6.2}{7.4}\selectfont
-    Train dispatched from \texttt{VG1-EME} into platform track \texttt{P8}. Route locks successfully; point machines \texttt{sw-12} and \texttt{sw-14} detected in reverse/normal correspondence. Siding track \texttt{P10} is safeguarded by flank protection with signal \texttt{S-p10} held at stop.
+\begin{frame}{Backup: Team organization}{Stations split among three of us for MPS-2 and MPS-3, then epics distributed. Proof runs, counterexample analysis, report and defense were shared}
+  \vspace*{1mm}
+  \begin{proverbox}[notitle,top=0.8mm,bottom=0.8mm]{}
+    \bodyfont
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabularx}{\linewidth}{@{}P{34mm}P{24mm}L@{}}
+      \toprule
+      \textbf{Member} & \textbf{Stations} & \textbf{Main contributions} \\
+      \midrule
+      Tiago dos Santos Closs & G-PEX, G-EME & Requirement 10 (MPS-11, MPS-12); set-up of the connected simulation and check of the line block behavior across borders (MPS-27, MPS-28) \\
+      Gabriel da Costa & G-CLA, G-TEC & Manual release in the OM and GDS (MPS-22, MPS-24); Test Cases 2, 3 and 4 (MPS-14, MPS-19, MPS-23); Requirement 9 (MPS-9, MPS-10); coordination of the simulation (MPS-28) \\
+      Pedro Lubaszewski Lima & G-ABR & Repository and workflow; Requirements 6 and 8 (MPS-7, MPS-8, MPS-17); \texttt{EXIT\_1} and \texttt{EXIT\_2} (MPS-18); correction of the exit signal equations (MPS-20) \\
+      Sebastián Pari Medina & -- & Requirement 2 (MPS-5, MPS-6); \texttt{EXIT\_1} and \texttt{EXIT\_2} (MPS-18); proof runs and counterexample analysis; execution of the line simulation (MPS-28) \\
+      \bottomrule
+    \end{tabularx}
   \end{proverbox}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% BACKUP SLIDE 2: SIMULATION CAPTURE 2 - BOUNDARY HANDOVER
+% BACKUP: SIMULATION CAPTURE 1 - APPROACHING ABRIAL
 % -----------------------------------------------------------------------------
-\begin{frame}{Backup: Simulation Step 2 - Boundary Clearance}{Exit signal S11 clearance into line block VG1-ABR at time t = 160.6s}
+\begin{frame}{Backup: Simulation at t = 108.0\,s, train approaching Abrial}{G-ABR simulator, train on \texttt{VG1-EME}}
   \centering
-  \includegraphics[width=0.92\linewidth,height=4.8cm,keepaspectratio]{../img/simulation_2.png}\par
+  \includegraphics[width=0.92\linewidth,height=4.6cm,keepaspectratio]{../img/simulation_1.png}\par
   \vspace*{1.5mm}
-  \begin{proverbox}{Engineering Observations at t = 160.6s}
-    \fontsize{6.2}{7.4}\selectfont
-    Exit signal \texttt{S11} commands proceed upon receiving \texttt{LineInput=true} from downstream station Clarke over MQTT. As the train advances into line block \texttt{VG1-ABR}, upstream platform route sections sequentially unlock, releasing locks on track \texttt{P8} and switches \texttt{sw-14} and \texttt{sw-16}.
+  \begin{proverbox}{What the capture shows}
+    \smallfont
+    \texttt{VG1-EME} is occupied (red): the train is on the line track between Emerson and Abrial. Routes S1 $\to$ S7 $\to$ SeG1-ABR-E are set through platform track P8 (green), with S1, S7 and the exit signal SeG1-ABR-E at proceed. Siding P10 and its signal S-p10 stay at stop.
   \end{proverbox}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% BACKUP SLIDE 3: SIMULATION CAPTURE 3 - CLARKE ARRIVAL & CROSSOVER
+% BACKUP: SIMULATION CAPTURE 2 - ON THE LINE TRACK
 % -----------------------------------------------------------------------------
-\begin{frame}{Backup: Simulation Step 3 - Arrival at Clarke}{Scissors crossover transit sw-18 and sw-19 to platform track at time t = 320.4s}
+\begin{frame}{Backup: Simulation at t = 160.6\,s, train on the line track}{G-ABR simulator, train on \texttt{VG1-ABR}}
   \centering
-  \includegraphics[width=0.92\linewidth,height=4.8cm,keepaspectratio]{../img/simulation_3.png}\par
+  \includegraphics[width=0.92\linewidth,height=4.4cm,keepaspectratio]{../img/simulation_2.png}\par
   \vspace*{1.5mm}
-  \begin{proverbox}{Engineering Observations at t = 320.4s}
-    \fontsize{6.2}{7.4}\selectfont
-    Train arrives at Clarke interlocking area from line track \texttt{VG1-ABR}. Traverses scissors crossover with switches \texttt{sw-18} and \texttt{sw-19} locked in reverse position, establishing guaranteed non-conflicting route to platform track \texttt{T35} under absolute signal protection.
+  \begin{proverbox}{What the capture shows}
+    \smallfont
+    The train has left Abrial and occupies the line track \texttt{VG1-ABR}. All route sections in Abrial have released behind it and every signal is at stop. The occupancy of \texttt{VG1-ABR} is shared by both projects: Clarke shows the same track occupied. While the train is on it, the vacancy term keeps the \texttt{LineOutput} of SeG1-ABR-E false.
   \end{proverbox}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% BACKUP SLIDE 4: TEMPORAL SEMANTICS OF GSS_10
+% BACKUP: SIMULATION CAPTURE 3 - ENTERING CLARKE
 % -----------------------------------------------------------------------------
-\begin{frame}{Backup: Temporal Semantics of GSS 10}{Cycle evaluation and temporal formalization with the PRE operator}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{Requirement 10 Mathematical Definition}
-        \fontsize{6.2}{7.4}\selectfont
-        \begin{equation*}
-          \begin{aligned}
-            & \mathbf{PRE}\,\texttt{Locked}(rts) \land \sim\texttt{Locked}(rts) \\
-            & \land \sim\mathbf{SOME}\,rt \Big(\texttt{route\_sections}(rt, rts) \land rt.\texttt{JustUnlocked} \\
-            & \quad \land \sim rt.\texttt{immediate\_manual\_release} \\
-            & \quad \land \sim\mathbf{SOME}\,rt1 (\sim(rt1 = rt) \land \texttt{route\_sections}(rt1, rts) \\
-            & \qquad \land \mathbf{PRE}\,rt1.\texttt{Holding} \land \sim rt1.\texttt{JustUnlocked})\Big) \\
-            & \implies \mathbf{ALL}\,tc (\texttt{tracks}(rts, tc) \implies \texttt{Clear}(tc)) \\
-            & \quad \land \mathbf{PRE}\,\texttt{ready\_to\_release}(rts)
-          \end{aligned}
-        \end{equation*}
-      \end{proverbox}
+\begin{frame}{Backup: Simulation at t = 320.4\,s, train entering Clarke}{G-CLA simulator, train on \texttt{VG1-ABR}}
+  \centering
+  \includegraphics[width=0.92\linewidth,height=4.6cm,keepaspectratio]{../img/simulation_3.png}\par
+  \vspace*{1.5mm}
+  \begin{proverbox}{What the capture shows}
+    \smallfont
+    The train is still on \texttt{VG1-ABR} (red, left). Entry signal S1 and signal S3 are at proceed; the route is locked from track 1 to track 2 across the scissors crossover (sw-18, sw-19), then through sw-21 and T35 to the exit signal SeG2-CLA-E, at proceed towards Technopôle.
+  \end{proverbox}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% BACKUP: REQUIREMENT 10 IN DETAIL
+% -----------------------------------------------------------------------------
+\begin{frame}[fragile]{Backup: Requirement 10 in its final form}{Release only behind a train, except a manual release on a section that no other route is holding}
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      \begin{codebox}[top=0.6mm,bottom=0.6mm]
+\begin{lstlisting}[basicstyle=\fontsize{6.0}{7.0}\ttfamily]
+GSS_10 :=
+  ALL rts (
+    ~SELF.initial_cycle &
+    PRE Locked(rts) & ~Locked(rts) &
+    ~SOME rt (
+      route_sections(rt, rts) &
+      rt.JustUnlocked &
+      ~rt.immediate_manual_release &
+      ~SOME rt1 (
+        ~(rt1 = rt) &
+        route_sections(rt1, rts) &
+        PRE rt1.Holding &
+        ~rt1.JustUnlocked
+      )
+    ) ->
+      ALL tc (tracks(rts, tc) -> Clear(tc)) &
+      PRE ReadyToRelease(rts)
+  );
+\end{lstlisting}
+      \end{codebox}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{Why the \texttt{PRE} Operator is Crucial}
-        \begin{itemize}\setlength{\itemsep}{1.5pt}\fontsize{6.5}{7.6}\selectfont
-          \item In cycle $t-1$, the train occupies the route section, making \texttt{ready\_to\_release} true.
-          \item In cycle $t$, the train moves off the track into the next section; the route section drops its \texttt{Locked} state.
-          \item Checking \texttt{ready\_to\_release} in cycle $t$ would evaluate to false because the section is now vacant.
-          \item The \textbf{\texttt{PRE}} operator bridges this discrete temporal gap, ensuring formal soundness.
-        \end{itemize}
+    \begin{column}{0.51\textwidth}
+      \begin{proverbox}[top=0.7mm,bottom=0.7mm]{Why \texttt{PRE ReadyToRelease}}
+        \smallfont
+        \texttt{release := clear \& ReadyToRelease} unlocks the section, and \texttt{ReadyToRelease := Locked \& (\dots)} falls in that same cycle. So it is checked in the previous cycle; clearance in the current one.
       \end{proverbox}
+      \vspace{-1mm}
+      \begin{proverbox}[top=0.7mm,bottom=0.7mm]{Why \texttt{\textasciitilde initial\_cycle}}
+        \smallfont
+        \texttt{PRE} is meaningless in the first cycle, where our first Req.~10 counterexample was. \texttt{initial\_cycle} reads the special input \texttt{Init}.
+      \end{proverbox}
+      \vspace{-1mm}
+      \begin{alertbox}[top=0.7mm,bottom=0.7mm]{A narrow exception, on purpose}
+        \smallfont
+        Exempted: releases by an expired timer, on sections no other route held in the previous cycle. \texttt{\textasciitilde immediate\_manual\_release} is deliberate: implementing immediate release will make GSS\_10 fail and force a decision on when it is acceptable.
+      \end{alertbox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% BACKUP SLIDE 5: MANUAL ROUTE RELEASE STATE MACHINE
+% BACKUP: MANUAL RELEASE STATES AND SHARED SECTIONS
 % -----------------------------------------------------------------------------
-\begin{frame}{Backup: Manual Route Release Transitions}{State machine behavior and overlapping route holding protection}
-  \begin{columns}[c]
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{Route Release State Machine}
-        \centering\vspace{1mm}
-        \begin{tikzpicture}[
-          x=1cm, y=1cm,
-          state/.style={draw=ProverNavy, fill=white, rounded corners=2pt, font=\fontsize{6.2}{7.2}\selectfont\bfseries, inner sep=2.5pt, minimum width=1.85cm, minimum height=0.48cm, align=center}
-        ]
-          % 4 States in clean clockwise rectangle
-          \node[state] (idle) at (0.2, 2.6) {UNSET / IDLE};
-          \node[state, fill=ProverTeal!12] (locked) at (3.1, 2.6) {LOCKED / SET};
-          \node[state, draw=MetroOrange, fill=MetroOrange!12, minimum width=2.1cm] (timer) at (3.1, 0.5) {RELEASE TIMER (30s)};
-          \node[state, draw=SafeGreen, fill=SafeGreen!12] (unlocked) at (0.2, 0.5) {JUST UNLOCKED};
-
-          % Transitions with spacious, non-overlapping labels
-          \draw[->, >=Latex, thick, ProverNavy] (idle) -- (locked)
-            node[midway, above=2.5mm, font=\fontsize{5.2}{6.2}\selectfont\bfseries\color{ProverNavy}] {Request \& Clear};
-
-          \draw[->, >=Latex, thick, MetroOrange] (locked) -- (timer)
-            node[midway, right=1.5mm, font=\fontsize{5.2}{6.2}\selectfont\bfseries\color{MetroOrange}, align=left] {Manual\\Release};
-
-          \draw[->, >=Latex, thick, SafeGreen] (timer) -- (unlocked)
-            node[midway, below=2.5mm, font=\fontsize{5.2}{6.2}\selectfont\bfseries\color{SafeGreen!90!black}] {Timer Expired (30s)};
-
-          \draw[->, >=Latex, thick, ProverSlate] (unlocked) -- (idle)
-            node[midway, left=1.5mm, font=\fontsize{5.2}{6.2}\selectfont\bfseries\color{ProverSlate}, align=right] {Reset\\Cycle};
+\begin{frame}{Backup: Route states and shared sections}{One route; relation between routes and sections is the delicate part}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.54\textwidth}
+      \begin{proverbox}{States of a route}
+        \centering
+        \begin{tikzpicture}[x=1mm,y=1mm,
+            state/.style={draw=ProverNavy, fill=white, rounded corners=2pt, line width=0.6pt, text width=25mm, align=center, inner sep=1.8pt, font=\fontsize{6.1}{7.2}\selectfont, minimum height=10mm},
+            lab/.style={font=\fontsize{5.5}{6.5}\selectfont, align=center}]
+          \node[state] (idle) at (0,27) {\textbf{No section locked}};
+          \node[state, fill=ProverTeal!10] (set) at (40,27) {\textbf{Set}\\ sections locked, timer stopped; start signal may proceed};
+          \node[state, draw=MetroOrange, fill=MetroOrange!10] (tim) at (40,0) {\textbf{Timer running}\\ not set, signal at stop, sections still locked};
+          \node[state, draw=SafeGreen, fill=SafeGreen!10] (rel) at (0,0) {\textbf{Sections unlocked}\\ except those another route holds or is locking};
+          \draw[-{Latex[length=1.5mm]}, thick, ProverNavy] (idle) -- node[above, lab, text width=19mm] {\texttt{RouteRequested},\\ \texttt{ready\_to\_lock}} (set);
+          \draw[-{Latex[length=1.5mm]}, thick, MetroOrange] (set) -- node[left, lab, text width=20mm, align=right] {\texttt{ReleaseRequested}\\ ignored if another set route shares a section} (tim);
+          \draw[-{Latex[length=1.5mm]}, thick, SafeGreen!80!black] (tim) -- node[below, lab, text width=22mm] {30\,s after the request ends: \texttt{JustUnlocked}, one cycle} (rel);
+          \draw[-{Latex[length=1.5mm]}, thick, ProverSlate] (rel) -- (idle);
+          \draw[-{Latex[length=1.5mm]}, dashed, ProverSlate] (set.north) to[out=150,in=30] node[above, lab] {train passes: sections release one by one, Req.~10 applies} (idle.north);
+          \draw[-{Latex[length=1.3mm]}, ProverSlate, line width=0.6pt] ([yshift=-1.5mm]tim.east) to[out=0, in=-90, looseness=1.6] ([xshift=8mm]tim.south);
+          \node[lab, anchor=north east] at (52,-7.5) {requested again: no effect};
         \end{tikzpicture}
       \end{proverbox}
     \end{column}
 
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{Concurrency and Overlap Resolution}
-        \begin{itemize}\setlength{\itemsep}{1.5pt}\fontsize{6.5}{7.6}\selectfont
-          \item \textbf{Scenario:} Route $A$ and Route $B$ share route section $S_1$.
-          \item Route $A$ is locked. Dispatcher initiates manual release on Route $A$.
-          \item If Route $B$ requests lock during the countdown:
-            \begin{itemize}\fontsize{6}{7}\selectfont
-              \item \texttt{Holding} latch on Route $A$ remains active.
-              \item $S_1$ is barred from releasing under Route $B$.
-              \item Once Route $A$'s timer expires, $S_1$ transitions safely to Route $B$ without any transient hazard.
-            \end{itemize}
+    \begin{column}{0.44\textwidth}
+      \begin{proverbox}{Section S belongs to routes A and B}
+        \begin{itemize}\setlength{\itemsep}{1.8pt}\smallfont
+          \item \textbf{B is set} when A's release is requested: the request is ignored (timer input false), so S is never released under B.
+          \item \textbf{B holds S} (locked by its own request, still a section locked) or \textbf{is locking it} in the expiry cycle: A's other sections unlock, S stays locked.
+          \item GSS\_10 mirrors this: its exception excludes sections another route held in the previous cycle (\texttt{PRE rt1.Holding}), so S may only release behind a train.
         \end{itemize}
       \end{proverbox}
     \end{column}
@@ -1195,79 +1059,254 @@ Timers:
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% BACKUP SLIDE 6: EXIT SIGNAL & LINE BLOCK PROTOCOL
+% BACKUP: MANUAL RELEASE EQUATIONS
 % -----------------------------------------------------------------------------
-\begin{frame}{Backup: Line Block Handshake Protocol}{Sequential interface signals between adjacent interlocking stations}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \begin{proverbox}{Handshake Sequence Between Station A and Station B}
-        \fontsize{6.2}{7.4}\selectfont
-        \begin{enumerate}\setlength{\itemsep}{1.2pt}
-          \item \textbf{Quiescent State:} Neither station has a locked route to line track \texttt{VG1}. Both output $\texttt{LineOutput} = \texttt{true}$.
-          \item \textbf{Dispatch Request at A:} Route locked to \texttt{SeG1-A-E}. Station A asserts internal \texttt{end\_locked}.
-          \item \textbf{Clearance Evaluation:}
-            \begin{equation*}
-              \begin{aligned}
-                \texttt{CommandedProceed} \iff & \texttt{end\_locked} \land \text{LineInput}_A \\
-                & \land \texttt{Clear}(VG1)
-              \end{aligned}
-            \end{equation*}
-          \item \textbf{Line Reservation:} Station A asserts proceed on \texttt{SeG1-A-E} $\implies$ $\text{LineOutput}_A$ drops to \texttt{false}.
-          \item \textbf{Boundary Lockout at B:} Station B detects $\sim\text{LineInput}_B$ $\implies$ opposite entry strictly forbidden.
-        \end{enumerate}
-      \end{proverbox}
+\begin{frame}[fragile]{Backup: Manual release equations}{OM and GDS equations for routes and route sections}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \begin{codebox}[top=0.5mm,bottom=0.5mm]
+\begin{lstlisting}[basicstyle=\fontsize{5.8}{6.7}\ttfamily]
+// OM/ROUTE (defined states)
+bool set :=
+  (ALL rts:SELF.route_sections rts.Locked) &
+  ~SELF.ReleaseTimer;
+bool JustUnlocked :=
+  (SELF.PreReleaseTimer & ~SELF.ReleaseTimer) #
+  (SELF.ReleaseRequested &
+   SELF.immediate_manual_release);
+bool PreReleaseTimer := SELF.ReleaseTimer;
+bool immediate_manual_release := false;  // hook
+
+// GDS_ROUTE
+ReleaseTimer :=
+  SELF.ReleaseRequested &
+  SOME rts:SELF.route_sections rts.Locked &
+  ~SOME rt1 (~(rt1 = SELF) & set(rt1) &
+    SOME rts:SELF.route_sections
+      route_sections(rt1, rts)) &
+  ~SELF.immediate_manual_release;
+Holding :=
+  SELF.ready_to_lock #
+  SELF.Holding &
+  SOME rts:SELF.route_sections rts.Locked &
+  ~SELF.JustUnlocked;
+\end{lstlisting}
+      \end{codebox}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
-      \begin{proverbox}{Requirements EXIT 1 and EXIT 2 Summary}
-        \fontsize{6.5}{7.6}\selectfont
-        \begin{itemize}\setlength{\itemsep}{1.5pt}
-          \item \textbf{\texttt{EXIT\_1}:} \texttt{LineOutput} is true only when unreserved, uncommanded to proceed and line track clear.
-          \item \textbf{\texttt{EXIT\_2}:} Exit signal commanded to proceed only when end-locked, line input is true and line track is vacant.
+    \begin{column}{0.46\textwidth}
+      \begin{codebox}[top=0.5mm,bottom=0.5mm]
+\begin{lstlisting}[basicstyle=\fontsize{5.8}{6.7}\ttfamily]
+// GDS_ROUTE, timer (off-delay)
+Timers:
+  ReleaseTimer (SET=0 SEC, CLEAR=30 SEC, FIXED);
+
+// GDS_ROUTE_SECTION
+bool manual_unlocking :=
+  SOME rt (route_sections(rt, SELF) &
+    rt.JustUnlocked &
+    ~SOME rt1 (~(rt1 = rt) &
+      route_sections(rt1, SELF) &
+      (rt1.Holding & ~rt1.JustUnlocked #
+       rt1.ready_to_lock)));
+Locked :=
+  (SELF.lock_commanded # SELF.Locked) &
+  ~SELF.release & ~SELF.manual_unlocking;
+\end{lstlisting}
+      \end{codebox}
+      \vspace{-1mm}
+      \begin{proverbox}[top=0.6mm,bottom=0.6mm]{Notes}
+        \begin{itemize}\smallfont
+          \item \texttt{PreReleaseTimer} as \texttt{PreCommandedNormal} in \texttt{GDS\_SWITCH}; in the OM because GSS\_10 uses \texttt{JustUnlocked}.
+          \item \texttt{ready\_to\_lock} ignores the timer: re-requesting does not cancel the release.
         \end{itemize}
       \end{proverbox}
-
-      \begin{safebox}{Safety Assurance}
-        \fontsize{6.5}{7.6}\selectfont
-        Guarantees head-on collision impossibility between adjacent stations.
-      \end{safebox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % -----------------------------------------------------------------------------
-% BACKUP SLIDE 7: VERIFICATION METRICS & COMPLEXITY ANALYSIS
+% BACKUP: LINE BLOCK SEQUENCE AND REQUIREMENT 6
 % -----------------------------------------------------------------------------
-\begin{frame}{Backup: Solver Performance Metrics}{Induction depth and verification execution time across stations}
-  \begin{columns}[c]
-    \begin{column}{0.65\textwidth}
-      \begin{proverbox}{Detailed Station Complexity and Model Checking Metrics}
-        \fontsize{6.2}{7.4}\selectfont
-        \begin{tabularx}{\linewidth}{Xccccc}
-          \toprule
-          \textbf{Metric} & \textbf{G-PEX} & \textbf{G-EME} & \textbf{G-ABR} & \textbf{G-CLA} & \textbf{G-TEC} \\
-          \midrule
-          \textbf{Switches} & 5 & 5 & 6 & 5 & 5 \\
-          \textbf{Signals} & 15 & 18 & 20 & 15 & 22 \\
-          \textbf{Tracks} & 11 & 11 & 10 & 11 & 11 \\
-          \textbf{Routes} & 14 & 16 & 22 & 16 & 20 \\
-          \textbf{Max $k$} & 1 & 1 & 1 & 1 & 1 \\
-          \textbf{Time} & 12.4\,s & 14.8\,s & 19.2\,s & 13.6\,s & 18.5\,s \\
-          \textbf{Status} & \color{SafeGreen}\textbf{PROVED} & \color{SafeGreen}\textbf{PROVED} & \color{SafeGreen}\textbf{PROVED} & \color{SafeGreen}\textbf{PROVED} & \color{SafeGreen}\textbf{PROVED} \\
-          \bottomrule
-        \end{tabularx}
+\begin{frame}[fragile]{Backup: Line block sequence and Requirement 6}{Train sent from Abrial to Clarke on \texttt{VG1-ABR}; values at the exit signal SeG1-ABR-E}
+  \begin{proverbox}[notitle,top=0.5mm,bottom=0.5mm]{}
+    \smallfont
+    \renewcommand{\arraystretch}{0.96}
+    \begin{tabularx}{\linewidth}{@{}Lcccc@{}}
+      \toprule
+      \textbf{Phase} & \texttt{end\_locked} & \texttt{CommandedProceed} & \textbf{line track clear} & \texttt{LineOutput} \\
+      \midrule
+      1. No route towards the border & 0 & 0 & 1 & \textbf{1} \\
+      2. Route locked, line input from Clarke set & 1 & 1 & 1 & \textbf{0} \\
+      3. First section released, train still in the station & 1 & 1 & 1 & \textbf{0} \\
+      4. Train on \texttt{VG1-ABR}, last section released & 0 & 0 & 0 & \textbf{0} \\
+      5. Train has left the line track & 0 & 0 & 1 & \textbf{1} \\
+      \bottomrule
+    \end{tabularx}\par
+    \vspace{0.4mm}
+    {\tinyfont The output drops as soon as the route is locked (phase 2). Phase 3 is the \texttt{EXIT\_1} counterexample: the pilot equation (no set route ending at the signal) gave 1 there. While \texttt{LineInput}(SeG1-ABR-W) is 0, Clarke can neither lock a route towards SeG1-ABR-W (\texttt{protected\_front}) nor clear that signal (\texttt{EXIT\_2}).\par}
+  \end{proverbox}
+  \vspace{-1mm}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \begin{codebox}[top=0.5mm,bottom=0.5mm]
+\begin{lstlisting}[basicstyle=\fontsize{5.8}{6.7}\ttfamily]
+GSS_06 := ALL si ALL rt (
+  CommandedProceed(si) & start_signal(rt, si) &
+  set(rt) ->
+    SOME bs:rt.end_object true #
+    SOME esi:rt.end_object (esi.LineInput &
+      SOME tc:esi.track_after tc.Clear) #
+    SOME si1:rt.end_object (~EXIT_SIGNAL(si1) &
+      (CommandedProceed(si1) #
+       SOME pa (protects_signal(pa, si1) &
+                protective(pa)))));
+\end{lstlisting}
+      \end{codebox}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      {\tinyfont\color{DarkText} \texttt{\textasciitilde EXIT\_SIGNAL(si1)}: without it, a route ending at an exit signal could satisfy Req.~6 through the exit signal's own proceed command, and the line condition would no longer be the only way in.\par
+      \vspace{0.8mm}
+      In \texttt{protected\_front} the protection-area case still ranges over exit signals. Harmless: no station has a protection area for an exit signal.\par}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% BACKUP: LIMITS OF THE LINE BLOCK INTERFACE
+% -----------------------------------------------------------------------------
+\begin{frame}{Backup: Limits of the line block interface}{What the per-station proofs leave open at a border}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{proverbox}{The border property is argued, not proved}
+        \bodyfont
+        Each proof concerns one interlocking with free inputs, the line input included. ``Trains are never sent onto a line track from both ends'' follows from \texttt{EXIT\_1} and \texttt{EXIT\_2} on both sides only if the link transmits the line output faithfully and without excessive delay.\par
+        \vspace{1mm}
+        Proving it would need a model composing two neighbouring interlockings with the communication link.
       \end{proverbox}
     \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{alertbox}{No arbitration}
+        \bodyfont
+        Both stations lock a route towards the same line track within one communication delay: both see a free line, both lock, both line outputs drop. Neither start signal can clear without its line input, so the outcome is safe, but both routes stay blocked until one is released manually ($\geq$\,30\,s). Line block systems in service avoid this with an explicit change of traffic direction.
+      \end{alertbox}
+      \vspace{-1mm}
+      \begin{proverbox}{Simulator default}
+        \bodyfont
+        \texttt{EXIT\_SIGNAL.tm} sets \texttt{SimulatorInitialValue: LineInput["True"]}. Convenient for one station alone, but a neighbour that is not connected looks like a free line. A real implementation must treat a missing or stale message as ``line not free''.
+      \end{proverbox}
+    \end{column}
+  \end{columns}
+\end{frame}
 
-    \begin{column}{0.33\textwidth}
-      \begin{proverbox}{Inductive Invariant Power}
-        \begin{itemize}\setlength{\itemsep}{1.5pt}\fontsize{6.5}{7.6}\selectfont
-          \item All 60 goals were proven via \textbf{1-step induction} ($k=1$), confirming the invariant inductivity of the system design.
-          \item No auxiliary induction lemmas needed to be hand-crafted, validating the architectural elegance of the GDS.
+% -----------------------------------------------------------------------------
+% BACKUP: TEST CASE 2
+% -----------------------------------------------------------------------------
+\begin{frame}[fragile]{Backup: Test Case 2, manual switch throwing}{GTS\_SWITCH.tm; step numbers refer to gts.pdf v2.0}
+  \begin{columns}[T]
+    \begin{column}{0.60\textwidth}
+      \begin{codebox}
+\begin{lstlisting}[basicstyle=\fontsize{6}{7.6}\ttfamily]
+TestCase: MANUAL_SWITCH_THROWING
+foreach(sw:SELF.gds_inst) {
+  init_system();
+  sw.RequestedReverse := true; sw.RequestedNormal := false; // 1
+  expect ~sw.DetectedNormal within 1 SEC;  // 2
+  expect sw.DetectedReverse within 4 SEC;  // 3, backlog: 1 s
+  sw.RequestedNormal := true; sw.RequestedReverse := false; // 4
+  expect ~sw.DetectedReverse within 1 SEC; // 5
+  expect sw.DetectedNormal within 4 SEC;   // 6, backlog: 1 s
+  foreach(tc:sw.track) { tc.Clear := false; } wait 1 SEC; // 7
+  sw.RequestedReverse := true; sw.RequestedNormal := false; // 8
+  expect sw.DetectedNormal during 60 SEC;  // 9
+  sw.RequestedReverse := false;
+}
+\end{lstlisting}
+      \end{codebox}
+    \end{column}
+    \begin{column}{0.38\textwidth}
+      \begin{proverbox}{Why 4\,s for gaining detection}
+        \smallfont
+        The switch model in \texttt{GTS\_SWITCH} reports the new position only after its motor has run for 3\,s (timer \texttt{MovementReverseComplete}, \texttt{SET = 3 SEC}): no design can meet 1\,s in simulation. Losing the old detection is immediate, so 1\,s is kept there. Changed in the formal test and in \texttt{gts.pdf}.
+      \end{proverbox}
+      \vspace{-1mm}
+      \begin{proverbox}{Assumptions and coverage}
+        \begin{itemize}\smallfont
+          \item Every switch starts in normal position, the simulator's initial state.
+          \item Steps 7--9: the GDS refuses the request because occupancy is part of the switch's \texttt{locked} function. Req.~7 does not cover it, so this test is the only check.
         \end{itemize}
       \end{proverbox}
     \end{column}
   \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% BACKUP: SIMULATION SET-UP
+% -----------------------------------------------------------------------------
+\begin{frame}{Backup: Simulation set-up}{Each project in its own instance, connected via local MQTT broker}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.55\textwidth}
+      \begin{proverbox}{Connections}
+        \centering\vspace{1mm}
+        \begin{tikzpicture}[x=1mm, y=1mm,
+            sta/.style={draw=ProverNavy, fill=white, line width=0.7pt, rounded corners=2pt, font=\fontsize{6.4}{7.4}\selectfont\bfseries, inner sep=2pt, minimum width=11.5mm, minimum height=6mm, align=center},
+            broker/.style={draw=SafeGreen!80!black, fill=SafeGreen!8, line width=0.7pt, rounded corners=2pt, font=\fontsize{6.4}{7.6}\selectfont, inner sep=2.5pt, align=center, text width=54mm},
+            lab/.style={font=\fontsize{5.6}{6.6}\selectfont\color{ProverSlate}}]
+          \draw[ProverSlate!60, line width=0.8pt] (0,22) -- (60,22);
+          \foreach \x/\c in {0/PEX,15/EME,30/ABR,45/CLA,60/TEC}{
+            \node[sta] (\c) at (\x,22) {G-\c};
+          }
+          \foreach \x/\c in {7.5/PEX,22.5/EME,37.5/ABR,52.5/CLA}{
+            \node[lab] at (\x,27.5) {\texttt{VG1/2-\c}};
+          }
+          \node[lab] at (30,32) {line tracks shared between neighbours};
+          \node[broker] (br) at (30,4) {\textbf{MQTT broker}\\[1pt] line outputs of exit signals, occupancy of line tracks};
+          \foreach \c in {PEX,EME,ABR,CLA,TEC}{
+            \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}, SafeGreen!80!black, line width=0.6pt] (\c.south) -- (\c.south |- br.north);
+          }
+        \end{tikzpicture}
+      \end{proverbox}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \begin{proverbox}{Pairing by name (dossier conventions)}
+        \begin{itemize}\smallfont
+          \item Exit signals: \texttt{Se<line><track>-<code>-E} at the station on the origin side, \texttt{...-W} at the next one, e.g.\ SeG1-PEX-E and SeG1-PEX-W.
+          \item Line track: \texttt{V<line><track>-<code>}, same name in both projects, e.g.\ \texttt{VG1-PEX}.
+        \end{itemize}
+      \end{proverbox}
+      \vspace{-1mm}
+      \begin{proverbox}{Broker}
+        \smallfont
+        By default Prover iLock uses \texttt{mqtt.prover.com}, normally turned off. Backlog MPS-28: for the broker embedded in Prover iLock, replace it by \texttt{localhost} in \texttt{config/io\_<project>.rjson}.
+      \end{proverbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% BACKUP: GSS OF THE DELIVERED PACKAGE
+% -----------------------------------------------------------------------------
+\begin{frame}{Backup: Requirements of the delivered GSS}{Proved on all five stations; status with respect to the pilot version}
+  \begin{proverbox}[notitle]{}
+    \smallfont
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabularx}{\linewidth}{@{}P{32mm}LP{24mm}P{22mm}@{}}
+      \toprule
+      \textbf{Requirement} & \textbf{Subject} & \textbf{Change} & \textbf{Task} \\
+      \midrule
+      \texttt{GSS\_01\_1}, \texttt{GSS\_01\_2} & Proceed only with a unique set route, or an end-locked exit signal & unchanged & -- \\
+      \texttt{GSS\_02} & Sections sharing a track never locked together & formalized & MPS-5, 6 \\
+      \texttt{GSS\_03} & Switches detected in their route positions & corrected & MPS-3 \\
+      \texttt{GSS\_04}, \texttt{GSS\_05} & Route tracks clear; flank protection & unchanged & -- \\
+      \texttt{GSS\_06} & Front protection and line condition & strengthened & MPS-17 \\
+      \texttt{GSS\_07} & Switch movement lock-out & unchanged & -- \\
+      \texttt{GSS\_08}, \texttt{GSS\_09} & Ready to release implies occupied, locked & formalized & MPS-7 to 10 \\
+      \texttt{GSS\_10} & Release only behind a train & formalized, extended & MPS-11, 12, 26 \\
+      \texttt{EXIT\_1}, \texttt{EXIT\_2} & Line output and exit signal proceed & new & MPS-18 \\
+      \texttt{DATACHECK\_01}--\texttt{03} & Placement of exit signals and exit tracks & unchanged & -- \\
+      \bottomrule
+    \end{tabularx}
+  \end{proverbox}
 \end{frame}
 
 \end{document}
