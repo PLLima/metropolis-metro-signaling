@@ -2,6 +2,24 @@
 \pdfminorversion=7
 
 % =========================================================
+% EXTRA REFERENCES (written next to main.tex at compile time;
+% kept separate so that ../ref.bib is left untouched)
+% =========================================================
+\begin{filecontents*}[overwrite]{ref_extra.bib}
+@manual{metropolis_dossier,
+  title        = {Metropolis -- R{\'e}novation du r{\'e}seau de m{\'e}tro: dossier technique},
+  organization = {Ville de Metropolis, Direction de la mobilit{\'e} et des transports},
+  note         = {Ref. DMT/RS/2026-11, rev. 1.0},
+  year         = {2026}
+}
+@manual{pispec_ref,
+  title        = {Prover iLock Documentation -- {PiSPEC} Language Reference},
+  organization = {Prover Technology},
+  note         = {Available from the Help/Documentation menu of Prover iLock}
+}
+\end{filecontents*}
+
+% =========================================================
 % LANGUAGE AND FONT
 % =========================================================
 \usepackage[english]{babel}
@@ -18,14 +36,14 @@
     left=2cm,
     right=2cm,
     top=2.2cm,
-    bottom=1.7cm,
+    bottom=1.8cm,
     headheight=25pt,
     headsep=11pt,
     footskip=20pt
 ]{geometry}
 
 \setlength{\parindent}{0.75cm}
-\setlength{\parskip}{0.02cm}
+\setlength{\parskip}{0.04cm}
 
 % =========================================================
 % MATHEMATICS AND ENGINEERING
@@ -43,10 +61,10 @@
 % =========================================================
 \usepackage[dvipsnames]{xcolor}
 
-\definecolor{ProverMadison}{HTML}{0B3360}     % #0B3360 (Primary Navy)
-\definecolor{ProverCornflower}{HTML}{569FF7}  % #569FF7 (Secondary Blue)
-\definecolor{ProverButtercup}{HTML}{F4A220}   % #F4A220 (Accent Gold/Orange)
-\definecolor{ConfRed}{HTML}{C9252B}           % #C9252B (Confidentiality Red)
+\definecolor{ProverMadison}{HTML}{0B3360}     % Primary navy
+\definecolor{ProverCornflower}{HTML}{569FF7}  % Secondary blue
+\definecolor{ProverButtercup}{HTML}{F4A220}   % Accent gold/orange
+\definecolor{ConfRed}{HTML}{C9252B}           % Confidentiality red
 
 \definecolor{SlateText}{HTML}{202B3A}
 \definecolor{MutedGray}{HTML}{65748A}
@@ -67,12 +85,19 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{tabularx}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
 
 \captionsetup[figure]{
     font=small,
     labelfont={bf,color=ProverMadison},
     skip=4pt,
     justification=centering
+}
+\captionsetup[table]{
+    font=small,
+    labelfont={bf,color=ProverMadison},
+    skip=3pt,
+    position=top
 }
 
 % =========================================================
@@ -102,25 +127,29 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
+% Inline PiSPEC identifiers (underscores allowed): \code{GSS_10}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+
+% Listings are never split across pages
+\newenvironment{keeptogether}{\par\noindent\begin{minipage}{\linewidth}}{\end{minipage}\par\smallskip}
+
 % =========================================================
-% CODE LISTINGS (PiSPEC and Scripting)
+% CODE LISTINGS (PiSPEC)
 % =========================================================
 \usepackage{listings}
 
 \lstdefinelanguage{PiSPEC}{
-    keywords={class, inherit, Equations, Variables, Inputs, Outputs, Parameters, Functions, TestCase, Prove, ALL, SOME, PRE, COND, wait, if, then, else, foreach, within, during, true, false, SEC, MIN, HOUR, expect},
+    keywords={class, inherit, Equations, Variables, Inputs, Outputs, Parameters, Functions, Timers, TestCase, Prove, ALL, SOME, PRE, foreach, if, wait, expect, within, during, true, false, SEC, bool},
     keywordstyle=\color{ProverMadison}\bfseries,
-    ndkeywords={Locked, ReadyToRelease, CommandedProceed, ShowsProceed, LineInput, LineOutput, Clear, MoveNormal, MoveReverse, DetectedNormal, DetectedReverse, RequestedNormal, RequestedReverse, RouteRequested, ReleaseRequested, Set, Protective, end_locked, initial_cycle, JustUnlocked, ReleaseTimer},
+    ndkeywords={Locked, ReadyToRelease, CommandedProceed, ShowsProceed, LineInput, LineOutput, Clear, MoveReverse, DetectedNormal, DetectedReverse, RequestedNormal, RequestedReverse, RouteRequested, ReleaseRequested, ReleaseTimer, PreReleaseTimer, JustUnlocked, Holding},
     ndkeywordstyle=\color{ProverCornflower}\bfseries,
     identifierstyle=\color{SlateText},
     sensitive=true,
     comment=[l]{//},
     morecomment=[s]{/*}{*/},
-    morecomment=[s]{"""}{"""},
     commentstyle=\color{ForestGreen}\itshape,
     stringstyle=\color{ProverButtercup}\bfseries,
-    morestring=[b]",
-    morestring=[b]'
+    morestring=[b]"
 }
 
 \lstset{
@@ -133,6 +162,7 @@
     frame=single,
     rulecolor=\color{ProverMadison!25},
     keepspaces=true,
+    columns=fullflexible,
     numbers=left,
     numbersep=5pt,
     numberstyle=\tiny\color{gray!60!black},
@@ -140,8 +170,8 @@
     showstringspaces=false,
     showtabs=false,
     tabsize=2,
-    aboveskip=2.5pt,
-    belowskip=2.5pt,
+    aboveskip=4pt,
+    belowskip=2pt,
     xleftmargin=8pt,
     xrightmargin=3pt
 }
@@ -153,33 +183,38 @@
 
 \pagestyle{fancy}
 \fancyhf{}
+\setlength{\headwidth}{\textwidth}
 
 \fancyhead[L]{\textsl{\small\color{MutedGray} CentraleSupélec $\cdot$ Metropolis Metro Signaling (Line G)}}
 \fancyhead[R]{\bfseries\small\color{ProverMadison}\thepage}
 
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
-\renewcommand{\headrule}{%
-    \nointerlineskip
-    {\color{ProverMadison!25}\hrule height \headrulewidth width \textwidth}%
-}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ProverMadison!25}\leaders\hrule height \headrulewidth\hfill}}
 
 \fancypagestyle{plain}{
     \fancyhf{}
+    \setlength{\headwidth}{\textwidth}
     \fancyhead[L]{\textsl{\small\color{MutedGray} CentraleSupélec $\cdot$ Metropolis Metro Signaling (Line G)}}
     \fancyhead[R]{\bfseries\small\color{ProverMadison}\thepage}
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0pt}
-    \renewcommand{\headrule}{%
-        \nointerlineskip
-        {\color{ProverMadison!25}\hrule height \headrulewidth width \textwidth}%
-    }
+    \renewcommand{\headrule}{\hbox to\headwidth{\color{ProverMadison!25}\leaders\hrule height \headrulewidth\hfill}}
 }
 
 % =========================================================
 % REFERENCES AND HYPERLINKS
 % =========================================================
-\usepackage{cite}
+\usepackage[
+    backend=biber,
+    style=ieee,
+    sorting=none
+]{biblatex}
+
+\addbibresource{../ref.bib}
+\addbibresource{ref_extra.bib}
+\setlength\bibitemsep{1.5pt}
+\AtBeginBibliography{\footnotesize}
 
 \usepackage[
     colorlinks=true,
@@ -188,7 +223,10 @@
     urlcolor=ProverCornflower
 ]{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
 \usepackage{bookmark}
+\usepackage{csquotes}
 
 % =========================================================
 % DOCUMENT METADATA
@@ -217,7 +255,7 @@
     \centering
 
     \vspace*{0.5cm}
-    
+
     \noindent
     \begin{minipage}[c]{0.45\textwidth}
         \centering
@@ -233,7 +271,7 @@
 
     {\Large\bfseries\color{ProverMadison} CentraleSupélec \par}
     \vspace{0.3cm}
-    {\large\bfseries\color{ProverMadison} Engineering Integration Project (EI) -- In Partnership with Prover Technology\par}
+    {\large\bfseries\color{ProverMadison} Engineering Integration Project (EI) --- In Partnership with Prover Technology\par}
 
     \vspace{2.0cm}
 
@@ -249,7 +287,7 @@
     \vspace{0.5cm}
 
     \begin{tabular}{cc}
-        \textbf{\color{ProverMadison} Gabriel DA COSTA} & \textbf{\color{ProverMadison} Tiago DOS SANTOS CLOSS} \\
+        \textbf{\color{ProverMadison} Tiago CLOSS} & \textbf{\color{ProverMadison} Gabriel DA COSTA} \\
         \vspace{0.15cm} & \vspace{0.15cm} \\
         \textbf{\color{ProverMadison} Pedro LUBASZEWSKI LIMA} & \textbf{\color{ProverMadison} Sebastián PARI MEDINA}
     \end{tabular}
@@ -263,14 +301,13 @@
 \hypersetup{pageanchor=true}
 
 % =========================================================
-% TABLE OF CONTENTS (Strictly 1 Page, Header Suppressed)
+% TABLE OF CONTENTS (one page, no header)
 % =========================================================
 \clearpage
 \pagenumbering{roman}
 \pagestyle{empty}
+\thispagestyle{empty}
 {
-    \fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
-    \thispagestyle{empty}
     \hypersetup{linkcolor=ProverMadison}
     \tableofcontents
     \thispagestyle{empty}
@@ -278,439 +315,424 @@
 \clearpage
 
 % =========================================================
-% BODY OF THE REPORT (Strictly Exactly 10 Pages, 1 to 10)
+% BODY OF THE REPORT (pages 1 to 10)
 % =========================================================
 \pagestyle{fancy}
 \pagenumbering{arabic}
 
 % =========================================================
-\section{Team Organization and Engineering Roles}
-\label{sec:team}
+\section{Introduction}
+\label{sec:intro}
 % =========================================================
 
-The modernization of \textbf{Line G} -- encompassing civil railyard layout modeling, formal safety verification, generic test suite construction, and full-line multi-station simulation -- was distributed across the four engineers of \textbf{Engineering Group 7} according to the Metropolis Backlog (MPS)~\cite{metropolis_backlog}:
+The relay interlockings of the Metropolis metro were installed almost forty years ago and are being replaced by computer-based interlockings, one per station, on all eight lines of the network~\cite{metropolis_dossier}. Our group was in charge of Line~G, which runs from Parc des Expositions to Technop\^ole through Emerson, Abrial and Clarke. Every station has its own interlocking, so the line consists of five separate Prover iLock projects that must also exchange information at their borders.
 
-\begin{itemize}[leftmargin=0.8cm,itemsep=2pt]
-    \item \textbf{Tiago dos Santos Closs:} Modeled interlocking stations \texttt{G-EME} (Emerson) and \texttt{G-PEX} (Parc des Expositions) from civil track schematics; formalized safety requirement \texttt{GSS\_10} (dynamic route section release) in PiSPEC using temporal logic; configured the distributed multi-station MQTT simulation and verified inter-station line block behavior (MPS-27, MPS-28).
-    \item \textbf{Gabriel da Costa:} Modeled interlocking stations \texttt{G-CLA} (Clarke) and \texttt{G-TEC} (Technop\^ole); extended the Object Model and Generic Design Specification for manual route release (MPS-21, MPS-22, MPS-24); authored generic test suites GTS Test Case 2 (switch throw lockout), Test Case 3 (line block clearance), and Test Case 4 (manual release delay); formalized requirement \texttt{GSS\_09}; and coordinated the multi-station simulation setup (MPS-27, MPS-28).
-    \item \textbf{Pedro Lubaszewski Lima:} Led repository architecture, software engineering workflow, and technical deliverables; modeled interlocking station \texttt{G-ABR} (Abrial); formalized and refined safety requirements \texttt{GSS\_06}, \texttt{GSS\_08}, \texttt{EXIT\_1}, and \texttt{EXIT\_2}; diagnosed and corrected line block interlocking equations in Prover iLock (MPS-18, MPS-20).
-    \item \textbf{Sebastián Pari Medina:} Formalized safety requirement \texttt{GSS\_02} (shared track mutual exclusion) and line block exit signal requirements (\texttt{EXIT\_1}, \texttt{EXIT\_2}) in PiSPEC; executed automated formal proofs using Prover iLock Verifier and resolved verification counterexamples.
-\end{itemize}
+The city chose Prover's Signaling Design Automation (SDA) method~\cite{prover_sda}. In SDA the signaling rules are written once, in a Generic Application (GA), and the tool instantiates them on the track layout of each station, the Specific Application (SA). The package \code{Metropolis_GA} has four parts. The Object Model (OM) declares the object types (tracks, signals, switches, routes, route sections, protection areas) with their inputs, outputs and internal states; the Generic Design Specification (GDS) gives the equations that compute those states; the Generic Safety Specification (GSS) lists the properties that the Prover iLock Verifier must prove on every station; and the Generic Test Specification (GTS) holds test procedures executed in the simulator. All four are written in PiSPEC~\cite{pispec_ref}, in which a design is a set of Boolean equations evaluated once per cycle and \textbf{PRE}~$e$ denotes the value of $e$ in the previous cycle.
 
-All team members contributed to formal verification, technical reporting, and defense presentation preparation. The complete source code, station configurations, formal proofs, and simulation assets are openly maintained in the project repository~\cite{metropolis_repo}.
+We started from the GA produced during an earlier pilot project. The backlog~\cite{metropolis_backlog} asked us to configure and debug the five interlockings (epic MPS-1), formalize four requirements of the informal GSS (MPS-4), write a test case for switch throwing (MPS-13), add a line block interface between neighbouring stations (MPS-16) and a manual release function for routes (MPS-21), and run the whole line in a connected simulation (MPS-27). Instead of following the backlog ticket by ticket, this report explains what we changed in the GA and why, the defects we came across, and what the final proofs and tests do and do not establish. The updated informal documents (\code{om.pdf} v0.3, \code{gss.pdf} v2.1, \code{gts.pdf} v2.0) and the PiSPEC sources are delivered with the report~\cite{metropolis_repo}.
+
+\subsection{Team organization}
+\label{subsec:team}
+
+The station layouts were split among three of us for MPS-2 and MPS-3, and the epics on the generic application were then distributed as in \cref{tab:team}. Since the five projects share one GA, a change made for one epic had to be proved again on every station, so proof runs, counterexample analysis, this report and the defense were shared work.
+
+\begin{table}[H]
+\centering
+\caption{Distribution of the backlog within the group.}
+\label{tab:team}
+\small
+\begin{tabularx}{\textwidth}{@{}l l Y@{}}
+\toprule
+\textbf{Member} & \textbf{Stations} & \textbf{Main contributions} \\
+\midrule
+Tiago Closs & \code{G-PEX}, \code{G-EME} & Requirement 10 (MPS-11, MPS-12); set-up of the connected simulation and check of the line block behavior across borders (MPS-27, MPS-28). \\
+Gabriel da Costa & \code{G-CLA}, \code{G-TEC} & Manual release in the OM and GDS (MPS-22, MPS-24); Test Cases 2, 3 and 4 (MPS-14, MPS-19, MPS-23); Requirement 9 (MPS-9, MPS-10); coordination of the simulation (MPS-28). \\
+Pedro Lubaszewski Lima & \code{G-ABR} & Repository and workflow; Requirements 6 and 8 (MPS-7, MPS-8, MPS-17); EXIT 1 and EXIT 2 (MPS-18); correction of the exit signal equations (MPS-20). \\
+Sebastián Pari Medina & --- & Requirement 2 (MPS-5, MPS-6); EXIT 1 and EXIT 2 (MPS-18); proof runs and counterexample analysis; execution of the line simulation (MPS-28). \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Overview of the changes to the generic application}
+\label{subsec:overview}
+
+\Cref{tab:changes} lists the files of \code{Metropolis_GA} that we modified. The following sections take these changes roughly in the order in which we made them.
+
+\begin{table}[H]
+\centering
+\caption{Changes made to \code{Metropolis_GA} with respect to the pilot version.}
+\label{tab:changes}
+\small
+\begin{tabularx}{\textwidth}{@{}l l Y l@{}}
+\toprule
+\textbf{Part} & \textbf{File} & \textbf{Change} & \textbf{Task} \\
+\midrule
+OM  & \code{ROUTE} & Input \code{ReleaseRequested}, timer \code{ReleaseTimer}, states \code{PreReleaseTimer}, \code{JustUnlocked}, \code{Holding}; \code{set} now requires the timer to be stopped & MPS-22 \\
+OM  & \code{ROUTE_SECTION} & Function \code{manual_unlocking} & MPS-22 \\
+GDS & \code{SWITCH} & Wrong guard of \code{MoveReverse} corrected & MPS-3 \\
+GDS & \code{ROUTE_SECTION} & \code{ReadyToRelease} armed by occupancy; \code{Locked} also released by manual unlocking & MPS-3, 24 \\
+GDS & \code{ROUTE} & Exit case of \code{protected_front}; equations of \code{ReleaseTimer} and \code{Holding} & MPS-20, 24, 26 \\
+GDS & \code{EXIT_SIGNAL} & \code{LineOutput} based on end locking; line input added to \code{CommandedProceed} & MPS-20 \\
+GSS & \code{REQUIREMENTS} & Req.~2, 8, 9, 10 formalized; Req.~3 corrected; Req.~6 strengthened; EXIT 1, EXIT 2 added; manual release case in Req.~10 & MPS-3 to 26 \\
+GTS & \code{GTS_SWITCH} & Test Case 2 & MPS-14 \\
+GTS & \code{GTS_ROUTE} & Test Cases 3 and 4 & MPS-19, 23 \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 % =========================================================
-\section{Functional Extensions: Object Model \& Generic Design}
-\label{sec:design_extensions}
+\section{Station Configuration and Baseline Debugging}
+\label{sec:sa}
 % =========================================================
 
-The Signaling Design Automation (SDA) methodology cleanly separates generic signaling principles (Generic Application, GA) from site-specific railyard geometry (Specific Application, SA)~\cite{prover_sda}. As mandated by the modernization program, our consortium extended the baseline Metropolis GA with two critical interlocking capabilities: a bidirectional line block communication interface (MPS-16, MPS-18) and a safe manual route release function with approach locking (MPS-21, MPS-24). The complete formalized Object Model is detailed in the accompanying deliverable document \texttt{om.pdf}.
+\subsection{Drawing the five interlockings (MPS-2)}
 
-\subsection{Line Block Communication Interface}
-Adjacent interlocking stations along Line G are linked by single-track boundary segments without intermediate switches. To ensure safe train handoffs without risk of head-on collisions, boundary boundaries are governed by back-to-back exit signals communicating via boolean interlocking channels.
+Each station was drawn in the layout phase of Prover iLock from the plans of the technical dossier~\cite{metropolis_dossier}: ordinary signals and exit signals, buffer stops at the end of platform and siding tracks, and track circuit delimiters; switches are placed by the tool. \Cref{tab:stations} summarizes the five layouts, which together contain 26 switches, 90 signals and 16 platform or siding tracks.
 
-\subsubsection{Object Model Additions (\texttt{OM/EXIT\_SIGNAL.tm})}
-In \texttt{packages/Metropolis\_GA/OM/EXIT\_SIGNAL.tm}, the \texttt{EXIT\_SIGNAL} class was extended with communication attributes:
-\begin{itemize}[leftmargin=0.8cm,noitemsep]
-    \item \texttt{LineInput} (BOOL, Input): Authorization received from the adjacent station indicating that the line track is unreserved and safe to enter.
-    \item \texttt{LineOutput} (BOOL, Output): Boolean transmission to the adjacent interlocking, asserting that this station is neither routing a train into the line nor holding an active proceed command.
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{The five interlockings of Line G, from west (origin) to east (terminus).}
+\label{tab:stations}
+\small
+\begin{tabularx}{\textwidth}{@{}l l Y c c@{}}
+\toprule
+\textbf{Project} & \textbf{Station} & \textbf{Layout} & \textbf{Switches} & \textbf{Signals} \\
+\midrule
+\code{G-PEX} & Parc des Expositions & Terminus with five platforms & 5 & 15 \\
+\code{G-EME} & Emerson & Two crossovers, siding on track 2 (east side) & 5 & 18 \\
+\code{G-ABR} & Abrial & Passing station with two dead-end sidings & 6 & 20 \\
+\code{G-CLA} & Clarke & Scissors crossover, siding on track 2 (west side) & 5 & 15 \\
+\code{G-TEC} & Technop\^ole & Fan-shaped terminus with five platforms & 5 & 22 \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
-\subsubsection{Generic Design Equations (\texttt{GDS/EXIT\_SIGNAL.tm})}
-In \texttt{EXIT\_SIGNAL.tm}, equations for \texttt{LineOutput} and \texttt{CommandedProceed} were specified to guarantee line block integrity across inter-station boundaries:
+Moving from the layout phase to the tools phase runs the data checks of the package, which encode placement rules that the generic equations take for granted: the track after an exit signal must be an exit track with a single neighbouring track (\code{DATACHECK_01}), every exit signal stands back to back with an ordinary signal (\code{DATACHECK_02}), and no switch may lie on an exit track (\code{DATACHECK_03}).
 
-\begin{lstlisting}[caption={Implementation of LineOutput and CommandedProceed in EXIT\_SIGNAL.tm.}]
-class GDS_EXIT_SIGNAL {
-  inherit EXIT_SIGNAL;
+The naming rules of the dossier needed as much care as the geometry. The two exit signals of a border have the same name except for the last letter (\code{SeG1-PEX-E} at Parc des Expositions, \code{SeG1-PEX-W} at Emerson), and the line track circuit (\code{VG1-PEX}) carries the same name in both projects. The simulator relies on these names to connect neighbouring interlockings (\cref{sec:simulation}). A naming error passes every proof, because the verifier only ever sees one station, and it only appears once two stations are connected.
 
-  Equations:
-    LineOutput :=
-      ~end_locked(SELF) &
-      ~CommandedProceed(SELF) &
-      ALL tc:SELF.track_after tc.Clear;
+\subsection{Defects in the baseline design (MPS-3)}
+\label{subsec:baseline_defects}
 
-    CommandedProceed :=
-      end_locked(SELF) &
-      SELF.LineInput &
-      SOME tc:SELF.track_after tc.Clear;
+Running the existing test case and proofs on our stations, and then writing Test Case 2, brought out three defects in the GA we had received. The first one was in \code{GDS_SWITCH}. The output \code{MoveReverse}, which drives the motor towards the reverse position, was guarded by \code{~SELF.DetectedNormal} instead of \code{~SELF.DetectedReverse}. A switch lying in normal position is precisely the one that has to be moved to reverse, so the motor was never energized. The consequence is visible in Test Case 1 (\code{RUN_ROUTE}) for every route that needs a reverse switch, and in Test Case 2 for every switch. What makes this defect worth noting is that no safety requirement can detect it: a switch that never moves satisfies Requirement 7 trivially, since that requirement only says when a switch must \emph{not} move. Only a test can show that the design does too little.
+
+The second defect was in \code{GDS_ROUTE_SECTION}: the latch \code{ReadyToRelease} was armed by \code{SELF.clear} rather than by its negation. A vacant section has \code{clear} true, so a section became ready to release as soon as it was locked and then released almost immediately, before any train had entered it. Test Case 1 fails on this, and Requirement 8, once formalized (\cref{sec:gss}), gives a direct counterexample. Both corrected equations are shown in \cref{lst:baseline_fix}.
+
+\begin{keeptogether}
+\begin{lstlisting}[caption={Corrected equations in \code{GDS_SWITCH} and \code{GDS_ROUTE_SECTION}.},label={lst:baseline_fix}]
+// GDS_SWITCH (baseline guard: ~SELF.DetectedNormal)
+MoveReverse :=
+  SELF.CommandedReverse & ~SELF.DetectedReverse &
+  (SELF.start_move_reverse # SELF.MoveReverse) & ~SELF.ReverseTimeout;
+
+// GDS_ROUTE_SECTION (baseline: armed by SELF.clear)
+ReadyToRelease :=
+  SELF.Locked & (~SELF.clear # SELF.ReadyToRelease);
+\end{lstlisting}
+\end{keeptogether}
+
+The third defect was in the GSS itself. The formal Requirement 3 stated that the switches of a cleared route must \emph{not} be detected in the positions the route needs, the opposite of the informal text. The verifier rejected it on every station, and removing the two negations was enough to prove it. This kind of error is easy to find because the proof fails. A requirement that is too weak, on the other hand, is proved without complaint; the original exit signal case of Requirement 6 (\cref{subsec:req6}) was of that kind, and nothing in the tool pointed at it.
+
+\subsection{Test Case 2: manual switch throwing (MPS-14, MPS-15)}
+\label{subsec:tc2}
+
+Test Case 2 throws every switch to reverse and back, then occupies the track circuit containing the switch and checks that a new reverse request is refused for 60~s (\cref{lst:tc2}). We had to depart from the backlog on one point. The backlog expects reverse detection within 1~s, but the switch model in \code{GTS_SWITCH} only reports the new position after its motor has run for 3~s (timer \code{MovementReverseComplete}), so no design could meet a 1~s bound in simulation. We used 4~s for gaining detection, kept 1~s for losing the old one, and wrote the change into both the formal test and \code{gts.pdf}. The test also assumes that every switch starts in normal position, which is the simulator's initial state.
+
+The last part of the test checks a property that the GSS does not contain. A switch refuses requests while its track is occupied because the GDS includes occupancy in the switch's \code{locked} function, but Requirement 7 only covers switches in locked route sections or used for protection. Test Case 2 is thus the only check of this behavior.
+
+\begin{keeptogether}
+\begin{lstlisting}[caption={Test Case 2 in \code{GTS_SWITCH.tm} (step numbers refer to \code{gts.pdf}).},label={lst:tc2}]
+TestCase: MANUAL_SWITCH_THROWING
+foreach(sw:SELF.gds_inst) {
+  init_system();
+  sw.RequestedReverse := true; sw.RequestedNormal := false;     // 1
+  expect ~sw.DetectedNormal within 1 SEC;                        // 2
+  expect sw.DetectedReverse within 4 SEC;                        // 3 (backlog: 1 s)
+  sw.RequestedNormal := true; sw.RequestedReverse := false;      // 4
+  expect ~sw.DetectedReverse within 1 SEC;                       // 5
+  expect sw.DetectedNormal within 4 SEC;                         // 6
+  foreach(tc:sw.track) { tc.Clear := false; }  wait 1 SEC;      // 7
+  sw.RequestedReverse := true; sw.RequestedNormal := false;     // 8
+  expect sw.DetectedNormal during 60 SEC;                        // 9
+  sw.RequestedReverse := false;
 }
 \end{lstlisting}
-
-Crucially, \texttt{LineOutput} is guarded by \texttt{\textasciitilde end\_locked(SELF)} rather than a transient route state, ensuring that line block permission is held back until every locked route section along an incoming route has completely released.
-
-\subsection{Manual Route Release with Approach Locking}
-In normal operation, route sections release dynamically in the trail of a moving train. However, when traffic controllers must cancel an established route (e.g., following a misroute command or train cancellation), the interlocking must revoke signal authorization immediately while maintaining route locking for a prescribed approach locking delay (30 seconds) to ensure an approaching train can brake safely to a halt.
-
-\subsubsection{Object Model Extensions (\texttt{OM/ROUTE.tm})}
-In \texttt{packages/Metropolis\_GA/OM/ROUTE.tm}, the \texttt{ROUTE} class was augmented with manual release inputs, timing mechanisms, and updated route states:
-\begin{itemize}[leftmargin=0.8cm,noitemsep]
-    \item \texttt{ReleaseRequested} (BOOL, Input): External command issued by the controller to revoke an active route.
-    \item \texttt{ReleaseTimer} (TIMER): A 30-second countdown timer enforcing approach locking delay.
-    \item \texttt{Set} (Defined State): A route is defined as \texttt{Set} only if all its constituent route sections are locked and the release timer is not currently running:
-    \begin{equation}
-    \begin{split}
-        \mathrm{Set}(rt) \coloneqq{} & \left(\forall rts,\; \mathrm{route\_sections}(rt, rts) \implies \mathrm{Locked}(rts)\right) \\
-        & \land \neg\mathrm{TimerRunning}(rt.\mathrm{ReleaseTimer})
-    \end{split}
-    \end{equation}
-    \item \texttt{JustUnlocked} (Defined State): Asserted during the single cycle when the timer transitions from running to expired, triggering simultaneous unlocking across all constituent sections:
-    \begin{equation}
-    \begin{split}
-        \mathrm{JustUnlocked}(rt) \coloneqq{} & \mathbf{PRE}(\mathrm{TimerRunning}(rt.\mathrm{ReleaseTimer})) \\
-        & \land \neg\mathrm{TimerRunning}(rt.\mathrm{ReleaseTimer})
-    \end{split}
-    \end{equation}
-\end{itemize}
-
-\subsubsection{Generic Design Equations (\texttt{GDS/ROUTE.tm} and \texttt{GDS/ROUTE\_SECTION.tm})}
-The functional logic for manual release was embedded across route, route section, and signal control equations:
-
-\begin{lstlisting}[caption={Manual route release logic in ROUTE.tm and ROUTE\_SECTION.tm.}]
-// In GDS/ROUTE.tm: initiating 30-second countdown upon operator request
-class GDS_ROUTE {
-  inherit ROUTE;
-  Equations:
-    ReleaseTimer :=
-      (SELF.ReleaseRequested & SELF.set) #
-      (SELF.ReleaseTimer & ~SELF.JustUnlocked);
-}
-
-// In GDS/ROUTE_SECTION.tm: simultaneous unlocking upon timer expiration
-class GDS_ROUTE_SECTION {
-  inherit ROUTE_SECTION;
-  Equations:
-    Locked :=
-      SELF.InitialLockCondition &
-      ~SOME rt (route_sections(rt, SELF) & rt.JustUnlocked) &
-      (SELF.Locked # SELF.RequestLock);
-}
-\end{lstlisting}
-
-Furthermore, in \texttt{packages/Metropolis\_GA/GDS/SIGNAL.tm}, the starting signal's proceed aspect is governed by:
-\begin{equation}
-    \mathrm{CommandedProceed}(si) \coloneqq \exists rt,\; \left(\mathrm{start\_signal}(rt, si) \land \mathrm{Set}(rt)\right)
-\end{equation}
-Because \texttt{Set(rt)} immediately becomes false the instant \texttt{ReleaseTimer} begins running, the starting signal instantly drops to stop, protecting against train departure during the approach locking window.
+\end{keeptogether}
 
 % =========================================================
-\section{Formal Safety Verification (GSS)}
-\label{sec:verification}
+\section{Formalizing Requirements 2, 8, 9 and 10 (MPS-4)}
+\label{sec:gss}
 % =========================================================
 
-In accordance with CENELEC EN 50128 standards for SIL 4 railway signaling software~\cite{cenelec_en50128}, empirical testing is insufficient to guarantee total safety. The Metropolis modernization program relies on automated formal verification via the \textbf{Prover iLock Verifier} (powered by the Prover PSL model checker)~\cite{prover_sda, baier2008principles}. The complete formal safety specifications are documented in the companion deliverable \texttt{gss.pdf}.
+Four of the ten informal requirements had no formal counterpart in the pilot GSS. Two features of PiSPEC shaped how we wrote them. A quantifier such as \code{ALL rts} ranges over every object of the corresponding type in the station, so each requirement is checked on all route sections of all five layouts. And \textbf{PRE} has no meaningful value in the first cycle: the first counterexample we obtained for Requirement 10 was located exactly there. Every requirement that uses \textbf{PRE} therefore excludes the initial cycle through the function \code{initial_cycle} of the \code{REQUIREMENTS} class.
 
-\subsection{Formalization of Safety Requirements in PiSPEC}
-Engineering Group 7 formalized and strengthened the entire suite of safety requirements in \texttt{packages/Metropolis\_GA/GSS/REQUIREMENTS.tm}.
+\paragraph{Requirement 2 (MPS-5, MPS-6).}
+\textit{Route sections which share tracks cannot be locked at the same time.} Two sections share a track when, for example, they cover the same switch track circuit with the switch in different positions. The condition \code{~(rts1 = rts2)} is not a formality: without it every locked section would conflict with itself.
 
-\subsubsection{Requirement 2 (\texttt{GSS\_02}, MPS-5): Route Section Mutual Exclusion}
-\textit{``Route sections which share tracks cannot be locked at the same time.''}
-This invariant prevents conflicting routes from locking common track segments concurrently:
-
-\begin{lstlisting}[caption={PiSPEC formalization of Requirement 2 (GSS\_02).}]
+\begin{keeptogether}
+\begin{lstlisting}[caption={Requirement 2.},label={lst:gss02}]
 GSS_02 :=
   ALL rts1 ALL rts2 (
-    (~(rts1 = rts2) & SOME tc (tracks(rts1, tc) & tracks(rts2, tc))) ->
+    ~(rts1 = rts2) & SOME tc (tracks(rts1, tc) & tracks(rts2, tc)) ->
       ~(rts1.Locked & rts2.Locked)
   );
 \end{lstlisting}
+\end{keeptogether}
 
-\subsubsection{Requirement 6 (\texttt{GSS\_06}, MPS-17): Signal Clearance and Line Block Protection}
-\textit{``If a signal that is the start of a set route is commanded to proceed, then either the route ends at a buffer stop, the route ends at an exit signal with the line input set and a vacant line track, the end signal is commanded to proceed, or there is front protection.''}
+\paragraph{Requirements 8 and 9 (MPS-7 to MPS-10).}
+\textit{If a route section becomes ready to release, then it is occupied}, and \textit{if a route section is ready to release, then it is locked.} ``Becomes'' is a rising edge, written as \code{ReadyToRelease} in the current cycle and its negation under \textbf{PRE}. Our first draft of Requirement 8 asked for \emph{all} track circuits of the section to be occupied. That is stronger than the informal text and false whenever a section spans several track circuits, since the latch is armed as soon as the train enters the first of them; the existential quantifier in \cref{lst:gss0809} is the correct reading. Requirement 9 follows directly from the corrected equation of \cref{lst:baseline_fix}, in which \code{Locked} is a conjunct, so its proof is immediate. We kept it as a guard against later edits of that equation.
 
-In the baseline GA, this requirement contained a dummy placeholder (\texttt{SOME esi:}\allowbreak\texttt{rt.end\_object true}) that cleared signals unconditionally. We refined the specification to explicitly verify line input authorization and exit line track vacancy:
-
-\begin{lstlisting}[caption={PiSPEC formalization of strengthened Requirement 6 (GSS\_06).}]
-GSS_06 :=
-  ALL si ALL rt (
-    CommandedProceed(si) & start_signal(rt, si) & set(rt) ->
-      SOME bs:rt.end_object true #
-      SOME esi:rt.end_object (
-        esi.LineInput &
-        SOME tc (track_after(esi, tc) -> tc.Clear)
-      ) #
-      SOME si1:rt.end_object (
-        CommandedProceed(si1) # PRE CommandedProceed(si1) #
-        SOME pa (protects_signal(pa, si1) & pa.Protective)
-      )
-  );
-\end{lstlisting}
-
-\subsubsection{Requirement 8 (\texttt{GSS\_08}, MPS-7): Track Occupancy on Ready to Release}
-\textit{``If a route section becomes ready to release, then it is occupied.''}
-This property guarantees that a route section cannot arm its dynamic release latch unless a train is physically detected on at least one of its constituent track circuits:
-
-\begin{lstlisting}[caption={PiSPEC formalization of Requirement 8 (GSS\_08).}]
+\begin{keeptogether}
+\begin{lstlisting}[caption={Requirements 8 and 9.},label={lst:gss0809}]
 GSS_08 :=
   ALL rts (
     ~SELF.initial_cycle &
     rts.ReadyToRelease & PRE ~rts.ReadyToRelease ->
       SOME tc (tracks(rts, tc) & ~Clear(tc))
   );
+
+GSS_09 := ALL rts (ReadyToRelease(rts) -> Locked(rts));
 \end{lstlisting}
+\end{keeptogether}
 
-\subsubsection{Requirement 9 (\texttt{GSS\_09}, MPS-9): Locking State on Ready to Release}
-\textit{``If a route section is ready to release, then it is locked.''}
-This invariant ensures that idle or unreserved route sections can never transition to the ready-to-release state:
+\paragraph{Requirement 10 (MPS-11, MPS-12).}
+\textit{If a route section releases, then it is clear of occupancy and ready to release.} A release is a falling edge of \code{Locked}. The subtle point is the time at which ``ready to release'' must hold: the latch is reset in the same cycle as the section unlocks, so asking for \code{ReadyToRelease} in the current cycle can never be satisfied, and the requirement has to look at the previous cycle. Clearance, on the other hand, is checked in the current cycle. \Cref{lst:gss10a} is the version proved before manual release existed; \cref{subsec:mr_gss} explains how it was extended.
 
-\begin{lstlisting}[caption={PiSPEC formalization of Requirement 9 (GSS\_09).}]
-GSS_09 :=
-  ALL rts (
-    ReadyToRelease(rts) ->
-      Locked(rts)
-  );
-\end{lstlisting}
-
-\subsubsection{Requirement 10 (\texttt{GSS\_10}, MPS-11): Route Section Dynamic Release Condition}
-\textit{``If a route section releases, then it is clear of occupancy and was ready to release in the prior cycle.''}
-This temporal invariant ensures sequential route breakdown behind a traversing train, preventing premature unlocking:
-
-\begin{lstlisting}[caption={PiSPEC formalization of Requirement 10 (GSS\_10).}]
+\begin{keeptogether}
+\begin{lstlisting}[caption={Requirement 10 before the manual release extension.},label={lst:gss10a}]
 GSS_10 :=
   ALL rts (
-    ~SELF.initial_cycle &
-    PRE Locked(rts) & ~Locked(rts) &
-    ~SOME rt (route_sections(rt, rts) & rt.JustUnlocked) ->
-      ALL tc (tracks(rts, tc) -> Clear(tc)) &
-      PRE ReadyToRelease(rts)
+    ~SELF.initial_cycle & PRE Locked(rts) & ~Locked(rts) ->
+      ALL tc (tracks(rts, tc) -> Clear(tc)) & PRE ReadyToRelease(rts)
   );
 \end{lstlisting}
+\end{keeptogether}
 
-\subsubsection{Requirement \texttt{EXIT\_1} (MPS-18): Exit Signal Line Output Invariant}
-\textit{``If the line output of an exit signal is set, then the signal is neither end-locked nor commanded to proceed.''}
-This invariant prevents a station from granting line access to an adjacent interlocking while an outgoing route is locked:
+% =========================================================
+\section{Line Block Interface (MPS-16 to MPS-20)}
+\label{sec:lineblock}
+% =========================================================
 
-\begin{lstlisting}[caption={PiSPEC formalization of Requirement EXIT\_1.}]
-EXIT_1 :=
-  ALL esi (
-    esi.LineOutput ->
-      ~end_locked(esi) &
-      ~CommandedProceed(esi)
+Each border of Line G is a single track circuit without switches, with an exit signal at each end placed back to back with the entry signal of the station. Both ends of a line track can send a train onto it, so the two interlockings must agree on who may use it. The interface proposed in the backlog is a pair of Booleans per line track: the \code{LineOutput} of one exit signal is wired to the \code{LineInput} of the exit signal at the other end, and means ``this interlocking is not using the line''.
+
+\subsection{Strengthening Requirement 6 (MPS-17)}
+\label{subsec:req6}
+
+Requirement 6 gives the conditions under which the start signal of a set route may be commanded to proceed when the route ends somewhere. In the pilot GSS the exit signal case was \code{SOME esi:rt.end_object true}, so any route ending at an exit signal was accepted whatever happened on the line. The strengthened version (\cref{lst:gss06}) requires the line input to be set and the line track to be vacant. We also restricted the last two cases to ordinary signals with \code{~EXIT_SIGNAL(si1)}. Without this restriction, a route ending at an exit signal could satisfy the requirement through the exit signal's own proceed command, and the line condition would no longer be the only way in.
+
+\begin{keeptogether}
+\begin{lstlisting}[caption={Strengthened Requirement 6.},label={lst:gss06}]
+GSS_06 :=
+  ALL si ALL rt (
+    CommandedProceed(si) & start_signal(rt, si) & set(rt) ->
+      SOME bs:rt.end_object true #
+      SOME esi:rt.end_object (esi.LineInput & SOME tc:esi.track_after tc.Clear) #
+      SOME si1:rt.end_object (
+        ~EXIT_SIGNAL(si1) &
+        (CommandedProceed(si1) # SOME pa (protects_signal(pa, si1) & protective(pa)))
+      )
   );
 \end{lstlisting}
+\end{keeptogether}
 
-\subsubsection{Requirement \texttt{EXIT\_2} (MPS-18): Exit Signal Proceed Authorization}
-\textit{``If an exit signal is commanded to proceed, then it is end-locked, its line input is set, and the line track is clear.''}
-This ensures trains are only dispatched across boundaries when the adjacent station has explicitly confirmed vacancy:
+On the design side, the same condition was added to \code{protected_front} in \code{GDS_ROUTE}; there the protection area case still ranges over exit signals, which is harmless because no station has a protection area for an exit signal. Since both \code{ready_to_lock} and \code{ready_to_proceed} require front protection, a route towards an exit signal can neither be locked nor cleared while the line input is false.
 
-\begin{lstlisting}[caption={PiSPEC formalization of Requirement EXIT\_2.}]
-EXIT_2 :=
-  ALL esi (
-    CommandedProceed(esi) ->
-      end_locked(esi) &
-      esi.LineInput &
-      ALL tc (track_after(esi, tc) -> Clear(tc))
+\subsection{Requirements EXIT 1 and EXIT 2, and the exit signal equations (MPS-18, MPS-20)}
+\label{subsec:exit}
+
+EXIT 1 says that a station announcing a free line has neither reserved the line nor sent a train onto it; EXIT 2 says that a train is only sent onto the line when the line is reserved, the neighbour has declared it free and the line track is vacant. \Cref{lst:exit} shows both requirements and the final equations of \code{GDS_EXIT_SIGNAL}.
+
+\begin{keeptogether}
+\begin{lstlisting}[caption={Requirements EXIT 1 and EXIT 2 and the equations of \code{GDS_EXIT_SIGNAL}.},label={lst:exit}]
+EXIT_1 := ALL esi (esi.LineOutput -> ~end_locked(esi) & ~CommandedProceed(esi));
+EXIT_2 := ALL esi (CommandedProceed(esi) ->
+            end_locked(esi) & esi.LineInput & SOME tc:esi.track_after tc.Clear);
+
+LineOutput :=
+  ~end_locked(SELF) & ~CommandedProceed(SELF) & SOME tc:SELF.track_after tc.Clear;
+CommandedProceed :=
+  end_locked(SELF) & SELF.LineInput & SOME tc:SELF.track_after tc.Clear;
+\end{lstlisting}
+\end{keeptogether}
+
+The \code{LineOutput} equation we started from declared the line free when no route ending at the exit signal was \code{set}. EXIT 1 rejected it, and the counterexample shows a real hazard. A route is \code{set} only while \emph{all} of its sections are locked. When a train runs towards the border, the first section releases behind it while the train is still inside the station; at that moment the route is no longer set, the last section is still locked, and the line track is still vacant because the train has not reached it. The old equation then announced a free line, and the neighbouring station could have locked a route onto the same line track in the opposite direction. Using \code{end_locked}, which looks at the last section of the route, keeps the line reserved until the train has left the station. The vacancy term then keeps it reserved while the train is on the line itself, after the last section has released. The term \code{~CommandedProceed(SELF)} is redundant, since \code{CommandedProceed} implies \code{end_locked}, but we kept it so that the equation reads like EXIT 1.
+
+\subsection{Test Case 3 (MPS-19)}
+\label{subsec:tc3}
+
+Test Case 3 runs for every route ending at an exit signal. After the switches and flank protection have been set, it clears the line input and checks that the line output stays true for 5~s and that a route request does not lock any section during 30~s. It then sets the line input, requests the route again and expects the route to be set within 5~s, the start signal to show proceed within 1~s and the line output to stay false for 5~s.
+
+The backlog stops there, but the test would then leave a locked route behind. The procedure \code{init_system} only resets track occupancy and line inputs, so the next iteration, usually a route towards the same exit signal, would be blocked by the locked sections. We added two clean-up steps that request a manual release and wait 35~s, long enough for the 30.5~s release delay described in \cref{sec:manual}. Test Case 3 therefore only passes once manual release exists, a dependency between two epics that the backlog does not mention.
+
+% =========================================================
+\section{Manual Route Release (MPS-21 to MPS-26)}
+\label{sec:manual}
+% =========================================================
+
+In the pilot GA a route section could only be released by a train passing through it. An operator who needs to cancel a route, for instance after setting the wrong one, had no way to do so. The backlog specifies the new function per route: on a release request the start signal stops being commanded to proceed, a 30~s timer starts, and when it expires all route sections of the route release at the same time. The delay gives a train already approaching the signal the time to stop.
+
+\subsection{Object model (MPS-22)}
+
+The informal and formal \code{ROUTE} type received a new input \code{ReleaseRequested}, a timer \code{ReleaseTimer} and three derived states. Following the hint of the backlog, a route is now \code{set} only if all its sections are locked \emph{and} the timer is not running. Since the start signal is commanded to proceed only for a set route, it returns to stop as soon as the timer starts. \code{JustUnlocked} marks the cycle in which the timer stops, using \code{PreReleaseTimer}, a state variable that keeps the previous value of the timer in the same way as \code{PreCommandedNormal} in \code{GDS_SWITCH}. It is defined in the OM rather than in the GDS because Requirement 10 refers to it. We also added a function \code{immediate_manual_release}, constantly false, as a hook for a later version in which a route with no approaching train could be released without delay.
+
+\begin{keeptogether}
+\begin{lstlisting}[caption={Additions to \code{OM/ROUTE.tm} (defined states).},label={lst:om}]
+bool set := (ALL rts:SELF.route_sections rts.Locked) & ~SELF.ReleaseTimer;
+bool JustUnlocked :=
+  (SELF.PreReleaseTimer & ~SELF.ReleaseTimer) #
+  (SELF.ReleaseRequested & SELF.immediate_manual_release);
+bool PreReleaseTimer := SELF.ReleaseTimer;    // previous-cycle value
+\end{lstlisting}
+\end{keeptogether}
+
+\subsection{Design equations (MPS-24)}
+\label{subsec:mr_gds}
+
+\Cref{lst:gds_mr} shows the GDS side. \code{ReleaseTimer} is declared as an off-delay timer: it becomes true as soon as its input is true and falls 30~s after the input becomes false. The countdown therefore starts when the operator's request ends. With the 0.5~s pulse of the interactive simulator the sections release about 30.5~s after the request, and about 31~s after the 1~s pulse used in the tests. The input of the timer is only true for a route that has at least one locked section, so a request on an idle route has no effect.
+
+\begin{keeptogether}
+\begin{lstlisting}[caption={Manual release in \code{GDS_ROUTE} and \code{GDS_ROUTE_SECTION}.},label={lst:gds_mr}]
+// GDS_ROUTE
+ReleaseTimer :=
+  SELF.ReleaseRequested & SOME rts:SELF.route_sections rts.Locked &
+  ~SOME rt1 (~(rt1 = SELF) & set(rt1) &
+             SOME rts:SELF.route_sections route_sections(rt1, rts)) &
+  ~SELF.immediate_manual_release;
+Holding :=
+  SELF.ready_to_lock #
+  SELF.Holding & SOME rts:SELF.route_sections rts.Locked & ~SELF.JustUnlocked;
+Timers:
+  ReleaseTimer (SET=0 SEC, CLEAR=30 SEC, FIXED);    // off-delay
+
+// GDS_ROUTE_SECTION
+bool manual_unlocking :=
+  SOME rt (route_sections(rt, SELF) & rt.JustUnlocked &
+    ~SOME rt1 (~(rt1 = rt) & route_sections(rt1, SELF) &
+               (rt1.Holding & ~rt1.JustUnlocked # rt1.ready_to_lock)));
+Locked :=
+  (SELF.lock_commanded # SELF.Locked) & ~SELF.release & ~SELF.manual_unlocking;
+\end{lstlisting}
+\end{keeptogether}
+
+The delicate part was deciding which route a locked section belongs to. A section is not owned by a single route, since the relation between routes and sections is many-to-many. If two routes contain the same section and both are set, releasing one of them must not unlock the section on which the other still relies. We handled this at two levels. A request is ignored when another set route shares a section with the route to be released. And the state \code{Holding} records that a route locked its sections by its own request and still has at least one of them locked; at expiry of the timer, a section is unlocked only if no other route still holds it or is locking it in the same cycle.
+
+One behavior is a deliberate simplification. Requesting the route again while its timer is running does not cancel the release: the route stays unset, its signal stays at stop, and all its sections release when the timer expires. The operator has to request the route again afterwards.
+
+\subsection{Consequences for the safety proofs (MPS-25, MPS-26)}
+\label{subsec:mr_gss}
+
+Running the GSS on the new design made Requirement 10 fail, as we expected: a manual release is by definition a release that no train has caused, so the section is neither guaranteed clear nor ready to release. We did not want to weaken the requirement in general, so we excluded exactly the releases produced by an expired timer, and only for sections that no other route was holding in the previous cycle (\cref{lst:gss10b}). Any other release still has to satisfy the original condition. The clause \code{~rt.immediate_manual_release} is intentional as well: whoever implements immediate release will see Requirement 10 fail and will have to state when such a release is acceptable.
+
+\begin{keeptogether}
+\begin{lstlisting}[caption={Final Requirement 10 with the manual release exception.},label={lst:gss10b}]
+GSS_10 :=
+  ALL rts (
+    ~SELF.initial_cycle & PRE Locked(rts) & ~Locked(rts) &
+    ~SOME rt (
+      route_sections(rt, rts) & rt.JustUnlocked & ~rt.immediate_manual_release &
+      ~SOME rt1 (~(rt1 = rt) & route_sections(rt1, rts) &
+                 PRE rt1.Holding & ~rt1.JustUnlocked)
+    ) ->
+      ALL tc (tracks(rts, tc) -> Clear(tc)) & PRE ReadyToRelease(rts)
   );
 \end{lstlisting}
+\end{keeptogether}
 
-\subsection{Verification Results (GSS)}
-\label{subsec:gss_results}
-Formal verification was executed using the Prover iLock Verifier across all five interlocking installations of Line G (\texttt{G-PEX}, \texttt{G-EME}, \texttt{G-ABR}, \texttt{G-CLA}, and \texttt{G-TEC}). The tool translates the high-level PiSPEC specifications and instantiated topology tables (LCF files) into propositional formulas evaluated by SAT-based bounded model checking combined with inductive invariant proofs~\cite{clarke2009model}. 
+An exception of this kind has a cost that should be stated plainly. The 30~s delay, which is the actual safety argument of the function, appears in no requirement. Requirements 2 to 7 still constrain what can happen after the release, but the GSS would also accept a design that released the sections one cycle after the request. The delay is only checked by Test Case 4.
 
-Every single safety requirement formalized in the Generic Safety Specification -- including universal route uniqueness (\texttt{GSS\_01}), shared track mutual exclusion (\texttt{GSS\_02}), switch correspondence alignment (\texttt{GSS\_03}), route track clearance (\texttt{GSS\_04}), flank protection (\texttt{GSS\_05}), exit and front protection (\texttt{GSS\_06}), switch movement lockout under locking (\texttt{GSS\_07}), dynamic release conditions (\texttt{GSS\_08}, \texttt{GSS\_09}, \texttt{GSS\_10}), and border communication invariants (\texttt{EXIT\_1}, \texttt{EXIT\_2}) -- achieved \textbf{100\% mathematical verification (PROVED)} across all five stations. No counterexamples were produced, no inductive lemmas remained unproven, and all data checks confirmed railyard topological integrity.
+\subsection{Test Case 4 (MPS-23)}
+\label{subsec:tc4}
 
-% =========================================================
-\section{Generic Test Specification (GTS) Suites}
-\label{sec:testing}
-% =========================================================
-
-Dynamic testing validates the behavioral sequencing, real-time delays, and multi-object coordination of the interlocking logic. In task MPS-13, we formalized executable test suites in PiSPEC under \texttt{packages/Metropolis\_GA/GTS/}, verified against concrete station layouts in Prover iLock Simulator. The full test procedures are detailed in the companion deliverable \texttt{gts.pdf}.
-
-\subsection{Underlying GA Modifications Required for Test Execution}
-Writing and passing the test suites required crucial corrections across the Generic Design Specification (GDS) and Object Model (OM). In particular, during the implementation of Test Case 2, we found that switch reverse movement in \texttt{SWITCH.tm} was inhibited by an inverted guard (\texttt{\textasciitilde DetectedNormal}), which was corrected to \texttt{\textasciitilde DetectedReverse}. For Test Case 3, we extended \texttt{EXIT\_SIGNAL.tm} with \texttt{LineInput} and \texttt{LineOutput} and implemented inter-station equations in \texttt{GDS/EXIT\_SIGNAL.tm}. For Test Case 4, we augmented \texttt{OM/ROUTE.tm} with \texttt{ReleaseRequested} and \texttt{ReleaseTimer}, conditioned \texttt{Set} on an inactive countdown, and updated \texttt{GDS/ROUTE\_SECTION.tm} so that \texttt{rt.JustUnlocked} triggers simultaneous unlocking across all locked sections.
-
-\subsection{Test Case 2 (MPS-13): Manual Switch Throwing Under Occupancy}
-Implemented in \texttt{packages/Metropolis\_GA/GTS/GTS\_SWITCH.tm}, this test verifies manual switch operation: requests to throw an idle switch between normal and reverse positions are executed within 4 seconds (tested against physical 3.0s switch throwing time), whereas identical commands issued while the containing track circuit is occupied are strictly rejected, holding the switch immovable for 60 seconds:
-
-\begin{lstlisting}[caption={PiSPEC test procedure for Test Case 2 in GTS\_SWITCH.tm.}]
-TestCase: MANUAL_SWITCH_THROWING
-foreach (sw:SELF.gds_inst) {
-  init_system();
-  sw.RequestedReverse := true; sw.RequestedNormal := false;
-  expect ~sw.DetectedNormal within 1 SEC;
-  expect sw.DetectedReverse within 4 SEC;
-
-  sw.RequestedNormal := true; sw.RequestedReverse := false;
-  expect ~sw.DetectedReverse within 1 SEC;
-  expect sw.DetectedNormal within 4 SEC;
-
-  foreach (tc:sw.track) { tc.Clear := false; }
-  wait 1 SEC;
-  sw.RequestedReverse := true; sw.RequestedNormal := false;
-  expect sw.DetectedNormal during 60 SEC;
-  sw.RequestedReverse := false;
-}
-\end{lstlisting}
-
-\subsection{Test Case 3 (MPS-19): Line Block Route Locking and Exit Signal Coordination}
-Implemented in \texttt{packages/Metropolis\_GA/GTS/GTS\_ROUTE.tm}, this test exercises the boundary interface between stations: when \texttt{LineInput} is false (line occupied or not granted), route locking toward the exit signal is strictly inhibited; once \texttt{LineInput} is set to true, the route locks within 5 seconds, the start signal clears to proceed within 1 second, and the exit signal \texttt{LineOutput} drops to false:
-
-\begin{lstlisting}[caption={PiSPEC test procedure for Test Case 3 in GTS\_ROUTE.tm.}]
-TestCase: TEST_CASE_3
-foreach (rt:SELF.gds_inst) foreach (esi:rt.end_object) if (exit_signal(esi)) {
-  init_system();
-  // Align switches and establish flank protection...
-  esi.LineInput := false;
-  expect esi.LineOutput during 5 SEC;
-
-  rt.RouteRequested := true; wait 1 SEC; rt.RouteRequested := false;
-  expect (ALL rts:rt.route_sections ~rts.Locked) during 30 SEC;
-
-  esi.LineInput := true;
-  rt.RouteRequested := true; wait 1 SEC; rt.RouteRequested := false;
-  expect rt.set within 5 SEC;
-  expect ALL si:rt.start_signal si.ShowsProceed within 1 SEC;
-  expect ~esi.LineOutput during 5 SEC;
-
-  rt.ReleaseRequested := true; wait 1 SEC; rt.ReleaseRequested := false;
-  wait 35 SEC;
-  expect ALL rts:rt.route_sections ~rts.Locked;
-}
-\end{lstlisting}
-
-\subsection{Test Case 4 (MPS-23): Manual Route Release Verification}
-Also in \texttt{GTS\_ROUTE.tm}, this test validates approach locking: once a route is established and its start signal cleared, issuing \texttt{ReleaseRequested} immediately drops the start signal to stop, maintains all route sections locked throughout the 28-second observation window, and verifies simultaneous unlocking of all sections upon timer expiration:
-
-\begin{lstlisting}[caption={PiSPEC test procedure for Test Case 4 in GTS\_ROUTE.tm.}]
-TestCase: TEST_CASE_4
-foreach (rt:SELF.gds_inst) {
-  init_system();
-  // Align switches, establish flank and front protection...
-  rt.RouteRequested := true; wait 1 SEC; rt.RouteRequested := false;
-  expect rt.set;
-  expect ALL si:rt.start_signal (si.CommandedProceed & si.ShowsProceed);
-
-  rt.ReleaseRequested := true; wait 1 SEC; rt.ReleaseRequested := false;
-  expect ALL si:rt.start_signal (~si.CommandedProceed & ~si.ShowsProceed);
-  expect ~rt.set;
-
-  expect ( (ALL rts:rt.route_sections rts.Locked) &
-           (ALL si:rt.start_signal ~si.CommandedProceed) ) during 28 SEC;
-  expect ALL rts1:rt.route_sections ALL rts2:rt.route_sections
-         ( (rts1.Locked & rts2.Locked) # (~rts1.Locked & ~rts2.Locked) ) during 4 SEC;
-  expect ALL rts:rt.route_sections ~rts.Locked;
-}
-\end{lstlisting}
+Test Case 4 sets each route as in Test Case 1 (with the line input set if the route ends at an exit signal), checks that the start signal shows proceed, and sends a 1~s release request. It then expects the signal to be at stop and the route to be unset immediately, all sections to stay locked for the next 28~s, all sections to be either all locked or all unlocked at every instant of the following 4~s, and every section to be unlocked at the end. The windows follow from the timing of \cref{subsec:mr_gds}: observation starts when the pulse ends, so the 28~s window ends 29~s after the request, and the expected release at about 31~s falls inside the 4~s window that checks simultaneity.
 
 % =========================================================
-\section{Multi-Station Interactive Simulation via MQTT}
+\section{Simulation of the Complete Line (MPS-27, MPS-28)}
 \label{sec:simulation}
 % =========================================================
 
-To validate end-to-end operational viability across Line G, tasks MPS-27 and MPS-28 required running a distributed, synchronized simulation linking all five Prover iLock station instances via MQTT communications.
+For the line simulation each project is opened in its own Prover iLock instance with the interactive simulator running, and the Communication tab connects it to an MQTT broker.
+% TODO: state which broker was used: mqtt.prover.com (on request to Prover)
+% or the broker embedded in Prover iLock (server set to "localhost" in
+% config/io_<project_name>.rjson), and on how many machines.
+Exit signals whose names differ only in the final \code{E} or \code{W} are paired automatically, so the line output of one becomes the line input of the other, and the line track circuit, which has the same name in both projects, is shared: occupying \code{VG1-ABR} in the Abrial simulator also shows it occupied in Clarke.
 
-\subsection{Distributed Architecture and Topic Configuration}
-In our implementation, each station runs as an independent Prover iLock process. Communications between adjacent stations are bridged through an embedded MQTT broker running on \texttt{localhost:1883}. Station I/O configuration files (\texttt{config/io\_g-*.rjson}) map physical boundary elements to structured MQTT topics:
-\begin{itemize}[leftmargin=0.8cm,noitemsep]
-    \item \textbf{Exit Signals:} Border signals share inverse matching designations across interlocking boundaries. For example, Eastbound signal $SeG2\text{-}PEX\text{-}E$ publishes its state to topic \texttt{metropolis/line\_g/SeG2-PEX}, which is consumed by Westbound signal $SeG2\text{-}PEX\text{-}W$ in \texttt{G-EME}.
-    \item \textbf{Boundary Track Circuits:} Intermediate line blocks ($VG1\text{-}PEX$, $VG2\text{-}EME$, $VG1\text{-}ABR$, etc.) publish track occupancy synchronously, updating tracking displays across neighboring stations simultaneously.
-\end{itemize}
+At each border we checked the sequence that Test Case 3 checks for a single station, but this time driven by the real neighbour: the sending station could only clear its exit signal with the line input set, the opposite exit signal in the receiving station lost its line input as soon as the route was locked, and the line was announced free again only after the train had left the line track. \Cref{fig:sim_abr_approach,fig:sim_abr_depart,fig:sim_cla_entry} show a train passing from Emerson through Abrial into Clarke; runs of the same kind were made over the whole line, from a platform of Parc des Expositions to the terminus at Technop\^ole.
+% TODO: check the signal names quoted in the three captions against the screenshots.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.96\textwidth,height=5.2cm,keepaspectratio]{../img/simulation_1.png}
-    \caption{Interactive simulation capture at $t = 108.0\,\text{s}$: train approaching Abrial (\texttt{G-ABR}) from \texttt{VG1-EME}, with route established and signals $S_1$ and $S_7$ cleared to proceed toward exit signal \texttt{SeG1-ABR-E}.}
+    \includegraphics[width=1.0\textwidth,height=4.4cm,keepaspectratio]{../img/simulation_1.png}
+    \caption{Simulation at $t = 108.0\,\text{s}$: train approaching Abrial (\code{G-ABR}) from \code{VG1-EME}, with a route set and signals $S_1$ and $S_7$ at proceed towards exit signal \code{SeG1-ABR-E}.}
     \label{fig:sim_abr_approach}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.96\textwidth,height=5.2cm,keepaspectratio]{../img/simulation_2.png}
-    \caption{Interactive simulation capture at $t = 160.6\,\text{s}$: train clearing Abrial and occupying the inter-station boundary line track \texttt{VG1-ABR} between Abrial and Clarke under active MQTT state transmission.}
+    \includegraphics[width=1.0\textwidth,height=4.4cm,keepaspectratio]{../img/simulation_2.png}
+    \caption{Simulation at $t = 160.6\,\text{s}$: the train has left Abrial and occupies the line track \code{VG1-ABR} between Abrial and Clarke; the occupancy is shared by both projects.}
     \label{fig:sim_abr_depart}
 \end{figure}
 
-\subsection{Live Line G Traversal Validation}
-Interactive simulation runs demonstrated successful continuous train movement across Line G: trains depart terminal platform tracks at \texttt{G-PEX}, negotiate intermediate crossovers at \texttt{G-EME}, \texttt{G-ABR}, and \texttt{G-CLA}, and berth safely at \texttt{G-TEC}. Track reservations, aspect clearing, and approach locking functioned deterministically without deadlocks.
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.96\textwidth,height=5.2cm,keepaspectratio]{../img/simulation_3.png}
-    \caption{Interactive simulation capture at $t = 320.4\,\text{s}$: train entering Clarke (\texttt{G-CLA}) from \texttt{VG1-ABR}, acquiring proceed aspect at entry signal $S_1$, and locking route across scissors crossover toward exit signal \texttt{SeG2-CLA-E}.}
+    \includegraphics[width=0.96\textwidth,height=4.4cm,keepaspectratio]{../img/simulation_3.png}
+    \caption{Simulation at $t = 320.4\,\text{s}$: train entering Clarke (\code{G-CLA}) from \code{VG1-ABR}; entry signal $S_1$ at proceed and route locked across the scissors crossover towards \code{SeG2-CLA-E}.}
     \label{fig:sim_cla_entry}
 \end{figure}
 
-% =========================================================
-\section{Problems Encountered and Technical Solutions}
-\label{sec:difficulties}
-% =========================================================
-
-During the development, formal verification, and simulation of Line~G, our team tackled complex engineering hurdles spanning formal specification syntax, discrete execution cycle semantics, and baseline software logic defects.
-
-\subsection{PiSPEC Semantics, Scoping, and Discrete Clock Boundaries}
-A fundamental challenge lay in mastering PiSPEC's declarative semantics and cycle-based execution model. In particular, the temporal operator $\mathbf{PRE}(x)$ evaluates the value of variable $x$ in the immediately preceding discrete cycle ($t - 1$). In safety requirement \texttt{GSS\_10} (dynamic route section release), initial model checking runs produced spurious counterexamples at cycle $t = 0$. Because initial cycle history is undefined, evaluating $\mathbf{PRE}$ without a boundary guard caused verification failures. We resolved this by explicitly conditioning temporal implications with \texttt{\textasciitilde SELF.initial\_cycle}, ensuring requirements evaluate strictly on well-defined execution cycles.
-
-\subsection{Test Case Implementation and Underlying GA Logic Defects}
-Constructing generic test suites GTS 2, 3, and 4 proved significantly more challenging than anticipated. Initial test runs failed persistently, but systematic diagnostic tracing revealed that the failures were not caused by the test procedures themselves, but rather by latent defects in the baseline Generic Application (GA):
-\begin{itemize}[leftmargin=0.8cm,noitemsep]
-    \item \textbf{Inverted Switch Throw Guard (\texttt{SWITCH.tm}):} In the baseline equation for \texttt{MoveReverse}, energizing the motor was conditioned on \texttt{\textasciitilde SELF.DetectedNormal}. This condition was logically contradictory: a switch resting in normal position is precisely the switch that must be commanded to reverse. Consequently, all reverse commands were deadlocked. Correcting the guard to \texttt{\textasciitilde SELF.DetectedReverse} enabled switch motor operation and satisfied requirement \texttt{GSS\_07}.
-    \item \textbf{Dynamic Release Occupancy Detection (\texttt{ROUTE\_SECTION.tm}):} In \texttt{ROUTE\_SECTION.tm}, the latch for \texttt{ReadyToRelease} was conditioned on \texttt{SELF.clear}. Because a vacant track is represented by \texttt{clear = true}, the baseline logic armed release readiness on vacant tracks instead of occupied ones! Adding the negation \texttt{\textasciitilde SELF.clear} restored train-dependent latching.
-\end{itemize}
-
-\subsection{Specification Errors in Baseline Safety Requirements (GSS)}
-Several formal safety requirements in the baseline GSS package contained mathematical errors that led to immediate proof falsification during model checking:
-
-\begin{lstlisting}[caption={Correction of erroneous negations in GSS\_03 (REQUIREMENTS.tm).}]
-// Defective baseline formulation in GSS_03:
-(switches_normal(rts, sw)  -> ~DetectedNormal(sw)) &
-(switches_reverse(rts, sw) -> ~DetectedReverse(sw))
-
-// Corrected formal specification:
-(switches_normal(rts, sw)  -> DetectedNormal(sw)) &
-(switches_reverse(rts, sw) -> DetectedReverse(sw))
-\end{lstlisting}
-
-\begin{itemize}[leftmargin=0.8cm,noitemsep]
-    \item \textbf{Spurious Negations in Switch Correspondence (\texttt{GSS\_03}):} As shown in the listing above, the baseline formula demanded that switches along a cleared route should \textit{not} be detected in their expected positions. Removing the two inverted negation operators brought the formula into compliance with physical interlocking rules, allowing \texttt{GSS\_03} to be proved across all stations.
-    \item \textbf{Quantifier Scope in Track Occupancy (\texttt{GSS\_08}):} In Requirement 8, the baseline specification required \textit{all} track circuits in a route section to be occupied simultaneously (\texttt{ALL tc}). In railway railyards, route sections often comprise multiple consecutive track circuits; an entering train occupies the first circuit before reaching downstream ones. Correcting the quantifier to \texttt{SOME tc} ensured proper latch verification.
-    \item \textbf{Exit Signal Protection Refinement (\texttt{GSS\_06}):} The baseline GA contained a dummy placeholder (\texttt{SOME esi:rt.end\_object true \#}) that cleared starting signals unconditionally toward exit boundaries. Refining the rule to require \texttt{esi.LineInput} and vacant exit line tracks closed a major safety gap.
-\end{itemize}
-
-\subsection{Exit Signal Approach Locking and False Vacancy Hazards}
-In task MPS-18, analyzing the baseline equation for \texttt{LineOutput} in \texttt{GDS/EXIT\_SIGNAL.tm} revealed a dangerous interlocking race condition:
-
-\begin{lstlisting}[caption={Refinement of LineOutput in EXIT\_SIGNAL.tm (MPS-18, MPS-20).}]
-// Defective baseline formulation in EXIT_SIGNAL.tm:
-LineOutput :=
-  ~SOME rt (end_object(rt, SELF) & set(rt)) &
-  ALL tc:SELF.track_after tc.Clear;
-
-// Corrected implementation accounting for all locked sections:
-LineOutput :=
-  ~end_locked(SELF) &
-  ~CommandedProceed(SELF) &
-  ALL tc:SELF.track_after tc.Clear;
-\end{lstlisting}
-
-The baseline equation evaluated only whether an approaching route was actively in state \texttt{set(rt)}. However, during train traversal, a route unsets the moment the train enters the first track circuit, while subsequent route sections remain securely locked under the train. Evaluating \texttt{set(rt)} caused \texttt{LineOutput} to assert true prematurely during train passage, falsely signaling to the neighboring interlocking that the line block was available. Substituting \texttt{\textasciitilde end\_locked(SELF)} and \texttt{\textasciitilde CommandedProceed(SELF)} guarantees that \texttt{LineOutput} remains strictly false until all route sections along the entire approaching route have completely released.
-
-\subsection{Simulation Network Setup and Local Broker Resolution}
-Prover iLock's default simulation environment is configured to connect to an external cloud broker (\texttt{mqtt.prover.com}). In local classroom sessions, this remote endpoint is unreachable, causing simulation instances to hang and border signals to freeze. In \texttt{mqtt\_config.py} and all station I/O definitions (\texttt{config/io\_g-*.rjson}), we redirected the host parameter to an embedded broker on \texttt{localhost:1883}, achieving deterministic, low-latency inter-process synchronization.
+One detail of the simulator setup matters beyond the simulation. In \code{EXIT_SIGNAL.tm} the line input starts at true, which is convenient when a station is simulated alone, but it means that a neighbour that is not connected looks like a free line. A real implementation would have to treat a missing or stale message as ``line not free''.
 
 % =========================================================
-\section{Conclusion and Perspectives}
+\section{Verification Results and Limitations}
+\label{sec:results}
+% =========================================================
+
+\Cref{tab:gss} summarizes the GSS of the delivered package. In the final run the Prover iLock Verifier proves every requirement on the five projects; the counterexamples met along the way are those discussed above.
+
+\begin{table}[tbp]
+\centering
+\caption{Requirements of the delivered GSS, all proved on the five stations, and their status with respect to the pilot version.}
+\label{tab:gss}
+\small
+\begin{tabularx}{\textwidth}{@{}l Y l l@{}}
+\toprule
+\textbf{Requirement} & \textbf{Subject} & \textbf{Change} & \textbf{Task} \\
+\midrule
+\code{GSS_01} (1, 2) & Proceed only with a unique set route, or an end-locked exit signal & unchanged & --- \\
+\code{GSS_02} & Sections sharing a track never locked together & formalized & MPS-5, 6 \\
+\code{GSS_03} & Switches detected in their route positions & corrected & MPS-3 \\
+\code{GSS_04}, \code{GSS_05} & Route tracks clear; flank protection & unchanged & --- \\
+\code{GSS_06} & Front protection and line condition & strengthened & MPS-17 \\
+\code{GSS_07} & Switch movement lock-out & unchanged & --- \\
+\code{GSS_08}, \code{GSS_09} & Ready to release implies occupied, locked & formalized & MPS-7 to 10 \\
+\code{GSS_10} & Release only behind a train & formalized, extended & MPS-11, 12, 26 \\
+\code{EXIT_1}, \code{EXIT_2} & Line output and exit signal proceed & new & MPS-18 \\
+\code{DATACHECK_01}--\code{03} & Placement of exit signals and exit tracks & unchanged & --- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+These results should be read for what they are. Each proof concerns one interlocking whose inputs are left free: track occupancy, switch detection, operator requests and the line input can take any value in any cycle. The properties therefore hold whatever the neighbour sends, but they say nothing about the pair. The property that actually matters at a border, that trains are never sent onto a line track from both ends, follows from EXIT 1 and EXIT 2 on both sides only if the link transmits the line output faithfully and without excessive delay. That argument is ours, not the verifier's; checking it formally would require a model that composes two neighbouring interlockings with the communication link.
+
+The interface also has no arbitration. If both stations lock a route towards the same line track within the same communication delay, both see a free line, both lock, and both line outputs then drop. The outcome is safe, because neither start signal can clear without its line input, but both routes stay blocked until one is released manually, which costs at least 30~s. Line block systems used in service usually avoid this situation with an explicit change of traffic direction.
+
+Finally, the GSS only contains safety properties of the form ``something bad never happens''. Several behaviors we care about lie outside it and are covered by tests only: that switches actually move (the defect of \cref{subsec:baseline_defects} went unnoticed by the proofs), that an occupied switch refuses requests (\cref{subsec:tc2}), and that manual release waits 30~s (\cref{subsec:mr_gss}).
+
+% =========================================================
+\section{Conclusion}
 \label{sec:conclusion}
 % =========================================================
 
-Through this engineering integration project, \textbf{Engineering Group 7} delivered a complete, formally verified, and simulation-validated modern computerized interlocking system for \textbf{Line G} of the Metropolis Metro network:
+During the week we configured the five interlockings of Line G, corrected three defects of the pilot GA, formalized or strengthened five requirements and added two, wrote three test cases, extended the GA with a line block interface and a delayed manual release, and ran the complete line in a connected simulation. All requirements are proved on the five stations and all test cases pass.
 
-\begin{itemize}[leftmargin=0.8cm,noitemsep]
-    \item \textbf{Comprehensive Station Coverage:} Built and verified all five interlocking stations (\texttt{G-PEX}, \texttt{G-EME}, \texttt{G-ABR}, \texttt{G-CLA}, \texttt{G-TEC}) from civil schematics, encompassing 26 switches, 90 signals, and 16 platform/siding tracks.
-    \item \textbf{Industrial Generic Logic Extensions:} Successfully designed, specified, and implemented bidirectional line block interfaces and safe 30-second manual route release logic in PiSPEC, fully documented in \texttt{om.pdf}.
-    \item \textbf{SIL 4 Mathematical Verification:} Proved 100\% of safety proof obligations across all 12 formal requirements using Prover iLock Verifier without counterexamples or unproven lemmas, fully documented in \texttt{gss.pdf}.
-    \item \textbf{Dynamic Testing \& Multi-Station Simulation:} Authored and passed rigorous GTS test suites (detailed in \texttt{gts.pdf}) and validated continuous train operations across Line G via a distributed MQTT simulation network.
-\end{itemize}
+The most useful lesson for us concerns the relation between requirements and design. Errors that make a requirement too strong are found at once, because the proof fails. Errors that make it too weak, like the old exit case of Requirement 6, or design errors that make the system do too little, like the switch guard, pass the verifier and were only found by reading the specification critically or by testing. The other lesson is that a manual release forces an exception in a safety requirement, and that such an exception has to be as narrow as possible and paired with a test that checks what the requirement no longer says.
 
-By decoupling generic signaling principles from site-specific topologies and leveraging automated formal verification, the Signaling Design Automation (SDA) methodology ensures zero-defect safety while substantially reducing development and commissioning lifecycles. Line G is fully ready for operational deployment.
+Several extensions follow naturally from this work: the immediate release of routes with no train in their approach area, for which the hook and an approach path class are already in place; a timed requirement for the 30~s delay; a fail-safe default for the line input; and a verification model of two neighbouring interlockings to prove the line block property instead of arguing it.
 
 % =========================================================
 % REFERENCES
 % =========================================================
-\vspace{-0.1cm}
-\begingroup
-\scriptsize
-\setlength{\itemsep}{1pt}
-\bibliographystyle{ieeetr}
-\bibliography{../ref}
-\endgroup
+\clearpage
+\printbibliography[title={References}]
 
 \end{document}
